@@ -1,0 +1,282 @@
+{
+  "heroSection": {
+    "title1": "POLITECHNIKA WROCŁAWSKA",
+    "title2": "PWR RACING TEAM",
+    "description": "PWR Racing Team to Strategiczne Koło Naukowe Politechniki Wrocławskiej, a zarazem najstarszy i najbardziej utytułowany Zespół wyścigowy Formuły Student w Polsce. Od 2009 roku grupa ok. 80 studentów i studentek wrocławskich uczelni co roku konstruuje bolidy i startuje nimi w prestiżowych zawodach inżynierskich odbywających się na całym świecie.",
+    "subtitle": "WE TAKE IT TO THE NEXT LEVEL",
+    "button": "Dowiedz się więcej"
+  },
+  "fsSection": {
+    "title": "ZAWODY FORMULA STUDENT",
+    "description": "Zawody Formuły Student sprawdzają nie tylko osiągi bolidu, ale również wiedzę inżynierską oraz umiejętności zarządzania. Rywalizajca odbywa się w ramach dwóch klas w zależności od rodzaju bolidu — elektrycznej (EV) lub spalinowej (CV). Na niektórych edycjach istnieje też możliwość startowania w opcjonalnej kategorii autonomicznej (DV). Zespoły walczą ze sobą na przestrzeni kilku punktowanych konkurencji, które dzielą się na statyczne i dynamiczne. Zespół z największą ilością punktów na tysiąc możliwych, zostaje ogłoszony zwycięzcą swojej klasy. Sposób ich przyznawania różni się w niewielkim stopniu pomiędzy edycjami.",
+    "buttonText": "Dowiedz się więcej"
+  },
+  "teamSection": {
+    "title": "ZESPÓŁ",
+    "subtitle": "RAZEM MOŻEMY WSZYSTKO",
+    "description": "Młodzi, ambitni, zaangażowani i odważni – tak najlepiej można opisać studentów Politechniki Wrocławskiej, a zwłaszcza członków PWR Racing Team. Nasza organizacja działa według struktury jak w dużych firmach. Na czele zespołu stoi lider, który ponosi największą odpowiedzialność. Bezpośrednio podlega mu lider techniczny, zarządzający liderami poszczególnych działów, z wyjątkiem marketingu – ten dział raportuje bezpośrednio do lidera zespołu. Każdy członek zespołu podlega swojemu liderowi działu.",
+    "buttonLabel": "Więcej o bolidzie"
+  },
+  "historySection": {
+    "title": "HISTORIA ZESPOŁU",
+    "subtitle": "HISTORIA NASZEGO ZESPOŁU",
+    "members": "CZŁONKÓW",
+    "membersDescription": "Których łączy jedna pasja",
+    "projects": "PROJEKTÓW",
+    "projectsDescription": "Ukończonych bolidów",
+    "achievements": "OSIĄGNIĘĆ",
+    "achievementsDescription": "W międzynarodowych zawodach",
+    "description": "Studenci Politechniki Wrocławskiej od zawsze byli jednymi z najzdolniejszych w całej Polsce, a co za tym idzie ich chęć zdobywania wiedzy i doświadczenia jest ponadprzeciętna. W celu zaspokojenia potrzeb młodych konstruktorów i menadżerów w 2009 roku powstał Zespół PWR Racing Team. W każdym sezonie tworzymy nowy bolid wyścigowy. Na swoim koncie mamy aż dwanaście niepowtarzalnych modeli bolidów spalinowych, z czego każdy kolejny jest w stanie z łatwością pokonać poprzedni. W roku 2022 powstał pierwszy w historii Zespołu bolid elektryczny z systemami jazdy autonomicznej – RT12e. Aktualnie zajmujemy się budową naszej piętnaster konstrukcji. Już w sezonie 2016/2017, pokazaliśmy co potrafią Polacy. Jako pierwszy polski zespół zwyciężyliśmy całą edycję zawodów Formula Student Italy. Od tego czasu utrzymujemy się wśród najlepszych zespołów w światowym rankingu i zajmujemy pierwsze miejsce w Polsce i 11 miejsce na świecie w sezonie 2021.",
+    "buttonText": "Dowiedz się więcej"
+  },
+  "joinusSection": {
+    "title": "Chcesz zostać częścią PWR Racing Team?",
+    "buttonRecruitment": "Rekrutacja",
+    "buttonPartner": "Zostań Partnerem"
+  },
+  "newsControls": {
+    "title": "AKTUALNOŚCI",
+    "becomePartner": "Zostań partnerem",
+    "contact": "Kontakt"
+  },
+  "navigation": {
+    "home": "Strona główna",
+    "bolid": "Bolid",
+    "team": "Zespół",
+    "about": "O nas",
+    "partners": "Partnerzy",
+    "news": "Aktualności",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "callUs": "Zadzwoń do nas",
+    "writeUs": "Napisz do nas",
+    "findUs": "Gdzie nas znaleźć?",
+    "navigation": "Nawigacja",
+    "home": "Strona Główna",
+    "bolid": "Bolid",
+    "team": "Zespół",
+    "about": "O nas",
+    "partners": "Partnerzy",
+    "headquarters": "Siedziba",
+    "address": "ul. Sopocka 16, Wrocław",
+    "phone": "+48 517 350 915",
+    "email": "racing.pwr@gmail.com",
+    "joinUs": "Zostań członkiem",
+    "becomePartner": "Zostań partnerem",
+    "generalInfo": "Informacje Ogólne",
+    "privacyPolicy": "Polityka prywatności",
+    "cookiesPolicy": "Pliki Cookies",
+    "rodo": "RODO",
+    "recruitment": "Rekrutacja",
+    "createdBy": "Projekt & Wykonanie: Maria Kanczewska & Dawid Chmal",
+    "allRightsReserved": "© 2024 Wszelkie prawa zastrzeżone",
+    "seasonDescription": "W każdym sezonie tworzymy nowy bolid wyścigowy. Na swoim koncie mamy aż piętnaście niepowtarzalnych modeli bolidów spalinowych, z czego każdy kolejny jest w stanie z łatwością pokonać poprzedni. W roku 2022 powstał pierwszy w historii Zespołu bolid elektryczny z systemami jazdy autonomicznej – RT12e. Aktualnie zajmujemy się budową naszej piętnastej konstrukcji."
+  },
+  "sidebar": {
+    "media": "Media",
+    "recruitment": "Rekrutacja"
+  },
+  "bolidSection": {
+    "moreAboutBolid": "Więcej o bolidzie",
+    "meetTeam": "Poznaj zespół",
+    "acceleration": "Przyspieszenie",
+    "mass": "Masa",
+    "power": "Moc",
+    "specyfikacja": "Specyfikacja",
+    "bolidu": "Bolidu",
+    "TXTacceleration": "PRZYSPIESZENIE 0-100 KM/H",
+    "TXTmass": "MOC SILNIKÓW",
+    "TXTpower": "MASA POJAZDU"
+  },
+  "heroAbout": {
+    "title": "POZNAJ NASZ ZESPÓŁ"
+  },
+  "navAbout": {
+    "garage": "Garaż",
+    "teamHistory": "Historia Zespołu",
+    "departments": "Nasze działy",
+    "formulaStudent": "Formula Student",
+    "paragraph1": "PWR Racing Team to Strategiczne Koło Naukowe Politechniki Wrocławskiej, a zarazem najstarszy i najbardziej utytułowany Zespół wyścigowy Formuły Student w Polsce. Od 2009 roku grupa ok. 80 studentów i studentek wrocławskich uczelni co roku konstruuje bolidy i startuje nimi w prestiżowych zawodach inżynierskich odbywających się na całym świecie. Największym sukcesem PWR Racing Teamu jest wygranie całej edycji zawodów, co miało miejsce Formula SAE Italy w 2017 roku. Było to pierwsze zwycięstwo polskiego Zespołu Formuły Student w historii.",
+    "paragraph2": "Na przestrzeni swojej działalności Zespół skonstruował 12 bolidów spalinowych, które zdobywały czołowe miejsca w zawodach Formuły Student w całej Europie i na świecie. Podążając za zmianami w branży motoryzacyjnej, PWR Racing Team podjął nowe wyzwanie i rozpoczął budowę konstrukcji napędzanych elektrycznych. Członkowie Zespołu dokonali zmiany napędu w zaledwie jeden rok. Ponadto w tym samym czasie stworzono zestaw rozwiązań pozwalający na jazdę autonomiczną. Rozpoczynając nową erę, w 2022 roku powstał pierwszy bolid elektryczny z systemami jazdy autonomicznej — RT12e. Obecnie Zespół pracuje nad 4 konstrukcją tego typu — RT15e.",
+    "paragraph3": "Zaprojektowanie i konstrukcja bolidu klasy Formuła Student to zaawansowany, interdyscyplinarny projekt inżynierski, pozwalający rozwinąć się młodym inżynierom i menedżerom. Wymaga ogromu zaangażowania ze strony Zespołu, co przekłada się na tysiące godzin, które Członkowie spędzają w warsztacie, rozwijając projekt oraz wykonując swoje części. Konstrukcja pojazdu jest możliwa dzięki wsparciu Politechniki Wrocławskiej, Miasta Wrocław, Fundacji Manus, a także ponad 120 partnerów — firm i instytucji z całej Europy."
+  },
+  "garage": {
+    "title": "Garaż",
+    "paragraph": "Przy ulicy Sopockiej 16, w spokojnej okolicy Wrocławia, znajdują się nasze warsztaty – garaże, w których z pasją i zaangażowaniem pracujemy nad naszymi bolidami. Te pięć przestronnych garaży to nasza strefa kreatywności i innowacji, gdzie każdego dnia zespół PWR Racing Team stawia czoła nowym wyzwaniom inżynieryjnym. Każdy z garaży jest dostosowany do specyficznych potrzeb naszych działów, zapewniając optymalne warunki do pracy nad zawieszeniem, aerodynamiką, elektroniką czy systemami autonomicznymi naszych bolidów. Przestrzeń ta nie tylko sprzyja rozwojowi technologicznemu, ale również stanowi miejsce integracji zespołu, wymiany wiedzy i wspólnego rozwiązywania problemów.",
+    "address": "ul. Sopocka 16, Wrocław",
+    "contact": "Kontakt"
+  },
+  "departmentsAbout": {
+    "title": "NASZE DZIAŁY",
+    "interestedIn": "JAKI DZIAŁ CIĘ INTERESUJE?",
+    "mechanical": {
+      "description": "Dział zajmuje się projektowaniem i budową układu zawieszenia. Odpowiada również za elementy autonomicznego układu kierowniczego, hamulcowego, części mocowania czy struktury metalowe w monocoque.",
+      "responsibilities": [
+        {
+          "text": "projektowaniem i budową układu zawieszenia",
+          "icon": "plik.svg"
+        },
+        {
+          "text": "projektowaniem i budową elementów autonomicznego układu kierowniczego",
+          "icon": "kolo.svg"
+        },
+        {
+          "text": "projektowaniem i budową układu hamulcowego",
+          "icon": "klucz.svg"
+        },
+        {
+          "text": "projektowaniem części mocowania i struktury metalowej w monocoque",
+          "icon": "box.svg"
+        }
+      ]
+    },
+    "composites": {
+      "description": "Dział odpowiada za własnoręczne wykonanie wszystkich elementów kompozytowych obecnych na bolidzie. Poczynając od największego elementu, czyli struktury nośnej, poprzez pakiet aerodynamiczny kończąc na ergonomii kierowcy oraz struktury ochronnej na baterię wysokiego napięcia.",
+      "responsibilities": [
+        {
+          "text": "modelowaniem elementów kompozytowych w programach CAD",
+          "icon": "plik.svg"
+        },
+        {
+          "text": "symulacjami wytrzymałościowymi oraz optymalizacją struktur kompozytowych",
+          "icon": "kolo.svg"
+        },
+        {
+          "text": "symulacjami CFD pakietu aerodynamicznego",
+          "icon": "klucz.svg"
+        },
+        {
+          "text": "wykonaniem oraz badaniami wytrzymałościowymi elementów kompozytowych",
+          "icon": "box.svg"
+        }
+      ]
+    },
+    "marketing": {
+      "description": "Dział zajumący się wizerunkiem Zespołu i promocją jego działań w mediach społecznościowych. Ponadto odpowiada za logistykę i organizację wydarzeń.",
+      "responsibilities": [
+        { "text": "tworzeniem materiałów promocyjnych", "icon": "plik.svg" },
+        { "text": "organizacją wydarzeń", "icon": "box.svg" }
+      ]
+    },
+    "software": {
+      "description": "Dział zajmujący się rozwojem systemu autonomicznego oraz programowaniem mikroprocesorów sterujących interfejsem kierowcy, hamowaniem lub skręcaniem pojazdu. Odpowiada za działanie systemów planowania trasy, kontroli pojazdu czy percepcji, gdy w bolidzie nie znajduje się kierowca. Oprogramowanie pisane jest w takich językach programowania, jak C, C++, czy Python.",
+      "responsibilities": [
+        {
+          "text": "opracowywaniem algorytmów usprawniających jazdę autonomiczną",
+          "icon": "plik.svg"
+        },
+        { "text": "rozwojem systemów embedded", "icon": "kolo.svg" }
+      ]
+    },
+    "electrical": {
+      "description": "Dział zajmujący się projektowaniem płytek PCB, tworzeniem wiązek wysokiego i niskiego napięcia oraz budową autorskiej baterii wysokiego napięcia.",
+      "responsibilities": [
+        {
+          "text": "projektowaniem i wykonawstwem płytek PCB",
+          "icon": "plik.svg"
+        },
+        {
+          "text": "projektowaniem w programach CAD oraz wykonawstwem wiązki niskiego oraz wysokiego napięcia zgodnych ze standardami motor sportowymi",
+          "icon": "kolo.svg"
+        },
+        {
+          "text": "modelowaniem obudów na elektronikę w programach CAD",
+          "icon": "klucz.svg"
+        },
+        {
+          "text": "projektowaniem oraz wykonawstwem baterii wysokiego napięcia",
+          "icon": "box.svg"
+        },
+        {
+          "text": "symulacjami termicznymi elektroniki oraz baterii",
+          "icon": "plik.svg"
+        },
+        { "text": "projektowaniem magistrali CAN", "icon": "kolo.svg" }
+      ]
+    },
+    "vehiclePerformance": {
+      "description": "Dział zajmujący się maksymalizacją osiągów pojazdu, kinematyką i dynamiką pojazdu, akwizycją danych, układem napędowym oraz organizacją testów.",
+      "responsibilities": [
+        { "text": "Symulacjami dynamiki pojazdu", "icon": "plik.svg" },
+        {
+          "text": "Projektowaniem oraz rozwojem układu napędowego",
+          "icon": "kolo.svg"
+        },
+        { "text": "Analizą danych z przejazdów", "icon": "klucz.svg" }
+      ]
+    },
+    "business": {
+      "description": "Dział odpowiadający za kontakt z partnerami, zarządzanie finansami Zespołu oraz przygotowywanie konkurencji statycznych na zawody Formula Student, takich jak prezentacja biznesowa.",
+      "responsibilities": [
+        {
+          "text": "Koordynacją zamówień, analizą danych, optymalizacją pracy Zespołu",
+          "icon": "plik.svg"
+        },
+        {
+          "text": "Przygotowaniem prezentacji biznesowych",
+          "icon": "kolo.svg"
+        },
+        { "text": "Kontaktem z partnerami", "icon": "klucz.svg" }
+      ]
+    }
+  },
+  "fsAbout": {
+    "dynamicCompetitions": "CZTERY KONKURENCJE DYNAMICZNE",
+    "staticCompetitions": "TRZY KONKURENCJE STATYCZNE",
+    "competitions": {
+      "acceleration": {
+        "title": "Acceleration",
+        "text": "Konkurencja, która polega na jak najszybszym pokonaniu 75 metrów, dzięki czemu możliwe jest ocenienie przyspieszenia bolidu. Zespoły mają do dyspozycji dwie próby i lepsza z nich jest oceniana."
+      },
+      "skidPad": {
+        "title": "Skid Pad",
+        "text": "Konkurencja polegająca na jeździe po “ósemce”. Każdy Zespół ma do dyspozycji dwie próby, z których przy punktowaniu brana jest pod uwagę lepsza z nich."
+      },
+      "autocross": {
+        "title": "Autocross",
+        "text": "Konkurencja, podczas której uczestnicy mają za zadanie pokonać jedno okrążenie na torze w jak najkrótszym czasie. W konkurencji może wziąć udział dwóch kierowców z danego Zespołu, a każdy z nich ma do dyspozycji dwa przejazdy. Pod uwagę brany jest najlepszy czas z czterech."
+      },
+      "endurance": {
+        "title": "Endurance",
+        "text": "Konkurencja polegająca na wyścigu na około 22 kilometry. Po przejechaniu 11 kilometrów następuje zmiana kierowcy, na którą Zespół ma 3 minuty. Jest to najwyżej punktowana konkurencja, ale punkty otrzymują tylko Zespoły, które ukończyły przejazd."
+      },
+      "cost": {
+        "title": "Cost and Manufacturing",
+        "text": "Konkurencja oceniają skrupulatność, z jaką przygotowano kosztorys projektu oraz wiedzę Członków Zespołu na temat kosztów materiałów oraz wytworzenia bolidu."
+      },
+      "engineering": {
+        "title": "Engineering Design",
+        "text": "Konkurencja polegająca na prezentacji projektu bolidu. Sędziowie oceniają umiejętności inżynierskie oraz pomysłowość Członków Zespołów przy projektowaniu zarówno całokształtu, jak i poszczególnych systemów pojazdu. Jest to najwyżej punktowana konkurencja statyczna, którą oceniają eksperci z branży motoryzacyjnej."
+      },
+      "business": {
+        "title": "Business Plan Presentation",
+        "text": "Konkurencja, podczas której Członkowie Zespołu wcielają się w rolę zarządu start-upu, przykładowo tworzonych na zamówienie hamulców. Za pomocą dziesięciominutowej prezentacji mają za zadanie przekonać sędziów odgrywających inwestorów do wsparcia ich modelu biznesowego."
+      }
+    }
+  },
+  "contactUs": {
+    "pageTitle": "KONTAKT",
+    "writeToUs": "NAPISZ DO NAS",
+    "theyWillAnswer": "Oni odpowiedzą na Twoje pytania:",
+    "whereToFindUs": "GDZIE NAS ZNAJDZIESZ?",
+    "projectSupervisors": "Opiekunowie zespołu:",
+    "siteAdministration": "Administracja strony:"
+  },
+  "joinUs": {
+    "pageTitle": "REKRUTACJA",
+    "becomeMember": "ZOSTAŃ CZŁONKIEM",
+    "nextRecruitmentStartsIn": "REKRUTACJA ZAMKNIE SIĘ ZA:",
+    "days": "DNI",
+    "hours": "GODZIN",
+    "minutes": "MINUT",
+    "seconds": "SEKUND",
+    "becomePartner": "Zostań Partnerem",
+    "contact": "Kontakt"
+  },
+  "admin": {
+    "title": "Zaloguj się do panelu administratora",
+    "buttonRecruitment": "Zaloguj się",
+    "buttonPartner": "Wróć na stronę główną"
+  }
+}

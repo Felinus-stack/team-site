@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Syncopate:wght@400;700&display=swap");
+
+@font-face {
+  font-family: "Syncopate";
+  src: url("/fonts/Syncopate-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Syncopate";
+  src: url("/fonts/Syncopate-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.font-syncopate {
+  font-family: "Syncopate", sans-serif;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+html,
+body,
+:root {
+  height: 100%;
+  --container-width: 80rem;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: rgba(203, 31, 58, 0.4); /* Kolor tła zaznaczenia */
+  color: inherit; /* Zachowuje domyślny kolor tekstu */
+}
+
+/* Custom scrollbar styles */
+.custom-scrollbar {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #888 transparent; /* For Firefox */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Width of the entire scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Make the track background transparent */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners on the thumb */
+  border: 2px solid transparent; /* Adds a little space around thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color when hovering over the scrollbar thumb */
+}
+
+/*! Sponsors scroll */
+/* Ukryj pasek przewijania w przeglądarkach opartych na WebKit (np. Safari, nowsze wersje Chrome) */
+.animation-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ukryj pasek przewijania w Firefox */
+.animation-container {
+  scrollbar-width: none;
+}
+
+/* Animacja dla wchodzącego elementu */
+.slide-enter {
+  transform: translateX(100%);
+}
+
+.slide-enter-active {
+  transform: translateX(0);
+  transition: transform 500ms ease-in-out;
+}
+
+/* Animacja dla wychodzącego elementu */
+.slide-exit {
+  transform: translateX(0);
+}
+
+.slide-exit-active {
+  transform: translateX(-100%);
+  transition: transform 500ms ease-in-out;
+}
+
+.transition-fill {
+  transition: fill 0.3s ease-in-out;
+}
+
+@media (max-width: 1410px) {
+  .nav-responsive {
+    display: none;
+  }
+  .social-responsive {
+    display: flex;
+  }
+  .userMenu-responsive {
+    display: flex;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer_bug {
+    align-items: center;
+  }
+}
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}

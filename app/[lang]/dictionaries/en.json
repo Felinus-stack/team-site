@@ -1,0 +1,282 @@
+{
+  "heroSection": {
+    "title1": "WROCŁAW UNIVERSITY OF SCIENCE AND TECHNOLOGY",
+    "title2": "PWR RACING TEAM",
+    "description": "PWR Racing Team is a Strategic Science Club of Wrocław University of Science and Technology, as well as the oldest and most titled Formula Student racing team in Poland. Since 2009, a group of about 80 students from Wrocław universities has been building race cars and competing in prestigious engineering competitions around the world each year.",
+    "subtitle": "WE TAKE IT TO THE NEXT LEVEL",
+    "button": "Learn more"
+  },
+  "fsSection": {
+    "title": "FORMULA STUDENT",
+    "description": "The Formula Student competition not only tests the performance of the car but also engineering knowledge and management skills. Participants are divided into classes depending on the type of car - electric (EV) or combustion (CV). In some editions, there is also the possibility to compete in the optional autonomous category (DV). The competition consists of several scored events, which are divided into static and dynamic. The team with the highest number of points out of a thousand possible is declared the winner of their class. The scoring method varies slightly between editions.",
+    "buttonText": "Learn more"
+  },
+  "teamSection": {
+    "title": "TEAM",
+    "subtitle": "TOGETHER WE CAN DO ANYTHING",
+    "description": "Young, ambitious, committed, and brave. These words describe the students of Wrocław University of Science and Technology, especially the members of the PWR Racing Team. Our team has a structure like a serious company. At its head is the team leader. The greatest responsibility rests on them. Directly reporting to them is the technical leader, who in turn oversees the leaders of individual departments, except for marketing, whose head is subordinate to the team leader. For the rest of the members, the leader of their department is their supervisor.",
+    "buttonLabel": "Learn more about the car"
+  },
+  "historySection": {
+    "title": "TEAM HISTORY",
+    "subtitle": "HISTORY OF OUR TEAM",
+    "members": "MEMBERS",
+    "membersDescription": "United by one passion",
+    "projects": "PROJECTS",
+    "projectsDescription": "Completed cars",
+    "achievements": "ACHIEVEMENTS",
+    "achievementsDescription": "In international competitions",
+    "description": "Students of Wrocław University of Science and Technology have always been among the most talented in all of Poland, and their desire to gain knowledge and experience is exceptional. To meet the needs of young constructors and managers, the PWR Racing Team was founded in 2009. Each season, we create a new racing car. We have fifteen unique combustion car models to our credit, each of which can easily outperform the previous one. The team's first electric car with autonomous driving systems – RT12e – was created in 2022. We are currently working on our fifteenth car. In the 2016/2017 season, we showed what Poles are capable of. As the first Polish team, we won the entire Formula Student Italy competition. Since then, we have been among the best teams in the world ranking, holding the first place in Poland and the 11th place in the world in the 2021 season.",
+    "buttonText": "Learn more"
+  },
+  "joinusSection": {
+    "title": "Do you want to become part of the PWR Racing Team?",
+    "buttonRecruitment": "Recruitment",
+    "buttonPartner": "Become a Partner"
+  },
+  "newsControls": {
+    "title": "NEWS",
+    "becomePartner": "Become a Partner",
+    "contact": "Contact"
+  },
+  "navigation": {
+    "home": "Home",
+    "bolid": "Bolid",
+    "team": "Team",
+    "about": "About Us",
+    "partners": "Partners",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "footer": {
+    "callUs": "Call us",
+    "writeUs": "Write to us",
+    "findUs": "Where to find us?",
+    "navigation": "Navigation",
+    "home": "Home",
+    "bolid": "Bolid",
+    "team": "Team",
+    "about": "About Us",
+    "partners": "Partners",
+    "headquarters": "Headquarters",
+    "address": "Sopocka 16, Wrocław",
+    "phone": "+48 517 350 915",
+    "email": "racing.pwr@gmail.com",
+    "joinUs": "Join Us",
+    "becomePartner": "Become a Partner",
+    "generalInfo": "General Information",
+    "privacyPolicy": "Privacy Policy",
+    "cookiesPolicy": "Cookies Policy",
+    "rodo": "RODO",
+    "recruitment": "Recruitment",
+    "createdBy": "Project & Execution: Maria Kanczewska & Dawid Chmal",
+    "allRightsReserved": "© 2024 All rights reserved",
+    "seasonDescription": "In each season, we create a new racing car. We have as many as twelve unique models of combustion cars, each of which can easily outperform the previous one. Last season, the first electric car with autonomous driving systems in the history of the Team – RT12e – was created. We are currently working on our fourteenth construction."
+  },
+  "sidebar": {
+    "media": "Media",
+    "recruitment": "Recruitment"
+  },
+  "bolidSection": {
+    "moreAboutBolid": "More about the bolid",
+    "meetTeam": "Meet the team",
+    "acceleration": "Acceleration",
+    "mass": "Mass",
+    "power": "Power",
+    "specyfikacja": "Specification",
+    "bolidu": "of the Bolid",
+    "TXTacceleration": "ACCELERATION 0-100 KM/H",
+    "TXTmass": "ENGINE POWER",
+    "TXTpower": "VEHICLE MASS"
+  },
+  "heroAbout": {
+    "title": "MEET OUR TEAM"
+  },
+  "navAbout": {
+    "garage": "Garage",
+    "teamHistory": "Team History",
+    "departments": "Our Departments",
+    "formulaStudent": "Formula Student",
+    "paragraph1": "PWR Racing Team is the Strategic Student Scientific Circle of the Wrocław University of Technology and the oldest and most titled Formula Student racing team in Poland. Since 2009, a group of about 80 students from Wrocław universities has been constructing bolids and competing in prestigious engineering competitions around the world every year. The greatest success of the PWR Racing Team is winning the entire edition of the competition, which took place at Formula SAE Italy in 2017. It was the first victory of a Polish Formula Student Team in history.",
+    "paragraph2": "Throughout its activity, the Team has constructed 12 combustion bolids, which have won top places in Formula Student competitions across Europe and the world. Following changes in the automotive industry, PWR Racing Team took on a new challenge and began building electric-powered constructions. Team members changed the drive in just one year. Moreover, at the same time, a set of solutions allowing for autonomous driving was created. Starting a new era, in 2022 the first electric bolid with autonomous driving systems — RT12e — was created. Currently, the Team is working on the third construction of this type — RT14e.",
+    "paragraph3": "Designing and constructing a Formula Student-class bolid is an advanced, interdisciplinary engineering project that allows young engineers and managers to develop. It requires enormous commitment from the Team, which translates into thousands of hours that members spend in the workshop, developing the project and making their parts. The construction of the vehicle is possible thanks to the support of the Wrocław University of Technology, the City of Wrocław, the Manus Foundation, and over 120 partners — companies and institutions from all over Europe."
+  },
+  "garage": {
+    "title": "Garage",
+    "paragraph": "At Sopocka Street 16, in a quiet area of Wrocław, you will find our workshops – garages where we work on our bolids with passion and commitment. These five spacious garages are our zone of creativity and innovation, where the PWR Racing Team faces new engineering challenges every day. Each garage is tailored to the specific needs of our departments, providing optimal conditions for working on the suspension, aerodynamics, electronics, and autonomous systems of our bolids. This space not only fosters technological development but also serves as a place for team integration, knowledge exchange, and problem-solving.",
+    "address": "Sopocka Street 16, Wrocław",
+    "contact": "Contact"
+  },
+  "departmentsAbout": {
+    "title": "OUR DEPARTMENTS",
+    "interestedIn": "WHICH DEPARTMENT ARE YOU INTERESTED IN?",
+    "mechanical": {
+      "description": "The department is responsible for designing and building the suspension system. It is also responsible for the elements of the autonomous steering and braking systems, mounting parts, and metal structures in the monocoque.",
+      "responsibilities": [
+        {
+          "text": "designing and building the suspension system",
+          "icon": "plik.svg"
+        },
+        {
+          "text": "designing and building elements of the autonomous steering system",
+          "icon": "kolo.svg"
+        },
+        {
+          "text": "designing and building the braking system",
+          "icon": "klucz.svg"
+        },
+        {
+          "text": "designing mounting parts and metal structures in the monocoque",
+          "icon": "box.svg"
+        }
+      ]
+    },
+    "composites": {
+      "description": "The department is responsible for the handmade production of all composite elements present in the bolid. Starting from the largest element, the load-bearing structure, through the aerodynamic package, to the driver's ergonomics and the protective structure for the high-voltage battery.",
+      "responsibilities": [
+        {
+          "text": "modeling composite elements in CAD programs",
+          "icon": "plik.svg"
+        },
+        {
+          "text": "strength simulations and optimization of composite structures",
+          "icon": "kolo.svg"
+        },
+        {
+          "text": "CFD simulations of the aerodynamic package",
+          "icon": "klucz.svg"
+        },
+        {
+          "text": "production and strength testing of composite elements",
+          "icon": "box.svg"
+        }
+      ]
+    },
+    "marketing": {
+      "description": "The department is responsible for the image, promotion of the Team, as well as logistics and event organization. It is also responsible for preparing static competitions for Formula Student events, such as the business presentation.",
+      "responsibilities": [
+        { "text": "creating promotional materials", "icon": "plik.svg" },
+        { "text": "preparing business presentations", "icon": "kolo.svg" },
+        {
+          "text": "coordinating orders, data analysis, optimizing Team's work",
+          "icon": "klucz.svg"
+        },
+        { "text": "organizing events", "icon": "box.svg" }
+      ]
+    },
+    "software": {
+      "description": "The department is responsible for developing the autonomous system and programming microprocessors that control the driver's interface, braking, or steering of the vehicle. It is responsible for the operation of path planning, vehicle control, and perception systems when the driver is not in the bolid. The software is written in programming languages such as C, C++, and Python.",
+      "responsibilities": [
+        {
+          "text": "developing algorithms that improve autonomous driving",
+          "icon": "plik.svg"
+        },
+        { "text": "developing embedded systems", "icon": "kolo.svg" }
+      ]
+    },
+    "electrical": {
+      "description": "The department is responsible for designing PCBs, creating high and low voltage harnesses, and building a custom high-voltage battery.",
+      "responsibilities": [
+        { "text": "designing and manufacturing PCBs", "icon": "plik.svg" },
+        {
+          "text": "designing in CAD programs and manufacturing high and low voltage harnesses compliant with motorsport standards",
+          "icon": "kolo.svg"
+        },
+        {
+          "text": "modeling housings for electronics in CAD programs",
+          "icon": "klucz.svg"
+        },
+        {
+          "text": "designing and manufacturing high-voltage batteries",
+          "icon": "box.svg"
+        },
+        {
+          "text": "thermal simulations of electronics and batteries",
+          "icon": "plik.svg"
+        },
+        { "text": "designing CAN bus", "icon": "kolo.svg" }
+      ]
+    },
+    "vehiclePerformance": {
+      "description": "The department is responsible for maximizing vehicle performance, vehicle kinematics and dynamics, data acquisition, powertrain, and test organization.",
+      "responsibilities": [
+        { "text": "Vehicle dynamics simulations", "icon": "plik.svg" },
+        {
+          "text": "Designing and developing the powertrain",
+          "icon": "kolo.svg"
+        },
+        { "text": "Analyzing data from runs", "icon": "klucz.svg" }
+      ]
+    },
+    "business": {
+      "description": "Department responsible for contact with partners, financial management of the Team, and preparation of static competition for Formula Student competitions, such as business presentation.",
+      "responsibilities": [
+        {
+          "text": "Coordination of orders, data analysis, optimization of the Team's work",
+          "icon": "plik.svg"
+        },
+        {
+          "text": "Preparation of business presentations",
+          "icon": "kolo.svg"
+        },
+        {
+          "text": "Contact with partners",
+          "icon": "klucz.svg"
+        }
+      ]
+    }
+  },
+  "fsAbout": {
+    "dynamicCompetitions": "FOUR DYNAMIC COMPETITIONS",
+    "staticCompetitions": "THREE STATIC COMPETITIONS",
+    "competitions": {
+      "acceleration": {
+        "title": "Acceleration",
+        "text": "A competition that involves covering 75 meters as quickly as possible, thus assessing the acceleration of the car. Teams have two attempts, and the better one is evaluated."
+      },
+      "skidPad": {
+        "title": "Skid Pad",
+        "text": "A competition involving driving in a “figure-eight” pattern. Each team has two attempts, and the better one is considered for scoring."
+      },
+      "autocross": {
+        "title": "Autocross",
+        "text": "A competition where participants aim to complete one lap of the track in the shortest time possible. Two drivers from each team can participate, each having two runs. The best time from the four runs is considered."
+      },
+      "endurance": {
+        "title": "Endurance",
+        "text": "A competition involving a race of about 22 kilometers. After 11 kilometers, there is a driver change, which the team has 3 minutes to complete. This is the highest-scoring competition, but only teams that finish the race receive points."
+      },
+      "cost": {
+        "title": "Cost and Manufacturing",
+        "text": "A competition that evaluates the accuracy of the project cost estimate and the team members' knowledge of material and manufacturing costs of the car."
+      },
+      "engineering": {
+        "title": "Engineering Design",
+        "text": "A competition involving the presentation of the car design. Judges assess the engineering skills and ingenuity of the team members in designing both the overall vehicle and individual systems. This is the highest-scoring static competition, judged by automotive industry experts."
+      },
+      "business": {
+        "title": "Business Plan Presentation",
+        "text": "A competition where team members take on the role of a start-up board, for example, creating custom brake systems. Using a ten-minute presentation, they must convince judges acting as investors to support their business model."
+      }
+    }
+  },
+  "contactUs": {
+    "pageTitle": "CONTACT",
+    "writeToUs": "WRITE TO US",
+    "theyWillAnswer": "They will answer your questions:",
+    "whereToFindUs": "WHERE TO FIND US?",
+    "projectSupervisors": "Project Supervisors:",
+    "siteAdministration": "Site Administration:"
+  },
+  "joinUs": {
+    "pageTitle": "RECRUITMENT",
+    "becomeMember": "BECOME A MEMBER",
+    "nextRecruitmentStartsIn": "THE NEXT RECRUITMENT STARTS IN:",
+    "days": "DAYS",
+    "hours": "HOURS",
+    "minutes": "MINUTES",
+    "seconds": "SECONDS",
+    "becomePartner": "Become a Partner",
+    "contact": "Contact"
+  }
+}
