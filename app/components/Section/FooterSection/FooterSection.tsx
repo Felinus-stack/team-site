@@ -3,11 +3,10 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import {
-  FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaYoutube,
 } from "react-icons/fa";
+import { BsPlayBtn } from "react-icons/bs";
 import Button from "../../Button";
 import Container from "../../Container";
 import Logo from "../../Navbar/Logo";
@@ -214,11 +213,6 @@ const FooterSection: React.FC<FooterSectionProps> = ({ dict }) => {
           <div className="w-full flex-col md:flex-row items-center gap-4 flex justify-between md:px-12 py-4 md:py-8">
             <div className="flex items-center gap-4">
               <SocialIcons
-                href="https://www.facebook.com/PWRRacingTeam"
-                icon={FaFacebookF}
-                ariaLabel="Facebook"
-              />
-              <SocialIcons
                 href="https://www.instagram.com/pwrracingteam/"
                 icon={FaInstagram}
                 ariaLabel="Instagram"
@@ -229,9 +223,9 @@ const FooterSection: React.FC<FooterSectionProps> = ({ dict }) => {
                 ariaLabel="LinkedIn"
               />
               <SocialIcons
-                href="https://www.youtube.com/@PWRRacingTeam"
-                icon={FaYoutube}
-                ariaLabel="YouTube"
+                href="https://space.bilibili.com/99622895"
+                icon={BsPlayBtn}
+                ariaLabel="哔哩哔哩"
               />
             </div>
             <div className="flex gap-4 w-full md:w-1/3">

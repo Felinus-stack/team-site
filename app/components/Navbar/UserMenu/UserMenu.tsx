@@ -2,11 +2,10 @@
 
 import { AiOutlineMenu } from "react-icons/ai";
 import {
-  FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaYoutube,
 } from "react-icons/fa";
+import { BsPlayBtn } from "react-icons/bs";
 import Avatar from "../../Avatar";
 import { useCallback, useState, useRef, useEffect } from "react";
 import MenuItem from "./MenuItem";
@@ -70,11 +69,6 @@ const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
         <div className="md:flex hidden items-center gap-4">
           <div className="social-responsive flex items-center gap-4 ml-4">
             <SocialIcons
-              href="https://www.facebook.com/PWRRacingTeam"
-              icon={FaFacebookF}
-              ariaLabel="Facebook"
-            />
-            <SocialIcons
               href="https://www.instagram.com/pwrracingteam/"
               icon={FaInstagram}
               ariaLabel="Instagram"
@@ -85,9 +79,9 @@ const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
               ariaLabel="LinkedIn"
             />
             <SocialIcons
-              href="https://www.youtube.com/@PWRRacingTeam"
-              icon={FaYoutube}
-              ariaLabel="YouTube"
+              href="https://space.bilibili.com/99622895"
+              icon={BsPlayBtn}
+              ariaLabel="哔哩哔哩"
             />
             <LangButton lang={lang} />
           </div>
@@ -149,12 +143,6 @@ const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
             <div className="social-responsive flex items-center gap-4 my-2 mx-3 ">
               <SocialIcons
                 black
-                href="https://www.facebook.com/PWRRacingTeam"
-                icon={FaFacebookF}
-                ariaLabel="Facebook"
-              />
-              <SocialIcons
-                black
                 href="https://www.instagram.com/pwrracingteam/"
                 icon={FaInstagram}
                 ariaLabel="Instagram"
@@ -167,9 +155,9 @@ const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
               />
               <SocialIcons
                 black
-                href="https://www.youtube.com/@PWRRacingTeam"
-                icon={FaYoutube}
-                ariaLabel="YouTube"
+                href="https://space.bilibili.com/99622895"
+                icon={BsPlayBtn}
+                ariaLabel="哔哩哔哩"
               />
               <LangButton lang={lang} />
             </div>
