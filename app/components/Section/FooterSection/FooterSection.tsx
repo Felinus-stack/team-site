@@ -102,7 +102,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ dict }) => {
                 </div>
                 <div className="font-black ">
                   <Text color="white" opacity1 hoverColor="red" small bold wide>
-                    +48 517 350 915
+                    +86 152 2596 8963
                   </Text>
                 </div>
               </div>
@@ -131,7 +131,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ dict }) => {
                   </Title>
                 </div>
                 <Text color="white" opacity1 hoverColor="red" small bold wide>
-                  racing.pwr@gmail.com
+                  yuanjingteam@163.com
                 </Text>
               </div>
               <div
