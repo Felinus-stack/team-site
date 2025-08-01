@@ -16,12 +16,12 @@ async function updateBolidDescriptions() {
       });
 
       if (bolid) {
-        // 更新赛车记录，添加新的变量EN_short_description
+        // 更新赛车记录，添加新的变量enShortDescription（修正字段名）
         await prisma.bolid.update({
           where: { name: bolidName },
-          data: { EN_short_description: description },
+          data: { enShortDescription: description },
         });
-        console.log(`已使用EN_short_description更新 ${bolidName}`);
+        console.log(`已使用enShortDescription更新 ${bolidName}`);
       } else {
         console.log(`未找到名为 ${bolidName} 的赛车`);
       }

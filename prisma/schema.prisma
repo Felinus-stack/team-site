@@ -69,7 +69,7 @@ model Bolid {
   name              String @unique
   year              String
   shortDescription  String
-  enShortDescription String?
+  enShortDescription String? @db.Text
   parts             Part[]
   acceleration      String
   mass              String
