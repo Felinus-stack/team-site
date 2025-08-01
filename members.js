@@ -1,987 +1,875 @@
 const members = [
     {
-        "name": "pawe\u0142",
-        "surname": "w\u00f3jcik",
+        "name": "帕维尔",
+        "surname": "沃伊奇克",
         "email": "pawel.wojcik.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "team leader",
-                "department": "management",
+                "role": "团队负责人",
+                "department": "管理部",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "drivers",
+                "department": "车手组",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "micha\u0142",
-        "surname": "wieczorek",
+        "name": "米哈尔",
+        "surname": "维乔雷克",
         "email": "michal.wieczorek.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "technical leader",
+                "role": "技术负责人",
                 "department": "",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "karolina",
-        "surname": "wasiukiewicz",
+        "name": "卡罗琳娜",
+        "surname": "瓦西乌凯维奇",
         "email": "karolina.wasiukiewicz.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "marketing leader",
-                "department": "marketing",
+                "role": "营销负责人",
+                "department": "营销部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "iga",
-        "surname": "friedrich",
+        "name": "伊加",
+        "surname": "弗里德里希",
         "email": "iga.friedrich.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "social media associate",
-                "department": "marketing",
+                "role": "社交媒体专员",
+                "department": "营销部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "",
-        "surname": "",
-        "email": "",
-        "roles": [
-            {
-                "role": "",
-                "department": "marketing",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "marketing",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "marketing",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "marketing",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "marketing",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "composites",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "composites",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "composites",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "composites",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "composites",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "software",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "software",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "software",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "software",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "software",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "electrical",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "mechanical",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "mechanical",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "mechanical",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "vehicle performance",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "drivers",
-                "bolidName": "RT14e"
-            }
-        ]
-    },
-    {
-        "name": "jakub",
-        "surname": "kucharski",
+        "name": "雅各布",
+        "surname": "库哈尔斯基",
         "email": "jakub.kucharski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "business associate",
-                "department": "marketing",
+                "role": "商务专员",
+                "department": "营销部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "zuzanna",
-        "surname": "ignaszak",
+        "name": "祖扎娜",
+        "surname": "伊格纳萨克",
         "email": "zuzanna.ignaszak.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "business and statics project manager",
-                "department": "marketing",
+                "role": "商务与统计项目经理",
+                "department": "营销部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "zuzanna",
-        "surname": "kochanowska",
+        "name": "祖扎娜",
+        "surname": "科哈诺夫斯卡",
         "email": "zuzanna.kochanowska.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "copywriter",
-                "department": "marketing",
+                "role": "文案撰写员",
+                "department": "营销部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "iga",
-        "surname": "ma\u0142kus",
+        "name": "伊加",
+        "surname": "马尔库斯",
         "email": "iga.malkus.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "social media associate",
-                "department": "marketing",
+                "role": "社交媒体专员",
+                "department": "营销部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "stanis\u0142aw",
-        "surname": "mazurkiewicz",
+        "name": "斯坦尼斯瓦夫",
+        "surname": "马祖尔凯维奇",
         "email": "stanislaw.mazurkiewicz.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "photographer",
-                "department": "marketing",
+                "role": "摄影师",
+                "department": "营销部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "\u0142ukasz",
-        "surname": "chodyna",
+        "name": "卢卡斯",
+        "surname": "乔迪纳",
         "email": "lukasz.chodyna.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "business associate",
-                "department": "marketing",
+                "role": "商务专员",
+                "department": "营销部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "joanna",
-        "surname": "popielewska",
+        "name": "乔安娜",
+        "surname": "波皮耶莱夫斯卡",
         "email": "joanna.popielewska.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "business associate",
-                "department": "marketing",
+                "role": "商务专员",
+                "department": "营销部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "alicja",
-        "surname": "je\u017cak",
+        "name": "阿莉西亚",
+        "surname": "热扎克",
         "email": "alicja.jezak.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "social media associate",
-                "department": "marketing",
+                "role": "社交媒体专员",
+                "department": "营销部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "jakub",
-        "surname": "rucha\u0142a",
+        "name": "雅各布",
+        "surname": "鲁哈拉",
         "email": "jakub.ruchala.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "composites leader",
-                "department": "composites",
+                "role": "复合材料负责人",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "patryk",
-        "surname": "ko\u0142tun",
+        "name": "帕特里克",
+        "surname": "科尔顿",
         "email": "patryk.koltun.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "monocoque project manager",
-                "department": "composites",
+                "role": "单体壳项目经理",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "adam",
-        "surname": "strojny",
+        "name": "亚当",
+        "surname": "斯特罗伊尼",
         "email": "adam.strojny.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "underbody engineer",
-                "department": "composites",
+                "role": "底部工程师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "mi\u0142osz",
-        "surname": "sw\u00f3\u0142",
+        "name": "米沃什",
+        "surname": "斯沃尔",
         "email": "milosz.swoj.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "monocoque engineer",
-                "department": "composites",
+                "role": "单体壳工程师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "aleksander",
-        "surname": "maci\u0105tek",
+        "name": "亚历山大",
+        "surname": "马恰泰克",
         "email": "aleksander.maciatek.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "cfd engineer",
-                "department": "composites",
+                "role": "计算流体动力学工程师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "jakub",
-        "surname": "koman",
+        "name": "雅各布",
+        "surname": "科曼",
         "email": "jakub.koman.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "rear wing engineer",
-                "department": "composites",
+                "role": "尾翼工程师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "maria",
-        "surname": "kanczewska",
+        "name": "玛丽亚",
+        "surname": "坎切夫斯卡",
         "email": "maria.kanczewska.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "ergonomics engineer",
-                "department": "composites",
+                "role": "人机工程学工程师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "przemys\u0142aw",
-        "surname": "szczepa\u0144ski",
+        "name": "普热梅斯瓦夫",
+        "surname": "什切潘斯基",
         "email": "przemyslaw.szczepanski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "aerodynamics project manager",
-                "department": "composites",
+                "role": "空气动力学项目经理",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "ewa",
-        "surname": "glenc",
+        "name": "埃娃",
+        "surname": "格伦茨",
         "email": "ewa.glenc.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "ergonomics engineer",
-                "department": "composites",
+                "role": "人机工程学工程师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "wojciech",
-        "surname": "\u017cuberek",
+        "name": "沃伊切赫",
+        "surname": "茹贝雷克",
         "email": "wojciech.zuberek.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "monocoque engineer",
-                "department": "composites",
+                "role": "单体壳工程师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "wiktor",
-        "surname": "ku\u017amicki",
+        "name": "维托尔德",
+        "surname": "库兹米奇",
         "email": "wiktor.kuzmicki.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "diffuser engineer",
-                "department": "composites",
+                "role": "扩散器工程师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "jakub",
-        "surname": "grochowski",
+        "name": "雅各布",
+        "surname": "格罗霍夫斯基",
         "email": "jakub.grochowski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "composites member",
-                "department": "composites",
+                "role": "复合材料成员",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "dominik",
-        "surname": "pachecki",
+        "name": "多米尼克",
+        "surname": "帕切茨基",
         "email": "dominik.pachecki.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "rims engineer",
-                "department": "composites",
+                "role": "轮辋工程师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "nazarii",
-        "surname": "honczarenko",
+        "name": "纳扎里",
+        "surname": "洪恰连科",
         "email": "nazarii.honczarenko.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "rear wing engineer",
-                "department": "composites",
+                "role": "尾翼工程师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "nina",
-        "surname": "janik",
+        "name": "妮娜",
+        "surname": "亚尼克",
         "email": "nina.janik.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "front wing engineer",
-                "department": "composites",
+                "role": "前翼工程师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "maciej",
-        "surname": "sikora",
+        "name": "马切伊",
+        "surname": "西科拉",
         "email": "maciej.sikora.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "monocoque engineer",
-                "department": "composites",
+                "role": "单体壳工程师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "miko\u0142aj",
-        "surname": "stojowski",
+        "name": "米科拉伊",
+        "surname": "斯托约夫斯基",
         "email": "mikolaj.stojowski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "ergonomics engineer",
-                "department": "composites",
+                "role": "人机工程学工程师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "dawid",
-        "surname": "jamer",
+        "name": "达维德",
+        "surname": "亚默尔",
         "email": "dawid.jamer.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "tsac constructor",
-                "department": "composites",
+                "role": "TSAC 构造师",
+                "department": "复合材料部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "jakub",
-        "surname": "drzewiecki",
+        "name": "雅各布",
+        "surname": "德热维茨基",
         "email": "jakub.drzewiecki.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "software leader",
-                "department": "software",
+                "role": "软件负责人",
+                "department": "软件部",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "drivers",
+                "department": "车手组",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "\u0142ukasz",
-        "surname": "michalski",
+        "name": "卢卡斯",
+        "surname": "米哈尔斯基",
         "email": "lukasz.michalski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "autonomous system engineer",
-                "department": "software",
+                "role": "自动驾驶系统工程师",
+                "department": "软件部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "bart\u0142omiej",
-        "surname": "sitnik",
+        "name": "巴托洛米耶",
+        "surname": "西特尼克",
         "email": "bartlomiej.sitnik.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "software developer",
-                "department": "software",
+                "role": "软件开发人员",
+                "department": "软件部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "franciszek",
-        "surname": "plisz",
+        "name": "弗朗齐歇克",
+        "surname": "普利斯",
         "email": "franciszek.plisz.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "perception developer",
-                "department": "software",
+                "role": "感知开发人员",
+                "department": "软件部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "maciej",
-        "surname": "sadowski",
+        "name": "马切伊",
+        "surname": "萨多夫斯基",
         "email": "maciej.sadowski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "sensor solutions and telemetry system engineer",
-                "department": "software",
+                "role": "传感器解决方案与遥测系统工程师",
+                "department": "软件部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "joel",
-        "surname": "kojma",
+        "name": "乔尔",
+        "surname": "科伊马",
         "email": "joel.kojma.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "data validation developer",
-                "department": "software",
+                "role": "数据验证开发人员",
+                "department": "软件部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "dawid",
-        "surname": "chmal",
+        "name": "达维德",
+        "surname": "赫马尔",
         "email": "dawid.chmal.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "website developer",
-                "department": "software",
+                "role": "网站开发人员",
+                "department": "软件部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "kacper",
-        "surname": "synator",
+        "name": "卡佩尔",
+        "surname": "西纳托尔",
         "email": "kacper.synator.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "perception fusion developer",
-                "department": "software",
+                "role": "感知融合开发人员",
+                "department": "软件部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "wiktoria",
-        "surname": "sawicka",
+        "name": "维托丽亚",
+        "surname": "萨维茨卡",
         "email": "wiktoria.sawicka.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "asb software developer",
-                "department": "software",
+                "role": "ASB 软件开发人员",
+                "department": "软件部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "kacper",
-        "surname": "sowi\u0144ski",
+        "name": "卡佩尔",
+        "surname": "索文斯基",
         "email": "kacper.sowinski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "electrical leader",
-                "department": "electrical",
+                "role": "电气负责人",
+                "department": "电气部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "kacper",
-        "surname": "\u015bliwa",
+        "name": "卡佩尔",
+        "surname": "斯利瓦",
         "email": "kacper.sliwa.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "powertrain engineer",
-                "department": "electrical",
+                "role": "动力系统工程师",
+                "department": "电气部",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "drivers",
+                "department": "车手组",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "antoni",
-        "surname": "radzimowski",
+        "name": "安东尼",
+        "surname": "拉齐莫夫斯基",
         "email": "antoni.radzimowski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "electronics designer",
-                "department": "electrical",
+                "role": "电子设计师",
+                "department": "电气部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "rafa\u0142",
-        "surname": "dziki",
+        "name": "拉法尔",
+        "surname": "吉基",
         "email": "rafal.dziki.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "electronics designer",
-                "department": "electrical",
+                "role": "电子设计师",
+                "department": "电气部",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "drivers",
+                "department": "车手组",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "maciej",
-        "surname": "bobak",
+        "name": "马切伊",
+        "surname": "博巴克",
         "email": "maciej.bobak.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "tsal engineer",
-                "department": "electrical",
+                "role": "TSAL 工程师",
+                "department": "电气部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "micha\u0142",
-        "surname": "twardochleb",
+        "name": "米哈尔",
+        "surname": "特瓦尔多赫莱布",
         "email": "michal.twardochleb.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "department support",
-                "department": "electrical",
+                "role": "部门支持人员",
+                "department": "电气部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "maciej",
-        "surname": "b\u0119benek",
+        "name": "马切伊",
+        "surname": "别贝内克",
         "email": "maciej.bebenek.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "electronics designer",
-                "department": "electrical",
+                "role": "电子设计师",
+                "department": "电气部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "krzysztof",
-        "surname": "dolecki",
+        "name": "克日什托夫",
+        "surname": "多莱茨基",
         "email": "krzysztof.dolecki.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "electrical member",
-                "department": "electrical",
+                "role": "电气成员",
+                "department": "电气部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "aleksander",
-        "surname": "dzi\u0105gwa",
-        "email": "aleksander.dzi\u0105gwa.pwrrt@gmail.com",
+        "name": "亚历山大",
+        "surname": "贾格瓦",
+        "email": "aleksander.dziągwa.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "electronics designer",
-                "department": "electrical",
+                "role": "电子设计师",
+                "department": "电气部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "igor",
-        "surname": "wawrzyniak",
+        "name": "伊戈尔",
+        "surname": "瓦夫日尼亚克",
         "email": "igor.wawrzyniak.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "mechanical leader, wheel assembly constructor",
-                "department": "mechanical",
+                "role": "机械负责人、车轮组件构造师",
+                "department": "机械部",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "drivers",
+                "department": "车手组",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "jakub",
-        "surname": "pi\u0119towski",
+        "name": "雅各布",
+        "surname": "皮耶托夫斯基",
         "email": "jakub.pietowski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "planetary gearbox constructor",
-                "department": "mechanical",
+                "role": "行星齿轮箱构造师",
+                "department": "机械部",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "drivers",
+                "department": "车手组",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "bartosz",
-        "surname": "sobczak",
+        "name": "巴托斯",
+        "surname": "索布恰克",
         "email": "bartosz.sobczak.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "motor case constructor",
-                "department": "mechanical",
+                "role": "电机壳构造师",
+                "department": "机械部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "piotr",
-        "surname": "war\u0142o",
+        "name": "彼得",
+        "surname": "瓦尔沃",
         "email": "piotr.warlo.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "cooling system constructor",
-                "department": "mechanical",
+                "role": "冷却系统构造师",
+                "department": "机械部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "katarzyna",
-        "surname": "pilip",
+        "name": "卡塔日娜",
+        "surname": "皮利普",
         "email": "katarzyna.pilip.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "pedalbox constructor",
-                "department": "mechanical",
+                "role": "踏板箱构造师",
+                "department": "机械部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "jan",
-        "surname": "konior",
+        "name": "扬",
+        "surname": "科尼奥尔",
         "email": "jan.konior.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "department support",
-                "department": "mechanical",
+                "role": "部门支持人员",
+                "department": "机械部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "dominik",
-        "surname": "ko\u0142akowski",
+        "name": "多米尼克",
+        "surname": "科瓦科夫斯基",
         "email": "dominik.kolakowski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "brake system constructor",
-                "department": "mechanical",
+                "role": "制动系统构造师",
+                "department": "机械部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "igor",
-        "surname": "wla\u017alik",
+        "name": "伊戈尔",
+        "surname": "瓦兹利克",
         "email": "igor.wlazlik.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "autonomous steering system constructor",
-                "department": "mechanical",
+                "role": "自动驾驶转向系统构造师",
+                "department": "机械部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "kacper",
-        "surname": "zych",
+        "name": "卡佩尔",
+        "surname": "齐赫",
         "email": "kacper.zych.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "asb responsible",
-                "department": "mechanical",
+                "role": "ASB 负责人",
+                "department": "机械部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "kamil",
-        "surname": "terlecki",
+        "name": "卡米尔",
+        "surname": "特尔莱茨基",
         "email": "kamil.terlecki.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "steering column constructor",
-                "department": "mechanical",
+                "role": "转向柱构造师",
+                "department": "机械部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "kamil",
-        "surname": "wadas",
+        "name": "卡米尔",
+        "surname": "瓦达斯",
         "email": "kamil.wadas.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "damper mount constructor",
-                "department": "mechanical",
+                "role": "减震器支架构造师",
+                "department": "机械部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "maciej",
-        "surname": "cepa",
+        "name": "马切伊",
+        "surname": "采帕",
         "email": "maciej.cepa.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "pushrods responsible",
-                "department": "mechanical",
+                "role": "推杆负责人",
+                "department": "机械部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "szymon",
-        "surname": "szaniawski",
+        "name": "西蒙",
+        "surname": "沙尼亚夫斯基",
         "email": "szymon.szaniewski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "tierods and arb responsible",
-                "department": "mechanical",
+                "role": "横拉杆与防倾杆负责人",
+                "department": "机械部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "bart\u0142omiej",
-        "surname": "p\u0142oszy\u0144ski",
+        "name": "巴托洛米耶",
+        "surname": "普沃兹尼斯基",
         "email": "bartlomiej.ploszynski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "vehicle performance leader",
-                "department": "vehicle performance",
+                "role": "车辆性能负责人",
+                "department": "车辆性能部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "pawe\u0142",
-        "surname": "mordwa",
+        "name": "帕维尔",
+        "surname": "莫德瓦",
         "email": "pawel.mordwa.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "tractive system engineer",
-                "department": "vehicle performance",
+                "role": "牵引系统工程师",
+                "department": "车辆性能部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "jakub",
-        "surname": "myszka",
+        "name": "雅各布",
+        "surname": "米什卡",
         "email": "jakub.myszka.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "vehicle dynamics engineer",
-                "department": "vehicle performance",
+                "role": "车辆动力学工程师",
+                "department": "车辆性能部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "aleksandra",
-        "surname": "birut",
+        "name": "亚历山德拉",
+        "surname": "比鲁特",
         "email": "aleksandra.birut.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "tractive system engineer",
-                "department": "vehicle performance",
+                "role": "牵引系统工程师",
+                "department": "车辆性能部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "maksymilian",
-        "surname": "musia\u0142",
+        "name": "马西米连",
+        "surname": "穆西尔",
         "email": "maksymilian.musial.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "drivers development",
-                "department": "vehicle performance",
+                "role": "车手发展专员",
+                "department": "车辆性能部",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "drivers",
+                "department": "车手组",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "piotr",
-        "surname": "bieniaszkiewicz",
+        "name": "彼得",
+        "surname": "别尼亚什凯维奇",
         "email": "piotr.bieniaszkiewicz.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "vehicle dynamics engineer",
-                "department": "vehicle performance",
+                "role": "车辆动力学工程师",
+                "department": "车辆性能部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "maksymilian",
-        "surname": "kami\u0144ski",
+        "name": "马西米连",
+        "surname": "卡明斯基",
         "email": "maksymilian.kaminski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "vehicle performance member",
-                "department": "vehicle performance",
+                "role": "车辆性能成员",
+                "department": "车辆性能部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "filip",
-        "surname": "ciecha\u0144ski",
+        "name": "菲利普",
+        "surname": "切汉斯基",
         "email": "filip.ciechanski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "vdcu developer",
-                "department": "vehicle performance",
+                "role": "VDCU 开发人员",
+                "department": "车辆性能部",
                 "bolidName": "RT14e"
             }
         ]
     },
     {
-        "name": "jakub",
-        "surname": "stankowski",
+        "name": "雅各布",
+        "surname": "斯坦科夫斯基",
         "email": "jakub.stankowski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "coordinator for workshop infrastructure",
-                "department": "workshop",
+                "role": "车间基础设施协调员",
+                "department": "车间",
                 "bolidName": "RT14e"
             }
         ]

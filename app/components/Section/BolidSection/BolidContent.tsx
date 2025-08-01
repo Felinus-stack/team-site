@@ -16,7 +16,7 @@ interface BolidData {
   acceleration: string;
   mass: string;
   power: string;
-  language: "pl" | "en";
+  language: "ch" | "en";
   dict: any;
 }
 

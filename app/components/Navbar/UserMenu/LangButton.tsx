@@ -13,14 +13,14 @@ const LangButton: React.FC<LangButtonProps> = ({ lang, black = false }) => {
 
   const handleLanguageChange = () => {
     if (pathname) {
-      const newLang = lang === "pl" ? "en" : "pl";
+      const newLang = lang === "ch" ? "en" : "ch";
       const newPath = pathname.replace(/^\/[a-z]{2}/, `/${newLang}`);
       router.push(newPath);
     }
   };
 
-  const flag = lang === "pl" ? "en" : "pl";
-  const altText = lang === "pl" ? "US flag" : "Polish flag";
+  const flag = lang === "ch" ? "ch" : "en";
+  const altText = lang === "ch" ? "CH flag" : "US flag";
 
   return (
     <div

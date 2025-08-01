@@ -9,11 +9,11 @@ export default async function getNewsById(newsId: string) {
     select: {
       date: true,
       title: true,
-      short_description: true,
-      long_description: true,
-      length_time: true,
+      shortDescription: true,
+      longDescription: true,
+      duration: true,
       logo: true,
-      main_image: true,
+      mainImage: true,
       content: true,
     },
   });

@@ -6,7 +6,7 @@ import Button from "@/app/components/Button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-// Tablica sponsorów strategicznych
+// 战略合作伙伴列表
 const strategicSponsors = [
   { name: "innowacje.png", url: "https://www.gov.pl/web/edukacja" },
   { name: "pwr.png", url: "https://pwr.edu.pl" },
@@ -30,15 +30,6 @@ const platinumSponsors = [
     url: "https://www.fanuc.eu/pl/pl?gad_source=1&gclid=Cj0KCQjwj9-zBhDyARIsAERjds0vZ-AdUK6tbuY9tFhBFlKjg323nGPseM-z6mF96YXZ8RJVH6Hp9TEaAnANEALw_wcB",
   },
   { name: "hexlogo_black_png.png", url: "https://www.hexcel.com/" },
-  { name: "investa.png", url: "https://www.investa.pl/" },
-  { name: "kisssoft.jpg", url: "https://www.kisssoft.com/en" },
-  { name: "komag.png", url: "https://komag.eu/" },
-  { name: "Logo_MAN.png", url: "https://www.man.eu/pl/pl/strona-glowna.html" },
-  {
-    name: "konrad composite technology.png",
-    url: "",
-  },
-  { name: "logo tor krzywa.png", url: "https://torkrzywa.com/" },
   { name: "logo_amkmotion rgb.png", url: "https://www.amk-motion.com/en/" },
   {
     name: "MovellaTM Logo 1C PMS 171 Orange.png",
@@ -65,11 +56,7 @@ const platinumSponsors = [
   {
     name: "wolften.jpg",
     url: "https://wolften.pl/pl/?gad_source=1&gclid=Cj0KCQjwj9-zBhDyARIsAERjds1OzvDOFGnD4jQcjVa_iI1GWNkXZgQqFz5XU0IFdlc3ORePnVQGjRMaAmUEEALw_wcB",
-  },
-  {
-    name: "zkz gears.png",
-    url: "https://zkz.net.pl/",
-  },
+  }
 ];
 
 const goldSponsors = [
@@ -248,7 +235,7 @@ const SponsorGrid: React.FC<SponsorGridProps> = ({
   gap,
   sponsors,
 }) => {
-  // Dynamically split the sponsors array into two halves inside the component
+  // 动态将赞助商数组分成两半
   const halfIndex = Math.ceil(sponsors.length / 2);
   const firstHalfSponsors = sponsors.slice(0, halfIndex);
   const secondHalfSponsors = sponsors.slice(halfIndex);
@@ -256,7 +243,7 @@ const SponsorGrid: React.FC<SponsorGridProps> = ({
   return (
     <div className="w-full flex flex-col items-center text-center">
       <div className="py-4 my-4 md:my-12 md:mt-14 border-y-2 md:w-fit px-8 border-customRed uppercase">
-        <Title color="black">PARTNERZY {sponsorRank}</Title>
+        <Title color="black">{sponsorRank}</Title>
       </div>
       <div className={`flex ${gap} flex-col md:flex-row w-full`}>
         <SponsorList
@@ -282,28 +269,28 @@ const Partners = () => {
     <div className=" pt-[100px] md:pt-[120px] mb-6 md:mb-12">
       <div className="absolute opacity-5 right-0">
         <h1 className="text-[15rem] font-extrabold text-black uppercase leading-none">
-          PARTNERZY
+          合作伙伴
         </h1>
       </div>
       <Container>
         <div className="flex flex-col items-center text-center w-full">
           <div className="py-4 my-4 border-b-2 md:w-3/5 border-black">
-            <Title color="black">PARTNERZY</Title>
+            <Title color="black">合作伙伴</Title>
           </div>
           <div className="my-8 flex gap-4 md:w-1/3">
             <Button
-              label="Zostań Partnerem"
+              label="成为合作伙伴"
               onClick={() => router.push(`/partners/joinus`)}
             />
             <Button
               outline
-              label="Kontakt"
+              label="联系我们"
               onClick={() => router.push(`/contact`)}
             />
           </div>
 
           <SponsorGrid
-            sponsorRank="strategiczni"
+            sponsorRank="战略合作伙伴"
             sponsors={strategicSponsors}
             height="h-20 md:h-40"
             gap="gap-0"
@@ -311,7 +298,7 @@ const Partners = () => {
           />
 
           <SponsorGrid
-            sponsorRank="platynowi"
+            sponsorRank="白金合作伙伴"
             sponsors={platinumSponsors}
             height="h-20 md:h-40"
             gap="md:gap-20"
@@ -319,7 +306,7 @@ const Partners = () => {
           />
 
           <SponsorGrid
-            sponsorRank="złoci"
+            sponsorRank="黄金合作伙伴"
             sponsors={goldSponsors}
             height="h-16 md:h-36"
             gap="md:gap-20"
@@ -327,7 +314,7 @@ const Partners = () => {
           />
 
           <SponsorGrid
-            sponsorRank="srebrni"
+            sponsorRank="白银合作伙伴"
             sponsors={silverSponsors}
             height="h-16 md:h-32"
             gap="md:gap-16"
@@ -335,7 +322,7 @@ const Partners = () => {
           />
 
           <SponsorGrid
-            sponsorRank="brązowi"
+            sponsorRank="青铜合作伙伴"
             sponsors={bronzeSponsors}
             height="h-16 md:h-32"
             gap="md:gap-16"

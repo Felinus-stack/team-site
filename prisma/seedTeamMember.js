@@ -12,39 +12,39 @@ async function main() {
   });
 
   if (existingMember) {
-    // Jeśli członek istnieje, dodaj nową rolę
+    // 如果成员存在，添加新角色
     await prisma.teamMember.update({
       where: { id: existingMember.id },
       data: {
         roles: {
           push: {
-            department: "Composites",
-            role: "Member",
+            department: "复合材料",
+            role: "成员",
             bolidName: "RT14e",
           },
         },
       },
     });
     console.log(
-      `Updated roles for ${memberToUpdate.name} ${memberToUpdate.surname}`
+      `为 ${memberToUpdate.name} ${memberToUpdate.surname} 更新了角色`
     );
   } else {
-    // Jeśli członek nie istnieje, dodaj nowego członka zespołu z odpowiednimi danymi
+    // 如果成员不存在，创建新的团队成员并添加相应数据
     await prisma.teamMember.create({
       data: {
         name: memberToUpdate.name,
         surname: memberToUpdate.surname,
         roles: [
           {
-            department: "Composites",
-            role: "Member",
+            department: "复合材料",
+            role: "成员",
             bolidName: "RT14e",
           },
         ],
       },
     });
     console.log(
-      `Created new team member ${memberToUpdate.name} ${memberToUpdate.surname}`
+      `创建了新的团队成员 ${memberToUpdate.name} ${memberToUpdate.surname}`
     );
   }
 }

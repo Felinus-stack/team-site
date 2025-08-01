@@ -62,7 +62,7 @@ const PartnersJoin: React.FC<Props> = async () => {
         <Container>
           <div className="w-full flex flex-col items-center mt-16">
             <div className="mb-24 py-4 my-4 border-b-2 md:w-3/5 border-white text-center">
-              <Title color="white">ZOSTAŃ PARTNEREM</Title>
+              <Title color="white">合作伙伴</Title>
             </div>
           </div>
         </Container>
@@ -75,7 +75,7 @@ const PartnersJoin: React.FC<Props> = async () => {
           <div className="flex flex-col w-full">
             <div className="flex flex-col w-full items-center gap-8">
               <Text medium wide bold>
-                Skontaktuj się z nami:
+                联系我们：
               </Text>
               <div className="grid grid-cols-1 md:grid-cols-3 w-full md:w-3/4 gap-6">
                 {mainMembers.map((member, index) => (
@@ -98,7 +98,7 @@ const PartnersJoin: React.FC<Props> = async () => {
             </div>
             <div className="flex flex-col items-center mt-16 gap-6 md:gap-12 mb-12">
               <Text medium wide bold>
-                Współpraca z nami to:
+                与我们合作意味着：
               </Text>
               <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-4 items-start">
                 <div className="flex flex-col gap-2 items-center text-center">
@@ -163,7 +163,7 @@ const PartnersJoin: React.FC<Props> = async () => {
                     />
                   </svg>
 
-                  <Text center>Skuteczny employeer branding</Text>
+                  <Text center>有效的雇主品牌建设</Text>
                 </div>
                 <div className="flex flex-col gap-2 items-center text-center">
                   <svg

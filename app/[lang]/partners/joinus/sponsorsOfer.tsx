@@ -26,11 +26,11 @@ const SponsorsOfer: React.FC<Props> = (props) => {
         </div>
         <div className="flex flex-col gap-2 justify-between">
           <Text center bold medium wide>
-            Pobierz naszą Ofertę Współpracy
+            下载我们的合作方案
           </Text>
           <div className="flex flex-col gap-2 mb-4">
             <div className="mb-2">
-              <Text>Co w niej znajdziesz?</Text>
+              <Text>您会在其中找到什么？</Text>
             </div>
             <div className="flex gap-2 items-center ">
               <svg
@@ -45,7 +45,7 @@ const SponsorsOfer: React.FC<Props> = (props) => {
                   fill="#D41E3E"
                 />
               </svg>
-              <Text color="gray">Kim jesteśmy</Text>
+              <Text color="gray">我们是谁</Text>
             </div>
             <div className="flex gap-2 items-center ">
               <svg
@@ -61,7 +61,7 @@ const SponsorsOfer: React.FC<Props> = (props) => {
                 />
               </svg>
 
-              <Text color="gray">Nasze sukcesy</Text>
+              <Text color="gray">我们的成就</Text>
             </div>
             <div className="flex gap-2 items-center ">
               <svg
@@ -81,7 +81,7 @@ const SponsorsOfer: React.FC<Props> = (props) => {
                 />
               </svg>
 
-              <Text color="gray">Propozycja współpracy z Zespołem</Text>
+              <Text color="gray">形象推广套餐</Text>
             </div>
             <div className="flex gap-2 items-center ">
               <svg
@@ -99,7 +99,7 @@ const SponsorsOfer: React.FC<Props> = (props) => {
                 />
               </svg>
 
-              <Text color="gray">Pakiety działań wizerunkowych</Text>
+              <Text color="gray">品牌形象推广套餐</Text>
             </div>
             <div className="flex gap-2 items-center ">
               <svg
@@ -115,10 +115,10 @@ const SponsorsOfer: React.FC<Props> = (props) => {
                 />
               </svg>
 
-              <Text color="gray">Kontakt</Text>
+              <Text color="gray">联系我们</Text>
             </div>
           </div>
-          <Button label="Pobierz naszą Ofertę Współpracy" onClick={() => {}} />
+          <Button label="下载合作方案" onClick={() => {}} />
         </div>
       </div>
     </Container>

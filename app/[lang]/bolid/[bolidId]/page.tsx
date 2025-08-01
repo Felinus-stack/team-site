@@ -11,11 +11,11 @@ interface Iparams {
   bolidId?: string;
 }
 
-type Locale = "pl" | "en";
+type Locale = "ch" | "en";
 
 const BolidPage = async ({ params }: { params: Iparams }) => {
   const { lang, bolidId } = params;
-  const currentLocale = lang === "pl" || lang === "en" ? lang : "en";
+  const currentLocale = lang === "ch" || lang === "en" ? lang : "en";
 
   const dict = await getDictionary(currentLocale);
   const bolidIdValue = bolidId ?? "RT13e";

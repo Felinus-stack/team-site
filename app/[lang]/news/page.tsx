@@ -9,7 +9,7 @@ const AboutUs = async () => {
   return (
     <div className=" flex flex-col items-center pt-[100px] md:pt-[120px] bg-neutral-900">
       <div className="py-4 my-4 md:my-12 border-b-2 md:w-fit px-8 border-white uppercase">
-        <Title>AKTUALNOŚCI</Title>
+        <Title>新闻资讯</Title>
       </div>
       <Container>
         <div className="my-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
@@ -18,10 +18,10 @@ const AboutUs = async () => {
               key={index}
               id={item.id}
               title={item.title}
-              short_description={item.short_description}
-              length_time={item.length_time}
+              short_description={item.shortDescription}
+              length_time={item.duration}
               logo={item.logo || "/images/logo-czarne.svg"}
-              main_image={item.main_image}
+              main_image={item.mainImage}
             />
           ))}
         </div>

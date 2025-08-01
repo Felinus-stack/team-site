@@ -9,7 +9,7 @@ interface PageProps {
 
 const AdminPage: React.FC<PageProps> = async ({ params }) => {
   const language =
-    params.lang === "pl" || params.lang === "en" ? params.lang : "en";
+    params.lang === "ch" || params.lang === "en" ? params.lang : "en";
   const dict = await getDictionary(language);
 
   return <AdminPageClient dict={dict.admin} />;

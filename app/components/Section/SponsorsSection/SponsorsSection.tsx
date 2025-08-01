@@ -19,7 +19,6 @@ const sponsors = [
   "/images/sponsors/endego.jpg",
   "/images/sponsors/fanuc.jpg",
   "/images/sponsors/hexlogo_black_png.png",
-  "/images/sponsors/kisssoft.jpg",
   "/images/sponsors/logo tor krzywa.png",
   "/images/sponsors/logo_amkmotion rgb.png",
   "/images/sponsors/mahle.png",
@@ -33,7 +32,6 @@ const sponsors = [
   "/images/sponsors/staubli.png",
   "/images/sponsors/top1karting_logo_rgb.svg",
   "/images/sponsors/wolften.jpg",
-  "/images/sponsors/zkz gears.png",
 ];
 
 const SponsorsSection = () => {

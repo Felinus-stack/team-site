@@ -34,10 +34,10 @@ interface RootLayoutProps {
   };
 }
 
-type Locale = "pl" | "en";
+type Locale = "ch" | "en";
 
 const isLocale = (lang: string): lang is Locale => {
-  return lang === "pl" || lang === "en";
+  return lang === "ch" || lang === "en";
 };
 
 export default async function RootLayout({

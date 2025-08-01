@@ -57,7 +57,7 @@ interface ContactUsProps {
 
 const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
   const language =
-    params.lang === "pl" || params.lang === "en" ? params.lang : "en";
+    params.lang === "ch" || params.lang === "en" ? params.lang : "en";
   const dict = await getDictionary(language);
 
   const mainMembers = await getMembersData([

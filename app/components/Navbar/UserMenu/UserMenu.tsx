@@ -135,15 +135,15 @@ const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
             />
             <MenuItem
               onClick={() => handleMenuItemClick(`/partners`)}
-              label="Partnerzy"
+              label="合作伙伴"
             />
             <MenuItem
               onClick={() => handleMenuItemClick(`/news`)}
-              label="Aktualności"
+              label="新闻资讯"
             />
             <MenuItem
               onClick={() => handleMenuItemClick(`/contact`)}
-              label="Kontakt"
+              label="联系我们"
             />
             <div className="w-full h-[1px] bg-black"></div>
             <div className="social-responsive flex items-center gap-4 my-2 mx-3 ">

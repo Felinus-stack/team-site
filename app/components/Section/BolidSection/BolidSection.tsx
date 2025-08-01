@@ -16,7 +16,7 @@ type BolidData = {
 
 interface BolidSectionProps {
   dict: any;
-  language: "pl" | "en";
+  language: "ch" | "en";
   presetBolid?: string;
 }
 
@@ -29,7 +29,7 @@ const BolidSection: React.FC<BolidSectionProps> = ({
     name: presetBolid,
     year: "2023",
     short_description:
-      "Najnowszy projekt jest odpowiedzią zespołu na wyzwania i trendy branży automotive. Chcemy projektować rozwiązania i być częścią odbywającej się zmiany. Elektryfikacja i stworzenie systemów autonomicznych w bolidzie jest krokiem milowym w rozwoju zespołu. Pojazd wyposażony został w innowacyjne rozwiązania ze świata motorsportu. Wyróżniają go pełny monocoque, ważący zaledwie 24 kilogramy, autorskie silniki oraz wiązki elektryczne wysokiego i niskiego napięcia. System jazdy autonomicznej pozwala nam na startowanie nie tylko w kategorii elektrycznej, lecz także w kategorii driverless.",
+      "最新项目是团队对汽车行业挑战和趋势的回应。我们希望设计解决方案并参与正在发生的变革。赛车的电动化和自动驾驶系统的创建是团队发展的一个里程碑。该车辆配备了来自赛车运动领域的创新解决方案。它的特点是全单体壳车身，仅重24公斤，还有自主研发的发动机以及高低压电线束。自动驾驶系统使我们不仅能够参加电动类别比赛，还能参加无人驾驶类别比赛。",
     EN_short_description: "",
     acceleration: "3s",
     mass: "230 KG",

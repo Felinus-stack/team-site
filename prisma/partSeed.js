@@ -4,39 +4,39 @@ const prisma = new PrismaClient();
 async function main() {
   const partsToAdd = [
     {
-      partName: "aerodynamics",
+      partName: "空气动力学套件",
       description:
-        "Pakiet aerodynamiczny wykonany z włókna węglowego, został w całości zaprojektowany i wykonany przez PWR Racing Team we własnym warsztacie. Główne zadanie elementów aerodynamicznych to redukcja oporów powietrza pojazdu oraz zapewnienie docisku, co zwiększa stabilność podczas przyspieszania oraz gwarantuje zwiększoną przyczepność podczas zakrętów. Masa całego pakietu aerodynamicznego wynosi zaledwie 9,5kg, co czyni go jednym z najlżejszych w całej Formule Student. Ważnymi elementami są również kanały chłodzące baterię i przedni układ hamulcowy, dzięki czemu maksymalizują one wydajność układu chłodzenia w każdych warunkach.",
+        "由碳纤维制成的空气动力学套件，完全由PWR赛车团队在自己的车间设计和制造。空气动力学部件的主要任务是减少车辆的空气阻力并提供下压力，这增加了加速时的稳定性，并保证了转弯时更大的抓地力。整个空气动力学套件的重量仅为9.5公斤，使其成为整个方程式学生赛车比赛中最轻的套件之一。重要的部件还包括电池和前制动系统的冷却通道，因此它们可以在任何条件下最大限度地提高冷却系统的效率。",
     },
     {
-      partName: "powertrain",
+      partName: "动力系统",
       description:
-        "Po 11 latach korzystania z silników spalinowych nadszedł czas na zbudowanie elektrycznego układu napędowego. Zaprojektowano i wykonano dwa silniki elektryczne z magnesami trwałymi, o mocy 47kW każdy i maksymalnej prędkości obrotowej wynoszącej 15 000 RPM. Dodatkowo stworzona została autorska przekładnia planetarna o stałym przełożeniu 9,8. PWR Racing Team, również samodzielnie wykonał baterię złożoną z 484 ogniw w konfiguracji 121S4P, pojemności 8,5kWh i napięciu maksymalnym 510V.",
+        "在使用了11年的内燃机之后，是时候打造一个电动动力系统了。设计并制造了两台永磁同步电机，每台功率为47千瓦，最大转速为15000转/分钟。此外，还开发了一款独特的行星齿轮变速箱，固定传动比为9.8。PWR赛车团队还自行制造了一个由484个电池单元组成的电池组，采用121S4P配置，容量为8.5千瓦时，最大电压为510伏。",
     },
     {
-      partName: "suspension",
+      partName: "悬挂系统",
       description:
-        "W związku z konstrukcją pierwszego bolidu elektrycznego z systemami jazdy autonomicznej kompletnie przeprojektowaliśmy zawieszenie, aby jak najlepiej zaadaptować je do nowego projektu. Zwrotnice wraz z piastami zostały przystosowane do przekładni planetarnych oraz montażu silników bezpośrednio przy kole. Układ kierowniczy zyskał dodatkowy mechanizm, przenoszący moment z silnika, który skręca bolidem podczas konkurencji autonomicznych. W przypadku gdy kontrolę nad bolidem przejmuje kierowca, silnik układu kierowniczego jest rozpinany za pomocą sprzęgła elektromagnetycznego. Przystosowaliśmy również system mocowania pedaliery z szynami, dzięki któremu posiadamy szybką możliwość regulacji ustawień pod konkretnego kierowcę. Przednie, autorskie zaciski bolidu posiadają różną średnicę tłoczków, aby zapewnić jednakowe zużycie okładzin klocków hamulcowych.",
+        "由于第一辆配备自动驾驶系统的电动赛车的设计，我们完全重新设计了悬挂系统，以使其尽可能适应新的项目。转向节和轮毂已适配行星齿轮箱，并可直接将电机安装在车轮上。转向系统增加了一个额外的机制，用于传递电机的扭矩，使赛车在自动驾驶比赛中能够转弯。当驾驶员接管赛车的控制权时，转向系统的电机通过电磁离合器分离。我们还调整了踏板支架与导轨的安装系统，因此我们可以快速调整设置以适应不同的驾驶员。赛车前部的独特卡钳采用了不同直径的活塞，以确保制动片的均匀磨损。",
     },
     {
-      partName: "electronics",
+      partName: "电子系统",
       description:
-        "RT12e został wyposażony w modularną wiązkę elektryczną liskiego i wysokiego napięcia, która została wykonana w militarnym standardzie MILSTDD810H i posiada 2 oddzielne magistrale CAN. Łączna długość przewodów to ponad 350 metrów, a w wiązce zastosowano koncentryczne skręcanie, dzięki któremu utrzymane zostały małe promienie gięcia przewodów, które są niezbędne w motorsporcie. Dodatkowo dzięki zaawansowanemu modelowaniu 3D, została ona zoptymalizowana, a średnice przewodów zmniejszono, co czyni ją najlżejszą w swojej klasie. RT12e został wyposażony w autorski system telemetrii opartej na 900MHz. Dzięki wsparciu firmy Speedgoat bolid został wyposażony w komputer Baseline Real-Time Target Machine, który obsługuje sieć ponad 100 czujników znajdujących się na aucie. Główne jego zadanie to kontrola działania inwerterów oraz połączenie wszystkich magistrali komunikacyjnych w RT12e umożliwiając łączność z głównym komputerem systemu autonomicznego.",
+        "RT12e配备了模块化的低压和高压线束，该线束按照军用标准MIL - STD - 810H制造，并拥有两条独立的CAN总线。线束的总长度超过350米，并且采用了同心绞合技术，因此保持了较小的导线弯曲半径，这在赛车运动中是必不可少的。此外，通过先进的3D建模，对线束进行了优化，减小了导线直径，使其成为同类产品中最轻的。RT12e配备了基于900MHz的自主研发的遥测系统。在Speedgoat公司的支持下，赛车配备了Baseline实时目标计算机，该计算机管理着汽车上的100多个传感器网络。其主要任务是控制逆变器的运行，并将RT12e中的所有通信总线连接起来，实现与自动驾驶系统主计算机的连接。",
     },
     {
-      partName: "chassis",
+      partName: "底盘",
       description:
-        "Struktura nośna RT12e w tym roku została zupełnie przeprojektowana na pierwszy pełny monocoque. Ważąca zaledwie 24 kg struktura nośna została w całości wykonana z włókna węglowego z aluminiowym rdzeniem o strukturze plastra miodu. Wnętrze kokpitu zostało zaprojektowane i wykonane z dbałością o wygodę i ergonomię kierowcy, a fotel z włókna węglowego został dopasowany do kształtu pleców kierowcy, co zapewnia stabilną pozycję, nawet przy dużych przeciążeniach.",
+        "今年，RT12e的承载结构完全重新设计为第一个完整的单体壳式结构。仅重24公斤的承载结构完全由碳纤维和铝制蜂窝芯制成。驾驶舱内部的设计和制造充分考虑了驾驶员的舒适性和人体工程学，碳纤维座椅根据驾驶员的背部形状进行了定制，即使在高负荷下也能提供稳定的坐姿。",
     },
     {
-      partName: "autonomy",
+      partName: "自动驾驶系统",
       description:
-        "Dział autonomy, powstał specjalnie na potrzeby projektu RT12e i od podstaw stworzył systemy jazdy autonomicznej. Bazujący na 2 kamerach stereoskopowych i 16 wiązkowym czujniku LiDAR system percepcji pozwala na wykrywanie pachołków i wyznaczanie toru jazdy. Komunikacja oparta jest na wzorcu see-think-act, a estymacja ruchu odbywa się na podstawie algorytmu SLAM.",
+        "自动驾驶部门专门为RT12e项目而设立，并从头开始开发了自动驾驶系统。基于两个立体摄像头和16线束激光雷达的感知系统，可以检测障碍物并确定行驶路线。通信遵循“感知 - 思考 - 行动”的模式，运动估计基于SLAM算法。",
     },
     {
-      partName: "vehicle performance",
+      partName: "车辆性能",
       description:
-        "Interdyscyplinarny projekt Vehicle Performance powstał w celu długofalowego rozwoju. Zaprojektowano od podstaw oprogramowanie sterujące dynamiką pojazdu, dzięki czemu bolid po raz pierwszy posiada systemy zwiększające osiągi samochodu takie jak Torque Vectoring czy Traction Control. Przeprowadzone zostały również symulacje wybranych konkurencji dynamicznych występujących podczas zawodów Formuły Student takich jak Skidpad czy Acceleration. Symulacje bazują na modelu matematycznym pojazdu, dzięki czemu już w fazie designu istnieje możliwość oszacowania, jak bolid będzie zachowywał się w rzeczywistości.",
+        "跨学科的车辆性能项目旨在实现长期发展。从头开始设计了车辆动态控制系统软件，因此赛车首次拥有了提高车辆性能的系统，如扭矩矢量分配和牵引力控制。还对方程式学生赛车比赛中出现的一些动态竞赛项目进行了模拟，如Skidpad和Acceleration。模拟基于车辆的数学模型，因此在设计阶段就有可能估计赛车在实际中的表现。",
     },
   ];
 
@@ -49,18 +49,18 @@ async function main() {
   if (bolid) {
     const updateBolid = await prisma.bolid.update({
       where: {
-        id: bolid.id, // Zmienione z name na id, ale w twoim przypadku możesz użyć `name: "RT12e"`
+        id: bolid.id, // 从name改为id，但在你的情况下你可以使用 `name: "RT12e"`
       },
       data: {
         parts: {
-          push: partsToAdd, // Użycie 'push' zamiast 'create'
+          push: partsToAdd, // 使用 'push' 而不是 'create'
         },
       },
     });
 
-    console.log(`Parts added to bolid: ${updateBolid.name}`);
+    console.log(`部件已添加到赛车: ${updateBolid.name}`);
   } else {
-    console.log('Bolid "RT12e" not found');
+    console.log('未找到名为 "RT12e" 的赛车');
   }
 }
 

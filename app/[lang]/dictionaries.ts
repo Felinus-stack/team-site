@@ -1,11 +1,11 @@
 import "server-only";
 
 const dictionaries = {
-  pl: () => import("./dictionaries/pl.json").then((module) => module.default),
+  ch: () => import("./dictionaries/ch.json").then((module) => module.default),
   en: () => import("./dictionaries/en.json").then((module) => module.default),
 };
 
-type Locale = "pl" | "en";
+type Locale = "ch" | "en";
 
 export const getDictionary = async (locale: Locale): Promise<any> => {
   if (!dictionaries[locale]) {

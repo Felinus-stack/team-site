@@ -1,10 +1,14 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
+/**
+ * 主函数，用于删除 'news' 集合中的所有记录。
+ * @returns {Promise<void>}
+ */
 async function main() {
-  // Usuwanie wszystkich wpisów z kolekcji 'news'
+  // 删除 'news' 集合中的所有记录
   const deleteResult = await prisma.news.deleteMany({});
-  console.log(`Usunięto ${deleteResult.count} wpisów z newsów.`); // Informacja o liczbie usuniętych rekordów
+  console.log(`已从新闻中删除 ${deleteResult.count} 条记录。`); // 输出删除记录的数量信息
 }
 
 main()
@@ -13,5 +17,5 @@ main()
     process.exit(1);
   })
   .finally(async () => {
-    await prisma.$disconnect(); // Zawsze pamiętaj o zamknięciu połączenia z bazą
+    await prisma.$disconnect(); // 始终记得关闭与数据库的连接
   });

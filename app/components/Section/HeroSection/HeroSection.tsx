@@ -9,7 +9,7 @@ import Title from "../../Title";
 import ClientOnly from "../../ClientOnly";
 import { motion } from "framer-motion";
 
-type Locale = "pl" | "en";
+type Locale = "ch" | "en";
 
 interface HeroSectionProps {
   dict: {
