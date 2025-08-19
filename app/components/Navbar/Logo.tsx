@@ -3,19 +3,19 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-interface LogoProps {
-  width: number;
-  height: number;
-}
-
-const Logo: React.FC<LogoProps> = ({ width, height }) => {
+const Logo: React.FC = () => {
   const router = useRouter();
   return (
     <div
       onClick={() => router.push(`/`)}
       className=" relative py-7 cursor-pointer"
     >
-      <Image alt="Logo" height={height} width={width} src="/images/logo.png" />
+      <Image 
+        alt="Logo" 
+        fill
+        className="object-contain"
+        src="/images/logo.png" 
+      />
     </div>
   );
 };

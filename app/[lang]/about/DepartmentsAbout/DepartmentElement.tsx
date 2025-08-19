@@ -62,7 +62,7 @@ const DepartmentElement: React.FC<DepartmentElementProps> = ({
             <Text color={textColor}>{text}</Text>
             <div className="flex flex-col gap-4 mt-4 md:mt-10">
               <Text color={textColor} bold>
-                W naszym dziale zajmiesz się:
+                我们的技术栈：
               </Text>
               <div className="flex flex-col gap-2">
                 {responsibilities.map((responsibility, idx) => (

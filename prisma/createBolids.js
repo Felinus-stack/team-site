@@ -68,7 +68,7 @@ const bolidBaseData = {
   },
   "RT05": {
     year: "2015",
-    shortDescription: "PWR赛车队的第六个项目",
+    shortDescription: "源境团队的第六个项目",
     acceleration: "待定",
     mass: "216公斤",
     power: "本田599cc发动机"
@@ -96,7 +96,7 @@ const bolidBaseData = {
   },
   "RT01": {
     year: "2010",
-    shortDescription: "PWR赛车队打造的第一款燃油车",
+    shortDescription: "源境团队打造的第一款燃油车",
     acceleration: "待定",
     mass: "待定",
     power: "本田CBR600RR 599cc"

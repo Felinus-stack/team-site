@@ -19,11 +19,11 @@ type DepartmentsAboutProps = {
   dict: {
     title: string;
     interestedIn: string;
-    mechanical: {
+    frontend: {
       description: string;
       responsibilities: { text: string; icon: string }[];
     };
-    composites: {
+    backend: {
       description: string;
       responsibilities: { text: string; icon: string }[];
     };
@@ -56,14 +56,14 @@ const DepartmentsAbout: React.FC<DepartmentsAboutProps> = ({
 }) => {
   const departments = [
     {
-      name: "mechanical",
-      description: dict.mechanical.description,
-      responsibilities: dict.mechanical.responsibilities,
+      name: "frontend",
+      description: dict.frontend.description,
+      responsibilities: dict.frontend.responsibilities,
     },
     {
-      name: "composites",
-      description: dict.composites.description,
-      responsibilities: dict.composites.responsibilities,
+      name: "backend",
+      description: dict.backend.description,
+      responsibilities: dict.backend.responsibilities,
     },
     {
       name: "marketing",
