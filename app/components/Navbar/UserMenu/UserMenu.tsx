@@ -2,8 +2,8 @@
 
 import { AiOutlineMenu } from "react-icons/ai";
 import {
-  FaInstagram,
-  FaLinkedinIn,
+  FaWeibo,
+  FaWeixin,
 } from "react-icons/fa";
 import { BsPlayBtn } from "react-icons/bs";
 import Avatar from "../../Avatar";
@@ -69,14 +69,14 @@ const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
         <div className="md:flex hidden items-center gap-4">
           <div className="social-responsive flex items-center gap-4 ml-4">
             <SocialIcons
-              href="https://www.instagram.com/pwrracingteam/"
-              icon={FaInstagram}
-              ariaLabel="Instagram"
+              href="https://weibo.com/pwrracingteam"
+              icon={FaWeibo}
+              ariaLabel="微博"
             />
             <SocialIcons
-              href="https://www.linkedin.com/company/pwr-racing-team/posts/?feedView=all"
-              icon={FaLinkedinIn}
-              ariaLabel="LinkedIn"
+              href="#"
+              icon={FaWeixin}
+              ariaLabel="微信公众号"
             />
             <SocialIcons
               href="https://space.bilibili.com/99622895"
@@ -143,15 +143,15 @@ const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
             <div className="social-responsive flex items-center gap-4 my-2 mx-3 ">
               <SocialIcons
                 black
-                href="https://www.instagram.com/pwrracingteam/"
-                icon={FaInstagram}
-                ariaLabel="Instagram"
+                href="https://weibo.com/pwrracingteam"
+                icon={FaWeibo}
+                ariaLabel="微博"
               />
               <SocialIcons
                 black
-                href="https://www.linkedin.com/company/pwr-racing-team/posts/?feedView=all"
-                icon={FaLinkedinIn}
-                ariaLabel="LinkedIn"
+                href="#"
+                icon={FaWeixin}
+                ariaLabel="微信公众号"
               />
               <SocialIcons
                 black

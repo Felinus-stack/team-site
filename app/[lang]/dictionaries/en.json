@@ -14,7 +14,7 @@
   "teamSection": {
     "title": "TEAM",
     "subtitle": "TOGETHER WE CAN DO ANYTHING",
-    "description": "Young, ambitious, committed, and brave. These words describe the students of Wrocław University of Science and Technology, especially the members of the PWR Racing Team. Our team has a structure like a serious company. At its head is the team leader. The greatest responsibility rests on them. Directly reporting to them is the technical leader, who in turn oversees the leaders of individual departments, except for marketing, whose head is subordinate to the team leader. For the rest of the members, the leader of their department is their supervisor.",
+    "description": "Young, ambitious, committed, and brave. These words describe the students of Wrocław University of Science and Technology, especially the members of the PWR Racing Team. Our team has a structure like a serious company. At its head is the team leader. The greatest responsibility rests on them. Directly reporting to them is the technical leader, who in turn oversees the leaders of individual departments, except for product, whose head is subordinate to the team leader. For the rest of the members, the leader of their department is their supervisor.",
     "buttonLabel": "Learn more about the car"
   },
   "historySection": {
@@ -69,7 +69,7 @@
     "cookiesPolicy": "Cookies Policy",
     "rodo": "RODO",
     "recruitment": "Recruitment",
-    "createdBy": "Project & Execution: Maria Kanczewska & Dawid Chmal",
+    "createdBy": "Project & Execution: yuanjingteam",
     "allRightsReserved": "© 2024 All rights reserved",
     "seasonDescription": "In each season, we create a new racing car. We have as many as twelve unique models of combustion cars, each of which can easily outperform the previous one. Last season, the first electric car with autonomous driving systems in the history of the Team – RT12e – was created. We are currently working on our fourteenth construction."
   },
@@ -110,7 +110,7 @@
   "departmentsAbout": {
     "title": "OUR DEPARTMENTS",
     "interestedIn": "WHICH DEPARTMENT ARE YOU INTERESTED IN?",
-    "mechanical": {
+    "frontend": {
       "description": "The department is responsible for designing and building the suspension system. It is also responsible for the elements of the autonomous steering and braking systems, mounting parts, and metal structures in the monocoque.",
       "responsibilities": [
         {
@@ -152,11 +152,11 @@
         }
       ]
     },
-    "marketing": {
-      "description": "The department is responsible for the image, promotion of the Team, as well as logistics and event organization. It is also responsible for preparing static competitions for Formula Student events, such as the business presentation.",
+    "product": {
+      "description": "The department is responsible for the image, promotion of the Team, as well as logistics and event organization. It is also responsible for preparing static competitions for Formula Student events, such as the algorithm presentation.",
       "responsibilities": [
         { "text": "creating promotional materials", "icon": "plik.svg" },
-        { "text": "preparing business presentations", "icon": "kolo.svg" },
+        { "text": "preparing algorithm presentations", "icon": "kolo.svg" },
         {
           "text": "coordinating orders, data analysis, optimizing Team's work",
           "icon": "klucz.svg"
@@ -164,8 +164,8 @@
         { "text": "organizing events", "icon": "box.svg" }
       ]
     },
-    "software": {
-      "description": "The department is responsible for developing the autonomous system and programming microprocessors that control the driver's interface, braking, or steering of the vehicle. It is responsible for the operation of path planning, vehicle control, and perception systems when the driver is not in the bolid. The software is written in programming languages such as C, C++, and Python.",
+    "design": {
+      "description": "The department is responsible for developing the autonomous system and programming microprocessors that control the driver's interface, braking, or steering of the vehicle. It is responsible for the operation of path planning, vehicle control, and perception systems when the driver is not in the bolid. The design is written in programming languages such as C, C++, and Python.",
       "responsibilities": [
         {
           "text": "developing algorithms that improve autonomous driving",
@@ -174,7 +174,7 @@
         { "text": "developing embedded systems", "icon": "kolo.svg" }
       ]
     },
-    "electrical": {
+    "operates": {
       "description": "The department is responsible for designing PCBs, creating high and low voltage harnesses, and building a custom high-voltage battery.",
       "responsibilities": [
         { "text": "designing and manufacturing PCBs", "icon": "plik.svg" },
@@ -197,8 +197,8 @@
         { "text": "designing CAN bus", "icon": "kolo.svg" }
       ]
     },
-    "vehiclePerformance": {
-      "description": "The department is responsible for maximizing vehicle performance, vehicle kinematics and dynamics, data acquisition, powertrain, and test organization.",
+    "mobile": {
+      "description": "The department is responsible for maximizing mobile, vehicle kinematics and dynamics, data acquisition, powertrain, and test organization.",
       "responsibilities": [
         { "text": "Vehicle dynamics simulations", "icon": "plik.svg" },
         {
@@ -208,15 +208,15 @@
         { "text": "Analyzing data from runs", "icon": "klucz.svg" }
       ]
     },
-    "business": {
-      "description": "Department responsible for contact with partners, financial management of the Team, and preparation of static competition for Formula Student competitions, such as business presentation.",
+    "algorithm": {
+      "description": "Department responsible for contact with partners, financial management of the Team, and preparation of static competition for Formula Student competitions, such as algorithm presentation.",
       "responsibilities": [
         {
           "text": "Coordination of orders, data analysis, optimization of the Team's work",
           "icon": "plik.svg"
         },
         {
-          "text": "Preparation of business presentations",
+          "text": "Preparation of algorithm presentations",
           "icon": "kolo.svg"
         },
         {
@@ -254,9 +254,9 @@
         "title": "Engineering Design",
         "text": "A competition involving the presentation of the car design. Judges assess the engineering skills and ingenuity of the team members in designing both the overall vehicle and individual systems. This is the highest-scoring static competition, judged by automotive industry experts."
       },
-      "business": {
-        "title": "Business Plan Presentation",
-        "text": "A competition where team members take on the role of a start-up board, for example, creating custom brake systems. Using a ten-minute presentation, they must convince judges acting as investors to support their business model."
+      "algorithm": {
+        "title": "algorithm Plan Presentation",
+        "text": "A competition where team members take on the role of a start-up board, for example, creating custom brake systems. Using a ten-minute presentation, they must convince judges acting as investors to support their algorithm model."
       }
     }
   },

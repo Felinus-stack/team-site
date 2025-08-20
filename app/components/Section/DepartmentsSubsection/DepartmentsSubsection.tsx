@@ -8,15 +8,15 @@ const DepartmentsSubsection = () => {
     <div>
       <div className=" grid-rows-2 relative border-none ">
         <div className=" grid grid-cols-1 md:grid-cols-3">
-          <Department department="mechanical" />
+          <Department department="frontend" />
           <Department department="composites" />
-          <Department department="marketing" />
+          <Department department="product" />
         </div>
         <div className=" grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-          <Department department="software" />
-          <Department department="electrical" />
-          <Department department="vehicle performance" />
-          <Department department="business" />
+          <Department department="design" />
+          <Department department="operates" />
+          <Department department="mobile" />
+          <Department department="algorithm" />
         </div>
       </div>
       <BottomBar />

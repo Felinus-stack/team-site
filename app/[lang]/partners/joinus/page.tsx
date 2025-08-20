@@ -143,7 +143,7 @@ const PartnersJoin: React.FC<Props> = async () => {
                     />
                   </svg>
 
-                  <Text center>Oryginalny sposób międzynarodowej promocji</Text>
+                  <Text center>独特的国际推广方式</Text>
                 </div>
                 <div className="flex flex-col gap-2 items-center text-center">
                   <svg
@@ -208,7 +208,7 @@ const PartnersJoin: React.FC<Props> = async () => {
                   </svg>
 
                   <Text center>
-                    Regularna obecność w mediach społecznościowych
+                    在社交媒体上的定期曝光
                   </Text>
                 </div>
                 <div className="flex flex-col gap-2 items-center text-center">
@@ -241,7 +241,7 @@ const PartnersJoin: React.FC<Props> = async () => {
                     />
                   </svg>
 
-                  <Text center>Zwiększenie widoczności firmy</Text>
+                  <Text center>提升公司知名度</Text>
                 </div>
                 <div className="flex flex-col gap-2 items-center text-center">
                   <svg
@@ -281,7 +281,7 @@ const PartnersJoin: React.FC<Props> = async () => {
                     />
                   </svg>
 
-                  <Text center>Bycie częścią innowacyjnego projektu</Text>
+                  <Text center>成为创新项目的一部分</Text>
                 </div>
               </div>
             </div>

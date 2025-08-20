@@ -34,8 +34,8 @@
         "email": "karolina.wasiukiewicz.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "marketing leader",
-                "department": "marketing",
+                "role": "product leader",
+                "department": "product",
                 "bolidName": "RT14e"
             }
         ]
@@ -47,7 +47,7 @@
         "roles": [
             {
                 "role": "social media associate",
-                "department": "marketing",
+                "department": "product",
                 "bolidName": "RT14e"
             }
         ]
@@ -59,32 +59,27 @@
         "roles": [
             {
                 "role": "",
-                "department": "marketing",
+                "department": "product",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "marketing",
+                "department": "product",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "marketing",
+                "department": "product",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "marketing",
+                "department": "product",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "marketing",
-                "bolidName": "RT14e"
-            },
-            {
-                "role": "",
-                "department": "composites",
+                "department": "product",
                 "bolidName": "RT14e"
             },
             {
@@ -109,52 +104,57 @@
             },
             {
                 "role": "",
-                "department": "software",
+                "department": "composites",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "software",
+                "department": "design",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "software",
+                "department": "design",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "software",
+                "department": "design",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "software",
+                "department": "design",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "electrical",
+                "department": "design",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "mechanical",
+                "department": "operates",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "vehicle performance",
+                "department": "frontend",
+                "bolidName": "RT14e"
+            },
+            {
+                "role": "",
+                "department": "mobile",
                 "bolidName": "RT14e"
             },
             {
@@ -170,8 +170,8 @@
         "email": "jakub.kucharski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "business associate",
-                "department": "marketing",
+                "role": "algorithm associate",
+                "department": "product",
                 "bolidName": "RT14e"
             }
         ]
@@ -182,8 +182,8 @@
         "email": "zuzanna.ignaszak.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "business and statics project manager",
-                "department": "marketing",
+                "role": "algorithm and statics project manager",
+                "department": "product",
                 "bolidName": "RT14e"
             }
         ]
@@ -195,7 +195,7 @@
         "roles": [
             {
                 "role": "copywriter",
-                "department": "marketing",
+                "department": "product",
                 "bolidName": "RT14e"
             }
         ]
@@ -207,7 +207,7 @@
         "roles": [
             {
                 "role": "social media associate",
-                "department": "marketing",
+                "department": "product",
                 "bolidName": "RT14e"
             }
         ]
@@ -219,7 +219,7 @@
         "roles": [
             {
                 "role": "photographer",
-                "department": "marketing",
+                "department": "product",
                 "bolidName": "RT14e"
             }
         ]
@@ -230,8 +230,8 @@
         "email": "lukasz.chodyna.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "business associate",
-                "department": "marketing",
+                "role": "algorithm associate",
+                "department": "product",
                 "bolidName": "RT14e"
             }
         ]
@@ -242,8 +242,8 @@
         "email": "joanna.popielewska.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "business associate",
-                "department": "marketing",
+                "role": "algorithm associate",
+                "department": "product",
                 "bolidName": "RT14e"
             }
         ]
@@ -255,7 +255,7 @@
         "roles": [
             {
                 "role": "social media associate",
-                "department": "marketing",
+                "department": "product",
                 "bolidName": "RT14e"
             }
         ]
@@ -482,8 +482,8 @@
         "email": "jakub.drzewiecki.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "software leader",
-                "department": "software",
+                "role": "design leader",
+                "department": "design",
                 "bolidName": "RT14e"
             },
             {
@@ -500,7 +500,7 @@
         "roles": [
             {
                 "role": "autonomous system engineer",
-                "department": "software",
+                "department": "design",
                 "bolidName": "RT14e"
             }
         ]
@@ -511,8 +511,8 @@
         "email": "bartlomiej.sitnik.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "software developer",
-                "department": "software",
+                "role": "design developer",
+                "department": "design",
                 "bolidName": "RT14e"
             }
         ]
@@ -524,7 +524,7 @@
         "roles": [
             {
                 "role": "perception developer",
-                "department": "software",
+                "department": "design",
                 "bolidName": "RT14e"
             }
         ]
@@ -536,7 +536,7 @@
         "roles": [
             {
                 "role": "sensor solutions and telemetry system engineer",
-                "department": "software",
+                "department": "design",
                 "bolidName": "RT14e"
             }
         ]
@@ -548,7 +548,7 @@
         "roles": [
             {
                 "role": "data validation developer",
-                "department": "software",
+                "department": "design",
                 "bolidName": "RT14e"
             }
         ]
@@ -560,7 +560,7 @@
         "roles": [
             {
                 "role": "website developer",
-                "department": "software",
+                "department": "design",
                 "bolidName": "RT14e"
             }
         ]
@@ -572,7 +572,7 @@
         "roles": [
             {
                 "role": "perception fusion developer",
-                "department": "software",
+                "department": "design",
                 "bolidName": "RT14e"
             }
         ]
@@ -583,8 +583,8 @@
         "email": "wiktoria.sawicka.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "asb software developer",
-                "department": "software",
+                "role": "asb design developer",
+                "department": "design",
                 "bolidName": "RT14e"
             }
         ]
@@ -595,8 +595,8 @@
         "email": "kacper.sowinski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "electrical leader",
-                "department": "electrical",
+                "role": "operates leader",
+                "department": "operates",
                 "bolidName": "RT14e"
             }
         ]
@@ -608,7 +608,7 @@
         "roles": [
             {
                 "role": "powertrain engineer",
-                "department": "electrical",
+                "department": "operates",
                 "bolidName": "RT14e"
             },
             {
@@ -625,7 +625,7 @@
         "roles": [
             {
                 "role": "electronics designer",
-                "department": "electrical",
+                "department": "operates",
                 "bolidName": "RT14e"
             }
         ]
@@ -637,7 +637,7 @@
         "roles": [
             {
                 "role": "electronics designer",
-                "department": "electrical",
+                "department": "operates",
                 "bolidName": "RT14e"
             },
             {
@@ -654,7 +654,7 @@
         "roles": [
             {
                 "role": "tsal engineer",
-                "department": "electrical",
+                "department": "operates",
                 "bolidName": "RT14e"
             }
         ]
@@ -666,7 +666,7 @@
         "roles": [
             {
                 "role": "department support",
-                "department": "electrical",
+                "department": "operates",
                 "bolidName": "RT14e"
             }
         ]
@@ -678,7 +678,7 @@
         "roles": [
             {
                 "role": "electronics designer",
-                "department": "electrical",
+                "department": "operates",
                 "bolidName": "RT14e"
             }
         ]
@@ -689,8 +689,8 @@
         "email": "krzysztof.dolecki.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "electrical member",
-                "department": "electrical",
+                "role": "operates member",
+                "department": "operates",
                 "bolidName": "RT14e"
             }
         ]
@@ -702,7 +702,7 @@
         "roles": [
             {
                 "role": "electronics designer",
-                "department": "electrical",
+                "department": "operates",
                 "bolidName": "RT14e"
             }
         ]
@@ -713,8 +713,8 @@
         "email": "igor.wawrzyniak.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "mechanical leader, wheel assembly constructor",
-                "department": "mechanical",
+                "role": "frontend leader, wheel assembly constructor",
+                "department": "frontend",
                 "bolidName": "RT14e"
             },
             {
@@ -731,7 +731,7 @@
         "roles": [
             {
                 "role": "planetary gearbox constructor",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             },
             {
@@ -748,7 +748,7 @@
         "roles": [
             {
                 "role": "motor case constructor",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             }
         ]
@@ -760,7 +760,7 @@
         "roles": [
             {
                 "role": "cooling system constructor",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             }
         ]
@@ -772,7 +772,7 @@
         "roles": [
             {
                 "role": "pedalbox constructor",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             }
         ]
@@ -784,7 +784,7 @@
         "roles": [
             {
                 "role": "department support",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             }
         ]
@@ -796,7 +796,7 @@
         "roles": [
             {
                 "role": "brake system constructor",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             }
         ]
@@ -808,7 +808,7 @@
         "roles": [
             {
                 "role": "autonomous steering system constructor",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             }
         ]
@@ -820,7 +820,7 @@
         "roles": [
             {
                 "role": "asb responsible",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             }
         ]
@@ -832,7 +832,7 @@
         "roles": [
             {
                 "role": "steering column constructor",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             }
         ]
@@ -844,7 +844,7 @@
         "roles": [
             {
                 "role": "damper mount constructor",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             }
         ]
@@ -856,7 +856,7 @@
         "roles": [
             {
                 "role": "pushrods responsible",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             }
         ]
@@ -868,7 +868,7 @@
         "roles": [
             {
                 "role": "tierods and arb responsible",
-                "department": "mechanical",
+                "department": "frontend",
                 "bolidName": "RT14e"
             }
         ]
@@ -879,8 +879,8 @@
         "email": "bartlomiej.ploszynski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "vehicle performance leader",
-                "department": "vehicle performance",
+                "role": "mobile leader",
+                "department": "mobile",
                 "bolidName": "RT14e"
             }
         ]
@@ -892,7 +892,7 @@
         "roles": [
             {
                 "role": "tractive system engineer",
-                "department": "vehicle performance",
+                "department": "mobile",
                 "bolidName": "RT14e"
             }
         ]
@@ -904,7 +904,7 @@
         "roles": [
             {
                 "role": "vehicle dynamics engineer",
-                "department": "vehicle performance",
+                "department": "mobile",
                 "bolidName": "RT14e"
             }
         ]
@@ -916,7 +916,7 @@
         "roles": [
             {
                 "role": "tractive system engineer",
-                "department": "vehicle performance",
+                "department": "mobile",
                 "bolidName": "RT14e"
             }
         ]
@@ -928,7 +928,7 @@
         "roles": [
             {
                 "role": "drivers development",
-                "department": "vehicle performance",
+                "department": "mobile",
                 "bolidName": "RT14e"
             },
             {
@@ -945,7 +945,7 @@
         "roles": [
             {
                 "role": "vehicle dynamics engineer",
-                "department": "vehicle performance",
+                "department": "mobile",
                 "bolidName": "RT14e"
             }
         ]
@@ -956,8 +956,8 @@
         "email": "maksymilian.kaminski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "vehicle performance member",
-                "department": "vehicle performance",
+                "role": "mobile member",
+                "department": "mobile",
                 "bolidName": "RT14e"
             }
         ]
@@ -969,7 +969,7 @@
         "roles": [
             {
                 "role": "vdcu developer",
-                "department": "vehicle performance",
+                "department": "mobile",
                 "bolidName": "RT14e"
             }
         ]

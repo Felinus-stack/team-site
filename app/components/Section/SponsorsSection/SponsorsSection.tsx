@@ -26,7 +26,7 @@ const sponsors = [
   "/images/sponsors/ntn-snr.png",
   "/images/sponsors/premium solutions.png",
   "/images/sponsors/pts waś_logo2023.jpg",
-  "/images/sponsors/radiotechnika marketing.png",
+  "/images/sponsors/radiotechnika product.png",
   "/images/sponsors/schaeffler.png",
   "/images/sponsors/siemens.png",
   "/images/sponsors/staubli.png",

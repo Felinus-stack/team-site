@@ -27,23 +27,23 @@ type DepartmentsAboutProps = {
       description: string;
       responsibilities: { text: string; icon: string }[];
     };
-    marketing: {
+    product: {
       description: string;
       responsibilities: { text: string; icon: string }[];
     };
-    software: {
+    design: {
       description: string;
       responsibilities: { text: string; icon: string }[];
     };
-    electrical: {
+    operates: {
       description: string;
       responsibilities: { text: string; icon: string }[];
     };
-    vehiclePerformance: {
+    mobile: {
       description: string;
       responsibilities: { text: string; icon: string }[];
     };
-    business: {
+    algorithm: {
       description: string;
       responsibilities: { text: string; icon: string }[];
     };
@@ -66,29 +66,29 @@ const DepartmentsAbout: React.FC<DepartmentsAboutProps> = ({
       responsibilities: dict.backend.responsibilities,
     },
     {
-      name: "marketing",
-      description: dict.marketing.description,
-      responsibilities: dict.marketing.responsibilities,
+      name: "product",
+      description: dict.product.description,
+      responsibilities: dict.product.responsibilities,
     },
     {
-      name: "software",
-      description: dict.software.description,
-      responsibilities: dict.software.responsibilities,
+      name: "design",
+      description: dict.design.description,
+      responsibilities: dict.design.responsibilities,
     },
     {
-      name: "electrical",
-      description: dict.electrical.description,
-      responsibilities: dict.electrical.responsibilities,
+      name: "operates",
+      description: dict.operates.description,
+      responsibilities: dict.operates.responsibilities,
     },
     {
-      name: "vehicle performance",
-      description: dict.vehiclePerformance.description,
-      responsibilities: dict.vehiclePerformance.responsibilities,
+      name: "mobile",
+      description: dict.mobile.description,
+      responsibilities: dict.mobile.responsibilities,
     },
     {
-      name: "business",
-      description: dict.business.description,
-      responsibilities: dict.business.responsibilities,
+      name: "algorithm",
+      description: dict.algorithm.description,
+      responsibilities: dict.algorithm.responsibilities,
     },
   ];
 
@@ -119,8 +119,8 @@ const DepartmentsAbout: React.FC<DepartmentsAboutProps> = ({
                   <Button
                     black
                     icon={IoSettings}
-                    label="MECHANICAL"
-                    onClick={() => handleScrollToSection("mechanical")}
+                    label="前端"
+                    onClick={() => handleScrollToSection("frontend")}
                   />
                 </div>
                 <div className="sm:max-w-72 flex-1">
@@ -135,40 +135,40 @@ const DepartmentsAbout: React.FC<DepartmentsAboutProps> = ({
                   <Button
                     black
                     icon={FaBullhorn}
-                    label="MARKETING"
-                    onClick={() => handleScrollToSection("marketing")}
+                    label="PRODUCT"
+                    onClick={() => handleScrollToSection("product")}
                   />
                 </div>
                 <div className="sm:max-w-72 flex-1">
                   <Button
                     black
                     icon={FaLaptopCode}
-                    label="SOFTWARE"
-                    onClick={() => handleScrollToSection("software")}
+                    label="DESIGN"
+                    onClick={() => handleScrollToSection("design")}
                   />
                 </div>
                 <div className="sm:max-w-72 flex-1">
                   <Button
                     black
                     icon={FaBolt}
-                    label="ELECTRICAL"
-                    onClick={() => handleScrollToSection("electrical")}
+                    label="OPERATES"
+                    onClick={() => handleScrollToSection("operates")}
                   />
                 </div>
                 <div className="sm:max-w-72 flex-1 whitespace-nowrap">
                   <Button
                     black
                     icon={FaChartBar}
-                    label="VEHICLE PERFORMANCE"
-                    onClick={() => handleScrollToSection("vehicle performance")}
+                    label="MOBILE"
+                    onClick={() => handleScrollToSection("mobile")}
                   />
                 </div>
                 <div className="sm:max-w-72 flex-1">
                   <Button
                     black
                     icon={FaDollarSign}
-                    label="BUSINESS"
-                    onClick={() => handleScrollToSection("business")}
+                    label="ALGORITHM"
+                    onClick={() => handleScrollToSection("algorithm")}
                   />
                 </div>
               </div>

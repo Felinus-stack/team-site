@@ -69,7 +69,7 @@
     "cookiesPolicy": "Cookie政策",
     "rodo": "数据保护",
     "recruitment": "招聘",
-    "createdBy": "设计与制作：Maria Kanczewska & Dawid Chmal",
+    "createdBy": "设计与制作：源境软件工作室",
     "allRightsReserved": "© 2024 版权所有",
     "seasonDescription": "每个赛季我们都会设计新的赛车。我们已经拥有十五款独特的燃油赛车，每一款都能轻松超越前一款。2022年，我们推出了团队历史上首款配备自动驾驶系统的电动赛车——RT12e。目前我们正在研发第十五代车型。"
   },
@@ -152,72 +152,62 @@
         }
       ]
     },
-    "marketing": {
-      "description": "部门负责团队形象及其在社交媒体上的推广。此外，还负责物流和活动组织。",
+    "product": {
+      "description": "从发掘并分析需求、产出产品原型到推进项目进度，从负责产品冷启动、参与产品运营到跟进产品更新迭代，负责产品的全生命周期管理。",
       "responsibilities": [
-        { "text": "制作宣传材料", "icon": "plik.svg" },
-        { "text": "组织活动", "icon": "box.svg" }
+        { "text": "产品需求分析与规划", "icon": "plik.svg" },
+        { "text": "产品原型设计", "icon": "kolo.svg" },
+        { "text": "用户研究与体验优化", "icon": "klucz.svg" }
       ]
     },
-    "software": {
-      "description": "部门负责开发自动驾驶系统及编程控制驾驶员界面、制动和转向的微处理器。负责路径规划、车辆控制及无人驾驶时的感知系统。软件使用的编程语言包括C、C++和Python。",
+    "design": {
+      "description": "负责团队内部的 UI 设计与平面设计，追求优秀的审美与精巧且以用户为中心的设计作品。",
       "responsibilities": [
         {
-          "text": "开发提升自动驾驶的算法",
+          "text": "审美",
           "icon": "plik.svg"
         },
-        { "text": "嵌入式系统开发", "icon": "kolo.svg" }
+        { "text": " Ps、Ai、Xd、Figma", "icon": "kolo.svg" }
       ]
     },
-    "electrical": {
-      "description": "部门负责设计PCB板，制作高低压线束及开发自制的高压电池。",
+    "operates": {
+      "description": "在微信、QQ、B站等不同平台产出创意内容，负责团队活动、产品的推广与运营。",
       "responsibilities": [
         {
-          "text": "设计及制作PCB板",
+          "text": "文案能力",
           "icon": "plik.svg"
         },
         {
-          "text": "使用CAD软件设计及制作符合赛车标准的高低压线束",
+          "text": "视频剪辑",
           "icon": "kolo.svg"
         },
         {
-          "text": "使用CAD软件建模电子设备外壳",
+          "text": "社交媒体管理",
           "icon": "klucz.svg"
-        },
-        {
-          "text": "设计及制作高压电池",
-          "icon": "box.svg"
-        },
-        {
-          "text": "进行电子设备及电池的热模拟",
-          "icon": "plik.svg"
-        },
-        { "text": "设计CAN总线", "icon": "kolo.svg" }
+        }
       ]
     },
-    "vehiclePerformance": {
-      "description": "部门负责最大化车辆性能，研究车辆运动学和动力学，进行数据采集，开发动力系统及组织测试。",
+    "mobile": {
+      "description": "负责移动端 App 的开发、设计与后期维护工作。追求优雅的交互体验与简洁高效的 UI 设计。",
       "responsibilities": [
-        { "text": "进行车辆动力学模拟", "icon": "plik.svg" },
+        { "text": "Android(Java / Kotlin)、iOS(Swift)", "icon": "plik.svg" },
         {
-          "text": "设计及开发动力系统",
+          "text": "Jetpack Compose、SwiftUI、Flutter(Dart)",
           "icon": "kolo.svg"
-        },
-        { "text": "分析行驶数据", "icon": "klucz.svg" }
+        }
       ]
     },
-    "business": {
-      "description": "部门负责与合作伙伴的联系，管理团队财务及准备大学生方程式赛事的静态项目，如商业展示。",
+    "algorithm": {
+      "description": "经典与前沿算法的探索、优化及实际场景应用尝试",
       "responsibilities": [
         {
-          "text": "协调订单、分析数据、优化团队工作",
+          "text": "算法竞赛、LeetCode、codeforces",
           "icon": "plik.svg"
         },
         {
-          "text": "准备商业展示",
+          "text": "机器学习、自然语言处理、图像识别",
           "icon": "kolo.svg"
-        },
-        { "text": "与合作伙伴联系", "icon": "klucz.svg" }
+        }
       ]
     }
   },
@@ -249,7 +239,7 @@
         "title": "工程设计",
         "text": "竞赛内容是展示赛车项目。评委会评估团队成员在设计整体和车辆各个系统时的工程技能和创造力。这是得分最高的静态竞赛项目，由汽车行业专家进行评估。"
       },
-      "business": {
+      "algorithm": {
         "title": "商业计划展示",
         "text": "竞赛内容是团队成员扮演初创公司管理层的角色，例如定制制造的制动器。通过十分钟的展示，团队需要说服扮演投资者的评委支持他们的商业模式。"
       }

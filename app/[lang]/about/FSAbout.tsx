@@ -32,7 +32,7 @@ interface FSAboutProps {
         title: string;
         text: string;
       };
-      business: {
+      algorithm: {
         title: string;
         text: string;
       };
@@ -97,9 +97,9 @@ const FSAbout: React.FC<FSAboutProps> = ({ dict }) => {
               />
               <FlipCard
                 height={"h-56 md:h-80"}
-                src="/images/FS/business.png"
-                title={competitions.business.title}
-                text={competitions.business.text}
+                src="/images/FS/algorithm.png"
+                title={competitions.algorithm.title}
+                text={competitions.algorithm.text}
               />
             </div>
           </div>
