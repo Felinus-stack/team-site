@@ -35,12 +35,12 @@ const NewsPage = async ({ params }: { params: Iparams }) => {
                 </Text>
               </div>
               <Text color="black" center alignCenter>
-                {news.long_description}
+                {news.longDescription}
               </Text>
             </div>
             <div className="bg-red-500 h-[32rem] w-2/3 relative rounded-md overflow-hidden">
               <Image
-                src={news.main_image}
+                src={news.mainImage}
                 alt={news.title}
                 fill
                 style={{ objectFit: "cover" }}

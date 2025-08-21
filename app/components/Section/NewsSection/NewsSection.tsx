@@ -26,11 +26,11 @@ const NewsSection: React.FC<NewsSectionProps> = async ({ dict }) => {
                 whiteMode
                 key={index}
                 title={item.title}
-                short_description={item.short_description}
-                long_description={item.long_description}
-                length_time={item.length_time}
+                short_description={item.shortDescription}
+                long_description={item.longDescription}
+                length_time={item.duration}
                 logo={item.logo || "/images/logo-czarne.svg"}
-                main_image={item.main_image}
+                main_image={item.mainImage}
               />
             ))}
           </div>

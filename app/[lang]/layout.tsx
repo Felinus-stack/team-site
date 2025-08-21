@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Open_Sans, Syncopate } from "next/font/google";
+import localFont from "next/font/local";
 
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -18,8 +18,32 @@ export async function generateStaticParams() {
   return [{ lang: "pl" }, { lang: "en" }];
 }
 
-const font = Open_Sans({ subsets: ["latin"] });
-const syncopate = Syncopate({ subsets: ["latin"], weight: ["400", "700"] });
+const font = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Syncopate-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-open-sans",
+});
+
+const syncopate = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Syncopate-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Syncopate-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-syncopate",
+});
 
 export const metadata: Metadata = {
   title: "源境团队",
