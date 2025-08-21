@@ -114,8 +114,8 @@ const DepartmentsAbout: React.FC<DepartmentsAboutProps> = ({
           </Title>
           <div className="w-full">
             <Container>
-              <div className="flex gap-4 md:w-3/4 flex-wrap justify-center items-center">
-                <div className="sm:max-w-72 flex-1">
+              <div className="flex gap-4 max-w-6xl mx-auto flex-wrap justify-center items-center">
+                <div className="min-w-32 max-w-40 flex-1">
                   <Button
                     black
                     icon={IoSettings}
@@ -123,51 +123,51 @@ const DepartmentsAbout: React.FC<DepartmentsAboutProps> = ({
                     onClick={() => handleScrollToSection("frontend")}
                   />
                 </div>
-                <div className="sm:max-w-72 flex-1">
+                <div className="min-w-32 max-w-40 flex-1">
                   <Button
                     black
                     icon={FaCube}
-                    label="COMPOSITES"
-                    onClick={() => handleScrollToSection("composites")}
+                    label="后端"
+                    onClick={() => handleScrollToSection("backend")}
                   />
                 </div>
-                <div className="sm:max-w-72 flex-1">
+                <div className="min-w-32 max-w-40 flex-1">
                   <Button
                     black
                     icon={FaBullhorn}
-                    label="PRODUCT"
+                    label="产品"
                     onClick={() => handleScrollToSection("product")}
                   />
                 </div>
-                <div className="sm:max-w-72 flex-1">
+                <div className="min-w-32 max-w-40 flex-1">
                   <Button
                     black
                     icon={FaLaptopCode}
-                    label="DESIGN"
+                    label="设计"
                     onClick={() => handleScrollToSection("design")}
                   />
                 </div>
-                <div className="sm:max-w-72 flex-1">
+                <div className="min-w-32 max-w-40 flex-1">
                   <Button
                     black
                     icon={FaBolt}
-                    label="OPERATES"
+                    label="运营"
                     onClick={() => handleScrollToSection("operates")}
                   />
                 </div>
-                <div className="sm:max-w-72 flex-1 whitespace-nowrap">
+                <div className="min-w-36 max-w-44 flex-1">
                   <Button
                     black
                     icon={FaChartBar}
-                    label="MOBILE"
+                    label="移动端"
                     onClick={() => handleScrollToSection("mobile")}
                   />
                 </div>
-                <div className="sm:max-w-72 flex-1">
+                <div className="min-w-32 max-w-40 flex-1">
                   <Button
                     black
                     icon={FaDollarSign}
-                    label="ALGORITHM"
+                    label="算法"
                     onClick={() => handleScrollToSection("algorithm")}
                   />
                 </div>

@@ -12,7 +12,7 @@ interface ButtonProps {
   small?: boolean;
   black?: boolean;
   icon?: IconType;
-  hoverText?: string; // Opcjonalny prop dla tekstu wyświetlanego podczas hovera
+  hoverText?: string; // 悬停时显示的文本的可选属性
 }
 
 const formatPhoneNumber = (phoneNumber: string) => {
@@ -49,6 +49,7 @@ const Button: React.FC<ButtonProps> = ({
         hover:opacity-80
         transition duration-300 ease-in-out
         w-full min-w-fit
+        whitespace-nowrap
         ${black ? "bg-black" : outline ? "bg-white" : "bg-customRed"}
         ${black ? "px-12" : "px-2"}
         ${

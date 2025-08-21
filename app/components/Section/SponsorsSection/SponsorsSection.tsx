@@ -4,10 +4,10 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const sponsors = [
-  "/images/sponsors/innowacje.png",
-  "/images/sponsors/pwr.png",
-  "/images/sponsors/manus.png",
-  "/images/sponsors/wydzial_mechaniczny.png",
+  "/images/sponsors/tencent.png",
+  "/images/sponsors/alibaba.png",
+  "/images/sponsors/baidu.png",
+  "/images/sponsors/huawei.png",
   "/images/sponsors/3d expert.jpg",
   "/images/sponsors/3designlab.png",
   "/images/sponsors/3m.png",
@@ -42,7 +42,7 @@ const SponsorsSection = () => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
-  const scrollSpeed = 1; // Możesz dostosować prędkość przewijania
+  const scrollSpeed = 1; // 可以调整滚动速度
 
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -66,10 +66,10 @@ const SponsorsSection = () => {
   };
 
   useEffect(() => {
-    // Rozpoczęcie animacji przewijania
+    // 开始滚动动画
     animateScroll();
 
-    // Czyszczenie: zatrzymanie animacji i aktualizacja stanu
+    // 清理：停止动画并更新状态
     return () => {
       setIsAnimating(false);
       if (animationFrameId) {
@@ -99,7 +99,7 @@ const SponsorsSection = () => {
     if (!isDragging || !containerRef.current) return;
     e.preventDefault();
     const x = e.pageX - containerRef.current.offsetLeft;
-    const walk = x - startX; // Mnożnik prędkości przewijania
+    const walk = x - startX; // 滚动速度倍数
     containerRef.current.scrollLeft = scrollLeft - walk;
   };
 

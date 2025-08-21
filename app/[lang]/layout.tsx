@@ -22,9 +22,9 @@ const font = Open_Sans({ subsets: ["latin"] });
 const syncopate = Syncopate({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
-  title: "PWR Racing",
+  title: "源境团队",
   description:
-    "Koło naukowe Politechniki Wrocławskiej zajmujące się budową bolidów",
+    "河南师范大学源境软件工作室，专注于软件开发与技术创新",
 };
 
 interface RootLayoutProps {

@@ -22,7 +22,7 @@ const GarageAbout: React.FC<GarageAboutProps> = ({ dict }) => {
 
   const handleMapClick = () => {
     window.open(
-      "https://www.google.com/maps/place/Sopocka+16,+50-344+Wroc%C5%82aw/data=!4m2!3m1!1s0x470fe82d5f41f4fd:0xa5be6508736bb57b?sa=X&ved=1t:242&ictx=1",
+      "https://www.google.com/maps/place/河南省新乡市红旗区金穗大道789号平原体育中心",
       "_blank"
     );
   };

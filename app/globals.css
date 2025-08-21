@@ -64,12 +64,12 @@ body,
 }
 
 /*! Sponsors scroll */
-/* Ukryj pasek przewijania w przeglądarkach opartych na WebKit (np. Safari, nowsze wersje Chrome) */
+/* 隐藏基于 WebKit 的浏览器中的滚动条（如 Safari、较新版本的 Chrome）*/
 .animation-container::-webkit-scrollbar {
   display: none;
 }
 
-/* Ukryj pasek przewijania w Firefox */
+/* 隐藏 Firefox 中的滚动条 */
 .animation-container {
   scrollbar-width: none;
 }

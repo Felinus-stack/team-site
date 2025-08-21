@@ -84,27 +84,27 @@
             },
             {
                 "role": "",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             },
             {
                 "role": "",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             },
             {
@@ -266,8 +266,8 @@
         "email": "jakub.ruchala.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "composites leader",
-                "department": "composites",
+                "role": "backend leader",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -279,7 +279,7 @@
         "roles": [
             {
                 "role": "monocoque project manager",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -291,7 +291,7 @@
         "roles": [
             {
                 "role": "underbody engineer",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -303,7 +303,7 @@
         "roles": [
             {
                 "role": "monocoque engineer",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -315,7 +315,7 @@
         "roles": [
             {
                 "role": "cfd engineer",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -327,7 +327,7 @@
         "roles": [
             {
                 "role": "rear wing engineer",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -339,7 +339,7 @@
         "roles": [
             {
                 "role": "ergonomics engineer",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -351,7 +351,7 @@
         "roles": [
             {
                 "role": "aerodynamics project manager",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -363,7 +363,7 @@
         "roles": [
             {
                 "role": "ergonomics engineer",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -375,7 +375,7 @@
         "roles": [
             {
                 "role": "monocoque engineer",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -387,7 +387,7 @@
         "roles": [
             {
                 "role": "diffuser engineer",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -398,8 +398,8 @@
         "email": "jakub.grochowski.pwrrt@gmail.com",
         "roles": [
             {
-                "role": "composites member",
-                "department": "composites",
+                "role": "backend member",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -411,7 +411,7 @@
         "roles": [
             {
                 "role": "rims engineer",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -423,7 +423,7 @@
         "roles": [
             {
                 "role": "rear wing engineer",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -435,7 +435,7 @@
         "roles": [
             {
                 "role": "front wing engineer",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -447,7 +447,7 @@
         "roles": [
             {
                 "role": "monocoque engineer",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -459,7 +459,7 @@
         "roles": [
             {
                 "role": "ergonomics engineer",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]
@@ -471,7 +471,7 @@
         "roles": [
             {
                 "role": "tsac constructor",
-                "department": "composites",
+                "department": "backend",
                 "bolidName": "RT14e"
             }
         ]

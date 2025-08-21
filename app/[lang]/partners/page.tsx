@@ -8,10 +8,10 @@ import { useRouter } from "next/navigation";
 
 // 战略合作伙伴列表
 const strategicSponsors = [
-  { name: "innowacje.png", url: "https://www.gov.pl/web/edukacja" },
-  { name: "pwr.png", url: "https://pwr.edu.pl" },
-  { name: "manus.png", url: "https://manus.pl" },
-  { name: "wydzial_mechaniczny.png", url: "https://wm.pwr.edu.pl/" },
+  { name: "tencent.png", url: "https://www.tencent.com/zh-cn" },
+  { name: "alibaba.png", url: "https://www.alibaba.com" },
+  { name: "baidu.png", url: "https://www.baidu.com" },
+  { name: "huawei.png", url: "https://www.huawei.com/cn" },
 ];
 
 const platinumSponsors = [
@@ -73,7 +73,7 @@ const goldSponsors = [
   { name: "bosch.png", url: "https://www.bosch.pl/" },
   {
     name: "ctc-logo-mit-airbus-line.png",
-    url: "https://www.ctc-composites.com/en/",
+    url: "https://www.ctc-backend.com/en/",
   },
   {
     name: "computer controls.jpg",
@@ -141,7 +141,7 @@ const bronzeSponsors = [
   },
   { name: "bl elektronik.png", url: "https://www.blelektronik.com.pl/" },
   { name: "centrum przyczep.png", url: "https://przyczepywroclaw.pl/" },
-  { name: "Easy Composites.png", url: "https://www.easycomposites.co.uk/" },
+  { name: "Easy Composites.png", url: "https://www.easybackend.co.uk/" },
   { name: "elgerta.png", url: "https://elgerta.com/pl/" },
   { name: "logo_cnc71.png", url: "https://cnc71.com/pl/index" },
   { name: "daga.png", url: "https://daga.com.pl/" },

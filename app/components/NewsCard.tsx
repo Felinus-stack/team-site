@@ -48,7 +48,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
           </div>
           <div className="flex justify-between">
             <Image alt="Logo" height={40} width={80} src={logo} />
-            <Text color="gray">{length_time} min czytania</Text>
+            <Text color="gray">{length_time} 分钟阅读</Text>
           </div>
         </div>
       </div>

@@ -59,7 +59,7 @@
     "about": "About Us",
     "partners": "Partners",
     "headquarters": "Headquarters",
-    "address": "Sopocka 16, Wrocław",
+    "address": "789 Jinsui Avenue, Pingyuan Sports Center, Hongqi District, Xinxiang City, Henan Province",
     "phone": "+86 152 2596 8963",
     "email": "yuanjingteam@163.com",
     "joinUs": "Join Us",
@@ -131,7 +131,7 @@
         }
       ]
     },
-    "composites": {
+    "backend": {
       "description": "The department is responsible for the handmade production of all composite elements present in the bolid. Starting from the largest element, the load-bearing structure, through the aerodynamic package, to the driver's ergonomics and the protective structure for the high-voltage battery.",
       "responsibilities": [
         {

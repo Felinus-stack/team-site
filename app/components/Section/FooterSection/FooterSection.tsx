@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import {
-  FaInstagram,
-  FaLinkedinIn,
+  FaWeibo,
+  FaWeixin,
 } from "react-icons/fa";
 import { BsPlayBtn } from "react-icons/bs";
 import Button from "../../Button";
@@ -54,7 +54,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ dict }) => {
 
   const handleMapClick = () => {
     window.open(
-      "https://www.google.com/maps/place/Sopocka+16,+50-344+Wroc%C5%82aw/data=!4m2!3m1!1s0x470fe82d5f41f4fd:0xa5be6508736bb57b?sa=X&ved=1t:242&ictx=1",
+      "https://www.google.com/maps/place/河南省新乡市红旗区金穗大道789号平原体育中心",
       "_blank"
     );
   };
@@ -156,7 +156,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ dict }) => {
                   </Title>
                 </div>
                 <Text color="white" opacity1 hoverColor="red" small bold wide>
-                  ul. Sopocka 16, Wrocław
+                  河南省新乡市红旗区金穗大道789号平原体育中心
                 </Text>
               </div>
             </div>
@@ -183,14 +183,14 @@ const FooterSection: React.FC<FooterSectionProps> = ({ dict }) => {
               </Text>
               <ul className="mt-1 md:mt-2">
                 <FooterLink onClick={handleMapClick}>{dict.address}</FooterLink>
-                <FooterLink onClick={handleMapClick}>50-349 Wrocław</FooterLink>
+                <FooterLink onClick={handleMapClick}>453007 新乡市</FooterLink>
                 <FooterLink onClick={handlePhoneClick}>{dict.phone}</FooterLink>
                 <FooterLink onClick={handleEmailClick}>{dict.email}</FooterLink>
               </ul>
             </div>
             <div className=" whitespace-nowrap">
               <Text center small bold>
-                PWR Racing Team
+                源境团队
               </Text>
               <ul className="mt-1 md:mt-2">
                 <FooterLink href="/joinus">{dict.joinUs}</FooterLink>
@@ -213,14 +213,14 @@ const FooterSection: React.FC<FooterSectionProps> = ({ dict }) => {
           <div className="w-full flex-col md:flex-row items-center gap-4 flex justify-between md:px-12 py-4 md:py-8">
             <div className="flex items-center gap-4">
               <SocialIcons
-                href="https://www.instagram.com/pwrracingteam/"
-                icon={FaInstagram}
-                ariaLabel="Instagram"
+                href="https://weibo.com/pwrracingteam"
+                icon={FaWeibo}
+                ariaLabel="微博"
               />
               <SocialIcons
-                href="https://www.linkedin.com/company/pwr-racing-team/posts/?feedView=all"
-                icon={FaLinkedinIn}
-                ariaLabel="LinkedIn"
+                href="https://mp.weixin.qq.com/s/pwrracingteam"
+                icon={FaWeixin}
+                ariaLabel="微信公众号"
               />
               <SocialIcons
                 href="https://space.bilibili.com/99622895"

@@ -81,7 +81,7 @@ const TeamPage = async ({ params }: { params: Iparams }) => {
   const departmentOrder = [
     "management",
     "product",
-    "composites",
+    "backend",
     "design",
     "operates",
     "frontend",
