@@ -13,14 +13,11 @@ RUN npm install --production=false
 # 复制项目文件
 COPY . .
 
-# 生成 Prisma 客户端
-RUN npx prisma generate
-
 # 构建应用
-RUN pnpm build
+RUN npm run build
 
 # 暴露端口
 EXPOSE 3000
 
 # 启动应用
-CMD ["pnpm", "start"]
+CMD ["npm", "start"]
