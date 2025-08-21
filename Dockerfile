@@ -7,8 +7,11 @@ WORKDIR /app
 # 复制 package.json
 COPY package.json ./
 
-# 只安装生产依赖
-RUN npm install --production
+# 安装所有依赖（Next.js 需要完整依赖来启动）
+RUN npm install
+
+# 复制环境变量文件
+COPY .env ./
 
 # 复制已构建的项目文件
 COPY . .
