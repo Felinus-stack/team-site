@@ -25,9 +25,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "docker/.next/types/**/*.ts",
-    "docker/prisma/seedTeamMember.jsmber.js",
-    "docker/prisma/clearColection.jstion.js"
+    ".next/types/**/*.ts
+    "prisma/seedTeamMember.jsmber.js
+    "prisma/clearColection.jstion.js
   ],
   "exclude": ["node_modules"]
 }

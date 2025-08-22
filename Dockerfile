@@ -13,6 +13,7 @@ WORKDIR /app
 # 复制 package.json 和 prisma 目录（prisma generate 需要）
 COPY package.json ./
 COPY .next ./.next/
+COPY public ./public/
 COPY .env ./
 COPY prisma ./prisma/
 
