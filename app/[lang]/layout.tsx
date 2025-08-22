@@ -81,8 +81,12 @@ export default async function RootLayout({
             {children}
             <FooterSection dict={dict.footer} />
           </ClosestSectionProvider>
-          <SpeedInsights />
-          <Analytics />
+          {process.env.VERCEL && (
+            <>
+              <SpeedInsights />
+              <Analytics />
+            </>
+          )}
         </ClientOnly>
       </body>
     </html>

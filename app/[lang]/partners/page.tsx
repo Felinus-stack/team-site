@@ -133,65 +133,7 @@ const silverSponsors = [
   { name: "wimarol.jpg", url: "https://waterjet.pl/" },
 ];
 
-const bronzeSponsors = [
-  { name: "3dconnexion.png", url: "https://3dconnexion.com/pl/" },
-  {
-    name: "adi-logo-cmyk-solid.jpg",
-    url: "https://www.analog.com/en/index.html",
-  },
-  { name: "bl elektronik.png", url: "https://www.blelektronik.com.pl/" },
-  { name: "centrum przyczep.png", url: "https://przyczepywroclaw.pl/" },
-  { name: "Easy Composites.png", url: "https://www.easybackend.co.uk/" },
-  { name: "elgerta.png", url: "https://elgerta.com/pl/" },
-  { name: "logo_cnc71.png", url: "https://cnc71.com/pl/index" },
-  { name: "daga.png", url: "https://daga.com.pl/" },
-  { name: "dremat.png", url: "https://dremat.pl/" },
-  {
-    name: "hexagon.png",
-    url: "https://hexagon.com/pl/company/divisions/manufacturing-intelligence",
-  },
-  { name: "elesa+ganter.jpg", url: "https://www.elesa-ganter.pl/pl/pol" },
-  { name: "hamaton.png", url: "https://www.hamaton-tpms.com/" },
-  { name: "logo_konmet-eu.jpg", url: "https://www.konmet.eu/pl/" },
-  { name: "gthr.png", url: "https://gthr.pl/" },
-  { name: "infineon.png", url: "https://www.infineon.com/" },
-  {
-    name: "lincoln electric.png",
-    url: "https://www.lincolnelectric.com/pl-pl",
-  },
-  {
-    name: "logo_igus.png",
-    url: "https://www.igus.pl/?gad_source=1&gclid=Cj0KCQjwj9-zBhDyARIsAERjds1DukXj1aZ6EKEc6W2IDWFlbU5CQH6nICAaE7w-_jqRtA3idxXtMA8aArlnEALw_wcB",
-  },
-  { name: "milar.png", url: "https://www.milar.pl/" },
-  { name: "miwa.png", url: "https://www.miwa.net.pl/" },
-  { name: "nc-tech.png", url: "https://nc-tech.pl/" },
-  { name: "N-POL cutting tools.png", url: "https://www.npol.com.pl/" },
-  { name: "metalpol.png", url: "https://mtlpl.eu/pl/" },
-  { name: "oberon.png", url: "http://www.oberon.pl/" },
-  { name: "pagero.png", url: "https://pagero.pl/" },
-  { name: "power rubber.webp", url: "https://powerrubber.com/" },
-  {
-    name: "petrobaza.png",
-    url: "http://petrobaza.pl/",
-  },
-  { name: "opony express.png", url: "https://oponyexpress.pl/?cl=pl" },
-  { name: "logo renex pl RED.svg", url: "https://www.renex.pl/" },
-  {
-    name: "solvec.png",
-    url: "https://solvec.pl/?fbclid=IwZXh0bgNhZW0CMTAAAR3lOtYRIQOeoEDz7qFMdb1XQZkmatNzJu7E41Lt7DZ19swJ6jPVXrbFE9o_aem_NrGa2wwTGFsIHmhsEPjrxw",
-  },
-  {
-    name: "st-microelectronic.png",
-    url: "https://www.st.com/content/st_com/en.html",
-  },
-  { name: "texas instruments.png", url: "https://www.ti.com/" },
-  { name: "ubierz ekipe.png", url: "https://ubierzekipe.pl/" },
-  {
-    name: "unisystem-slogan-logo_unisystem-slogan-logo.svg",
-    url: "https://unisystem.com/",
-  },
-];
+
 
 interface SponsorGridProps {
   sponsorRank: string;
@@ -316,14 +258,6 @@ const Partners = () => {
           <SponsorGrid
             sponsorRank="白银合作伙伴"
             sponsors={silverSponsors}
-            height="h-16 md:h-32"
-            gap="md:gap-16"
-            gridCols="grid-cols-3 md:grid-cols-4"
-          />
-
-          <SponsorGrid
-            sponsorRank="青铜合作伙伴"
-            sponsors={bronzeSponsors}
             height="h-16 md:h-32"
             gap="md:gap-16"
             gridCols="grid-cols-3 md:grid-cols-4"
