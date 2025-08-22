@@ -13,6 +13,7 @@ WORKDIR /app
 # 复制 package.json 和 prisma 目录（prisma generate 需要）
 COPY package.json ./
 COPY .next ./.next/
+COPY .env ./
 COPY prisma ./prisma/
 
 # 设置npm镜像源并只安装生产依赖（云效已完成构建，这里只需要运行时依赖）
