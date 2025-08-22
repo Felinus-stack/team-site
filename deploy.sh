@@ -21,7 +21,7 @@ stop_container() {
 build_image() {
     echo "🔨 构建应用镜像..."
     # 清理旧镜像（可选）
-    docker rmi $IMAGE_NAME:latest 2>/dev/null || echo "旧镜像不存在"
+    docker rmi $IMAGE_NAME:latest 2>/dev/null || echo "旧镜像不存在，开始构建新镜像"
     docker build -t $IMAGE_NAME:latest .
 }
 
