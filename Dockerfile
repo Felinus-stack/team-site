@@ -14,7 +14,7 @@ WORKDIR /app
 COPY package.json ./
 COPY .next ./.next/
 COPY public ./public/
-COPY .env ./
+# COPY .env* ./
 COPY prisma ./prisma/
 
 # 设置npm镜像源并只安装生产依赖（云效已完成构建，这里只需要运行时依赖）

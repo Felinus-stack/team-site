@@ -32,6 +32,9 @@ start_container() {
       --name $APP_NAME \
       -p $PORT:3000 \
       -e NODE_ENV=production \
+      -e DATABASE_URL="mysql://yuanjing:eH5BkCs87SsGn5zb@rm-m5ekp21no5z88rl1rgo.mysql.rds.aliyuncs.com:3306/teamsite" \
+      -e NEXTAUTH_SECRET="yuanjing" \
+      -e NEXT_PUBLIC_GOOGLE_MAPS_API_KEY="AIzaSyCgw2HEy6L1MKSuteQq4u8UF-OFSnW0QsA" \
       --restart unless-stopped \
       $IMAGE_NAME:latest
 }
