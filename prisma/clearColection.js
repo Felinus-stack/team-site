@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 async function main() {
   try {
-// 查找所有 bolidName 为 "RT11b" 的文档
+// Find all documents where bolidName is "RT11b"
     const teamMembers = await prisma.teamMember.findMany({
       where: {
         roles: {
@@ -14,7 +14,7 @@ async function main() {
       },
     });
 
-    // 将 bolidName 的值更新为 "RT11"
+    // Update bolidName value to "RT11"
     for (const member of teamMembers) {
       const updatedMember = await prisma.teamMember.update({
         where: { id: member.id },

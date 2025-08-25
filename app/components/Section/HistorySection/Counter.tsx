@@ -21,8 +21,8 @@ const Counter: React.FC<CounterProps> = ({ targetNumber, ...props }) => {
         (entries) => {
           entries.forEach((entry) => {
             if (!didCancel && entry.isIntersecting) {
-              const duration = 2000; // Całkowity czas trwania animacji w ms
-              const intervalTime = duration / targetNumber; // Czas między aktualizacjami
+              const duration = 2000; // 动画总持续时间（毫秒）
+              const intervalTime = duration / targetNumber; // 更新间隔时间
 
               let start = 0;
               const interval = setInterval(() => {

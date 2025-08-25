@@ -4,10 +4,10 @@ export async function fetchFiveNews() {
   const news = await prisma.news.findMany({
     orderBy: [
       {
-        date: "desc", // Sortuje wyniki malejąco, więc najnowsze newsy będą na górze
+        date: "desc", // 按日期降序排列，最新的新闻在顶部
       },
     ],
-    take: 3, // Pobiera tylko 5 najnowszych wiadomości
+    take: 3, // 只获取最新的3条新闻
   });
   return news;
 }

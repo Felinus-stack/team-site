@@ -5,8 +5,8 @@ import { MouseEventHandler } from "react";
 
 type FooterLinkProps = {
   children: string;
-  href?: string; // Optional href prop for navigation
-  onClick?: MouseEventHandler<HTMLLIElement>; // Optional onClick prop for custom functions
+  href?: string; // 可选的导航链接属性
+  onClick?: MouseEventHandler<HTMLLIElement>; // 可选的自定义点击事件属性
 };
 
 const FooterLink: React.FC<FooterLinkProps> = ({ children, href, onClick }) => {
@@ -14,9 +14,9 @@ const FooterLink: React.FC<FooterLinkProps> = ({ children, href, onClick }) => {
 
   const handleClick = (event: React.MouseEvent<HTMLLIElement>) => {
     if (onClick) {
-      onClick(event); // Execute the custom function if provided
+      onClick(event); // 如果提供了自定义函数则执行
     } else if (href) {
-      router.push(href); // Navigate to the provided href if no custom function
+      router.push(href); // 如果没有自定义函数则导航到指定链接
     }
   };
 

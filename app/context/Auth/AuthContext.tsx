@@ -6,22 +6,22 @@ import React, {
   useEffect,
 } from "react";
 
-// Define the shape of the context data
+// 定义上下文数据的结构
 interface AuthContextProps {
   isAuthenticated: boolean;
   login: () => void;
   logout: () => void;
 }
 
-// Create the context with an undefined initial value
+// 创建上下文，初始值为 undefined
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
-// Create a provider component
+// 创建提供者组件
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // Check if the user is already logged in by checking localStorage/sessionStorage
+    // 通过检查 localStorage/sessionStorage 来确认用户是否已登录
     const loggedIn = localStorage.getItem("isAuthenticated");
     if (loggedIn === "true") {
       setIsAuthenticated(true);

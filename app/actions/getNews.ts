@@ -4,7 +4,7 @@ export async function fetchNews() {
   const news = await prisma.news.findMany({
     orderBy: [
       {
-        date: "desc", // Sortuje wyniki malejąco, więc najnowsze newsy będą na górze
+        date: "desc", // 按日期降序排列，最新的新闻在顶部
       },
     ],
   });

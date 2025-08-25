@@ -15,7 +15,7 @@ const Slider: React.FC<SliderProps> = ({
   onChangeBolid = () => {},
   darkMode = false,
 }) => {
-  // Stan dla przeciągania
+  // 拖拽状态
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
@@ -35,7 +35,7 @@ const Slider: React.FC<SliderProps> = ({
     onChangeBolid = bolidRedirect;
   }
 
-  // Rozpoczęcie przeciągania
+  // 开始拖拽
   const startDragging = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!scrollContainerRef.current) return;
 
@@ -44,7 +44,7 @@ const Slider: React.FC<SliderProps> = ({
     setScrollLeft(scrollContainerRef.current.scrollLeft);
   };
 
-  // Przeciąganie
+  // 拖拽中
   const onDrag = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isDragging || !scrollContainerRef.current) return;
 
@@ -54,7 +54,7 @@ const Slider: React.FC<SliderProps> = ({
     scrollContainerRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  // Zakończenie przeciągania
+  // 结束拖拽
   const stopDragging = () => {
     setIsDragging(false);
   };

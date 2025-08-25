@@ -1,4 +1,4 @@
-// app/admin/addNews/page.tsx
+// 管理员添加新闻页面
 "use client";
 
 import React, { useEffect, useState } from "react";

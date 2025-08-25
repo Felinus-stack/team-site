@@ -1,4 +1,4 @@
-// actions/getNewsById.ts
+// 根据新闻ID获取新闻信息的操作
 import prisma from "@/app/libs/prismadb";
 
 export default async function getNewsById(newsId: string) {

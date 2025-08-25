@@ -1,4 +1,4 @@
-// pages/about-us.jsx
+// 新闻页面组件
 import Container from "@/app/components/Container";
 import NewsCard from "@/app/components/NewsCard";
 import { fetchNews } from "@/app/actions/getNews";

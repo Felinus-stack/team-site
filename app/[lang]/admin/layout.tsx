@@ -1,4 +1,4 @@
-// app/admin/AdminLayout.tsx
+// 管理员布局组件
 "use client";
 
 import { ReactNode } from "react";
