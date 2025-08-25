@@ -21,7 +21,7 @@ const Department: React.FC<DepartmentProps> = ({ department }) => {
             style={{ objectFit: "cover" }}
           />
         </div>
-        <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-70 transition duration-300 ease-in-out"></div>
+        <div className="absolute inset-0 bg-black opacity-70 group-hover:opacity-50 transition duration-300 ease-in-out"></div>
         <div className="absolute right-0 bottom-0 flex items-center p-4 pr-12 uppercase text-white transition-all duration-300 ease-in-out group-hover:right-1/2 group-hover:bottom-1/2 group-hover:translate-x-1/2 group-hover:translate-y-1/2 group-hover:pr-4">
           <p className="flex-shrink-0 whitespace-nowrap text-sm md:text-xl font-extrabold px-4 group-hover:text-white group-hover:text-[1rem] md:group-hover:text-[1.5rem] transition-all duration-300 ease-in-out">
             {department}
