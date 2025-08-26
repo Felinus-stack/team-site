@@ -1,4 +1,4 @@
-import { getTeamByBolid } from "@/app/actions/getTeamByBolid";
+import { getTeamByProject } from "@/app/actions/getTeamByProject";
 import Container from "@/app/components/Container";
 import SecondaryButton from "@/app/components/SecondaryButton";
 import Title from "@/app/components/Title";
@@ -13,7 +13,7 @@ interface Iparams {
 
 const TeamPage = async ({ params }: { params: Iparams }) => {
   const teamId = params.teamId ?? "RT13e";
-  const team = await getTeamByBolid(teamId);
+  const team = await getTeamByProject(teamId);
 
   interface Member {
     name: string;
@@ -175,13 +175,13 @@ const TeamPage = async ({ params }: { params: Iparams }) => {
                         <div className=" absolute">
                           <SecondaryButton
                             darkMode
-                            to={`/bolid/${params.teamId}`}
-                            buttonText={`Do bolidu ${params.teamId}`}
+                            to={`/projects/${params.teamId}`}
+                            buttonText={`查看项目 ${params.teamId}`}
                           />
                         </div>
 
                         <Image
-                          src={`/images/bolid/${params.teamId}/${params.teamId}.png`}
+                          src={`/images/projects/${params.teamId}/${params.teamId}.png`}
                           alt="bolid"
                           width={700}
                           height={551}

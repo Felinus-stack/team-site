@@ -1,6 +1,6 @@
-import { getBolidByBolidId } from "@/app/actions/getBolidByBolidId";
+import { getProjectByProjectId } from "@/app/actions/getProjectByProjectId";
 import Container from "@/app/components/Container";
-import BolidSection from "@/app/components/Section/BolidSection/BolidSection";
+import ProjectSection from "@/app/components/Section/ProjectSection/ProjectSection";
 import Text from "@/app/components/Text";
 import Title from "@/app/components/Title";
 import Image from "next/image";
@@ -8,42 +8,42 @@ import { getDictionary } from "../../dictionaries";
 
 interface Iparams {
   lang: string;
-  bolidId?: string;
+  projectId?: string;
 }
 
 type Locale = "ch" | "en";
 
-const BolidPage = async ({ params }: { params: Iparams }) => {
-  const { lang, bolidId } = params;
+const ProjectPage = async ({ params }: { params: Iparams }) => {
+  const { lang, projectId } = params;
   const currentLocale = lang === "ch" || lang === "en" ? lang : "en";
 
   const dict = await getDictionary(currentLocale);
-  const bolidIdValue = bolidId ?? "RT13e";
-  const bolid = await getBolidByBolidId(bolidIdValue);
+  const projectIdValue = projectId ?? "新乡市卡口车辆防疫管理系统";
+  const project = await getProjectByProjectId(projectIdValue);
 
-  if (!bolid) {
-    return <p>未找到赛车</p>;
+  if (!project) {
+    return <p>未找到项目</p>;
   }
 
   return (
     <div className="flex flex-col pt-[100px]">
-      <BolidSection
-        dict={dict.bolidSection}
+      <ProjectSection
+        dict={dict.projectSection}
         language={currentLocale}
-        presetBolid={bolidIdValue}
+        presetProject={projectIdValue}
       />
       <div className=" w-full" id="achievements">
         <Container>
           <div className="flex flex-col w-full py-8 md:py-16">
             <Title size="big" color="black">
-              {bolid.year}赛季成就
+              {project.year}赛季成就
             </Title>
 
             <div className="flex">
               <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 pt-6 text-white">
                 <div className="relative rounded overflow-hidden h-52 md:h-60">
                   <Image
-                    src="/images/bolid/RT12e/images/zawody/1.jpg"
+                    src="/images/projects/RT12e/images/zawody/1.jpg"
                     alt="比赛照片"
                     layout="fill"
                     objectFit="cover"
@@ -62,7 +62,7 @@ const BolidPage = async ({ params }: { params: Iparams }) => {
                       </div>
                       <div className="">
                         <Image
-                          src="/images/bolid/RT12e/images/zawody/logo1.png"
+                          src="/images/projects/RT12e/images/zawody/logo1.png"
                           alt="比赛标志"
                           width={100}
                           height={100}
@@ -73,7 +73,7 @@ const BolidPage = async ({ params }: { params: Iparams }) => {
                 </div>
                 <div className="relative rounded overflow-hidden h-52 md:h-60">
                   <Image
-                    src="/images/bolid/RT12e/images/zawody/2.jpg"
+                    src="/images/projects/RT12e/images/zawody/2.jpg"
                     alt="Zdjęcie 2"
                     layout="fill"
                     objectFit="cover"
@@ -92,7 +92,7 @@ const BolidPage = async ({ params }: { params: Iparams }) => {
                       </div>
                       <div className="">
                         <Image
-                          src="/images/bolid/RT12e/images/zawody/logo2.png"
+                          src="/images/projects/RT12e/images/zawody/logo2.png"
                           alt="Zdjęcie 1"
                           width={100}
                           height={100}
@@ -103,7 +103,7 @@ const BolidPage = async ({ params }: { params: Iparams }) => {
                 </div>
                 <div className="relative rounded overflow-hidden h-52 md:h-60">
                   <Image
-                    src="/images/bolid/RT12e/images/zawody/3.jpg"
+                    src="/images/projects/RT12e/images/zawody/3.jpg"
                     alt="Zdjęcie 2"
                     layout="fill"
                     objectFit="cover"
@@ -122,7 +122,7 @@ const BolidPage = async ({ params }: { params: Iparams }) => {
                       </div>
                       <div className="">
                         <Image
-                          src="/images/bolid/RT12e/images/zawody/logo3.png"
+                          src="/images/projects/RT12e/images/zawody/logo3.png"
                           alt="Zdjęcie 1"
                           width={100}
                           height={100}
@@ -137,7 +137,7 @@ const BolidPage = async ({ params }: { params: Iparams }) => {
         </Container>
       </div>
       <div className="w-full">
-        {bolid.parts.map((part, depIndex) => (
+        {project.parts.map((part, depIndex) => (
           <div
             key={part.partName}
             className={`${depIndex % 2 === 0 ? "bg-neutral-200" : "bg-white"}`}
@@ -160,7 +160,7 @@ const BolidPage = async ({ params }: { params: Iparams }) => {
                 </div>
                 <div className=" my-auto md:w-1/3">
                   <Image
-                    src={`/images/bolid/RT12e/parts/${part.partName}.png`}
+                    src={`/images/projects/RT12e/parts/${part.partName}.png`}
                     alt={`${part.partName}部件图片`}
                     width={300} // 使用真实的图片比例
                     height={400} // 使用真实的图片比例
@@ -180,4 +180,4 @@ const BolidPage = async ({ params }: { params: Iparams }) => {
   );
 };
 
-export default BolidPage;
+export default ProjectPage;

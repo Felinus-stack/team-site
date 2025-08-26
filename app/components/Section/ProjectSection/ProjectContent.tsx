@@ -6,9 +6,9 @@ import Button from "../../Button";
 import Container from "../../Container";
 import Text from "../../Text";
 import Title from "../../Title";
-import BolidSpecs from "./BolidSpecs";
+import ProjectSpecs from "./ProjectSpecs";
 
-interface BolidData {
+interface ProjectData {
   name: string;
   year: string;
   short_description: string;
@@ -20,7 +20,7 @@ interface BolidData {
   dict: any;
 }
 
-const BolidContent: React.FC<BolidData> = ({
+const ProjectContent: React.FC<ProjectData> = ({
   name,
   year,
   short_description,
@@ -34,13 +34,13 @@ const BolidContent: React.FC<BolidData> = ({
   const router = useRouter();
   const path = usePathname();
 
-  const teamRedirect = (bolid: string) => {
+  const teamRedirect = (project: string) => {
     const currentLocale = path!.split("/")[1];
-    router.push(`/${currentLocale}/team/${bolid}`);
+    router.push(`/${currentLocale}/team/${project}`);
   };
-  const bolidRedirect = (bolid: string) => {
+  const projectRedirect = (project: string) => {
     const currentLocale = path!.split("/")[1];
-    router.push(`/${currentLocale}/bolid/${bolid}#achievements`);
+    router.push(`/${currentLocale}/projects/${project}#achievements`);
   };
 
   const renderName = (name: string) => {
@@ -79,8 +79,8 @@ const BolidContent: React.FC<BolidData> = ({
               </div>
               <div className="gap-4 mt-8 hidden lg:flex">
                 <Button
-                  label={dict.moreAboutBolid}
-                  onClick={() => bolidRedirect(name)}
+                  label={dict.moreAboutProject}
+                  onClick={() => projectRedirect(name)}
                 />
                 <Button
                   outline
@@ -94,8 +94,8 @@ const BolidContent: React.FC<BolidData> = ({
             className={`flex flex-col justify-end items-center h-full w-full transition-all ease-out duration-500`}
           >
             <Image
-              src={`/images/bolid/${name}/${name}.png`}
-              alt="bolid"
+              src={`/images/projects/${name}/${name}.png`}
+              alt="project"
               layout="intrinsic"
               width={700}
               height={300}
@@ -103,8 +103,8 @@ const BolidContent: React.FC<BolidData> = ({
           </div>
           <div className="gap-2 md:gap-4 flex lg:hidden">
             <Button
-              label={dict.moreAboutBolid}
-              onClick={() => bolidRedirect(name)}
+              label={dict.moreAboutProject}
+              onClick={() => projectRedirect(name)}
             />
             <Button
               outline
@@ -114,7 +114,7 @@ const BolidContent: React.FC<BolidData> = ({
           </div>
         </div>
       </Container>
-      <BolidSpecs
+      <ProjectSpecs
         animate={"opacity"}
         acceleration={acceleration}
         mass={mass}
@@ -125,4 +125,4 @@ const BolidContent: React.FC<BolidData> = ({
   );
 };
 
-export default BolidContent;
+export default ProjectContent;
