@@ -41,7 +41,7 @@
   },
   "navigation": {
     "home": "Home",
-    "bolid": "Bolid",
+    "bolid": "Projects",
     "team": "Team",
     "about": "About Us",
     "partners": "Partners",
@@ -54,7 +54,7 @@
     "findUs": "Where to find us?",
     "navigation": "Navigation",
     "home": "Home",
-    "bolid": "Bolid",
+    "bolid": "Projects",
     "team": "Team",
     "about": "About Us",
     "partners": "Partners",
@@ -77,17 +77,17 @@
     "media": "Media",
     "recruitment": "Recruitment"
   },
-  "bolidSection": {
-    "moreAboutBolid": "More about the bolid",
+  "projectSection": {
+    "moreAboutProject": "More about the project",
     "meetTeam": "Meet the team",
-    "acceleration": "Acceleration",
-    "mass": "Mass",
-    "power": "Power",
-    "specyfikacja": "Specification",
-    "bolidu": "of the Bolid",
-    "TXTacceleration": "ACCELERATION 0-100 KM/H",
-    "TXTmass": "ENGINE POWER",
-    "TXTpower": "VEHICLE MASS"
+    "acceleration": "Response Speed",
+    "mass": "Architecture",
+    "power": "Performance",
+    "specyfikacja": "Technical Specs",
+    "projektu": "of the Project",
+    "TXTacceleration": "RESPONSE TIME",
+    "TXTmass": "TECH ARCHITECTURE",
+    "TXTpower": "PROJECT SCALE"
   },
   "heroAbout": {
     "title": "MEET OUR TEAM"

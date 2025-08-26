@@ -17,7 +17,7 @@ const nextConfig = {
       },
       {
         source: "/bolid",
-        destination: "/bolid/RT12e",
+        destination: "/projects",
         permanent: true,
       },
     ];
