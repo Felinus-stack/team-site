@@ -51,7 +51,7 @@ const FSSection: React.FC<FSSectionProps> = ({ aboutUs, dict }) => {
               <Image
                 className=""
                 src="/images/bolidFS.jpeg"
-                alt="bolid"
+                alt="project"
                 layout="fill"
                 objectFit="cover"
                 objectPosition="70% center"

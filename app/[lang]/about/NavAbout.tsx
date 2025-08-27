@@ -42,7 +42,7 @@ const NavAbout: React.FC<NavAboutProps> = ({ dict }) => {
                 <Image
                   className=""
                   src="/images/poznaj_nas.jpg"
-                  alt="bolid"
+                  alt="project"
                   layout="fill"
                   objectFit="cover"
                   objectPosition="center 10%"

@@ -35,7 +35,7 @@ const textVariants = {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ dict }) => {
   const handleScroll = () => {
-    const element = document.getElementById("bolid");
+    const element = document.getElementById("projects");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -136,7 +136,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ dict }) => {
             >
               <Image
                 src="/images/bolid_main.png"
-                alt="bolid"
+                alt="project"
                 layout="intrinsic"
                 width={700}
                 height={551}

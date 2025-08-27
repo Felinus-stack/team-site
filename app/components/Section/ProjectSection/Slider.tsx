@@ -80,56 +80,56 @@ const Slider: React.FC<SliderProps> = ({
           <SliderElement
             darkMode={darkMode}
             date={2025}
-            bolid="智能陪护"
+            projectName="智能陪护"
             onClick={onChangeProject}
             currentProject={currentProject}
           />
           <SliderElement
             darkMode={darkMode}
             date={2024}
-            bolid="新乡市卡口车辆防疫管理系统"
+            projectName="新乡市卡口车辆防疫管理系统"
             onClick={onChangeProject}
             currentProject={currentProject}
           />
           <SliderElement
             darkMode={darkMode}
             date={2023}
-            bolid="新生报道系统"
+            projectName="新生报道系统"
             onClick={onChangeProject}
             currentProject={currentProject}
           />
           <SliderElement
             darkMode={darkMode}
             date={2022}
-            bolid="无人车定位跟踪系统"
+            projectName="无人车定位跟踪系统"
             onClick={onChangeProject}
             currentProject={currentProject}
           />
           <SliderElement
             darkMode={darkMode}
             date={2021}
-            bolid="网格化管理系统"
+            projectName="网格化管理系统"
             onClick={onChangeProject}
             currentProject={currentProject}
           />
           <SliderElement
             darkMode={darkMode}
             date={2020}
-            bolid="统战管理系统"
+            projectName="统战管理系统"
             onClick={onChangeProject}
             currentProject={currentProject}
           />
           <SliderElement
             darkMode={darkMode}
             date={2019}
-            bolid="场所工作人员管理界面"
+            projectName="场所工作人员管理界面"
             onClick={onChangeProject}
             currentProject={currentProject}
           />
           <SliderElement
             darkMode={darkMode}
             date={2018}
-            bolid="XXX市信访预警系统"
+            projectName="XXX市信访预警系统"
             onClick={onChangeProject}
             currentProject={currentProject}
           />

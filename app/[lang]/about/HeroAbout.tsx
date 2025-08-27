@@ -71,7 +71,7 @@ const HeroAbout: React.FC<HeroAboutProps> = ({ dict }) => {
         <Image
           className=""
           src="/images/history.jpg"
-          alt="bolid"
+          alt="project"
           layout="fill"
           objectFit="cover"
           objectPosition="center 20%"

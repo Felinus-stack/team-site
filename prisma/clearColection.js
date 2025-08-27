@@ -3,26 +3,26 @@ const prisma = new PrismaClient();
 
 async function main() {
   try {
-// Find all documents where bolidName is "RT11b"
+// Find all documents where projectName is "RT11b"
     const teamMembers = await prisma.teamMember.findMany({
       where: {
         roles: {
           some: {
-            bolidName: "RT11b",
+            projectName: "RT11b",
           },
         },
       },
     });
 
-    // Update bolidName value to "RT11"
+    // Update projectName value to "RT11"
     for (const member of teamMembers) {
       const updatedMember = await prisma.teamMember.update({
         where: { id: member.id },
         data: {
           roles: {
             set: member.roles.map((role) => {
-              if (role.bolidName === "RT11b") {
-                role.bolidName = "RT11";
+              if (role.projectName === "RT11b") {
+                role.projectName = "RT11";
               }
               return role;
             }),

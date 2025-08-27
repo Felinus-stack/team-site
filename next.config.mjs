@@ -12,11 +12,11 @@ const nextConfig = {
     return [
       {
         source: "/team",
-        destination: "/team/RT14e",
+        destination: "/team/智能陪护",
         permanent: true,
       },
       {
-        source: "/bolid",
+        source: "/projects",
         destination: "/projects",
         permanent: true,
       },
