@@ -42,7 +42,7 @@ const platinumSponsors = [
     name: "pts waś_logo2023.jpg",
     url: "https://www.was.eu/?gad_source=1&gclid=Cj0KCQjwj9-zBhDyARIsAERjds0lhK-KCC0bZtcfvXqOMsCyknlfES8eysmWfn2BKaNBDikBmDPLXRQaAm_QEALw_wcB",
   },
-  { name: "radiotechnika product.png", url: "http://radiotechnika.com.pl/" },
+  { name: "radiotechnika marketing.png", url: "http://radiotechnika.com.pl/" },
   { name: "siemens.png", url: "https://www.siemens.com/pl/pl.html" },
   {
     name: "speedgoat.png",

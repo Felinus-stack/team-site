@@ -82,12 +82,12 @@
     "meetTeam": "Meet the team",
     "acceleration": "Response Speed",
     "mass": "Architecture",
-    "power": "Performance",
+    "power": "Development Duration",
     "specyfikacja": "Technical Specs",
     "projektu": "of the Project",
-    "TXTacceleration": "RESPONSE TIME",
+    "TXTacceleration": "PARTICIPANTS",
     "TXTmass": "TECH ARCHITECTURE",
-    "TXTpower": "PROJECT SCALE"
+    "TXTpower": "DEVELOPMENT DURATION"
   },
   "heroAbout": {
     "title": "MEET OUR TEAM"
