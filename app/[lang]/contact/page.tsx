@@ -7,6 +7,8 @@ import UserCard from "../team/[teamId]/UserCard";
 import { sortRoles } from "../team/[teamId]/utils";
 import { EmailAction, Admin } from "./emailAction";
 import GoogleMapComponent from "./map";
+import { FaWeixin, FaWeibo, FaLinkedin, FaGithub, FaPhone, FaEnvelope, FaClock, FaMapMarkerAlt } from "react-icons/fa";
+import { SiBilibili } from "react-icons/si";
 
 interface Role {
   department: string;
@@ -162,6 +164,124 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
                   teamId="RT14e"
                   roleHistory={roleHistory}
                 />
+              ))}
+            </div>
+          </div>
+        </div>
+      </Container>
+
+      <Container>
+        <div className="grid grid-cols-1 w-full my-8 md:my-12 gap-12 md:gap-20">
+          {/* 社交媒体 */}
+          <div className="flex flex-col items-start md:items-center gap-4 md:gap-6">
+            <Text bold medium>
+              {dict.contactUs.socialMedia}
+            </Text>
+            <div className="flex gap-6 text-2xl">
+              <a
+                href="https://weixin.qq.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-customRed duration-300"
+                title="微信"
+              >
+                <FaWeixin />
+              </a>
+              <a
+                href="https://weibo.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-customRed duration-300"
+                title="微博"
+              >
+                <FaWeibo />
+              </a>
+              <a
+                href="https://linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-customRed duration-300"
+                title="LinkedIn"
+              >
+                <FaLinkedin />
+              </a>
+                             <a 
+                 href="https://github.com/" 
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="text-black hover:text-customRed duration-300"
+                 title="GitHub"
+               >
+                 <FaGithub />
+               </a>
+               <a 
+                 href="https://bilibili.com/" 
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="text-black hover:text-customRed duration-300"
+                 title="Bilibili"
+               >
+                 <SiBilibili />
+               </a>
+            </div>
+          </div>
+
+          {/* 其他联系信息 */}
+          <div className="flex flex-col items-start md:items-center gap-4 md:gap-6">
+            <Text bold medium>
+              其他联系信息
+            </Text>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full gap-6 justify-items-center">
+              <div className="text-center w-full max-w-md">
+                <Text bold className="mb-2">
+                  {dict.contactUs.officeHours}
+                </Text>
+                <Text>
+                  {dict.contactUs.officeHoursText}
+                </Text>
+              </div>
+              <div className="text-center w-full max-w-md">
+                <Text bold className="mb-2">
+                  {dict.contactUs.emergencyContact}
+                </Text>
+                <Text>
+                  {dict.contactUs.emergencyPhone}
+                </Text>
+              </div>
+              <div className="text-center w-full max-w-md">
+                <Text bold className="mb-2">
+                  邮箱联系
+                </Text>
+                <Text>
+                  yuanjingteam@163.com
+                </Text>
+              </div>
+              <div className="text-center w-full max-w-md">
+                <Text bold className="mb-2">
+                  {dict.contactUs.mailingAddress}
+                </Text>
+                <Text className="whitespace-pre-line">
+                  {dict.contactUs.addressText}
+                </Text>
+              </div>
+            </div>
+          </div>
+
+          {/* 常见问题 */}
+          <div className="flex flex-col items-start md:items-center gap-4 md:gap-6">
+            <Text bold medium>
+              {dict.contactUs.faq}
+            </Text>
+            <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-6 justify-items-center">
+              {dict.contactUs.faqItems.map((item, index) => (
+                <div key={index} className="text-center w-full max-w-md">
+                  <Text bold className="mb-2">
+                    {item.question}
+                  </Text>
+                  <Text>
+                    {item.answer}
+                  </Text>
+                </div>
               ))}
             </div>
           </div>

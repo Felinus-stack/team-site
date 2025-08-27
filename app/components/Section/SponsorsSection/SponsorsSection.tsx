@@ -4,10 +4,10 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const sponsors = [
-  "/images/sponsors/tencent.png",
-  "/images/sponsors/alibaba.png",
-  "/images/sponsors/baidu.png",
-  "/images/sponsors/huawei.png",
+  "/images/sponsors/hist.png",
+  "/images/sponsors/htu.png",
+  "/images/sponsors/xxu.png",
+  "/images/sponsors/xxgc.png",
   "/images/sponsors/3d expert.jpg",
   "/images/sponsors/3designlab.png",
   "/images/sponsors/3m.png",

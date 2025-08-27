@@ -129,7 +129,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
             />
             <MenuItem
               onClick={() => handleMenuItemClick(`/partners`)}
-              label="合作伙伴"
+              label="校企伙伴"
             />
             <MenuItem
               onClick={() => handleMenuItemClick(`/news`)}
