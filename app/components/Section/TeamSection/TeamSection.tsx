@@ -30,10 +30,10 @@ const TeamSection: React.FC<TeamSectionProps> = ({ dict }) => {
           style={{ filter: "grayscale(100%)" }}
         />
         {/* Warstwa przyciemniająca */}
-        <div className="absolute inset-0 bg-black bg-opacity-80"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-80 "></div>
       </div>
       <Container paddingType="l">
-        <div className=" flex flex-col lg:flex-row items-center gap-8 md:gap-20 py-8 md:py-16 w-auto overflow-hidden">
+        <div className="  flex flex-col lg:flex-row items-center gap-8 md:gap-20 py-8 md:py-16 w-auto overflow-hidden">
           <div className="">
             <Title size="subtitle" color="gray">
               {dict.title}
@@ -45,7 +45,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ dict }) => {
             <div className="flex gap-4 mt-8">
               <Button
                 label={dict.buttonLabel}
-                onClick={() => router.push(`/bolid`)}
+                onClick={() => router.push(`/projects`)}
               />
             </div>
           </div>

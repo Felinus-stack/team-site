@@ -1,11 +1,11 @@
 import prisma from "@/app/libs/prismadb";
 
-export async function getTeamByBolid(bolidName: string) {
+export async function getTeamByProject(projectName: string) {
   const teamMembers = await prisma.teamMember.findMany({
     where: {
       roles: {
         some: {
-          bolidName: bolidName,
+          projectName: projectName,
         },
       },
     },
@@ -18,7 +18,7 @@ export async function getTeamByBolid(bolidName: string) {
         select: {
           department: true,
           role: true,
-          bolidName: true,
+          projectName: true,
         },
       },
     },

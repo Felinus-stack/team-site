@@ -1,12 +1,12 @@
 "use client";
 
-import Slider from "@/app/components/Section/BolidSection/Slider";
+import Slider from "@/app/components/Section/ProjectSection/Slider";
 
 interface ParamsParamsClientSlider {
   teamId: string;
 }
 const ClientSlider: React.FC<ParamsParamsClientSlider> = ({ teamId }) => {
-  return <Slider currentBolid={teamId} darkMode></Slider>;
+  return <Slider currentProject={teamId} darkMode></Slider>;
 };
 
 export default ClientSlider;

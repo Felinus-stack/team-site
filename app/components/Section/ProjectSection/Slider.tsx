@@ -5,14 +5,14 @@ import React, { useRef, useState } from "react";
 import SliderElement from "./SliderElement";
 
 export interface SliderProps {
-  currentBolid: string;
-  onChangeBolid?: (newBolid: string) => void;
+  currentProject: string;
+  onChangeProject?: (newProject: string) => void;
   darkMode?: boolean;
 }
 
 const Slider: React.FC<SliderProps> = ({
-  currentBolid = "RT13e",
-  onChangeBolid = () => {},
+  currentProject = "新乡市卡口车辆防疫管理系统",
+  onChangeProject = () => {},
   darkMode = false,
 }) => {
   // 拖拽状态
@@ -24,15 +24,15 @@ const Slider: React.FC<SliderProps> = ({
   const router = useRouter();
   const pathname = usePathname();
   const currentLocale = pathname!.split("/")[1];
-  const teamRedirect = (bolid: string) =>
-    router.push(`/${currentLocale}/team/${bolid}`);
-  const bolidRedirect = (bolid: string) =>
-    router.push(`/${currentLocale}/bolid/${bolid}`);
+  const teamRedirect = (project: string) =>
+    router.push(`/${currentLocale}/team/${project}`);
+  const projectRedirect = (project: string) =>
+    router.push(`/${currentLocale}/projects/${project}`);
 
   if (pathname && pathname.includes(`/team/`)) {
-    onChangeBolid = teamRedirect;
-  } else if (pathname && pathname.includes(`/bolid/`)) {
-    onChangeBolid = bolidRedirect;
+    onChangeProject = teamRedirect;
+  } else if (pathname && pathname.includes(`/projects/`)) {
+    onChangeProject = projectRedirect;
   }
 
   // 开始拖拽
@@ -79,108 +79,59 @@ const Slider: React.FC<SliderProps> = ({
         <div className="flex relative gap-12 sm:gap-24 mx-8 md:ml-[calc((100vw-var(--container-width))/2)]">
           <SliderElement
             darkMode={darkMode}
+            date={2025}
+            bolid="智能陪护"
+            onClick={onChangeProject}
+            currentProject={currentProject}
+          />
+          <SliderElement
+            darkMode={darkMode}
             date={2024}
-            bolid="RT14e"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
+            bolid="新乡市卡口车辆防疫管理系统"
+            onClick={onChangeProject}
+            currentProject={currentProject}
           />
           <SliderElement
             darkMode={darkMode}
             date={2023}
-            bolid="RT13e"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
-          />
-          <SliderElement
-            darkMode={darkMode}
-            date={2023}
-            bolid="RT11b"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
+            bolid="新生报道系统"
+            onClick={onChangeProject}
+            currentProject={currentProject}
           />
           <SliderElement
             darkMode={darkMode}
             date={2022}
-            bolid="RT12e"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
+            bolid="无人车定位跟踪系统"
+            onClick={onChangeProject}
+            currentProject={currentProject}
           />
           <SliderElement
             darkMode={darkMode}
             date={2021}
-            bolid="RT11"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
+            bolid="网格化管理系统"
+            onClick={onChangeProject}
+            currentProject={currentProject}
           />
           <SliderElement
             darkMode={darkMode}
             date={2020}
-            bolid="RTX"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
+            bolid="统战管理系统"
+            onClick={onChangeProject}
+            currentProject={currentProject}
           />
           <SliderElement
             darkMode={darkMode}
             date={2019}
-            bolid="RT09"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
+            bolid="场所工作人员管理界面"
+            onClick={onChangeProject}
+            currentProject={currentProject}
           />
           <SliderElement
             darkMode={darkMode}
             date={2018}
-            bolid="RT08"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
-          />
-          <SliderElement
-            darkMode={darkMode}
-            date={2017}
-            bolid="RT07"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
-          />
-          <SliderElement
-            darkMode={darkMode}
-            date={2016}
-            bolid="RT06"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
-          />
-          <SliderElement
-            darkMode={darkMode}
-            date={2015}
-            bolid="RT05"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
-          />
-          <SliderElement
-            darkMode={darkMode}
-            date={2014}
-            bolid="RT04"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
-          />
-          <SliderElement
-            darkMode={darkMode}
-            date={2013}
-            bolid="RT03"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
-          />
-          <SliderElement
-            darkMode={darkMode}
-            date={2012}
-            bolid="RT02"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
-          />
-          <SliderElement
-            darkMode={darkMode}
-            date={2011}
-            bolid="RT01"
-            onClick={onChangeBolid}
-            currentBolid={currentBolid}
+            bolid="XXX市信访预警系统"
+            onClick={onChangeProject}
+            currentProject={currentProject}
           />
           <div className="flex-shrink-0 w-1 md:w-[calc((85vw-var(--container-width))/2)]"></div>
         </div>

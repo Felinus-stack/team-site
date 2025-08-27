@@ -41,7 +41,7 @@
   },
   "navigation": {
     "home": "首页",
-    "bolid": "作品展示",
+    "bolid": "项目展示",
     "team": "团队架构",
     "about": "关于我们",
     "partners": "校企伙伴",
@@ -54,7 +54,7 @@
     "findUs": "办公地址",
     "navigation": "站点导航",
     "home": "首页",
-    "bolid": "技术展示",
+    "bolid": "技术项目",
     "team": "团队组成",
     "about": "发展历程",
     "partners": "合作企业",
@@ -77,17 +77,17 @@
     "media": "媒体",
     "recruitment": "招新"
   },
-  "bolidSection": {
-    "moreAboutBolid": "了解更多关于赛车",
+  "projectSection": {
+    "moreAboutProject": "了解更多关于项目",
     "meetTeam": "认识团队",
-    "acceleration": "加速",
-    "mass": "质量",
-    "power": "功率",
-    "specyfikacja": "规格",
-    "bolidu": "赛车",
-    "TXTacceleration": "0-100公里/小时加速",
-    "TXTmass": "发动机功率",
-    "TXTpower": "车辆质量"
+    "acceleration": "响应速度",
+    "mass": "架构复杂度",
+    "power": "性能指标",
+    "specyfikacja": "技术规格",
+    "projektu": "项目",
+    "TXTacceleration": "响应时间",
+    "TXTmass": "技术架构",
+    "TXTpower": "项目规模"
   },
   "heroAbout": {
     "title": "认识我们的团队"

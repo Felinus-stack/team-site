@@ -5,8 +5,8 @@ import Title from "../../Title";
 export interface SliderElementProps {
   date: number;
   bolid: string;
-  onClick: (bolidName: string) => void;
-  currentBolid: string;
+  onClick: (projectName: string) => void;
+  currentProject: string;
   darkMode: boolean;
 }
 
@@ -14,10 +14,10 @@ const SliderElement: React.FC<SliderElementProps> = ({
   date,
   bolid,
   onClick,
-  currentBolid,
+  currentProject,
   darkMode,
 }) => {
-  const isActive = currentBolid === bolid;
+  const isActive = currentProject === bolid;
   const handleClick = () => onClick(bolid);
   let subColor: "white" | "black" | "red" | "gray" | undefined = "black";
   let dotColor = "bg-neutral-300";

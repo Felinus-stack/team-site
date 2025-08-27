@@ -2,14 +2,14 @@
 
 import Text from "../../Text";
 
-interface BolidSpecsProps {
+interface ProjectSpecsProps {
   animate: string;
   acceleration: string;
   power: string;
   mass: string;
   dict: any;
 }
-const BolidSpecs: React.FC<BolidSpecsProps> = ({
+const ProjectSpecs: React.FC<ProjectSpecsProps> = ({
   animate,
   acceleration,
   power,
@@ -27,7 +27,7 @@ const BolidSpecs: React.FC<BolidSpecsProps> = ({
               {dict.specyfikacja}
             </Text>
             <Text right center bold medium color="white" opacity1>
-              {dict.bolidu}
+              {dict.projektu}
             </Text>
           </div>
           <svg
@@ -109,7 +109,7 @@ const BolidSpecs: React.FC<BolidSpecsProps> = ({
             <h2
               className={`hidden min-w-fit md:block text-customRed font-akiraExpanded text-2xl font-extrabold leading-tight`}
             >
-              {dict.TXTmass}
+              {dict.TXTpower}
             </h2>
           </div>
         </div>
@@ -150,7 +150,7 @@ const BolidSpecs: React.FC<BolidSpecsProps> = ({
             <h2
               className={`hidden md:block text-customRed font-akiraExpanded text-2xl font-extrabold leading-tight`}
             >
-              {dict.TXTpower}
+              {dict.TXTmass}
             </h2>
           </div>
         </div>
@@ -159,4 +159,4 @@ const BolidSpecs: React.FC<BolidSpecsProps> = ({
   );
 };
 
-export default BolidSpecs;
+export default ProjectSpecs;

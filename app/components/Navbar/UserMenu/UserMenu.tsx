@@ -116,8 +116,8 @@ const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
           <div className="flex flex-col cursor-pointer">
             <MenuItem onClick={() => handleMenuItemClick(`/`)} label="Home" />
             <MenuItem
-              onClick={() => handleMenuItemClick(`/bolid/RT14e`)}
-              label="Bolid"
+              onClick={() => handleMenuItemClick(`/projects`)}
+              label="Projects"
             />
             <MenuItem
               onClick={() => handleMenuItemClick(`/team/RT14e`)}
