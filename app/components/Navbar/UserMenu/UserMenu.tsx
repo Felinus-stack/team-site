@@ -120,7 +120,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
               label="Projects"
             />
             <MenuItem
-              onClick={() => handleMenuItemClick(`/team/RT14e`)}
+              onClick={() => handleMenuItemClick(`/team/智能陪护`)}
               label="Zespoł"
             />
             <MenuItem

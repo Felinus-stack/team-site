@@ -39,7 +39,7 @@ const GarageAbout: React.FC<GarageAboutProps> = ({ dict }) => {
               <div className=" hidden md:block relative h-2/3">
                 <Image
                   src="/images/garage/1.jpg"
-                  alt="bolid"
+                  alt="project"
                   layout="fill"
                   objectFit="cover"
                   objectPosition="center 20%"
@@ -98,7 +98,7 @@ const GarageAbout: React.FC<GarageAboutProps> = ({ dict }) => {
               <Image
                 className="scale-x-[-1]"
                 src="/images/garage/2.jpg"
-                alt="bolid"
+                alt="project"
                 layout="fill"
                 objectFit="cover"
                 objectPosition="center 20%"

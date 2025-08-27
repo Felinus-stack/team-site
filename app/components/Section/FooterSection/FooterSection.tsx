@@ -22,7 +22,7 @@ interface FooterSectionProps {
     findUs: string;
     navigation: string;
     home: string;
-    bolid: string;
+    projects: string;
     team: string;
     about: string;
     partners: string;
@@ -171,7 +171,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ dict }) => {
               </Text>
               <ul className="mt-1 md:mt-2">
                 <FooterLink href="/">{dict.home}</FooterLink>
-                <FooterLink href="/projects">{dict.bolid}</FooterLink>
+                <FooterLink href="/projects">{dict.projects}</FooterLink>
                 <FooterLink href="/team">{dict.team}</FooterLink>
                 <FooterLink href="/about">{dict.about}</FooterLink>
                 <FooterLink href="/partners">{dict.partners}</FooterLink>

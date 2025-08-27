@@ -17,7 +17,7 @@ interface UserCardProps {
   roleHistory: {
     [key: string]: {
       role: string;
-      bolidName: string;
+      projectName: string;
       department: string;
     }[];
   };

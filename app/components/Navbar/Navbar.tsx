@@ -10,7 +10,7 @@ interface NavbarProps {
   lang: string;
   dict: {
     home: string;
-    bolid: string;
+    projects: string;
     team: string;
     about: string;
     partners: string;

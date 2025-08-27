@@ -2,20 +2,20 @@
   "heroSection": {
     "title1": "WROCŁAW UNIVERSITY OF SCIENCE AND TECHNOLOGY",
     "title2": "PWR RACING TEAM",
-    "description": "PWR Racing Team is a Strategic Science Club of Wrocław University of Science and Technology, as well as the oldest and most titled Formula Student racing team in Poland. Since 2009, a group of about 80 students from Wrocław universities has been building race cars and competing in prestigious engineering competitions around the world each year.",
+    "description": "Yuanjing Team is a student software development team established in 2018, focusing on cutting-edge technology research and innovative software development. Our team brings together computer enthusiasts from various majors to explore Go/Python/Java programming, web development, and algorithm competitions.",
     "subtitle": "WE TAKE IT TO THE NEXT LEVEL",
     "button": "Learn more"
   },
   "fsSection": {
     "title": "FORMULA STUDENT",
-    "description": "The Formula Student competition not only tests the performance of the car but also engineering knowledge and management skills. Participants are divided into classes depending on the type of car - electric (EV) or combustion (CV). In some editions, there is also the possibility to compete in the optional autonomous category (DV). The competition consists of several scored events, which are divided into static and dynamic. The team with the highest number of points out of a thousand possible is declared the winner of their class. The scoring method varies slightly between editions.",
+    "description": "Algorithm competitions test not only programming skills but also engineering knowledge and problem-solving abilities. Participants are divided into different categories based on their experience level and programming languages. Competitions include various challenges such as data structures, algorithms, and system design. Teams are evaluated based on code quality, efficiency, and innovation. The scoring methods vary across different competition platforms.",
     "buttonText": "Learn more"
   },
   "teamSection": {
     "title": "TEAM",
     "subtitle": "TOGETHER WE CAN DO ANYTHING",
     "description": "Young, ambitious, committed, and brave. These words describe the students of Wrocław University of Science and Technology, especially the members of the PWR Racing Team. Our team has a structure like a serious company. At its head is the team leader. The greatest responsibility rests on them. Directly reporting to them is the technical leader, who in turn oversees the leaders of individual departments, except for product, whose head is subordinate to the team leader. For the rest of the members, the leader of their department is their supervisor.",
-    "buttonLabel": "Learn more about the car"
+    "buttonLabel": "Learn more about our projects"
   },
   "historySection": {
     "title": "TEAM HISTORY",
@@ -23,10 +23,10 @@
     "members": "MEMBERS",
     "membersDescription": "United by one passion",
     "projects": "PROJECTS",
-    "projectsDescription": "Completed cars",
+    "projectsDescription": "Completed projects",
     "achievements": "ACHIEVEMENTS",
     "achievementsDescription": "In international competitions",
-    "description": "Students of Wrocław University of Science and Technology have always been among the most talented in all of Poland, and their desire to gain knowledge and experience is exceptional. To meet the needs of young constructors and managers, the PWR Racing Team was founded in 2009. Each season, we create a new racing car. We have fifteen unique combustion car models to our credit, each of which can easily outperform the previous one. The team's first electric car with autonomous driving systems – RT12e – was created in 2022. We are currently working on our fifteenth car. In the 2016/2017 season, we showed what Poles are capable of. As the first Polish team, we won the entire Formula Student Italy competition. Since then, we have been among the best teams in the world ranking, holding the first place in Poland and the 11th place in the world in the 2021 season.",
+    "description": "Students passionate about computer science have always been among the most talented, with exceptional desire for knowledge and experience. To meet the needs of young developers and project managers, Yuanjing Team was founded in 2018. Each year, we develop new innovative software projects. We have 15+ campus projects to our credit, each showcasing advanced technology and practical applications. Our team members have achieved recognition in programming competitions like the Blue Bridge Cup. Since establishment, we've been committed to technical excellence and continuous learning in software development.",
     "buttonText": "Learn more"
   },
   "joinusSection": {
@@ -41,7 +41,7 @@
   },
   "navigation": {
     "home": "Home",
-    "bolid": "Projects",
+    "projects": "Projects",
     "team": "Team",
     "about": "About Us",
     "partners": "Partners",
@@ -54,7 +54,7 @@
     "findUs": "Where to find us?",
     "navigation": "Navigation",
     "home": "Home",
-    "bolid": "Projects",
+    "projects": "Projects",
     "team": "Team",
     "about": "About Us",
     "partners": "Partners",
@@ -96,14 +96,14 @@
     "garage": "Garage",
     "teamHistory": "Team History",
     "departments": "Our Departments",
-    "formulaStudent": "Formula Student",
-    "paragraph1": "PWR Racing Team is the Strategic Student Scientific Circle of the Wrocław University of Technology and the oldest and most titled Formula Student racing team in Poland. Since 2009, a group of about 80 students from Wrocław universities has been constructing bolids and competing in prestigious engineering competitions around the world every year. The greatest success of the PWR Racing Team is winning the entire edition of the competition, which took place at Formula SAE Italy in 2017. It was the first victory of a Polish Formula Student Team in history.",
-    "paragraph2": "Throughout its activity, the Team has constructed 12 combustion bolids, which have won top places in Formula Student competitions across Europe and the world. Following changes in the automotive industry, PWR Racing Team took on a new challenge and began building electric-powered constructions. Team members changed the drive in just one year. Moreover, at the same time, a set of solutions allowing for autonomous driving was created. Starting a new era, in 2022 the first electric bolid with autonomous driving systems — RT12e — was created. Currently, the Team is working on the third construction of this type — RT14e.",
-    "paragraph3": "Designing and constructing a Formula Student-class bolid is an advanced, interdisciplinary engineering project that allows young engineers and managers to develop. It requires enormous commitment from the Team, which translates into thousands of hours that members spend in the workshop, developing the project and making their parts. The construction of the vehicle is possible thanks to the support of the Wrocław University of Technology, the City of Wrocław, the Manus Foundation, and over 120 partners — companies and institutions from all over Europe."
+    "formulaStudent": "Technology Innovation",
+    "paragraph1": "Yuanjing Team is a student software development organization focused on innovative technology research and practical application. Since 2018, our team has brought together computer enthusiasts from various majors to explore cutting-edge programming technologies and participate in prestigious competitions. Our greatest achievements include completing 15+ campus projects and winning awards in algorithm competitions like the Blue Bridge Cup.",
+    "paragraph2": "Throughout its activity, the Team has developed numerous software projects, earning recognition in programming competitions across the region. Following the rapid evolution of technology, Yuanjing Team embraces new challenges in areas like artificial intelligence, web development, and mobile applications. Team members quickly adapt to emerging technologies and frameworks. We've successfully implemented various innovative solutions in campus management systems, intelligent companions, and tracking systems. Currently, the Team is working on next-generation projects incorporating modern architectures.",
+    "paragraph3": "Designing and developing comprehensive software systems is an advanced, interdisciplinary project that allows young developers and managers to grow. It requires enormous commitment from the Team, translating to thousands of hours that members spend coding, designing, and implementing solutions. The success of our projects is possible thanks to the support of our university, local technology companies, and various industry partners who provide guidance and resources."
   },
   "garage": {
     "title": "Garage",
-    "paragraph": "At Sopocka Street 16, in a quiet area of Wrocław, you will find our workshops – garages where we work on our bolids with passion and commitment. These five spacious garages are our zone of creativity and innovation, where the PWR Racing Team faces new engineering challenges every day. Each garage is tailored to the specific needs of our departments, providing optimal conditions for working on the suspension, aerodynamics, electronics, and autonomous systems of our bolids. This space not only fosters technological development but also serves as a place for team integration, knowledge exchange, and problem-solving.",
+    "paragraph": "At our campus laboratory in Xinxiang, you will find our development spaces where we work on software projects with passion and commitment. These modern facilities are our zone of creativity and innovation, where Yuanjing Team tackles new programming challenges every day. Each workspace is tailored to the specific needs of our departments, providing optimal conditions for frontend development, backend architecture, mobile applications, and algorithm research. This space not only fosters technological development but also serves as a place for team collaboration, knowledge sharing, and problem-solving.",
     "address": "Sopocka Street 16, Wrocław",
     "contact": "Contact"
   },
@@ -132,7 +132,7 @@
       ]
     },
     "backend": {
-      "description": "The department is responsible for the handmade production of all composite elements present in the bolid. Starting from the largest element, the load-bearing structure, through the aerodynamic package, to the driver's ergonomics and the protective structure for the high-voltage battery.",
+      "description": "The department is responsible for backend development, server architecture, and database management. From designing scalable microservices architecture to implementing robust APIs, ensuring data security and system performance optimization.",
       "responsibilities": [
         {
           "text": "modeling composite elements in CAD programs",
@@ -153,7 +153,7 @@
       ]
     },
     "product": {
-      "description": "The department is responsible for the image, promotion of the Team, as well as logistics and event organization. It is also responsible for preparing static competitions for Formula Student events, such as the algorithm presentation.",
+      "description": "The department is responsible for product management, user experience design, and project coordination. From analyzing requirements and creating prototypes to managing product lifecycle and organizing team events, including preparation for algorithm competitions.",
       "responsibilities": [
         { "text": "creating promotional materials", "icon": "plik.svg" },
         { "text": "preparing algorithm presentations", "icon": "kolo.svg" },
@@ -165,7 +165,7 @@
       ]
     },
     "design": {
-      "description": "The department is responsible for developing the autonomous system and programming microprocessors that control the driver's interface, braking, or steering of the vehicle. It is responsible for the operation of path planning, vehicle control, and perception systems when the driver is not in the bolid. The design is written in programming languages such as C, C++, and Python.",
+      "description": "The department is responsible for algorithm research, artificial intelligence development, and advanced programming solutions. From developing machine learning models to implementing efficient algorithms for data processing, natural language processing, and computer vision. Projects are developed using programming languages such as Python, C++, and Java.",
       "responsibilities": [
         {
           "text": "developing algorithms that improve autonomous driving",
@@ -209,7 +209,7 @@
       ]
     },
     "algorithm": {
-      "description": "Department responsible for contact with partners, financial management of the Team, and preparation of static competition for Formula Student competitions, such as algorithm presentation.",
+      "description": "Department responsible for team operations, content creation, and social media management. Including partnership coordination, team promotion, and preparation for programming competitions and technical presentations.",
       "responsibilities": [
         {
           "text": "Coordination of orders, data analysis, optimization of the Team's work",
@@ -232,7 +232,7 @@
     "competitions": {
       "acceleration": {
         "title": "Acceleration",
-        "text": "A competition that involves covering 75 meters as quickly as possible, thus assessing the acceleration of the car. Teams have two attempts, and the better one is evaluated."
+        "text": "A programming challenge that involves solving algorithm problems as efficiently as possible, assessing code optimization and problem-solving speed. Teams have multiple attempts, and the best solution is evaluated."
       },
       "skidPad": {
         "title": "Skid Pad",
@@ -248,11 +248,11 @@
       },
       "cost": {
         "title": "Cost and Manufacturing",
-        "text": "A competition that evaluates the accuracy of the project cost estimate and the team members' knowledge of material and manufacturing costs of the car."
+        "text": "A competition that evaluates project planning accuracy and team members' knowledge of software development costs, resource allocation, and technology stack selection."
       },
       "engineering": {
         "title": "Engineering Design",
-        "text": "A competition involving the presentation of the car design. Judges assess the engineering skills and ingenuity of the team members in designing both the overall vehicle and individual systems. This is the highest-scoring static competition, judged by automotive industry experts."
+        "text": "A competition involving the presentation of software architecture and system design. Judges assess the technical skills and creativity of team members in designing both the overall system and individual components. This is the highest-scoring presentation competition, judged by software industry experts."
       },
       "algorithm": {
         "title": "algorithm Plan Presentation",

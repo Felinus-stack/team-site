@@ -7,7 +7,7 @@ const members = [
             {
                 "role": "技术总监",
                 "department": "管理部",
-                "bolidName": "RT14e"
+                "projectName": "智能陪护"
             }
         ]
     },
@@ -19,7 +19,7 @@ const members = [
             {
                 "role": "前端负责人",
                 "department": "前端组",
-                "bolidName": "RT14e"
+                "projectName": "智能陪护"
             }
         ]
     },
@@ -31,7 +31,7 @@ const members = [
             {
                 "role": "UI设计师",
                 "department": "设计组",
-                "bolidName": "RT14e"
+                "projectName": "智能陪护"
             }
         ]
     },
@@ -43,7 +43,7 @@ const members = [
             {
                 "role": "后端工程师",
                 "department": "后端组",
-                "bolidName": "RT14e"
+                "projectName": "智能陪护"
             }
         ]
     },
@@ -55,7 +55,7 @@ const members = [
             {
                 "role": "产品经理",
                 "department": "产品组",
-                "bolidName": "RT14e"
+                "projectName": "智能陪护"
             }
         ]
     },
@@ -67,7 +67,7 @@ const members = [
             {
                 "role": "前端工程师",
                 "department": "前端组",
-                "bolidName": "RT14e"
+                "projectName": "智能陪护"
             }
         ]
     },
@@ -79,7 +79,7 @@ const members = [
             {
                 "role": "UI/UX设计师",
                 "department": "设计组",
-                "bolidName": "RT14e"
+                "projectName": "智能陪护"
             }
         ]
     },
@@ -91,7 +91,7 @@ const members = [
             {
                 "role": "后端工程师",
                 "department": "后端组",
-                "bolidName": "RT14e"
+                "projectName": "智能陪护"
             }
         ]
     },
@@ -103,7 +103,7 @@ const members = [
             {
                 "role": "产品运营",
                 "department": "产品组",
-                "bolidName": "RT14e"
+                "projectName": "智能陪护"
             }
         ]
     },
@@ -115,7 +115,7 @@ const members = [
             {
                 "role": "前端工程师",
                 "department": "前端组",
-                "bolidName": "RT14e"
+                "projectName": "智能陪护"
             }
         ]
     }
