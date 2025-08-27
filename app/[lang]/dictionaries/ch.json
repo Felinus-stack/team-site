@@ -82,12 +82,12 @@
     "meetTeam": "认识团队",
     "acceleration": "响应速度",
     "mass": "架构复杂度",
-    "power": "性能指标",
-    "specyfikacja": "技术规格",
+    "power": "开发周期",
+    "specyfikacja": "规格",
     "projektu": "项目",
-    "TXTacceleration": "响应时间",
+    "TXTacceleration": "参与人数",
     "TXTmass": "技术架构",
-    "TXTpower": "项目规模"
+    "TXTpower": "开发周期"
   },
   "heroAbout": {
     "title": "认识我们的团队"
