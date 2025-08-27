@@ -3,35 +3,47 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
+// 校企伙伴数据，与partners页面保持同步
+const strategicSponsors = [
+  "hist.png",
+  "htu.png", 
+  "xxu.png",
+  "xxgc.png",
+];
+
+const platinumSponsors = [
+  "weibo.png",
+  "MiHoYo.png",
+  "kuaishou.png",
+  "JD.png",
+  "DiDi.png",
+  "baidu.png",
+  "360.png",
+  "Ctrip.png",
+  "haluo.png",
+  "weipai.png",
+  "xiaomi.png",
+  "ByteDance.png",
+  "huawei.png",
+  "alibaba.png",
+  "tongcheng.png",
+  "jinshanyun.png",
+  "yunzhi.png",
+  "tengyu.png",
+  "bluelogo.png",
+  "duxiaoman.png",
+  "FlashEx.png",
+  "haoweilai.png",
+  "shuma.png",
+  "tengdataiyuan.png"
+];
+
+
+
+// 合并所有赞助商图片
 const sponsors = [
-  "/images/sponsors/hist.png",
-  "/images/sponsors/htu.png",
-  "/images/sponsors/xxu.png",
-  "/images/sponsors/xxgc.png",
-  "/images/sponsors/3d expert.jpg",
-  "/images/sponsors/3designlab.png",
-  "/images/sponsors/3m.png",
-  "/images/sponsors/apex one.png",
-  "/images/sponsors/astromal.png",
-  "/images/sponsors/betis.png",
-  "/images/sponsors/content.jpg",
-  "/images/sponsors/ellagro.png",
-  "/images/sponsors/endego.jpg",
-  "/images/sponsors/fanuc.jpg",
-  "/images/sponsors/hexlogo_black_png.png",
-  "/images/sponsors/logo tor krzywa.png",
-  "/images/sponsors/logo_amkmotion rgb.png",
-  "/images/sponsors/mahle.png",
-  "/images/sponsors/mibm.png",
-  "/images/sponsors/ntn-snr.png",
-  "/images/sponsors/premium solutions.png",
-  "/images/sponsors/pts waś_logo2023.jpg",
-  "/images/sponsors/radiotechnika product.png",
-  "/images/sponsors/schaeffler.png",
-  "/images/sponsors/siemens.png",
-  "/images/sponsors/staubli.png",
-  "/images/sponsors/top1karting_logo_rgb.svg",
-  "/images/sponsors/wolften.jpg",
+  ...strategicSponsors.map(name => `/images/sponsors/${name}`),
+  ...platinumSponsors.map(name => `/images/sponsors/${name}`),
 ];
 
 const SponsorsSection = () => {

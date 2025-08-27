@@ -41,79 +41,7 @@ const platinumSponsors = [
   { name: "tengdataiyuan.png", url: "https://www.tdology.com/" }
 ];
 
-const goldSponsors = [
-  {
-    name: "adbl.png",
-    url: "https://adbl.eu/",
-  },
-  { name: "airtech.png", url: "https://airtech.lu/" },
-  { name: "filipowicz pawel.png", url: "https://www.pfpcnc.pl/" },
-  { name: "avl.jpeg", url: "https://www.avl.com/en" },
-  { name: "ams świdnica.png", url: "https://ams-at.eu/" },
-  { name: "anodal.png", url: "https://anodal.pl/" },
-  { name: "astar.png", url: "https://astar.pl/" },
-  { name: "bosch.png", url: "https://www.bosch.pl/" },
-  {
-    name: "ctc-logo-mit-airbus-line.png",
-    url: "https://www.ctc-backend.com/en/",
-  },
-  {
-    name: "computer controls.jpg",
-    url: "https://www.ccontrols.pl/pl_pl/?utm_term=computer%20controls&utm_campaign=4P+-+Wyszukiwarka+-+Brand+-+PL&utm_source=adwords&utm_medium=ppc&hsa_acc=5776325502&hsa_cam=1748560941&hsa_grp=75287601584&hsa_ad=539317009618&hsa_src=g&hsa_tgt=kwd-311144365331&hsa_kw=computer%20controls&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjwj9-zBhDyARIsAERjds0xUeQm0g1a8hBpirS6YIs2AOKA3sZHQDU7LeztdhwZMP-YO0y7vI8aAkPSEALw_wcB",
-  },
-  { name: "altium.png", url: "https://www.altium.com/" },
-  { name: "czekała.png", url: "https://wagi-czekala.pl/" },
-  { name: "eurocircuits.jpg", url: "https://www.eurocircuits.com/" },
-  { name: "ELMAR_logo_www_duze_red.png", url: "https://www.elmar-bhp.pl/" },
-  { name: "indasa.jpg", url: "https://indasa.sklep.pl/" },
-  { name: "inkarbo.jpg", url: "https://www.inkarbo.com/" },
-  { name: "inter-metal.png", url: "https://www.inter-metal.com.pl/" },
-  { name: "kaufland.png", url: "https://www.kaufland.pl/" },
-  { name: "lange .png", url: "https://langelukaszuk.pl/" },
-  { name: "quay.png", url: "https://www.quay.pl/" },
-  { name: "mitutoyo.png", url: "https://mitutoyo.pl/pl_pl" },
-  { name: "ntn-snr.png", url: "https://www.ntn-snr.com/pl" },
-  { name: "polak modele i prototypy.png", url: "https://modeleiprototypy.pl/" },
-  { name: "protoplastic.png", url: "https://protoplastic.pl/" },
-  { name: "rs.png", url: "https://pl.rs-online.com/web/" },
-  { name: "schaeffler.png", url: "https://www.schaeffler.pl/pl/" },
-  { name: "tenneco logo finalrgb.png", url: "https://www.tenneco.com/" },
-  { name: "vector.png", url: "https://www.vector.com/int/en/" },
-  { name: "Wolfratech_Logo.png", url: "http://www.wolfratech.pl/" },
-  { name: "WAMTECHNIK_Logo_NeutralBlack-1.png", url: "https://wamtechnik.pl/" },
-];
 
-const silverSponsors = [
-  { name: "logo-AMA-PROFIL-COREL-_2_.png", url: "https://www.amaprofil.pl/" },
-  { name: "auto zatoka.jpg", url: "https://www.auto-zatoka.pl/" },
-  { name: "boellhoff-logo.svg", url: "https://www.boellhoff.com/pl-pl/" },
-  { name: "chem trend.png", url: "https://pl.chemtrend.com/" },
-  { name: "czupryna car.png", url: "http://czupryna.eu/" },
-  { name: "cnc jurczak.png", url: "https://cncjurczak.pl/" },
-  { name: "LOGO-nowe 2019.png", url: "https://www.perrot.de/pl/" },
-  {
-    name: "dewrap.png",
-    url: "https://www.facebook.com/p/DeWrap-100063967515424/",
-  },
-  { name: "hellermanntyton.jpg", url: "https://www.hellermanntyton.pl/" },
-  { name: "jusky.png", url: "https://jusky.pl/" },
-  {
-    name: "logo_branson.png",
-    url: "https://www.emerson.com/pl-pl/automation/branson",
-  },
-  { name: "logo_wichuworkshop.jpg", url: "https://www.wichuworkshop.pl/" },
-  { name: "Logo_NewTechnology (1).png", url: "https://www.newtec.pl/pl/" },
-  { name: "IEWC-Logo.png", url: "https://www.iewc.com/" },
-  { name: "smart one.png", url: "https://smart-one.com.pl/" },
-  {
-    name: "sonel.png",
-    url: "https://www.sonel.pl/pl/",
-  },
-  { name: "stelweld.png", url: "https://www.stelweld.com.pl/" },
-  { name: "tadex_logo_black.svg", url: "https://tadex.com.pl/" },
-  { name: "wo bit.png", url: "https://wobit.com.pl/" },
-  { name: "wimarol.jpg", url: "https://waterjet.pl/" },
-];
 
 
 
@@ -229,21 +157,7 @@ const Partners = () => {
             gridCols="grid-cols-2"
           />
 
-          <SponsorGrid
-            sponsorRank="黄金合作伙伴"
-            sponsors={goldSponsors}
-            height="h-16 md:h-36"
-            gap="md:gap-20"
-            gridCols="grid-cols-3"
-          />
 
-          <SponsorGrid
-            sponsorRank="白银合作伙伴"
-            sponsors={silverSponsors}
-            height="h-16 md:h-32"
-            gap="md:gap-16"
-            gridCols="grid-cols-3 md:grid-cols-4"
-          />
         </div>
       </Container>
     </div>
