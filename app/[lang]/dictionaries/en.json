@@ -71,7 +71,7 @@
     "recruitment": "Recruitment",
     "createdBy": "Project & Execution: yuanjingteam",
     "allRightsReserved": "© 2024 All rights reserved",
-    "seasonDescription": "In each season, we create a new racing car. We have as many as twelve unique models of combustion cars, each of which can easily outperform the previous one. Last season, the first electric car with autonomous driving systems in the history of the Team – RT12e – was created. We are currently working on our fourteenth construction."
+    "seasonDescription": "Yuanjing team, founded in 2018, unites computer enthusiasts across all majors. We practice Go/Python/Java, web development, and algorithm competitions. With 15+ campus projects and \"Blue Bridge Cup\" awards, every line of code creates value."
   },
   "sidebar": {
     "media": "Media",
@@ -266,7 +266,33 @@
     "theyWillAnswer": "They will answer your questions:",
     "whereToFindUs": "WHERE TO FIND US?",
     "projectSupervisors": "Project Supervisors:",
-    "siteAdministration": "Site Administration:"
+    "siteAdministration": "Site Administration:",
+    "socialMedia": "Follow Us:",
+    "officeHours": "Office Hours:",
+    "officeHoursText": "Monday - Friday 9:00-17:00",
+    "mailingAddress": "Mailing Address:",
+    "addressText": "Yuanjing Team, Pingyuan Jianye Sports Center\nPostal Code: 453000",
+    "emergencyContact": "Emergency Contact:",
+    "emergencyPhone": "+86 152-2596-8963",
+    "faq": "Frequently Asked Questions",
+    "faqItems": [
+      {
+        "question": "How to join yuanjing Team?",
+        "answer": "Please visit our 'Join Us' page for the latest recruitment information, or contact our team leaders directly."
+      },
+      {
+        "question": "How to become a partner?",
+        "answer": "Please contact our partnership coordinator. We are happy to discuss collaboration opportunities."
+      },
+      {
+        "question": "Can we visit the lab?",
+        "answer": "Yes! Please contact us in advance to schedule a visit."
+      },
+      {
+        "question": "What technical background is required?",
+        "answer": "We welcome students of all technical levels! From beginners to experienced developers, everyone can find suitable projects and learning paths."
+      }
+    ]
   },
   "joinUs": {
     "pageTitle": "RECRUITMENT",
