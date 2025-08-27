@@ -38,7 +38,7 @@ const getMembersData = async (names: string[]): Promise<TeamMember[]> => {
     if (memberData.length > 0) {
       const member = memberData[0];
       const currentRole =
-        member.roles.find((role: Role) => role.projectName === "RT14e")?.role ||
+        member.roles.find((role: Role) => role.projectName === "智能陪护")?.role ||
         "No current role";
 
       teamMembers.push({
@@ -116,7 +116,7 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
               <div key={index} className="flex flex-col gap-6 ">
                 <UserCard
                   member={member}
-                  teamId="RT14e"
+                  teamId="智能陪护"
                   roleHistory={roleHistory}
                 />
                 <EmailAction
@@ -148,7 +148,7 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
                   key={index}
                   opiekun={true}
                   member={member}
-                  teamId="RT14e"
+                  teamId="智能陪护"
                   roleHistory={roleHistory}
                 />
               ))}
@@ -161,7 +161,7 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
                 <UserCard
                   key={index}
                   member={member}
-                  teamId="RT14e"
+                  teamId="智能陪护"
                   roleHistory={roleHistory}
                 />
               ))}
@@ -233,36 +233,46 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
             </Text>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full gap-6 justify-items-center">
               <div className="text-center w-full max-w-md">
-                <Text bold className="mb-2">
-                  {dict.contactUs.officeHours}
-                </Text>
+                <div className="mb-2">
+                  <Text bold>
+                    {dict.contactUs.officeHours}
+                  </Text>
+                </div>
                 <Text>
                   {dict.contactUs.officeHoursText}
                 </Text>
               </div>
               <div className="text-center w-full max-w-md">
-                <Text bold className="mb-2">
-                  {dict.contactUs.emergencyContact}
-                </Text>
+                <div className="mb-2">
+                  <Text bold>
+                    {dict.contactUs.emergencyContact}
+                  </Text>
+                </div>
                 <Text>
                   {dict.contactUs.emergencyPhone}
                 </Text>
               </div>
               <div className="text-center w-full max-w-md">
-                <Text bold className="mb-2">
-                  邮箱联系
-                </Text>
+                <div className="mb-2">
+                  <Text bold>
+                    邮箱联系
+                  </Text>
+                </div>
                 <Text>
                   yuanjingteam@163.com
                 </Text>
               </div>
               <div className="text-center w-full max-w-md">
-                <Text bold className="mb-2">
-                  {dict.contactUs.mailingAddress}
-                </Text>
-                <Text className="whitespace-pre-line">
-                  {dict.contactUs.addressText}
-                </Text>
+                <div className="mb-2">
+                  <Text bold>
+                    {dict.contactUs.mailingAddress}
+                  </Text>
+                </div>
+                <div className="whitespace-pre-line">
+                  <Text>
+                    {dict.contactUs.addressText}
+                  </Text>
+                </div>
               </div>
             </div>
           </div>
@@ -273,11 +283,13 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
               {dict.contactUs.faq}
             </Text>
             <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-6 justify-items-center">
-              {dict.contactUs.faqItems.map((item, index) => (
+              {dict.contactUs.faqItems.map((item: {question: string, answer: string}, index: number) => (
                 <div key={index} className="text-center w-full max-w-md">
-                  <Text bold className="mb-2">
-                    {item.question}
-                  </Text>
+                  <div className="mb-2">
+                    <Text bold>
+                      {item.question}
+                    </Text>
+                  </div>
                   <Text>
                     {item.answer}
                   </Text>

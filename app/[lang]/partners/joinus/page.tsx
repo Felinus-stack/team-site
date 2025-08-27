@@ -32,7 +32,7 @@ const getMembersData = async (names: string[]): Promise<TeamMember[]> => {
 
   return teamMembers.map((member) => {
     const currentRole = member.roles.find(
-      (role) => role.projectName === "RT14e"
+      (role) => role.projectName === "智能陪护"
     )?.role;
     return {
       ...member,
@@ -82,7 +82,7 @@ const PartnersJoin: React.FC<Props> = async () => {
                   <UserCard
                     key={index}
                     member={member}
-                    teamId="RT14e"
+                    teamId="智能陪护"
                     roleHistory={{
                       [`${member.name} ${member.surname}`]: member.roles.map(
                         (role) => ({

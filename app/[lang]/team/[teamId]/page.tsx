@@ -182,7 +182,7 @@ const TeamPage = async ({ params }: { params: Iparams }) => {
 
                         <Image
                           src={`/images/projects/${params.teamId}/${params.teamId}.png`}
-                          alt="bolid"
+                          alt="project"
                           width={700}
                           height={551}
                           objectFit="cover"
