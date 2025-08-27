@@ -25,7 +25,7 @@ const TeamPage = async ({ params }: { params: Iparams }) => {
 
   interface RoleHistoryItem {
     role: string;
-    bolidName: string;
+    projectName: string;
     department: string;
   }
 
@@ -49,11 +49,11 @@ const TeamPage = async ({ params }: { params: Iparams }) => {
       }
       roleHistory[memberFullName].push({
         role: role.role,
-        bolidName: role.bolidName,
+        projectName: role.projectName,
         department: role.department,
       });
 
-      if (role.bolidName === teamId) {
+      if (role.projectName === teamId) {
         if (!membersByDepartment[role.department]) {
           membersByDepartment[role.department] = [];
         }

@@ -70,7 +70,7 @@
     "rodo": "数据保护",
     "recruitment": "招新",
     "createdBy": "设计与制作：源境软件工作室",
-    "allRightsReserved": "© 2024 版权所有",
+    "allRightsReserved": "© 2025 版权所有",
     "seasonDescription": "源境团队是一群对计算机领域满怀热忱的校园同行者聚集地，自2018年组建以来，始终秉持 “知行合一、协作共赢” 原则，打破年级与专业壁垒，在 Go/Python/Java 编程实践、Web 开发及算法竞赛备赛等方向探索，已完成 15 + 个校园实践项目，成员亦在 “蓝桥杯” 等赛事中获奖；在这里每一行代码都能创造价值，每一次探索都能抵达新 “境” 界。"
   },
   "sidebar": {
@@ -135,19 +135,19 @@
       "description": "负责 Web 后端的开发、部署与运维工作，追求稳定的服务、高效的开发与优雅的实现。",
       "responsibilities": [
         {
-          "text": "使用CAD软件进行复合材料部件建模",
+          "text": "Java、Go、Python",
           "icon": "plik.svg"
         },
         {
-          "text": "进行强度模拟及优化复合材料结构",
+          "text": "spring Boot、gin、django、express",
           "icon": "kolo.svg"
         },
         {
-          "text": "进行空气动力学套件的CFD模拟",
+          "text": "maven、gradle、docker、kubernetes",
           "icon": "klucz.svg"
         },
         {
-          "text": "制作及进行复合材料部件的强度测试",
+          "text": "https、token、prometheus、grafana",
           "icon": "box.svg"
         }
       ]

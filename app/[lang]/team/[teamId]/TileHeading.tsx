@@ -18,7 +18,7 @@ interface Member {
 
 interface Role {
   role: string;
-  bolidName: string;
+  projectName: string;
   department: string;
 }
 
@@ -122,7 +122,7 @@ const TileHeading: React.FC<ParamsTileHeading> = ({
                   <div className=" absolute w-2 h-2 rounded-full bg-white mt-2"></div>
                   <div className=" ml-5">
                     <Text center>
-                      {role.bolidName} - {role.role}
+                      {role.projectName} - {role.role}
                     </Text>
                   </div>
                 </div>

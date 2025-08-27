@@ -15,7 +15,7 @@ export async function getTeamByFullName(name: string, surname: string) {
         select: {
           department: true,
           role: true,
-          bolidName: true,
+          projectName: true,
         },
       },
     },

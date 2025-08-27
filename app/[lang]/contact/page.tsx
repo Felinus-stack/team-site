@@ -13,7 +13,7 @@ import { SiBilibili } from "react-icons/si";
 interface Role {
   department: string;
   role: string;
-  bolidName: string;
+  projectName: string;
 }
 interface TeamMember {
   name: string;
@@ -38,7 +38,7 @@ const getMembersData = async (names: string[]): Promise<TeamMember[]> => {
     if (memberData.length > 0) {
       const member = memberData[0];
       const currentRole =
-        member.roles.find((role: Role) => role.bolidName === "RT14e")?.role ||
+        member.roles.find((role: Role) => role.projectName === "RT14e")?.role ||
         "No current role";
 
       teamMembers.push({
@@ -87,7 +87,7 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
       roleHistory[memberFullName] = sortRoles(
         member.roles.map((role) => ({
           role: role.role,
-          bolidName: role.bolidName,
+          projectName: role.projectName,
           department: role.department,
         }))
       );
@@ -215,7 +215,7 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
                  <FaGithub />
                </a>
                <a 
-                 href="https://bilibili.com/" 
+                 href="https://space.bilibili.com/99622895" 
                  target="_blank"
                  rel="noopener noreferrer"
                  className="text-black hover:text-customRed duration-300"
