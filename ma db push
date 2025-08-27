@@ -1,0 +1,189 @@
+[1mdiff --git a/app/[lang]/dictionaries/ch.json b/app/[lang]/dictionaries/ch.json[m
+[1mindex 2b0542f..775c7a1 100644[m
+[1m--- a/app/[lang]/dictionaries/ch.json[m
+[1m+++ b/app/[lang]/dictionaries/ch.json[m
+[36m@@ -41,7 +41,7 @@[m
+   },[m
+   "navigation": {[m
+     "home": "首页",[m
+[31m-    "bolid": "作品展示",[m
+[32m+[m[32m    "bolid": "项目展示",[m
+     "team": "团队架构",[m
+     "about": "关于我们",[m
+     "partners": "校企伙伴",[m
+[36m@@ -54,7 +54,7 @@[m
+     "findUs": "办公地址",[m
+     "navigation": "站点导航",[m
+     "home": "首页",[m
+[31m-    "bolid": "技术展示",[m
+[32m+[m[32m    "bolid": "技术项目",[m
+     "team": "团队组成",[m
+     "about": "发展历程",[m
+     "partners": "合作企业",[m
+[36m@@ -77,17 +77,17 @@[m
+     "media": "媒体",[m
+     "recruitment": "招新"[m
+   },[m
+[31m-  "bolidSection": {[m
+[31m-    "moreAboutBolid": "了解更多关于赛车",[m
+[32m+[m[32m  "projectSection": {[m
+[32m+[m[32m    "moreAboutProject": "了解更多关于项目",[m
+     "meetTeam": "认识团队",[m
+[31m-    "acceleration": "加速",[m
+[31m-    "mass": "质量",[m
+[31m-    "power": "功率",[m
+[31m-    "specyfikacja": "规格",[m
+[31m-    "bolidu": "赛车",[m
+[31m-    "TXTacceleration": "0-100公里/小时加速",[m
+[31m-    "TXTmass": "发动机功率",[m
+[31m-    "TXTpower": "车辆质量"[m
+[32m+[m[32m    "acceleration": "响应速度",[m
+[32m+[m[32m    "mass": "架构复杂度",[m
+[32m+[m[32m    "power": "性能指标",[m
+[32m+[m[32m    "specyfikacja": "技术规格",[m
+[32m+[m[32m    "projektu": "项目",[m
+[32m+[m[32m    "TXTacceleration": "响应时间",[m
+[32m+[m[32m    "TXTmass": "技术架构",[m
+[32m+[m[32m    "TXTpower": "项目规模"[m
+   },[m
+   "heroAbout": {[m
+     "title": "认识我们的团队"[m
+[1mdiff --git a/app/[lang]/dictionaries/en.json b/app/[lang]/dictionaries/en.json[m
+[1mindex 49a6e87..7b9e9f0 100644[m
+[1m--- a/app/[lang]/dictionaries/en.json[m
+[1m+++ b/app/[lang]/dictionaries/en.json[m
+[36m@@ -41,7 +41,7 @@[m
+   },[m
+   "navigation": {[m
+     "home": "Home",[m
+[31m-    "bolid": "Bolid",[m
+[32m+[m[32m    "bolid": "Projects",[m
+     "team": "Team",[m
+     "about": "About Us",[m
+     "partners": "Partners",[m
+[36m@@ -54,7 +54,7 @@[m
+     "findUs": "Where to find us?",[m
+     "navigation": "Navigation",[m
+     "home": "Home",[m
+[31m-    "bolid": "Bolid",[m
+[32m+[m[32m    "bolid": "Projects",[m
+     "team": "Team",[m
+     "about": "About Us",[m
+     "partners": "Partners",[m
+[36m@@ -77,17 +77,17 @@[m
+     "media": "Media",[m
+     "recruitment": "Recruitment"[m
+   },[m
+[31m-  "bolidSection": {[m
+[31m-    "moreAboutBolid": "More about the bolid",[m
+[32m+[m[32m  "projectSection": {[m
+[32m+[m[32m    "moreAboutProject": "More about the project",[m
+     "meetTeam": "Meet the team",[m
+[31m-    "acceleration": "Acceleration",[m
+[31m-    "mass": "Mass",[m
+[31m-    "power": "Power",[m
+[31m-    "specyfikacja": "Specification",[m
+[31m-    "bolidu": "of the Bolid",[m
+[31m-    "TXTacceleration": "ACCELERATION 0-100 KM/H",[m
+[31m-    "TXTmass": "ENGINE POWER",[m
+[31m-    "TXTpower": "VEHICLE MASS"[m
+[32m+[m[32m    "acceleration": "Response Speed",[m
+[32m+[m[32m    "mass": "Architecture",[m
+[32m+[m[32m    "power": "Performance",[m
+[32m+[m[32m    "specyfikacja": "Technical Specs",[m
+[32m+[m[32m    "projektu": "of the Project",[m
+[32m+[m[32m    "TXTacceleration": "RESPONSE TIME",[m
+[32m+[m[32m    "TXTmass": "TECH ARCHITECTURE",[m
+[32m+[m[32m    "TXTpower": "PROJECT SCALE"[m
+   },[m
+   "heroAbout": {[m
+     "title": "MEET OUR TEAM"[m
+[1mdiff --git a/app/[lang]/page.tsx b/app/[lang]/page.tsx[m
+[1mindex 8bcce85..4a40dca 100644[m
+[1m--- a/app/[lang]/page.tsx[m
+[1m+++ b/app/[lang]/page.tsx[m
+[36m@@ -1,6 +1,6 @@[m
+ import { getDictionary } from "@/app/[lang]/dictionaries";[m
+ import ClientOnly from "../components/ClientOnly";[m
+[31m-import BolidSection from "../components/Section/BolidSection/BolidSection";[m
+[32m+[m[32mimport ProjectSection from "../components/Section/ProjectSection/ProjectSection";[m
+ import DepartmentsSubsection from "../components/Section/DepartmentsSubsection/DepartmentsSubsection";[m
+ import FSSection from "../components/Section/FSSection/FSSection";[m
+ import HeroSection from "../components/Section/HeroSection/HeroSection";[m
+[36m@@ -25,7 +25,7 @@[m [mconst Home: React.FC<PageProps> = async ({ params }) => {[m
+       <div className="">[m
+         <HeroSection dict={dict.heroSection} />[m
+         <DepartmentsSubsection />[m
+[31m-        <BolidSection dict={dict.bolidSection} language={language} />[m
+[32m+[m[32m        <ProjectSection dict={dict.projectSection} language={language} />[m
+         <FSSection dict={dict.fsSection} />[m
+         <TeamSection dict={dict.teamSection} />[m
+         <HistorySection dict={dict.historySection} />[m
+[1mdiff --git a/app/[lang]/bolid/[bolidId]/page.tsx b/app/[lang]/projects/[projectId]/page.tsx[m
+[1msimilarity index 84%[m
+[1mrename from app/[lang]/bolid/[bolidId]/page.tsx[m
+[1mrename to app/[lang]/projects/[projectId]/page.tsx[m
+[1mindex 2637870..2c069f5 100644[m
+[1m--- a/app/[lang]/bolid/[bolidId]/page.tsx[m
+[1m+++ b/app/[lang]/projects/[projectId]/page.tsx[m
+[36m@@ -1,6 +1,6 @@[m
+[31m-import { getBolidByBolidId } from "@/app/actions/getBolidByBolidId";[m
+[32m+[m[32mimport { getProjectByProjectId } from "@/app/actions/getProjectByProjectId";[m
+ import Container from "@/app/components/Container";[m
+[31m-import BolidSection from "@/app/components/Section/BolidSection/BolidSection";[m
+[32m+[m[32mimport ProjectSection from "@/app/components/Section/ProjectSection/ProjectSection";[m
+ import Text from "@/app/components/Text";[m
+ import Title from "@/app/components/Title";[m
+ import Image from "next/image";[m
+[36m@@ -8,42 +8,42 @@[m [mimport { getDictionary } from "../../dictionaries";[m
+ [m
+ interface Iparams {[m
+   lang: string;[m
+[31m-  bolidId?: string;[m
+[32m+[m[32m  projectId?: string;[m
+ }[m
+ [m
+ type Locale = "ch" | "en";[m
+ [m
+[31m-const BolidPage = async ({ params }: { params: Iparams }) => {[m
+[31m-  const { lang, bolidId } = params;[m
+[32m+[m[32mconst ProjectPage = async ({ params }: { params: Iparams }) => {[m
+[32m+[m[32m  const { lang, projectId } = params;[m
+   const currentLocale = lang === "ch" || lang === "en" ? lang : "en";[m
+ [m
+   const dict = await getDictionary(currentLocale);[m
+[31m-  const bolidIdValue = bolidId ?? "RT13e";[m
+[31m-  const bolid = await getBolidByBolidId(bolidIdValue);[m
+[32m+[m[32m  const projectIdValue = projectId ?? "新乡市卡口车辆防疫管理系统";[m
+[32m+[m[32m  const project = await getProjectByProjectId(projectIdValue);[m
+ [m
+[31m-  if (!bolid) {[m
+[31m-    return <p>未找到赛车</p>;[m
+[32m+[m[32m  if (!project) {[m
+[32m+[m[32m    return <p>未找到项目</p>;[m
+   }[m
+ [m
+   return ([m
+     <div className="flex flex-col pt-[100px]">[m
+[31m-      <BolidSection[m
+[31m-        dict={dict.bolidSection}[m
+[32m+[m[32m      <ProjectSection[m
+[32m+[m[32m        dict={dict.projectSection}[m
+         language={currentLocale}[m
+[31m-        presetBolid={bolidIdValue}[m
+[32m+[m[32m        presetProject={projectIdValue}[m
+       />[m
+       <div className=" w-full" id="achievements">[m
+         <Container>[m
+           <div className="flex flex-col w-full py-8 md:py-16">[m
+             <Title size="big" color="black">[m
+[31m-              {bolid.year}赛季成就[m
+[32m+[m[32m              {project.year}赛季成就[m
+             </Title>[m
+ [m
+             <div className="flex">[m
+               <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 pt-6 text-white">[m
+                 <div className="relative rounded overflow-hidden h-52 md:h-60">[m
+                   <Image[m
+[31m-                    src="/images/bolid/RT12e/images/zawody/1.jpg"[m
+[32m+[m[32m                    src="/images/projects

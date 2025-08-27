@@ -28,7 +28,7 @@ const JoinUs: React.FC<Props> = async ({ params }) => {
           <div className="mb-24 py-4 my-4 border-b-2 md:w-3/5 border-black text-center">
             <Title color="black">{dict.joinUs.becomeMember}</Title>
           </div>
-          <Timer targetDate="2024-10-26T00:00:00" dict={dict.joinUs} />
+          <Timer targetDate="-10-26T00:00:00" dict={dict.joinUs} />
           <ButtonsSection dict={dict.joinusSection} />
         </div>
       </Container>

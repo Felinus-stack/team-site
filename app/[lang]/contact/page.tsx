@@ -215,7 +215,7 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
                  <FaGithub />
                </a>
                <a 
-                 href="https://bilibili.com/" 
+                 href="https://space.bilibili.com/99622895" 
                  target="_blank"
                  rel="noopener noreferrer"
                  className="text-black hover:text-customRed duration-300"
