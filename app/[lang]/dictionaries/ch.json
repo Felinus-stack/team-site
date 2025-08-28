@@ -96,7 +96,7 @@
     "garage": "实验室",
     "teamHistory": "团队历史",
     "departments": "我们的部门",
-    "formulaStudent": "技术创新",
+    "formulaStudent": "算法竞赛",
     "paragraph1": "源境团队是专注于软件开发与技术创新的学生组织，成立于2018年。团队汇聚了来自各个专业的计算机爱好者，致力于Go/Python/Java编程实践、Web开发及算法竞赛。我们最大的成功是完成了15+个校园项目并在蓝桥杯等编程竞赛中获得佳绩。",
     "paragraph2": "在发展过程中，团队开发了多个优秀的软件项目，这些项目在校园内外获得了广泛认可。随着技术的快速发展，源境团队积极迎接新挑战，探索人工智能、大数据、云计算等前沿技术领域。团队成员能够快速适应新技术栈和开发框架。我们成功实现了智能陪护系统、无人车定位跟踪系统等创新解决方案。目前团队正在研发下一代采用现代化架构的项目。",
     "paragraph3": "设计和开发综合性软件系统是一项复杂的跨学科技术项目，让年轻的开发者和项目经理得到全面成长。这需要团队成员的大量投入，转化为数千小时的编程、设计和实现工作。项目的成功得益于学校、本地科技企业以及各行业合作伙伴提供的指导和资源支持。"
@@ -249,8 +249,74 @@
     "pageTitle": "联系我们",
     "writeToUs": "写信给我们",
     "theyWillAnswer": "他们会回答您的问题：",
+    "questionCategories": [
+      {
+        "id": "recruitment",
+        "title": "招募咨询",
+        "description": "想加入源境团队？有关于招新、面试流程的问题？",
+        "icon": "FaUsers",
+        "contact": {
+          "name": "张明华",
+          "role": "团队招募负责人",
+          "email": "recruitment@yuanjingteam.com",
+          "phone": "+86 152-2596-8963",
+          "expertise": ["团队招募", "面试流程", "新人培训", "部门分配"]
+        }
+      },
+      {
+        "id": "cooperation",
+        "title": "合作洽谈",
+        "description": "校企合作、项目外包、技术咨询等商务合作事宜",
+        "icon": "FaHandshake",
+        "contact": {
+          "name": "李雅楠",
+          "role": "校企合作负责人",
+          "email": "cooperation@yuanjingteam.com",
+          "phone": "+86 138-9876-5432",
+          "expertise": ["校企合作", "项目外包", "商务洽谈", "合作协议"]
+        }
+      },
+      {
+        "id": "technical",
+        "title": "技术咨询",
+        "description": "技术问题、架构设计、代码评审等技术相关咨询",
+        "icon": "FaCode",
+        "contact": {
+          "name": "王志强",
+          "role": "技术总监",
+          "email": "tech@yuanjingteam.com",
+          "phone": "+86 139-1234-5678",
+          "expertise": ["技术架构", "代码评审", "技术选型", "性能优化"]
+        }
+      },
+      {
+        "id": "project",
+        "title": "项目咨询",
+        "description": "项目开发、需求分析、产品设计等项目相关问题",
+        "icon": "FaProjectDiagram",
+        "contact": {
+          "name": "陈思雨",
+          "role": "项目经理",
+          "email": "project@yuanjingteam.com",
+          "phone": "+86 137-8888-9999",
+          "expertise": ["项目管理", "需求分析", "产品设计", "进度跟踪"]
+        }
+      },
+      {
+        "id": "general",
+        "title": "综合咨询",
+        "description": "团队介绍、实验室参观、媒体采访等其他问题",
+        "icon": "FaQuestionCircle",
+        "contact": {
+          "name": "刘文博",
+          "role": "综合事务负责人",
+          "email": "info@yuanjingteam.com",
+          "phone": "+86 151-0000-1234",
+          "expertise": ["团队介绍", "实验室参观", "媒体接待", "活动组织"]
+        }
+      }
+    ],
     "whereToFindUs": "您可以在哪里找到我们？",
-    "projectSupervisors": "团队顾问：",
     "siteAdministration": "网站管理：",
     "socialMedia": "关注我们：",
     "officeHours": "办公时间：",
