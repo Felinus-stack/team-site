@@ -70,7 +70,7 @@
     "rodo": "RODO",
     "recruitment": "Recruitment",
     "createdBy": "Project & Execution: yuanjingteam",
-    "allRightsReserved": "© 2024 All rights reserved",
+    "allRightsReserved": "© 2025 All rights reserved",
     "seasonDescription": "Yuanjing team, founded in 2018, unites computer enthusiasts across all majors. We practice Go/Python/Java, web development, and algorithm competitions. With 15+ campus projects and \"Blue Bridge Cup\" awards, every line of code creates value."
   },
   "sidebar": {
@@ -111,117 +111,117 @@
     "title": "OUR DEPARTMENTS",
     "interestedIn": "WHICH DEPARTMENT ARE YOU INTERESTED IN?",
     "frontend": {
-      "description": "The department is responsible for designing and building the suspension system. It is also responsible for the elements of the autonomous steering and braking systems, mounting parts, and metal structures in the monocoque.",
+      "description": "Responsible for the development of the Web front-end, pursuing excellent user experience, efficient development process and beautiful interface implementation",
       "responsibilities": [
         {
-          "text": "designing and building the suspension system",
+          "text": "html、css、javascript、typescript",
           "icon": "plik.svg"
         },
         {
-          "text": "designing and building elements of the autonomous steering system",
+          "text": "vue、react、taro、uni-app",
           "icon": "kolo.svg"
         },
         {
-          "text": "designing and building the braking system",
+          "text": "node.js、express、mongodb、MySQL",
           "icon": "klucz.svg"
         },
         {
-          "text": "designing mounting parts and metal structures in the monocoque",
+          "text": "electron、Flutter",
           "icon": "box.svg"
         }
       ]
     },
     "backend": {
-      "description": "The department is responsible for backend development, server architecture, and database management. From designing scalable microservices architecture to implementing robust APIs, ensuring data security and system performance optimization.",
+      "description": "Responsible for the development, deployment and operation and maintenance of the Web backend, pursuing stable services, efficient development and elegant implementation.",
       "responsibilities": [
         {
-          "text": "modeling composite elements in CAD programs",
+          "text": "Java、Go、Python",
           "icon": "plik.svg"
         },
         {
-          "text": "strength simulations and optimization of composite structures",
+          "text": "spring Boot、gin、django、express",
           "icon": "kolo.svg"
         },
         {
-          "text": "CFD simulations of the aerodynamic package",
+          "text": "maven、gradle、docker、kubernetes",
           "icon": "klucz.svg"
         },
         {
-          "text": "production and strength testing of composite elements",
+          "text": "https、token、prometheus、grafana",
           "icon": "box.svg"
         }
       ]
     },
     "product": {
-      "description": "The department is responsible for product management, user experience design, and project coordination. From analyzing requirements and creating prototypes to managing product lifecycle and organizing team events, including preparation for algorithm competitions.",
+      "description": "From discovering and analyzing needs and producing product prototypes to advancing project progress, from being responsible for product cold starts, participating in product operations to following up product update iterations, responsible for product life cycle management",
       "responsibilities": [
-        { "text": "creating promotional materials", "icon": "plik.svg" },
-        { "text": "preparing algorithm presentations", "icon": "kolo.svg" },
         {
-          "text": "coordinating orders, data analysis, optimizing Team's work",
-          "icon": "klucz.svg"
+          "text": "Product requirements analysis and planning",
+          "icon": "plik.svg"
         },
-        { "text": "organizing events", "icon": "box.svg" }
+        {
+          "text": "product prototyping",
+          "icon": "kolo.svg"
+        },
+        {
+          "text": "User research and experience optimization",
+          "icon": "klucz.svg"
+        }
       ]
     },
     "design": {
-      "description": "The department is responsible for algorithm research, artificial intelligence development, and advanced programming solutions. From developing machine learning models to implementing efficient algorithms for data processing, natural language processing, and computer vision. Projects are developed using programming languages such as Python, C++, and Java.",
+      "description": "Responsible for UI design and graphic design within the team, pursuing excellent aesthetics and exquisite and user-centered design works",
       "responsibilities": [
         {
-          "text": "developing algorithms that improve autonomous driving",
+          "text": "aesthetic",
           "icon": "plik.svg"
         },
-        { "text": "developing embedded systems", "icon": "kolo.svg" }
+        {
+          "text": "Ps、Ai、Xd、Figma",
+          "icon": "kolo.svg"
+        }
       ]
     },
     "operates": {
-      "description": "The department is responsible for designing PCBs, creating high and low voltage harnesses, and building a custom high-voltage battery.",
+      "description": "Produce creative content on different platforms such as WeChat, QQ, and B, and is responsible for the promotion and operation of team activities and products.",
       "responsibilities": [
-        { "text": "designing and manufacturing PCBs", "icon": "plik.svg" },
         {
-          "text": "designing in CAD programs and manufacturing high and low voltage harnesses compliant with motorsport standards",
+          "text": "Copywriting ability",
+          "icon": "plik.svg"
+        },
+        {
+          "text": "video clip",
           "icon": "kolo.svg"
         },
         {
-          "text": "modeling housings for electronics in CAD programs",
+          "text": "social media management",
           "icon": "klucz.svg"
-        },
-        {
-          "text": "designing and manufacturing high-voltage batteries",
-          "icon": "box.svg"
-        },
-        {
-          "text": "thermal simulations of electronics and batteries",
-          "icon": "plik.svg"
-        },
-        { "text": "designing CAN bus", "icon": "kolo.svg" }
+        }
       ]
     },
     "mobile": {
-      "description": "The department is responsible for maximizing mobile, vehicle kinematics and dynamics, data acquisition, powertrain, and test organization.",
-      "responsibilities": [
-        { "text": "Vehicle dynamics simulations", "icon": "plik.svg" },
-        {
-          "text": "Designing and developing the powertrain",
-          "icon": "kolo.svg"
-        },
-        { "text": "Analyzing data from runs", "icon": "klucz.svg" }
-      ]
-    },
-    "algorithm": {
-      "description": "Department responsible for team operations, content creation, and social media management. Including partnership coordination, team promotion, and preparation for programming competitions and technical presentations.",
+      "description": "Responsible for the development, design and post-maintenance of mobile apps. Pursuing elegant interactive experience and simple and efficient UI design.",
       "responsibilities": [
         {
-          "text": "Coordination of orders, data analysis, optimization of the Team's work",
+          "text": "Android(Java / Kotlin)、iOS(Swift)",
           "icon": "plik.svg"
         },
         {
-          "text": "Preparation of algorithm presentations",
+          "text": "Jetpack Compose、SwiftUI、Flutter(Dart)",
           "icon": "kolo.svg"
+        }
+      ]
+    },
+    "algorithm": {
+      "description": "Exploration, optimization and practical application attempts of classic and cutting-edge algorithms",
+      "responsibilities": [
+        {
+          "text": "Algorithm competition、LeetCode、codeforces",
+          "icon": "plik.svg"
         },
         {
-          "text": "Contact with partners",
-          "icon": "klucz.svg"
+          "text": "Machine learning 、 natural language processing 、image recognition",
+          "icon": "kolo.svg"
         }
       ]
     }
@@ -264,8 +264,99 @@
     "pageTitle": "CONTACT",
     "writeToUs": "WRITE TO US",
     "theyWillAnswer": "They will answer your questions:",
+    "questionCategories": [
+      {
+        "id": "recruitment",
+        "title": "Recruitment Inquiry",
+        "description": "Want to join Yuanjing Team? Questions about recruitment and interview process?",
+        "icon": "FaUsers",
+        "contact": {
+          "name": "Ming Zhang",
+          "role": "Recruitment Manager",
+          "email": "recruitment@yuanjingteam.com",
+          "phone": "+86 152-2596-8963",
+          "expertise": [
+            "Team Recruitment",
+            "Interview Process",
+            "Onboarding",
+            "Department Assignment"
+          ]
+        }
+      },
+      {
+        "id": "cooperation",
+        "title": "Partnership & Cooperation",
+        "description": "University-enterprise cooperation, project outsourcing, technical consulting and other business cooperation",
+        "icon": "FaHandshake",
+        "contact": {
+          "name": "Yanan Li",
+          "role": "Partnership Manager",
+          "email": "cooperation@yuanjingteam.com",
+          "phone": "+86 138-9876-5432",
+          "expertise": [
+            "University Partnerships",
+            "Project Outsourcing",
+            "Business Negotiation",
+            "Collaboration Agreements"
+          ]
+        }
+      },
+      {
+        "id": "technical",
+        "title": "Technical Consultation",
+        "description": "Technical questions, architecture design, code review and other technical consultations",
+        "icon": "FaCode",
+        "contact": {
+          "name": "Zhiqiang Wang",
+          "role": "Technical Director",
+          "email": "tech@yuanjingteam.com",
+          "phone": "+86 139-1234-5678",
+          "expertise": [
+            "Technical Architecture",
+            "Code Review",
+            "Technology Selection",
+            "Performance Optimization"
+          ]
+        }
+      },
+      {
+        "id": "project",
+        "title": "Project Consultation",
+        "description": "Project development, requirement analysis, product design and other project-related questions",
+        "icon": "FaProjectDiagram",
+        "contact": {
+          "name": "Siyu Chen",
+          "role": "Project Manager",
+          "email": "project@yuanjingteam.com",
+          "phone": "+86 137-8888-9999",
+          "expertise": [
+            "Project Management",
+            "Requirement Analysis",
+            "Product Design",
+            "Progress Tracking"
+          ]
+        }
+      },
+      {
+        "id": "general",
+        "title": "General Inquiry",
+        "description": "Team introduction, lab visits, media interviews and other general questions",
+        "icon": "FaQuestionCircle",
+        "contact": {
+          "name": "Wenbo Liu",
+          "role": "General Affairs Manager",
+          "email": "info@yuanjingteam.com",
+          "phone": "+86 151-0000-1234",
+          "expertise": [
+            "Team Introduction",
+            "Lab Visits",
+            "Media Relations",
+            "Event Organization"
+          ]
+        }
+      }
+    ],
     "whereToFindUs": "WHERE TO FIND US?",
-    "projectSupervisors": "Project Supervisors:",
     "siteAdministration": "Site Administration:",
     "socialMedia": "Follow Us:",
     "officeHours": "Office Hours:",
