@@ -72,6 +72,7 @@
     "cookiesPolicy": "Cookies Policy",
     "rodo": "RODO",
     "recruitment": "Recruitment",
+    "teamName": "Yuanjing Team",
     "createdBy": "Project & Execution: yuanjingteam",
     "allRightsReserved": "© 2025 All rights reserved",
     "seasonDescription": "Yuanjing team, founded in 2018, unites computer enthusiasts across all majors. We practice Go/Python/Java, web development, and algorithm competitions. With 15+ campus projects and \"Blue Bridge Cup\" awards, every line of code creates value."
@@ -117,7 +118,7 @@
     "departmentLabels": {
       "frontend": "Frontend",
       "backend": "Backend",
-      "product": "Product", 
+      "product": "Product",
       "design": "Design",
       "operates": "Marketing",
       "mobile": "Mobile",
@@ -273,7 +274,7 @@
       }
     }
   },
-      "contactUs": {
+  "contactUs": {
     "pageTitle": "CONTACT",
     "writeToUs": "WRITE TO US",
     "theyWillAnswer": "They will answer your questions:",
@@ -422,7 +423,7 @@
     "becomePartner": "Become a Partner",
     "contactUs": "Contact Us",
     "sponsorCategories": {
-      "strategic": "Strategic Partners", 
+      "strategic": "Strategic Partners",
       "platinum": "Innovation Partners"
     }
   },
