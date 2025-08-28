@@ -39,6 +39,9 @@
     "becomePartner": "商务合作",
     "contact": "联系我们"
   },
+  "newsPage": {
+    "title": "新闻资讯"
+  },
   "navigation": {
     "home": "首页",
     "projects": "项目展示",
@@ -110,6 +113,15 @@
   "departmentsAbout": {
     "title": "我们的部门",
     "interestedIn": "您对哪个部门感兴趣？",
+    "departmentLabels": {
+      "frontend": "前端",
+      "backend": "后端", 
+      "product": "产品",
+      "design": "设计",
+      "operates": "运营",
+      "mobile": "移动端",
+      "algorithm": "算法"
+    },
     "frontend": {
       "description": "负责 Web 前端的开发，追求卓越的用户体验、高效的开发流程与精美的界面实现",
       "responsibilities": [
@@ -348,7 +360,10 @@
   "joinUs": {
     "pageTitle": "加入我们",
     "becomeMember": "成为成员",
+    "recruitmentOpen": "招新开放中，快来加入我们！🚀",
+    "recruitmentClosed": "本期招新已结束，敬请期待下一期！✨",
     "nextRecruitmentStartsIn": "招新将在以下时间结束：",
+    "recruitmentEndedMessage": "招新已结束，感谢关注！",
     "days": "天",
     "hours": "小时",
     "minutes": "分钟",

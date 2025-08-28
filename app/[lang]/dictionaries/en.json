@@ -39,6 +39,9 @@
     "becomePartner": "Become a Partner",
     "contact": "Contact"
   },
+  "newsPage": {
+    "title": "News"
+  },
   "navigation": {
     "home": "Home",
     "projects": "Projects",
@@ -110,117 +113,126 @@
   "departmentsAbout": {
     "title": "OUR DEPARTMENTS",
     "interestedIn": "WHICH DEPARTMENT ARE YOU INTERESTED IN?",
+    "departmentLabels": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "product": "Product", 
+      "design": "Design",
+      "operates": "Marketing",
+      "mobile": "Mobile",
+      "algorithm": "Algorithm"
+    },
     "frontend": {
-      "description": "Responsible for the development of the Web front-end, pursuing excellent user experience, efficient development process and beautiful interface implementation",
+      "description": "Responsible for Web front-end development, pursuing excellent user experience, efficient development processes, and beautiful interface implementation",
       "responsibilities": [
         {
-          "text": "html、css、javascript、typescript",
+          "text": "HTML, CSS, JavaScript, TypeScript",
           "icon": "plik.svg"
         },
         {
-          "text": "vue、react、taro、uni-app",
+          "text": "Vue, React, Taro, Uni-app",
           "icon": "kolo.svg"
         },
         {
-          "text": "node.js、express、mongodb、MySQL",
+          "text": "Node.js, Express, MongoDB, MySQL",
           "icon": "klucz.svg"
         },
         {
-          "text": "electron、Flutter",
+          "text": "Electron, Flutter",
           "icon": "box.svg"
         }
       ]
     },
     "backend": {
-      "description": "Responsible for the development, deployment and operation and maintenance of the Web backend, pursuing stable services, efficient development and elegant implementation.",
+      "description": "Responsible for Web backend development, deployment, and operations & maintenance, pursuing stable services, efficient development, and elegant implementation",
       "responsibilities": [
         {
-          "text": "Java、Go、Python",
+          "text": "Java, Go, Python",
           "icon": "plik.svg"
         },
         {
-          "text": "spring Boot、gin、django、express",
+          "text": "Spring Boot, Gin, Django, Express",
           "icon": "kolo.svg"
         },
         {
-          "text": "maven、gradle、docker、kubernetes",
+          "text": "Maven, Gradle, Docker, Kubernetes",
           "icon": "klucz.svg"
         },
         {
-          "text": "https、token、prometheus、grafana",
+          "text": "HTTPS, Token, Prometheus, Grafana",
           "icon": "box.svg"
         }
       ]
     },
     "product": {
-      "description": "From discovering and analyzing needs and producing product prototypes to advancing project progress, from being responsible for product cold starts, participating in product operations to following up product update iterations, responsible for product life cycle management",
+      "description": "Responsible for the complete product lifecycle management, from discovering and analyzing requirements to creating prototypes, managing product launches, operations, and iteration updates",
       "responsibilities": [
         {
-          "text": "Product requirements analysis and planning",
+          "text": "Product Requirements Analysis & Planning",
           "icon": "plik.svg"
         },
         {
-          "text": "product prototyping",
+          "text": "Product Prototyping & Design",
           "icon": "kolo.svg"
         },
         {
-          "text": "User research and experience optimization",
+          "text": "User Research & Experience Optimization",
           "icon": "klucz.svg"
         }
       ]
     },
     "design": {
-      "description": "Responsible for UI design and graphic design within the team, pursuing excellent aesthetics and exquisite and user-centered design works",
+      "description": "Responsible for UI design and graphic design within the team, pursuing excellent aesthetics and creating exquisite, user-centered design works",
       "responsibilities": [
         {
-          "text": "aesthetic",
+          "text": "Aesthetic Design & Visual Arts",
           "icon": "plik.svg"
         },
         {
-          "text": "Ps、Ai、Xd、Figma",
+          "text": "Photoshop, Illustrator, XD, Figma",
           "icon": "kolo.svg"
         }
       ]
     },
     "operates": {
-      "description": "Produce creative content on different platforms such as WeChat, QQ, and B, and is responsible for the promotion and operation of team activities and products.",
+      "description": "Creates creative content across various platforms like WeChat, QQ, and Bilibili, responsible for promoting and operating team activities and products",
       "responsibilities": [
         {
-          "text": "Copywriting ability",
+          "text": "Content Creation & Copywriting",
           "icon": "plik.svg"
         },
         {
-          "text": "video clip",
+          "text": "Video Editing & Production",
           "icon": "kolo.svg"
         },
         {
-          "text": "social media management",
+          "text": "Social Media Management",
           "icon": "klucz.svg"
         }
       ]
     },
     "mobile": {
-      "description": "Responsible for the development, design and post-maintenance of mobile apps. Pursuing elegant interactive experience and simple and efficient UI design.",
+      "description": "Responsible for mobile app development, design, and maintenance, pursuing elegant interactive experiences and simple, efficient UI design",
       "responsibilities": [
         {
-          "text": "Android(Java / Kotlin)、iOS(Swift)",
+          "text": "Android (Java/Kotlin), iOS (Swift)",
           "icon": "plik.svg"
         },
         {
-          "text": "Jetpack Compose、SwiftUI、Flutter(Dart)",
+          "text": "Jetpack Compose, SwiftUI, Flutter (Dart)",
           "icon": "kolo.svg"
         }
       ]
     },
     "algorithm": {
-      "description": "Exploration, optimization and practical application attempts of classic and cutting-edge algorithms",
+      "description": "Explores, optimizes, and applies classic and cutting-edge algorithms in practical scenarios",
       "responsibilities": [
         {
-          "text": "Algorithm competition、LeetCode、codeforces",
+          "text": "Algorithm Competitions, LeetCode, Codeforces",
           "icon": "plik.svg"
         },
         {
-          "text": "Machine learning 、 natural language processing 、image recognition",
+          "text": "Machine Learning, NLP, Computer Vision",
           "icon": "kolo.svg"
         }
       ]
@@ -388,7 +400,10 @@
   "joinUs": {
     "pageTitle": "RECRUITMENT",
     "becomeMember": "BECOME A MEMBER",
+    "recruitmentOpen": "Recruitment is Open, Join Us Now! 🚀",
+    "recruitmentClosed": "This recruitment period has ended, stay tuned for the next one! ✨",
     "nextRecruitmentStartsIn": "THE NEXT RECRUITMENT STARTS IN:",
+    "recruitmentEndedMessage": "Recruitment has ended, thank you for your interest!",
     "days": "DAYS",
     "hours": "HOURS",
     "minutes": "MINUTES",
