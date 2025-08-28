@@ -67,6 +67,7 @@ model Role {
 model Project {
   id                String @id @default(uuid())
   name              String @unique
+  enName            String? 
   year              String
   shortDescription  String
   enShortDescription String? @db.Text
@@ -90,8 +91,8 @@ model News {
   id                String @id @default(uuid())
   date              DateTime  @default(now())
   title             String
-  shortDescription  String
-  longDescription   String
+  shortDescription  String @db.Text
+  longDescription   String @db.Text
   duration          Int
   logo              String
   mainImage         String
@@ -100,7 +101,7 @@ model News {
 
 model NewsContent {
   id      String @id @default(uuid())
-  text    String
+  text    String @db.Text
   news    News @relation(fields: [newsId], references: [id])
   newsId  String
 }

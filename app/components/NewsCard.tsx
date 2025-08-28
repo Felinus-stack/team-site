@@ -43,8 +43,20 @@ const NewsCard: React.FC<NewsCardProps> = ({
           <Text color="black" small wide bold opacity1 center>
             {title}
           </Text>
-          <div className="mb-3 mt-1 md:mb-4 md:mt-2">
-            <Text color="black">{short_description}</Text>
+          <div className="mb-3 mt-1 md:mb-4 md:mt-2 flex-1">
+            <div 
+              className="text-sm leading-relaxed text-black overflow-hidden"
+              style={{
+                display: '-webkit-box',
+                WebkitLineClamp: 3,
+                WebkitBoxOrient: 'vertical' as const,
+                maxHeight: '4.5em'
+              }}
+            >
+              {short_description.length > 150 
+                ? `${short_description.substring(0, 150)}...` 
+                : short_description}
+            </div>
           </div>
           <div className="flex justify-between">
             <Image alt="Logo" height={40} width={80} src={logo} />

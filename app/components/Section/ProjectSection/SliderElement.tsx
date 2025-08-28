@@ -4,7 +4,8 @@ import Title from "../../Title";
 
 export interface SliderElementProps {
   date: number;
-  projectName: string;  // 项目名称
+  projectName: string;  // 项目名称（用于逻辑识别）
+  displayName?: string; // 显示名称（可选，默认使用projectName）
   onClick: (projectName: string) => void;
   currentProject: string;
   darkMode: boolean;
@@ -13,6 +14,7 @@ export interface SliderElementProps {
 const SliderElement: React.FC<SliderElementProps> = ({
   date,
   projectName,
+  displayName,
   onClick,
   currentProject,
   darkMode,
@@ -25,6 +27,9 @@ const SliderElement: React.FC<SliderElementProps> = ({
     subColor = "white";
     dotColor = "bg-neutral-500";
   }
+
+  // 获取显示文本
+  const displayText = displayName || projectName;
 
   return (
     <div
@@ -44,8 +49,8 @@ const SliderElement: React.FC<SliderElementProps> = ({
         <Title size="small" color="red">
           {date}
         </Title>
-        <Title size="medium" color={subColor}>
-          {projectName}
+        <Title size={/^[a-zA-Z\s]+$/.test(displayText) ? "small" : "medium"} color={subColor}>
+          {displayText}
         </Title>
       </div>
     </div>

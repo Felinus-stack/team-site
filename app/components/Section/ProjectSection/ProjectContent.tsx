@@ -10,6 +10,7 @@ import ProjectSpecs from "./ProjectSpecs";
 
 interface ProjectData {
   name: string;
+  EN_name?: string;
   year: string;
   short_description: string;
   EN_short_description: string;
@@ -22,6 +23,7 @@ interface ProjectData {
 
 const ProjectContent: React.FC<ProjectData> = ({
   name,
+  EN_name,
   year,
   short_description,
   EN_short_description,
@@ -46,10 +48,31 @@ const ProjectContent: React.FC<ProjectData> = ({
   const renderName = (name: string) => {
     const lastChar = name.slice(-1);
     const isSpecialChar = lastChar === "e" || lastChar === "b";
+    const isEnglish = /^[a-zA-Z\s]+$/.test(name);
+
+    // 为长英文名称添加换行
+    const formatEnglishName = (englishName: string) => {
+      if (!isEnglish) return englishName;
+      
+      const words = englishName.split(' ');
+      if (words.length > 4) {
+        const midPoint = Math.ceil(words.length / 2);
+        return (
+          <>
+            {words.slice(0, midPoint).join(' ')}
+            <br />
+            {words.slice(midPoint).join(' ')}
+          </>
+        );
+      }
+      return englishName;
+    };
 
     return (
       <div className="uppercase flex items-baseline">
-        <Title color="red">{isSpecialChar ? name.slice(0, -1) : name}</Title>
+        <Title color="red" size={isEnglish ? "medium" : "normal"} wrap={isEnglish}>
+          {isSpecialChar ? formatEnglishName(name.slice(0, -1)) : formatEnglishName(name)}
+        </Title>
         {isSpecialChar && (
           <Title color="red" size="medium">
             {lastChar}
@@ -61,11 +84,21 @@ const ProjectContent: React.FC<ProjectData> = ({
 
   const description =
     language === "en" ? EN_short_description : short_description;
+  
+  const displayName = language === "en" ? (EN_name || name) : name;
+
+  // 为按钮文字格式化 - 英文模式下只显示项目名称
+  const formatButtonText = (teamText: string, projectName: string) => {
+    if (language === "en") {
+      return teamText; // 英文模式下只显示 "MEET THE TEAM"
+    }
+    return `${teamText} ${projectName}`;
+  };
 
   return (
     <div className="relative flex flex-col">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 py-4 sm:py-12 transition-all ease-out duration-500">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 py-4 sm:py-12 transition-all ease-out duration-500">
           <div
             className={`flex justify-center items-center transition-all ease-out duration-500`}
           >
@@ -73,9 +106,9 @@ const ProjectContent: React.FC<ProjectData> = ({
               <Title size="subtitle" color="gray">
                 {year}
               </Title>
-              {renderName(name)}
+              {renderName(displayName)}
               <div className="my-2 sm:my-6">
-                <Text color="gray">{description}</Text>
+                <Text color="gray" small={language === "en"}>{description}</Text>
               </div>
               <div className="gap-4 mt-8 hidden lg:flex">
                 <Button
@@ -84,7 +117,7 @@ const ProjectContent: React.FC<ProjectData> = ({
                 />
                 <Button
                   outline
-                  label={`${dict.meetTeam} ${name}`}
+                  label={formatButtonText(dict.meetTeam, displayName)}
                   onClick={() => teamRedirect(name)}
                 />
               </div>
@@ -108,7 +141,7 @@ const ProjectContent: React.FC<ProjectData> = ({
             />
             <Button
               outline
-              label={`${dict.meetTeam} ${name}`}
+              label={formatButtonText(dict.meetTeam, displayName)}
               onClick={() => teamRedirect(name)}
             />
           </div>
