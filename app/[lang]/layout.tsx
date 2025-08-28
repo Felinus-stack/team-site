@@ -48,7 +48,7 @@ const syncopate = localFont({
 export const metadata: Metadata = {
   title: "源境团队",
   description:
-    "河南师范大学源境软件工作室，专注于软件开发与技术创新",
+    "源境软件工作室，专注于软件开发与技术创新",
 };
 
 interface RootLayoutProps {

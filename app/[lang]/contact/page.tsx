@@ -6,6 +6,7 @@ import { getDictionary } from "../dictionaries";
 import UserCard from "../team/[teamId]/UserCard";
 import { sortRoles } from "../team/[teamId]/utils";
 import { EmailAction, Admin } from "./emailAction";
+import ContactCategoryCard from "./ContactCategoryCard";
 import GoogleMapComponent from "./map";
 import { FaWeixin, FaWeibo, FaLinkedin, FaGithub, FaPhone, FaEnvelope, FaClock, FaMapMarkerAlt } from "react-icons/fa";
 import { SiBilibili } from "react-icons/si";
@@ -69,11 +70,7 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
     "joanna popielewska",
   ]);
 
-  const projectSupervisors = await getMembersData([
-    "dr hab. inż. Anna Janicka",
-    "dr hab. inż. Damian Derlukiewicz",
-    "dr inż. Gustaw Sierzputowski",
-  ]);
+
 
   const siteAdministration = await getMembersData([
     "dawid chmal",
@@ -81,7 +78,7 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
   ]);
 
   const roleHistory: RoleHistory = {};
-  [...mainMembers, ...projectSupervisors, ...siteAdministration].forEach(
+  [...mainMembers, ...siteAdministration].forEach(
     (member) => {
       const memberFullName = `${member.name} ${member.surname}`;
       roleHistory[memberFullName] = sortRoles(
@@ -111,23 +108,16 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
               {dict.contactUs.theyWillAnswer}
             </Text>
           </div>
-          <div className="grid grid-cols-1 xl:grid-cols-4 sm:grid-cols-2 w-full gap-6">
-            {mainMembers.map((member, index) => (
-              <div key={index} className="flex flex-col gap-6 ">
-                <UserCard
-                  member={member}
-                  teamId="智能陪护"
-                  roleHistory={roleHistory}
-                />
-                <EmailAction
-                  email={member.email || "pawel.wojcik.pwrrt@gmail.com"}
-                />
-                <EmailAction
-                  email={member.phoneNumber || "pawel.wojcik.pwrrt@gmail.com"}
-                />
-              </div>
+          
+          {/* 按问题类型分类的联系人展示 */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 w-full gap-8">
+            {dict.contactUs.questionCategories.map((category: any, index: number) => (
+              <ContactCategoryCard key={category.id} category={category} />
             ))}
           </div>
+          
+          {/* 添加分隔线 */}
+          <div className="w-full border-t border-gray-200 mt-12"></div>
         </div>
       </Container>
       <div className="text-center mt-4 md:mt-12 mb-6">
@@ -138,22 +128,6 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
       <GoogleMapComponent />
       <Container>
         <div className="grid grid-cols-1 w-full my-8 md:my-12 gap-12 md:gap-20">
-          <div className="flex flex-col items-start md:items-center gap-4 md:gap-6">
-            <Text bold medium>
-              {dict.contactUs.projectSupervisors}
-            </Text>
-            <div className="grid grid-cols-1 md:grid-cols-3 w-full md:w-3/4 gap-6">
-              {projectSupervisors.map((member, index) => (
-                <UserCard
-                  key={index}
-                  opiekun={true}
-                  member={member}
-                  teamId="智能陪护"
-                  roleHistory={roleHistory}
-                />
-              ))}
-            </div>
-          </div>
           <div className="flex flex-col items-start md:items-center gap-4 md:gap-6">
             <Admin text={dict.contactUs.siteAdministration} />
             <div className="grid grid-cols-1 md:grid-cols-2 w-full md:w-1/2 gap-6">
