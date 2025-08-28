@@ -113,6 +113,7 @@
   "departmentsAbout": {
     "title": "我们的部门",
     "interestedIn": "您对哪个部门感兴趣？",
+    "techStackLabel": "我们的技术栈：",
     "departmentLabels": {
       "frontend": "前端",
       "backend": "后端", 
@@ -257,10 +258,11 @@
       }
     }
   },
-  "contactUs": {
+      "contactUs": {
     "pageTitle": "联系我们",
     "writeToUs": "写信给我们",
     "theyWillAnswer": "他们会回答您的问题：",
+    "expertiseLabel": "专业领域：",
     "questionCategories": [
       {
         "id": "recruitment",
@@ -330,6 +332,7 @@
     ],
     "whereToFindUs": "您可以在哪里找到我们？",
     "siteAdministration": "网站管理：",
+    "siteAdminDescription": "网站管理和技术支持请联系我们的技术团队",
     "socialMedia": "关注我们：",
     "officeHours": "办公时间：",
     "officeHoursText": "周一至周五 9:00-17:00",
@@ -337,6 +340,8 @@
     "addressText": "平原建业体育中心 源境团队\n邮编：453000",
     "emergencyContact": "紧急联系方式：",
     "emergencyPhone": "+86 152-2596-8963",
+    "otherContactInfo": "其他联系信息",
+    "emailContact": "邮箱联系",
     "faq": "常见问题",
     "faqItems": [
       {
@@ -370,6 +375,16 @@
     "seconds": "秒",
     "becomePartner": "成为合作伙伴",
     "contact": "联系"
+  },
+  "partnersPage": {
+    "pageTitle": "校企伙伴",
+    "title": "校企伙伴",
+    "becomePartner": "成为合作伙伴",
+    "contactUs": "联系我们",
+    "sponsorCategories": {
+      "strategic": "同行起点",
+      "platinum": "梦想落地"
+    }
   },
   "admin": {
     "title": "登录管理员面板",

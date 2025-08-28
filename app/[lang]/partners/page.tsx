@@ -4,7 +4,9 @@ import Container from "@/app/components/Container";
 import Title from "@/app/components/Title";
 import Button from "@/app/components/Button";
 import Image from "next/image";
+import { getDictionaryClient } from "../dictionaries-client";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 // 校企伙伴列表
 const strategicSponsors = [
@@ -51,6 +53,12 @@ interface SponsorGridProps {
   height: string;
   gap?: string;
   sponsors: Array<{ name: string; url: string }>;
+}
+
+interface PartnersProps {
+  params: {
+    lang: string;
+  };
 }
 
 const SponsorList: React.FC<SponsorGridProps> = ({
@@ -115,34 +123,49 @@ const SponsorGrid: React.FC<SponsorGridProps> = ({
   );
 };
 
-const Partners = () => {
+const Partners: React.FC<PartnersProps> = ({ params }) => {
+  const language = params.lang === "ch" || params.lang === "en" ? params.lang : "en";
   const router = useRouter();
+  const [dict, setDict] = useState<any>(null);
+
+  useEffect(() => {
+    const loadDictionary = async () => {
+      const dictionary = await getDictionaryClient(language);
+      setDict(dictionary);
+    };
+    loadDictionary();
+  }, [language]);
+
+  if (!dict) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className=" pt-[100px] md:pt-[120px] mb-6 md:mb-12">
       <div className="absolute opacity-5 right-0">
         <h1 className="text-[15rem] font-extrabold text-black uppercase leading-none">
-          校企伙伴
+          {dict.partnersPage.pageTitle}
         </h1>
       </div>
       <Container>
         <div className="flex flex-col items-center text-center w-full">
-          <div className="py-4 my-4 border-b-2 md:w-3/5 border-black">
-            <Title color="black">校企伙伴</Title>
+          <div className="py-4 my-4 border-b-2 w-full max-w-4xl border-black text-center">
+            <Title color="black" wrap>{dict.partnersPage.title}</Title>
           </div>
           <div className="my-8 flex gap-4 md:w-1/3">
             <Button
-              label="成为合作伙伴"
-              onClick={() => router.push(`/partners/joinus`)}
+              label={dict.partnersPage.becomePartner}
+              onClick={() => router.push(`/${language}/partners/joinus`)}
             />
             <Button
               outline
-              label="联系我们"
-              onClick={() => router.push(`/contact`)}
+              label={dict.partnersPage.contactUs}
+              onClick={() => router.push(`/${language}/contact`)}
             />
           </div>
 
           <SponsorGrid
-            sponsorRank="同行起点"
+            sponsorRank={dict.partnersPage.sponsorCategories.strategic}
             sponsors={strategicSponsors}
             height="h-20 md:h-40"
             gap="gap-0"
@@ -150,7 +173,7 @@ const Partners = () => {
           />
 
           <SponsorGrid
-            sponsorRank="梦想落地"
+            sponsorRank={dict.partnersPage.sponsorCategories.platinum}
             sponsors={platinumSponsors}
             height="h-20 md:h-40"
             gap="md:gap-20"

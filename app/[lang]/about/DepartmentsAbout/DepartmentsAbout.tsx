@@ -19,6 +19,7 @@ type DepartmentsAboutProps = {
   dict: {
     title: string;
     interestedIn: string;
+    techStackLabel: string;
     departmentLabels: {
       frontend: string;
       backend: string;
@@ -195,6 +196,7 @@ const DepartmentsAbout: React.FC<DepartmentsAboutProps> = ({
               text={department.description}
               index={index}
               lightMode={lightMode}
+              techStackLabel={dict.techStackLabel}
             />
           ))}
         </div>
