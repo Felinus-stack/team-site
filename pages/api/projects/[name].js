@@ -16,6 +16,7 @@ export default async function handler(req, res) {
         ...project,
         short_description: project.shortDescription,
         EN_short_description: project.enShortDescription,
+        EN_name: project.enName,
       };
       res.status(200).json(responseData);
     } else {

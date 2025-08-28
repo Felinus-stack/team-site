@@ -23,7 +23,7 @@ const Home: React.FC<PageProps> = async ({ params }) => {
   return (
     <ClientOnly>
       <div className="">
-        <HeroSection dict={dict.heroSection} />
+        <HeroSection dict={dict.heroSection} language={language} />
         <DepartmentsSubsection />
         <ProjectSection dict={dict.projectSection} language={language} />
         <FSSection dict={dict.fsSection} />
