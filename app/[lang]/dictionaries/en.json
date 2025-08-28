@@ -395,5 +395,10 @@
     "seconds": "SECONDS",
     "becomePartner": "Become a Partner",
     "contact": "Contact"
+  },
+  "admin": {
+    "title": "Admin Panel Login",
+    "buttonRecruitment": "Login",
+    "buttonPartner": "Back to Home"
   }
 }
