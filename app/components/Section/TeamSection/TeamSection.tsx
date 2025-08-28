@@ -52,7 +52,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ dict }) => {
           <div className="flex gap-4">
             <div className=" w-[400px] h-[300px] md:h-[400px] relative">
               <Image
-                src="/images/team/team1.jpeg"
+                src="/images/team/team4.jpg"
                 alt="project"
                 layout="fill"
                 objectFit="cover"
@@ -60,7 +60,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ dict }) => {
             </div>
             <div className=" hidden sm:block w-[400px] h-[300px] md:h-[400px] relative">
               <Image
-                src="/images/team/team2.jpeg"
+                src="/images/team/team5.jpg"
                 alt="project"
                 layout="fill"
                 objectFit="cover"
@@ -68,7 +68,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ dict }) => {
             </div>
             <div className=" hidden lg:block w-[200px] h-[400px] relative">
               <Image
-                src="/images/team/team3.jpeg"
+                src="/images/team/team6.jpg"
                 alt="project"
                 layout="fill"
                 objectFit="cover"

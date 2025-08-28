@@ -40,7 +40,10 @@ const UserCard: React.FC<UserCardProps> = ({
   )}.jpg`;
 
   return (
-    <div className="relative group w-full">
+    <div 
+      className="relative group w-full"
+      data-member={`${member.name}-${member.surname}`}
+    >
       <div className="absolute inset-0 z-0 w-full h-full rounded-full blur-3xl bg-white opacity-10"></div>
       <div className="relative rounded-md overflow-hidden bg-black pb-14">
         <div className=" absolute w-full h-[350px]">
