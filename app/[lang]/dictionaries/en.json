@@ -113,6 +113,7 @@
   "departmentsAbout": {
     "title": "OUR DEPARTMENTS",
     "interestedIn": "WHICH DEPARTMENT ARE YOU INTERESTED IN?",
+    "techStackLabel": "Our Tech Stack:",
     "departmentLabels": {
       "frontend": "Frontend",
       "backend": "Backend",
@@ -272,10 +273,11 @@
       }
     }
   },
-  "contactUs": {
+      "contactUs": {
     "pageTitle": "CONTACT",
     "writeToUs": "WRITE TO US",
     "theyWillAnswer": "They will answer your questions:",
+    "expertiseLabel": "Expertise:",
     "questionCategories": [
       {
         "id": "recruitment",
@@ -297,7 +299,7 @@
       },
       {
         "id": "cooperation",
-        "title": "Partnership & Cooperation",
+        "title": "Partnership Cooperation",
         "description": "University-enterprise cooperation, project outsourcing, technical consulting and other business cooperation",
         "icon": "FaHandshake",
         "contact": {
@@ -370,6 +372,7 @@
     ],
     "whereToFindUs": "WHERE TO FIND US?",
     "siteAdministration": "Site Administration:",
+    "siteAdminDescription": "For website management and technical support, please contact our technical team",
     "socialMedia": "Follow Us:",
     "officeHours": "Office Hours:",
     "officeHoursText": "Monday - Friday 9:00-17:00",
@@ -377,6 +380,8 @@
     "addressText": "Yuanjing Team, Pingyuan Jianye Sports Center\nPostal Code: 453000",
     "emergencyContact": "Emergency Contact:",
     "emergencyPhone": "+86 152-2596-8963",
+    "otherContactInfo": "Other Contact Information",
+    "emailContact": "Email Contact",
     "faq": "Frequently Asked Questions",
     "faqItems": [
       {
@@ -410,6 +415,16 @@
     "seconds": "SECONDS",
     "becomePartner": "Become a Partner",
     "contact": "Contact"
+  },
+  "partnersPage": {
+    "pageTitle": "PARTNERS",
+    "title": "University-Enterprise Partners",
+    "becomePartner": "Become a Partner",
+    "contactUs": "Contact Us",
+    "sponsorCategories": {
+      "strategic": "Strategic Partners", 
+      "platinum": "Innovation Partners"
+    }
   },
   "admin": {
     "title": "Admin Panel Login",

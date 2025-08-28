@@ -1,56 +1,12 @@
-import { getTeamByFullName } from "@/app/actions/getTeamByName";
 import Container from "@/app/components/Container";
 import Text from "@/app/components/Text";
 import Title from "@/app/components/Title";
 import { getDictionary } from "../dictionaries";
-import UserCard from "../team/[teamId]/UserCard";
-import { sortRoles } from "../team/[teamId]/utils";
-import { EmailAction, Admin } from "./emailAction";
+import { Admin } from "./emailAction";
 import ContactCategoryCard from "./ContactCategoryCard";
 import GoogleMapComponent from "./map";
-import { FaWeixin, FaWeibo, FaLinkedin, FaGithub, FaPhone, FaEnvelope, FaClock, FaMapMarkerAlt } from "react-icons/fa";
+import { FaWeixin, FaWeibo, FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiBilibili } from "react-icons/si";
-
-interface Role {
-  department: string;
-  role: string;
-  projectName: string;
-}
-interface TeamMember {
-  name: string;
-  surname: string;
-  roles: Role[];
-  currentRole: string;
-  phoneNumber?: string | null;
-  email?: string | null;
-}
-
-interface RoleHistory {
-  [key: string]: Role[];
-}
-
-const getMembersData = async (names: string[]): Promise<TeamMember[]> => {
-  const teamMembers: TeamMember[] = [];
-
-  for (const member of names) {
-    const [name, ...rest] = member.split(" ");
-    const surname = rest.join(" ");
-    const memberData = await getTeamByFullName(name, surname);
-    if (memberData.length > 0) {
-      const member = memberData[0];
-      const currentRole =
-        member.roles.find((role: Role) => role.projectName === "智能陪护")?.role ||
-        "No current role";
-
-      teamMembers.push({
-        ...member,
-        currentRole,
-      });
-    }
-  }
-
-  return teamMembers;
-};
 
 interface ContactUsProps {
   params: {
@@ -62,34 +18,6 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
   const language =
     params.lang === "ch" || params.lang === "en" ? params.lang : "en";
   const dict = await getDictionary(language);
-
-  const mainMembers = await getMembersData([
-    "paweł wójcik",
-    "bartosz sobczak",
-    "zuzanna kochanowska",
-    "joanna popielewska",
-  ]);
-
-
-
-  const siteAdministration = await getMembersData([
-    "dawid chmal",
-    "maria kanczewska",
-  ]);
-
-  const roleHistory: RoleHistory = {};
-  [...mainMembers, ...siteAdministration].forEach(
-    (member) => {
-      const memberFullName = `${member.name} ${member.surname}`;
-      roleHistory[memberFullName] = sortRoles(
-        member.roles.map((role) => ({
-          role: role.role,
-          projectName: role.projectName,
-          department: role.department,
-        }))
-      );
-    }
-  );
 
   return (
     <div className="pt-[100px] md:pt-[120px]">
@@ -112,7 +40,11 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
           {/* 按问题类型分类的联系人展示 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 w-full gap-8">
             {dict.contactUs.questionCategories.map((category: any, index: number) => (
-              <ContactCategoryCard key={category.id} category={category} />
+              <ContactCategoryCard 
+                key={category.id} 
+                category={category} 
+                expertiseLabel={dict.contactUs.expertiseLabel}
+              />
             ))}
           </div>
           
@@ -130,15 +62,10 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
         <div className="grid grid-cols-1 w-full my-8 md:my-12 gap-12 md:gap-20">
           <div className="flex flex-col items-start md:items-center gap-4 md:gap-6">
             <Admin text={dict.contactUs.siteAdministration} />
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full md:w-1/2 gap-6">
-              {siteAdministration.map((member, index) => (
-                <UserCard
-                  key={index}
-                  member={member}
-                  teamId="智能陪护"
-                  roleHistory={roleHistory}
-                />
-              ))}
+            <div className="text-center">
+              <Text>
+                {dict.contactUs.siteAdminDescription}
+              </Text>
             </div>
           </div>
         </div>
@@ -203,7 +130,7 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
           {/* 其他联系信息 */}
           <div className="flex flex-col items-start md:items-center gap-4 md:gap-6">
             <Text bold medium>
-              其他联系信息
+              {dict.contactUs.otherContactInfo}
             </Text>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full gap-6 justify-items-center">
               <div className="text-center w-full max-w-md">
@@ -229,7 +156,7 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
               <div className="text-center w-full max-w-md">
                 <div className="mb-2">
                   <Text bold>
-                    邮箱联系
+                    {dict.contactUs.emailContact}
                   </Text>
                 </div>
                 <Text>
