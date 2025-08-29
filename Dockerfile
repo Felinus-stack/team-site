@@ -2,9 +2,12 @@
 FROM node:18-slim
 
 # 安装 Prisma 所需的依赖
-RUN apt-get update && apt-get install -y \
-    openssl \
-    ca-certificates \
+RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list && \
+    sed -i 's/security.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get install -y \
+        openssl \
+        ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 # 设置工作目录
