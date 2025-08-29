@@ -14,7 +14,7 @@
   "teamSection": {
     "title": "团队",
     "subtitle": "团结就是力量",
-    "description": "年轻、有抱负、投入和勇敢——这是对弗罗茨瓦夫理工大学学生，特别是源境团队成员最好的描述。我们的组织采用类似大公司的结构运作。团队由一位承担最大责任的领队带领。技术主管直接向他汇报，负责管理各部门的负责人，市场部除外——该部门直接向团队领队汇报。每个团队成员都向其部门负责人汇报。",
+    "description": "年轻、有抱负、投入和勇敢——这是对源境团队成员最好的描述。我们的组织采用类似大公司的结构运作。团队由一位承担最大责任的领队带领。技术主管直接向他汇报，负责管理各部门的负责人，市场部除外——该部门直接向团队领队汇报。每个团队成员都向其部门负责人汇报。",
     "buttonLabel": "了解源境"
   },
   "historySection": {
@@ -39,12 +39,15 @@
     "becomePartner": "商务合作",
     "contact": "联系我们"
   },
+  "newsPage": {
+    "title": "新闻资讯"
+  },
   "navigation": {
     "home": "首页",
-    "bolid": "作品展示",
+    "projects": "项目展示",
     "team": "团队架构",
     "about": "关于我们",
-    "partners": "合作伙伴",
+    "partners": "校企伙伴",
     "news": "新闻中心",
     "contact": "联系方式"
   },
@@ -54,10 +57,10 @@
     "findUs": "办公地址",
     "navigation": "站点导航",
     "home": "首页",
-    "bolid": "技术展示",
+    "projects": "技术项目",
     "team": "团队组成",
     "about": "发展历程",
-    "partners": "合作企业",
+    "partners": "校企伙伴",
     "headquarters": "总部地址",
     "address": "河南省新乡市红旗区平原(建业)体育中心金穗大道789号",
     "phone": "+86 152 2596 8963",
@@ -70,46 +73,56 @@
     "rodo": "数据保护",
     "recruitment": "招新",
     "createdBy": "设计与制作：源境软件工作室",
-    "allRightsReserved": "© 2024 版权所有",
-    "seasonDescription": "每个赛季我们都会设计新的赛车。我们已经拥有十五款独特的燃油赛车，每一款都能轻松超越前一款。2022年，我们推出了团队历史上首款配备自动驾驶系统的电动赛车——RT12e。目前我们正在研发第十五代车型。"
+    "allRightsReserved": "© 2025 版权所有",
+    "seasonDescription": "源境团队是一群对计算机领域满怀热忱的校园同行者聚集地，自2018年组建以来，始终秉持 “知行合一、协作共赢” 原则，打破年级与专业壁垒，在 Go/Python/Java 编程实践、Web 开发及算法竞赛备赛等方向探索，已完成 15 + 个校园实践项目，成员亦在 “蓝桥杯” 等赛事中获奖；在这里每一行代码都能创造价值，每一次探索都能抵达新 “境” 界。"
   },
   "sidebar": {
     "media": "媒体",
     "recruitment": "招新"
   },
-  "bolidSection": {
-    "moreAboutBolid": "了解更多关于赛车",
+  "projectSection": {
+    "moreAboutProject": "了解更多关于项目",
     "meetTeam": "认识团队",
-    "acceleration": "加速",
-    "mass": "质量",
-    "power": "功率",
+    "acceleration": "响应速度",
+    "mass": "架构复杂度",
+    "power": "开发周期",
     "specyfikacja": "规格",
-    "bolidu": "赛车",
-    "TXTacceleration": "0-100公里/小时加速",
-    "TXTmass": "发动机功率",
-    "TXTpower": "车辆质量"
+    "projektu": "项目",
+    "TXTacceleration": "参与人数",
+    "TXTmass": "技术架构",
+    "TXTpower": "开发周期"
   },
   "heroAbout": {
     "title": "认识我们的团队"
   },
   "navAbout": {
-    "garage": "车库",
+    "garage": "实验室",
     "teamHistory": "团队历史",
     "departments": "我们的部门",
-    "formulaStudent": "大学生方程式",
-    "paragraph1": "源境团队是弗罗茨瓦夫理工大学的战略科学俱乐部，也是波兰历史最悠久、最具声望的大学方程式赛车队。自2009年以来，约80名弗罗茨瓦夫大学的学生每年都在设计赛车，并参加在世界各地举行的著名工程竞赛。源境团队最大的成功是在2017年赢得了Formula SAE Italy的整个赛事，这是波兰大学生方程式赛车队历史上的首次胜利。",
-    "paragraph2": "在其活动期间，团队设计了12款燃油赛车，这些赛车在整个欧洲和世界的大学生方程式赛事中获得了领先地位。随着汽车行业的变化，源境团队迎接了新的挑战，开始建造电动驱动的结构。团队成员仅用一年时间就完成了动力系统的转换。此外，在同一时间还开发了一套允许自动驾驶的解决方案。开启新时代，2022年推出了首款配备自动驾驶系统的电动赛车——RT12e。目前团队正在研发第四代此类结构——RT15e。",
-    "paragraph3": "设计和建造大学生方程式赛车是一项复杂的跨学科工程项目，允许年轻工程师和经理人发展自己。它需要团队成员的大量投入，转化为数千小时，他们在车间中开发项目并制作自己的部件。车辆的建造得益于弗罗茨瓦夫理工大学、弗罗茨瓦夫市、Manus基金会以及来自整个欧洲的120多家合作伙伴的支持。"
+    "formulaStudent": "算法竞赛",
+    "paragraph1": "源境团队是专注于软件开发与技术创新的学生组织，成立于2018年。团队汇聚了来自各个专业的计算机爱好者，致力于Go/Python/Java编程实践、Web开发及算法竞赛。我们最大的成功是完成了15+个校园项目并在蓝桥杯等编程竞赛中获得佳绩。",
+    "paragraph2": "在发展过程中，团队开发了多个优秀的软件项目，这些项目在校园内外获得了广泛认可。随着技术的快速发展，源境团队积极迎接新挑战，探索人工智能、大数据、云计算等前沿技术领域。团队成员能够快速适应新技术栈和开发框架。我们成功实现了智能陪护系统、无人车定位跟踪系统等创新解决方案。目前团队正在研发下一代采用现代化架构的项目。",
+    "paragraph3": "设计和开发综合性软件系统是一项复杂的跨学科技术项目，让年轻的开发者和项目经理得到全面成长。这需要团队成员的大量投入，转化为数千小时的编程、设计和实现工作。项目的成功得益于学校、本地科技企业以及各行业合作伙伴提供的指导和资源支持。"
   },
   "garage": {
-    "title": "车库",
-    "paragraph": "在河南省新乡市红旗区金穗大道789号平原体育中心，位于一个安静的地区，是我们的车间——车库，我们在这里充满激情和投入地工作于我们的赛车。这五个宽敞的车库是我们的创造力和创新的区域，每天源境团队都在这里迎接新的工程挑战。每个车库都根据我们部门的具体需求进行调整，提供最佳条件用于悬架、空气动力学、电子或我们的赛车的自动驾驶系统的工作。这个空间不仅促进技术发展，还成为团队整合、知识交流和共同解决问题的场所。",
+    "title": "实验室",
+    "paragraph": "在河南省新乡市红旗区金穗大道789号平原体育中心，位于一个安静的地区，是我们的实验室——开发空间，我们在这里充满激情和投入地工作于软件项目。这些现代化设施是我们的创造力和创新的区域，每天源境团队都在这里迎接新的编程挑战。每个工作区域都根据我们部门的具体需求进行调整，提供最佳条件用于前端开发、后端架构、移动应用和算法研究。这个空间不仅促进技术发展，还成为团队协作、知识分享和共同解决问题的场所。",
     "address": "河南省新乡市红旗区金穗大道789号平原体育中心",
     "contact": "联系"
   },
   "departmentsAbout": {
     "title": "我们的部门",
     "interestedIn": "您对哪个部门感兴趣？",
+    "techStackLabel": "我们的技术栈：",
+    "departmentLabels": {
+      "frontend": "前端",
+      "backend": "后端", 
+      "product": "产品",
+      "design": "设计",
+      "operates": "运营",
+      "mobile": "移动端",
+      "algorithm": "算法"
+    },
     "frontend": {
       "description": "负责 Web 前端的开发，追求卓越的用户体验、高效的开发流程与精美的界面实现",
       "responsibilities": [
@@ -135,19 +148,19 @@
       "description": "负责 Web 后端的开发、部署与运维工作，追求稳定的服务、高效的开发与优雅的实现。",
       "responsibilities": [
         {
-          "text": "使用CAD软件进行复合材料部件建模",
+          "text": "Java、Go、Python",
           "icon": "plik.svg"
         },
         {
-          "text": "进行强度模拟及优化复合材料结构",
+          "text": "spring Boot、gin、django、express",
           "icon": "kolo.svg"
         },
         {
-          "text": "进行空气动力学套件的CFD模拟",
+          "text": "maven、gradle、docker、kubernetes",
           "icon": "klucz.svg"
         },
         {
-          "text": "制作及进行复合材料部件的强度测试",
+          "text": "https、token、prometheus、grafana",
           "icon": "box.svg"
         }
       ]
@@ -217,7 +230,7 @@
     "competitions": {
       "acceleration": {
         "title": "加速",
-        "text": "竞赛内容是尽可能快地完成75米的距离，从而可以评估赛车的加速度。团队有两次尝试机会，取其中较好的成绩进行评估。"
+        "text": "竞赛内容是尽可能快地解决算法问题，从而评估代码优化和问题解决的速度。团队有多次尝试机会，取最优解决方案进行评估。"
       },
       "skidPad": {
         "title": "绕桩",
@@ -233,11 +246,11 @@
       },
       "cost": {
         "title": "成本与制造",
-        "text": "竞赛内容是评估项目预算的精确性以及团队成员对材料成本和赛车制造成本的了解。"
+        "text": "竞赛内容是评估项目规划的精确性以及团队成员对软件开发成本、资源配置和技术栈选择的了解。"
       },
       "engineering": {
         "title": "工程设计",
-        "text": "竞赛内容是展示赛车项目。评委会评估团队成员在设计整体和车辆各个系统时的工程技能和创造力。这是得分最高的静态竞赛项目，由汽车行业专家进行评估。"
+        "text": "竞赛内容是展示软件架构和系统设计。评委会评估团队成员在设计整体系统和各个组件时的技术技能和创新能力。这是得分最高的展示竞赛项目，由软件行业专家进行评估。"
       },
       "algorithm": {
         "title": "商业计划展示",
@@ -245,24 +258,133 @@
       }
     }
   },
-  "contactUs": {
+      "contactUs": {
     "pageTitle": "联系我们",
     "writeToUs": "写信给我们",
     "theyWillAnswer": "他们会回答您的问题：",
+    "expertiseLabel": "专业领域：",
+    "questionCategories": [
+      {
+        "id": "recruitment",
+        "title": "招募咨询",
+        "description": "想加入源境团队？有关于招新、面试流程的问题？",
+        "icon": "FaUsers",
+        "contact": {
+          "name": "张明华",
+          "role": "团队招募负责人",
+          "email": "recruitment@yuanjingteam.com",
+          "phone": "+86 152-2596-8963",
+          "expertise": ["团队招募", "面试流程", "新人培训", "部门分配"]
+        }
+      },
+      {
+        "id": "cooperation",
+        "title": "合作洽谈",
+        "description": "校企合作、项目外包、技术咨询等商务合作事宜",
+        "icon": "FaHandshake",
+        "contact": {
+          "name": "李雅楠",
+          "role": "校企合作负责人",
+          "email": "cooperation@yuanjingteam.com",
+          "phone": "+86 138-9876-5432",
+          "expertise": ["校企合作", "项目外包", "商务洽谈", "合作协议"]
+        }
+      },
+      {
+        "id": "technical",
+        "title": "技术咨询",
+        "description": "技术问题、架构设计、代码评审等技术相关咨询",
+        "icon": "FaCode",
+        "contact": {
+          "name": "王志强",
+          "role": "技术总监",
+          "email": "tech@yuanjingteam.com",
+          "phone": "+86 139-1234-5678",
+          "expertise": ["技术架构", "代码评审", "技术选型", "性能优化"]
+        }
+      },
+      {
+        "id": "project",
+        "title": "项目咨询",
+        "description": "项目开发、需求分析、产品设计等项目相关问题",
+        "icon": "FaProjectDiagram",
+        "contact": {
+          "name": "陈思雨",
+          "role": "项目经理",
+          "email": "project@yuanjingteam.com",
+          "phone": "+86 137-8888-9999",
+          "expertise": ["项目管理", "需求分析", "产品设计", "进度跟踪"]
+        }
+      },
+      {
+        "id": "general",
+        "title": "综合咨询",
+        "description": "团队介绍、实验室参观、媒体采访等其他问题",
+        "icon": "FaQuestionCircle",
+        "contact": {
+          "name": "刘文博",
+          "role": "综合事务负责人",
+          "email": "info@yuanjingteam.com",
+          "phone": "+86 151-0000-1234",
+          "expertise": ["团队介绍", "实验室参观", "媒体接待", "活动组织"]
+        }
+      }
+    ],
     "whereToFindUs": "您可以在哪里找到我们？",
-    "projectSupervisors": "团队顾问：",
-    "siteAdministration": "网站管理："
+    "siteAdministration": "网站管理：",
+    "siteAdminDescription": "网站管理和技术支持请联系我们的技术团队",
+    "socialMedia": "关注我们：",
+    "officeHours": "办公时间：",
+    "officeHoursText": "周一至周五 9:00-17:00",
+    "mailingAddress": "邮寄地址：",
+    "addressText": "平原建业体育中心 源境团队\n邮编：453000",
+    "emergencyContact": "紧急联系方式：",
+    "emergencyPhone": "+86 152-2596-8963",
+    "otherContactInfo": "其他联系信息",
+    "emailContact": "邮箱联系",
+    "faq": "常见问题",
+    "faqItems": [
+      {
+        "question": "如何加入源境团队？",
+        "answer": "请访问我们的'加入我们'页面了解最新招募信息，或直接联系团队负责人。"
+      },
+      {
+        "question": "如何成为合作伙伴？",
+        "answer": "请联系我们的校企合作负责人，我们很乐意讨论合作机会。"
+      },
+      {
+        "question": "可以参观实验室吗？",
+        "answer": "可以！请提前联系我们预约参观时间。"
+      },
+      {
+        "question": "需要什么技术基础？",
+        "answer": "我们欢迎各种技术水平的同学！从零基础到有经验的开发者都可以找到适合的项目和学习路径。"
+      }
+    ]
   },
   "joinUs": {
     "pageTitle": "加入我们",
     "becomeMember": "成为成员",
+    "recruitmentOpen": "招新开放中，快来加入我们！🚀",
+    "recruitmentClosed": "本期招新已结束，敬请期待下一期！✨",
     "nextRecruitmentStartsIn": "招新将在以下时间结束：",
+    "recruitmentEndedMessage": "招新已结束，感谢关注！",
     "days": "天",
     "hours": "小时",
     "minutes": "分钟",
     "seconds": "秒",
     "becomePartner": "成为合作伙伴",
     "contact": "联系"
+  },
+  "partnersPage": {
+    "pageTitle": "校企伙伴",
+    "title": "校企伙伴",
+    "becomePartner": "成为合作伙伴",
+    "contactUs": "联系我们",
+    "sponsorCategories": {
+      "strategic": "同行起点",
+      "platinum": "梦想落地"
+    }
   },
   "admin": {
     "title": "登录管理员面板",

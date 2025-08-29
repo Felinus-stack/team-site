@@ -19,6 +19,16 @@ type DepartmentsAboutProps = {
   dict: {
     title: string;
     interestedIn: string;
+    techStackLabel: string;
+    departmentLabels: {
+      frontend: string;
+      backend: string;
+      product: string;
+      design: string;
+      operates: string;
+      mobile: string;
+      algorithm: string;
+    };
     frontend: {
       description: string;
       responsibilities: { text: string; icon: string }[];
@@ -114,60 +124,60 @@ const DepartmentsAbout: React.FC<DepartmentsAboutProps> = ({
           </Title>
           <div className="w-full">
             <Container>
-              <div className="flex gap-4 max-w-6xl mx-auto flex-wrap justify-center items-center">
-                <div className="min-w-32 max-w-40 flex-1">
+              <div className="flex gap-3 md:gap-4 max-w-6xl mx-auto flex-wrap justify-center items-center">
+                <div className="min-w-28 w-auto">
                   <Button
                     black
                     icon={IoSettings}
-                    label="前端"
+                    label={dict.departmentLabels.frontend}
                     onClick={() => handleScrollToSection("frontend")}
                   />
                 </div>
-                <div className="min-w-32 max-w-40 flex-1">
+                <div className="min-w-28 w-auto">
                   <Button
                     black
                     icon={FaCube}
-                    label="后端"
+                    label={dict.departmentLabels.backend}
                     onClick={() => handleScrollToSection("backend")}
                   />
                 </div>
-                <div className="min-w-32 max-w-40 flex-1">
+                <div className="min-w-28 w-auto">
                   <Button
                     black
                     icon={FaBullhorn}
-                    label="产品"
+                    label={dict.departmentLabels.product}
                     onClick={() => handleScrollToSection("product")}
                   />
                 </div>
-                <div className="min-w-32 max-w-40 flex-1">
+                <div className="min-w-24 w-auto">
                   <Button
                     black
                     icon={FaLaptopCode}
-                    label="设计"
+                    label={dict.departmentLabels.design}
                     onClick={() => handleScrollToSection("design")}
                   />
                 </div>
-                <div className="min-w-32 max-w-40 flex-1">
+                <div className="min-w-32 w-auto">
                   <Button
                     black
                     icon={FaBolt}
-                    label="运营"
+                    label={dict.departmentLabels.operates}
                     onClick={() => handleScrollToSection("operates")}
                   />
                 </div>
-                <div className="min-w-36 max-w-44 flex-1">
+                <div className="min-w-24 w-auto">
                   <Button
                     black
                     icon={FaChartBar}
-                    label="移动端"
+                    label={dict.departmentLabels.mobile}
                     onClick={() => handleScrollToSection("mobile")}
                   />
                 </div>
-                <div className="min-w-32 max-w-40 flex-1">
+                <div className="min-w-28 w-auto">
                   <Button
                     black
                     icon={FaDollarSign}
-                    label="算法"
+                    label={dict.departmentLabels.algorithm}
                     onClick={() => handleScrollToSection("algorithm")}
                   />
                 </div>
@@ -186,6 +196,7 @@ const DepartmentsAbout: React.FC<DepartmentsAboutProps> = ({
               text={department.description}
               index={index}
               lightMode={lightMode}
+              techStackLabel={dict.techStackLabel}
             />
           ))}
         </div>

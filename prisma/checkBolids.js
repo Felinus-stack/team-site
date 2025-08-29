@@ -3,9 +3,9 @@ const prisma = new PrismaClient();
 
 async function checkBolids() {
   try {
-    console.log("检查数据库中现有的Bolid记录...");
+    console.log("检查数据库中现有的项目记录...");
     
-    const bolids = await prisma.bolid.findMany({
+    const projects = await prisma.project.findMany({
       select: {
         name: true,
         year: true,
@@ -13,13 +13,13 @@ async function checkBolids() {
       }
     });
     
-    console.log(`数据库中共有 ${bolids.length} 条Bolid记录:`);
-    bolids.forEach(bolid => {
-      console.log(`- ${bolid.name} (${bolid.year}): ${bolid.shortDescription}`);
+    console.log(`数据库中共有 ${projects.length} 条项目记录:`);
+    projects.forEach(project => {
+      console.log(`- ${project.name} (${project.year}): ${project.shortDescription}`);
     });
     
-    if (bolids.length === 0) {
-      console.log("数据库中没有任何Bolid记录！");
+    if (projects.length === 0) {
+      console.log("数据库中没有任何项目记录！");
     }
     
   } catch (error) {

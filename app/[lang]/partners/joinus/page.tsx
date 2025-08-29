@@ -11,7 +11,7 @@ import { getTeamByFullName } from "@/app/actions/getTeamByName";
 interface Role {
   department: string;
   role: string;
-  bolidName: string;
+  projectName: string;
 }
 interface TeamMember {
   name: string;
@@ -32,7 +32,7 @@ const getMembersData = async (names: string[]): Promise<TeamMember[]> => {
 
   return teamMembers.map((member) => {
     const currentRole = member.roles.find(
-      (role) => role.bolidName === "RT14e"
+      (role) => role.projectName === "智能陪护"
     )?.role;
     return {
       ...member,
@@ -62,7 +62,7 @@ const PartnersJoin: React.FC<Props> = async () => {
         <Container>
           <div className="w-full flex flex-col items-center mt-16">
             <div className="mb-24 py-4 my-4 border-b-2 md:w-3/5 border-white text-center">
-              <Title color="white">合作伙伴</Title>
+              <Title color="white">校企伙伴</Title>
             </div>
           </div>
         </Container>
@@ -82,12 +82,12 @@ const PartnersJoin: React.FC<Props> = async () => {
                   <UserCard
                     key={index}
                     member={member}
-                    teamId="RT14e"
+                    teamId="智能陪护"
                     roleHistory={{
                       [`${member.name} ${member.surname}`]: member.roles.map(
                         (role) => ({
                           role: role.role,
-                          bolidName: role.bolidName,
+                          projectName: role.projectName,
                           department: role.department,
                         })
                       ),

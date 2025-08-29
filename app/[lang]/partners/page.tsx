@@ -4,134 +4,46 @@ import Container from "@/app/components/Container";
 import Title from "@/app/components/Title";
 import Button from "@/app/components/Button";
 import Image from "next/image";
+import { getDictionaryClient } from "../dictionaries-client";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
-// 战略合作伙伴列表
+// 校企伙伴列表
 const strategicSponsors = [
-  { name: "tencent.png", url: "https://www.tencent.com/zh-cn" },
-  { name: "alibaba.png", url: "https://www.alibaba.com" },
-  { name: "baidu.png", url: "https://www.baidu.com" },
-  { name: "huawei.png", url: "https://www.huawei.com/cn" },
+  { name: "hist.png", url: "https://www.hist.edu.cn" },
+  { name: "htu.png", url: "https://www.htu.edu.cn" },
+  { name: "xxu.png", url: "https://www.xxu.edu.cn" },
+  { name: "xxgc.png", url: "https://www.xxgc.edu.cn" },
 ];
 
 const platinumSponsors = [
-  { name: "3d expert.jpg", url: "https://3d-expert.pl/" },
-  { name: "3designlab.png", url: "https://3designlab.pl/" },
-  { name: "3m.png", url: "https://www.3mpolska.pl/3M/pl_PL/firma-pl/" },
-  { name: "apex one.png", url: "https://apexone.pl/" },
-  { name: "atlas ward.png", url: "https://atlasward.pl/" },
-  { name: "astromal.png", url: "https://astromal.pl/" },
-  { name: "betis.png", url: "https://ekspertyzy-szkolenia.pl/" },
-  { name: "content.jpg", url: "https://www.lapp.com/pl/pl/PLN/" },
-  { name: "ellagro.png", url: "http://www.ellagro.com/" },
-  { name: "endego.jpg", url: "https://endego.com/pl/" },
-  {
-    name: "fanuc.jpg",
-    url: "https://www.fanuc.eu/pl/pl?gad_source=1&gclid=Cj0KCQjwj9-zBhDyARIsAERjds0vZ-AdUK6tbuY9tFhBFlKjg323nGPseM-z6mF96YXZ8RJVH6Hp9TEaAnANEALw_wcB",
-  },
-  { name: "hexlogo_black_png.png", url: "https://www.hexcel.com/" },
-  { name: "logo_amkmotion rgb.png", url: "https://www.amk-motion.com/en/" },
-  {
-    name: "MovellaTM Logo 1C PMS 171 Orange.png",
-    url: "https://www.movella.com/applications/automation-mobility",
-  },
-  { name: "mahle.png", url: "https://www.pl.mahle.com/pl/" },
-  { name: "mibm.png", url: "https://mibm.pl/" },
-  { name: "premium solutions.png", url: "https://premiumsolutions.pl/" },
-  {
-    name: "pts waś_logo2023.jpg",
-    url: "https://www.was.eu/?gad_source=1&gclid=Cj0KCQjwj9-zBhDyARIsAERjds0lhK-KCC0bZtcfvXqOMsCyknlfES8eysmWfn2BKaNBDikBmDPLXRQaAm_QEALw_wcB",
-  },
-  { name: "radiotechnika product.png", url: "http://radiotechnika.com.pl/" },
-  { name: "siemens.png", url: "https://www.siemens.com/pl/pl.html" },
-  {
-    name: "speedgoat.png",
-    url: "https://www.speedgoat.com/?utm_adgroup=%20&utm_term=%20&utm_content=%20&utm_source=google&utm_medium=cpc&device=c&utm_campaign=17749558443&gad_source=1&gclid=Cj0KCQjwj9-zBhDyARIsAERjds2YbyCYm5dSunlvZT-QypZjXGldVeD6FLP9pXgj4JSJGPKgqtIwhuMaAmZEEALw_wcB",
-  },
-  {
-    name: "staubli.png",
-    url: "https://www.staubli.com/pl/pl/home.html",
-  },
-  { name: "top1karting_logo_rgb.svg", url: "https://top1karting.pl/" },
-  {
-    name: "wolften.jpg",
-    url: "https://wolften.pl/pl/?gad_source=1&gclid=Cj0KCQjwj9-zBhDyARIsAERjds1OzvDOFGnD4jQcjVa_iI1GWNkXZgQqFz5XU0IFdlc3ORePnVQGjRMaAmUEEALw_wcB",
-  }
+  { name: "weibo.png", url: "https://weibo.com/" },
+  { name: "MiHoYo.png", url: "https://www.mihoyo.com/" },
+  { name: "kuaishou.png", url: "https://www.kuaishou.com/" },
+  { name: "JD.png", url: "https://www.jd.com/" },
+  { name: "DiDi.png", url: "https://www.didiglobal.com/" },
+  { name: "baidu.png", url: "https://www.baidu.com/" },
+  { name: "360.png", url: "https://www.360.cn/" },
+  { name: "Ctrip.png", url: "https://www.ctrip.com/" },
+  { name: "haluo.png", url: "https://www.haluo.com/" },
+  { name: "weipai.png", url: "https://www.weipai.com/" },
+  { name: "xiaomi.png", url: "https://www.mi.com/" },
+  { name: "ByteDance.png", url: "https://www.bytedance.com/" },
+  { name: "huawei.png", url: "https://www.huawei.com/" },
+  { name: "alibaba.png", url: "https://www.alibaba.com/" },
+  { name: "tongcheng.png", url: "https://www.ly.com/" },
+  { name: "jinshanyun.png", url: "https://www.ksyun.com/" },
+  { name: "yunzhi.png", url: "https://cloud.tencent.com/" },
+  { name: "tengyu.png", url: "https://app-tc.mokahr.com/campus-recruitment/tencent-ieg/6023#/" },
+  { name: "bluelogo.png", url: "https://www.bluefocusgroup.com/" },
+  { name: "duxiaoman.png", url: "https://www.duxiaoman.com/" },
+  { name: "FlashEx.png", url: "https://www.ishansong.com/" },
+  { name: "haoweilai.png", url: "https://www.100tal.com/" },
+  { name: "shuma.png", url: "https://www.digital-engine.com/" },
+  { name: "tengdataiyuan.png", url: "https://www.tdology.com/" }
 ];
 
-const goldSponsors = [
-  {
-    name: "adbl.png",
-    url: "https://adbl.eu/",
-  },
-  { name: "airtech.png", url: "https://airtech.lu/" },
-  { name: "filipowicz pawel.png", url: "https://www.pfpcnc.pl/" },
-  { name: "avl.jpeg", url: "https://www.avl.com/en" },
-  { name: "ams świdnica.png", url: "https://ams-at.eu/" },
-  { name: "anodal.png", url: "https://anodal.pl/" },
-  { name: "astar.png", url: "https://astar.pl/" },
-  { name: "bosch.png", url: "https://www.bosch.pl/" },
-  {
-    name: "ctc-logo-mit-airbus-line.png",
-    url: "https://www.ctc-backend.com/en/",
-  },
-  {
-    name: "computer controls.jpg",
-    url: "https://www.ccontrols.pl/pl_pl/?utm_term=computer%20controls&utm_campaign=4P+-+Wyszukiwarka+-+Brand+-+PL&utm_source=adwords&utm_medium=ppc&hsa_acc=5776325502&hsa_cam=1748560941&hsa_grp=75287601584&hsa_ad=539317009618&hsa_src=g&hsa_tgt=kwd-311144365331&hsa_kw=computer%20controls&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=Cj0KCQjwj9-zBhDyARIsAERjds0xUeQm0g1a8hBpirS6YIs2AOKA3sZHQDU7LeztdhwZMP-YO0y7vI8aAkPSEALw_wcB",
-  },
-  { name: "altium.png", url: "https://www.altium.com/" },
-  { name: "czekała.png", url: "https://wagi-czekala.pl/" },
-  { name: "eurocircuits.jpg", url: "https://www.eurocircuits.com/" },
-  { name: "ELMAR_logo_www_duze_red.png", url: "https://www.elmar-bhp.pl/" },
-  { name: "indasa.jpg", url: "https://indasa.sklep.pl/" },
-  { name: "inkarbo.jpg", url: "https://www.inkarbo.com/" },
-  { name: "inter-metal.png", url: "https://www.inter-metal.com.pl/" },
-  { name: "kaufland.png", url: "https://www.kaufland.pl/" },
-  { name: "lange .png", url: "https://langelukaszuk.pl/" },
-  { name: "quay.png", url: "https://www.quay.pl/" },
-  { name: "mitutoyo.png", url: "https://mitutoyo.pl/pl_pl" },
-  { name: "ntn-snr.png", url: "https://www.ntn-snr.com/pl" },
-  { name: "polak modele i prototypy.png", url: "https://modeleiprototypy.pl/" },
-  { name: "protoplastic.png", url: "https://protoplastic.pl/" },
-  { name: "rs.png", url: "https://pl.rs-online.com/web/" },
-  { name: "schaeffler.png", url: "https://www.schaeffler.pl/pl/" },
-  { name: "tenneco logo finalrgb.png", url: "https://www.tenneco.com/" },
-  { name: "vector.png", url: "https://www.vector.com/int/en/" },
-  { name: "Wolfratech_Logo.png", url: "http://www.wolfratech.pl/" },
-  { name: "WAMTECHNIK_Logo_NeutralBlack-1.png", url: "https://wamtechnik.pl/" },
-];
 
-const silverSponsors = [
-  { name: "logo-AMA-PROFIL-COREL-_2_.png", url: "https://www.amaprofil.pl/" },
-  { name: "auto zatoka.jpg", url: "https://www.auto-zatoka.pl/" },
-  { name: "boellhoff-logo.svg", url: "https://www.boellhoff.com/pl-pl/" },
-  { name: "chem trend.png", url: "https://pl.chemtrend.com/" },
-  { name: "czupryna car.png", url: "http://czupryna.eu/" },
-  { name: "cnc jurczak.png", url: "https://cncjurczak.pl/" },
-  { name: "LOGO-nowe 2019.png", url: "https://www.perrot.de/pl/" },
-  {
-    name: "dewrap.png",
-    url: "https://www.facebook.com/p/DeWrap-100063967515424/",
-  },
-  { name: "hellermanntyton.jpg", url: "https://www.hellermanntyton.pl/" },
-  { name: "jusky.png", url: "https://jusky.pl/" },
-  {
-    name: "logo_branson.png",
-    url: "https://www.emerson.com/pl-pl/automation/branson",
-  },
-  { name: "logo_wichuworkshop.jpg", url: "https://www.wichuworkshop.pl/" },
-  { name: "Logo_NewTechnology (1).png", url: "https://www.newtec.pl/pl/" },
-  { name: "IEWC-Logo.png", url: "https://www.iewc.com/" },
-  { name: "smart one.png", url: "https://smart-one.com.pl/" },
-  {
-    name: "sonel.png",
-    url: "https://www.sonel.pl/pl/",
-  },
-  { name: "stelweld.png", url: "https://www.stelweld.com.pl/" },
-  { name: "tadex_logo_black.svg", url: "https://tadex.com.pl/" },
-  { name: "wo bit.png", url: "https://wobit.com.pl/" },
-  { name: "wimarol.jpg", url: "https://waterjet.pl/" },
-];
 
 
 
@@ -141,6 +53,12 @@ interface SponsorGridProps {
   height: string;
   gap?: string;
   sponsors: Array<{ name: string; url: string }>;
+}
+
+interface PartnersProps {
+  params: {
+    lang: string;
+  };
 }
 
 const SponsorList: React.FC<SponsorGridProps> = ({
@@ -205,34 +123,49 @@ const SponsorGrid: React.FC<SponsorGridProps> = ({
   );
 };
 
-const Partners = () => {
+const Partners: React.FC<PartnersProps> = ({ params }) => {
+  const language = params.lang === "ch" || params.lang === "en" ? params.lang : "en";
   const router = useRouter();
+  const [dict, setDict] = useState<any>(null);
+
+  useEffect(() => {
+    const loadDictionary = async () => {
+      const dictionary = await getDictionaryClient(language);
+      setDict(dictionary);
+    };
+    loadDictionary();
+  }, [language]);
+
+  if (!dict) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className=" pt-[100px] md:pt-[120px] mb-6 md:mb-12">
       <div className="absolute opacity-5 right-0">
         <h1 className="text-[15rem] font-extrabold text-black uppercase leading-none">
-          合作伙伴
+          {dict.partnersPage.pageTitle}
         </h1>
       </div>
       <Container>
         <div className="flex flex-col items-center text-center w-full">
-          <div className="py-4 my-4 border-b-2 md:w-3/5 border-black">
-            <Title color="black">合作伙伴</Title>
+          <div className="py-4 my-4 border-b-2 w-full max-w-4xl border-black text-center">
+            <Title color="black" wrap>{dict.partnersPage.title}</Title>
           </div>
           <div className="my-8 flex gap-4 md:w-1/3">
             <Button
-              label="成为合作伙伴"
-              onClick={() => router.push(`/partners/joinus`)}
+              label={dict.partnersPage.becomePartner}
+              onClick={() => router.push(`/${language}/partners/joinus`)}
             />
             <Button
               outline
-              label="联系我们"
-              onClick={() => router.push(`/contact`)}
+              label={dict.partnersPage.contactUs}
+              onClick={() => router.push(`/${language}/contact`)}
             />
           </div>
 
           <SponsorGrid
-            sponsorRank="战略合作伙伴"
+            sponsorRank={dict.partnersPage.sponsorCategories.strategic}
             sponsors={strategicSponsors}
             height="h-20 md:h-40"
             gap="gap-0"
@@ -240,28 +173,14 @@ const Partners = () => {
           />
 
           <SponsorGrid
-            sponsorRank="白金合作伙伴"
+            sponsorRank={dict.partnersPage.sponsorCategories.platinum}
             sponsors={platinumSponsors}
             height="h-20 md:h-40"
             gap="md:gap-20"
             gridCols="grid-cols-2"
           />
 
-          <SponsorGrid
-            sponsorRank="黄金合作伙伴"
-            sponsors={goldSponsors}
-            height="h-16 md:h-36"
-            gap="md:gap-20"
-            gridCols="grid-cols-3"
-          />
 
-          <SponsorGrid
-            sponsorRank="白银合作伙伴"
-            sponsors={silverSponsors}
-            height="h-16 md:h-32"
-            gap="md:gap-16"
-            gridCols="grid-cols-3 md:grid-cols-4"
-          />
         </div>
       </Container>
     </div>

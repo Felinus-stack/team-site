@@ -27,7 +27,7 @@ for index, row in df.iterrows():
         'role': str(row['ROLA W SEZONIE 2023/24']).strip().lower() if not pd.isna(row['ROLA W SEZONIE 2023/24']) else '',
         # 获取部门，去除首尾空格并转换为小写，如果为空则赋值为空字符串
         'department': str(row['DZIAŁ']).strip().lower() if not pd.isna(row['DZIAŁ']) else '',
-        'bolidName': 'RT14e'
+        'projectName': '智能陪护'
     }
 
     # 生成成员标识符

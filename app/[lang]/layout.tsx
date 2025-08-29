@@ -12,6 +12,7 @@ import SideBar from "../components/Navbar/SideBar";
 import FooterSection from "../components/Section/FooterSection/FooterSection";
 import "../globals.css";
 import ToasterProvider from "../providers/ToasterProvider";
+import SessionProviderWrapper from "../providers/SessionProvider";
 import { getDictionary } from "./dictionaries";
 
 export async function generateStaticParams() {
@@ -48,7 +49,7 @@ const syncopate = localFont({
 export const metadata: Metadata = {
   title: "源境团队",
   description:
-    "河南师范大学源境软件工作室，专注于软件开发与技术创新",
+    "源境软件工作室，专注于软件开发与技术创新",
 };
 
 interface RootLayoutProps {
@@ -74,19 +75,21 @@ export default async function RootLayout({
     <html lang={params.lang}>
       <body className={font.className}>
         <ClientOnly>
-          <ClosestSectionProvider>
-            <ToasterProvider />
-            <Navbar lang={params.lang} dict={dict.navigation} />
-            <SideBar dict={dict.sidebar} />
-            {children}
-            <FooterSection dict={dict.footer} />
-          </ClosestSectionProvider>
-          {process.env.VERCEL && (
-            <>
-              <SpeedInsights />
-              <Analytics />
-            </>
-          )}
+          <SessionProviderWrapper>
+            <ClosestSectionProvider>
+              <ToasterProvider />
+              <Navbar lang={params.lang} dict={dict.navigation} />
+              <SideBar dict={dict.sidebar} />
+              {children}
+              <FooterSection dict={dict.footer} />
+            </ClosestSectionProvider>
+            {process.env.VERCEL && (
+              <>
+                <SpeedInsights />
+                <Analytics />
+              </>
+            )}
+          </SessionProviderWrapper>
         </ClientOnly>
       </body>
     </html>

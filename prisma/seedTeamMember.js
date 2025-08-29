@@ -17,10 +17,10 @@ async function main() {
       where: { id: existingMember.id },
       data: {
         roles: {
-          push: {
+          create: {
             department: "复合材料",
             role: "成员",
-            bolidName: "RT14e",
+            projectName: "智能陪护",
           },
         },
       },
@@ -34,13 +34,15 @@ async function main() {
       data: {
         name: memberToUpdate.name,
         surname: memberToUpdate.surname,
-        roles: [
-          {
-            department: "复合材料",
-            role: "成员",
-            bolidName: "RT14e",
-          },
-        ],
+        roles: {
+          create: [
+            {
+              department: "复合材料",
+              role: "成员",
+              projectName: "智能陪护",
+            },
+          ],
+        },
       },
     });
     console.log(

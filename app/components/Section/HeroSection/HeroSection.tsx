@@ -19,6 +19,7 @@ interface HeroSectionProps {
     subtitle: string;
     button: string;
   };
+  language: Locale;
 }
 const textVariants = {
   hidden: { x: -100, opacity: 0 },
@@ -33,9 +34,9 @@ const textVariants = {
   }),
 };
 
-const HeroSection: React.FC<HeroSectionProps> = ({ dict }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ dict, language }) => {
   const handleScroll = () => {
-    const element = document.getElementById("bolid");
+    const element = document.getElementById("projects");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -85,7 +86,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ dict }) => {
                 custom={0.2}
                 variants={textVariants}
               >
-                <Title>{dict.title2}</Title>
+                <Title size={language === "en" ? "big" : "normal"}>{dict.title2}</Title>
               </motion.div>
 
               {/* Animated Description */}
@@ -136,7 +137,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ dict }) => {
             >
               <Image
                 src="/images/bolid_main.png"
-                alt="bolid"
+                alt="project"
                 layout="intrinsic"
                 width={700}
                 height={551}

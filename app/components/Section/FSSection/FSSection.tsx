@@ -50,8 +50,8 @@ const FSSection: React.FC<FSSectionProps> = ({ aboutUs, dict }) => {
             <div className="relative h-[22rem] lg:h-auto">
               <Image
                 className=""
-                src="/images/bolidFS.jpeg"
-                alt="bolid"
+                src="/images/algorithm.jpeg"
+                alt="project"
                 layout="fill"
                 objectFit="cover"
                 objectPosition="70% center"

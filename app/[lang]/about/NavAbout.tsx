@@ -41,8 +41,8 @@ const NavAbout: React.FC<NavAboutProps> = ({ dict }) => {
               <div className="relative md:w-2/5 h-[20rem] md:h-auto">
                 <Image
                   className=""
-                  src="/images/poznaj_nas.jpg"
-                  alt="bolid"
+                  src="/images/team.jpg"
+                  alt="project"
                   layout="fill"
                   objectFit="cover"
                   objectPosition="center 10%"

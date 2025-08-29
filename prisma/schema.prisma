@@ -25,6 +25,7 @@ model Admin {
   updatedAt      DateTime  @updatedAt
 
   accounts Account[]
+  sessions Session[]
 }
 
 model Account {
@@ -46,6 +47,22 @@ model Account {
   @@unique([provider, providerAccountId])
 }
 
+model Session {
+  id           String   @id @default(uuid())
+  sessionToken String   @unique
+  adminId      String
+  expires      DateTime
+  admin        Admin    @relation(fields: [adminId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
 model TeamMember {
   id          String @id @default(uuid())
   name        String
@@ -59,14 +76,15 @@ model Role {
   id          String @id @default(uuid())
   department  String
   role        String
-  bolidName   String
+  projectName String
   teamMember  TeamMember @relation(fields: [teamMemberId], references: [id])
   teamMemberId String
 }
 
-model Bolid {
+model Project {
   id                String @id @default(uuid())
   name              String @unique
+  enName            String? 
   year              String
   shortDescription  String
   enShortDescription String? @db.Text
@@ -74,22 +92,24 @@ model Bolid {
   acceleration      String
   mass              String
   power             String
+
+  @@map("projects")
 }
 
 model Part {
   id          String @id @default(uuid())
   partName    String
   description String
-  bolid       Bolid @relation(fields: [bolidId], references: [id])
-  bolidId     String
+  project     Project @relation(fields: [projectId], references: [id])
+  projectId   String
 }
 
 model News {
   id                String @id @default(uuid())
   date              DateTime  @default(now())
   title             String
-  shortDescription  String
-  longDescription   String
+  shortDescription  String @db.Text
+  longDescription   String @db.Text
   duration          Int
   logo              String
   mainImage         String
@@ -98,7 +118,7 @@ model News {
 
 model NewsContent {
   id      String @id @default(uuid())
-  text    String
+  text    String @db.Text
   news    News @relation(fields: [newsId], references: [id])
   newsId  String
 }
