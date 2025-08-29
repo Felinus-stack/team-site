@@ -13,6 +13,7 @@ interface ButtonProps {
   black?: boolean;
   icon?: IconType;
   hoverText?: string; // 悬停时显示的文本的可选属性
+  allowWrap?: boolean; // 允许文字换行
 }
 
 const formatPhoneNumber = (phoneNumber: string) => {
@@ -32,6 +33,7 @@ const Button: React.FC<ButtonProps> = ({
   black,
   icon: Icon,
   hoverText,
+  allowWrap = false,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -49,7 +51,7 @@ const Button: React.FC<ButtonProps> = ({
         hover:opacity-80
         transition duration-300 ease-in-out
         w-full min-w-fit
-        whitespace-nowrap
+        ${allowWrap ? "whitespace-normal" : "whitespace-nowrap"}
         ${black ? "bg-black" : outline ? "bg-white" : "bg-customRed"}
         ${black ? "px-12" : "px-2"}
         ${

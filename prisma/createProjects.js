@@ -65,11 +65,11 @@ async function createProjects() {
   try {
     console.log("开始创建项目数据...");
     
-    // 获取projectsDescriptions.json中的描述
+    // 获取英文短描述
     const fs = require("fs");
     const path = require("path");
-    const projectDescriptionsPath = path.join(__dirname, "projectsDescriptions.json");
-    const projectDescriptions = require(projectDescriptionsPath);
+    const enShortDescriptionsPath = path.join(__dirname, "enShortDescriptions.json");
+    const enShortDescriptions = require(enShortDescriptionsPath);
     
     // 创建所有项目记录
     for (const [projectName, baseData] of Object.entries(projectBaseData)) {
@@ -80,7 +80,7 @@ async function createProjects() {
 
       if (!existingProject) {
         // 获取详细描述（如果有）
-        const enDescription = projectDescriptions[projectName] || null;
+        const enDescription = enShortDescriptions[projectName] || null;
         
         // 创建新的项目记录
         await prisma.project.create({
@@ -97,7 +97,7 @@ async function createProjects() {
         console.log(`已创建新项目记录: ${projectName}`);
       } else {
         // 更新现有项目记录
-        const enDescription = projectDescriptions[projectName] || existingProject.enShortDescription;
+        const enDescription = enShortDescriptions[projectName] || existingProject.enShortDescription;
         
         await prisma.project.update({
           where: { name: projectName },

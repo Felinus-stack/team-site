@@ -6,6 +6,7 @@ import Slider from "./Slider";
 
 type ProjectData = {
   name: string;
+  EN_name?: string;
   year: string;
   short_description: string;
   EN_short_description: string;
@@ -27,13 +28,13 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
 }) => {
   const [currentProjectData, setCurrentProjectData] = useState<ProjectData>({
     name: presetProject,
+    EN_name: "Xinxiang Vehicle Checkpoint Management System",
     year: "2024",
-    short_description:
-      "新乡市卡口车辆防疫管理系统是我们团队针对疫情期间交通管控需求开发的智能化管理平台。系统集成了车辆识别、健康码验证、通行证管理等功能，为疫情防控提供了高效的技术支撑。通过人工智能和大数据分析，实现了对过往车辆的精准管控和实时监测，大大提高了防疫工作的效率和准确性。",
-    EN_short_description: "Xinxiang Checkpoint Vehicle Epidemic Prevention Management System",
-    acceleration: "实时处理",
-    mass: "云端部署",
-    power: "AI智能",
+    short_description: "专为疫情防控设计的智能管理系统",
+    EN_short_description: "An intelligent epidemic prevention management system designed specifically for vehicle checkpoint control.",
+    acceleration: "8人",
+    mass: "微服务架构",
+    power: "4个月",
   });
 
   const [previousProjectData, setPreviousProjectData] =
@@ -104,6 +105,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
         <Slider
           currentProject={currentProjectData.name}
           onChangeProject={handleChangeProject}
+          language={language}
         />
         <div
           className={`flex ${sameDirectionShift} ${isAnimating} ${
