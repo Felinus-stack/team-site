@@ -80,6 +80,25 @@ const LoginModal = () => {
     </div>
   );
 
+  const handleOAuthSignIn = (provider: string) => {
+    setIsLoading(true);
+    signIn(provider, {
+      callbackUrl: '/admin/addNews'
+    }).then((result) => {
+      if (result?.ok) {
+        login(); // Update AuthContext
+        toast.success('Logged in successfully');
+        loginModal.onClose();
+      } else if (result?.error) {
+        toast.error('Login failed');
+      }
+      setIsLoading(false);
+    }).catch(() => {
+      toast.error('Login failed');
+      setIsLoading(false);
+    });
+  };
+
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
       <hr />
@@ -87,13 +106,15 @@ const LoginModal = () => {
         outline
         label="Continue with Google"
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={() => handleOAuthSignIn('google')}
+        disabled={isLoading}
       />
       <Button
         outline
         label="Continue with GitHub"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => handleOAuthSignIn('github')}
+        disabled={isLoading}
       />
       <div className="text-neutral-500 text-center mt-4 font-light">
         <div className="justify-center flex flex-row items-center gap-2">
