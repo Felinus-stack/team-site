@@ -12,6 +12,7 @@ import SideBar from "../components/Navbar/SideBar";
 import FooterSection from "../components/Section/FooterSection/FooterSection";
 import "../globals.css";
 import ToasterProvider from "../providers/ToasterProvider";
+import SessionProviderWrapper from "../providers/SessionProvider";
 import { getDictionary } from "./dictionaries";
 
 export async function generateStaticParams() {
@@ -46,9 +47,85 @@ const syncopate = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "源境团队",
+  title: {
+    default: "源境团队 - 专业软件开发与技术创新团队",
+    template: "%s | 源境团队"
+  },
   description:
-    "源境软件工作室，专注于软件开发与技术创新",
+    "源境软件工作室成立于2018年，是专注于Go/Python/Java编程、Web开发和算法竞赛的专业学生团队。已完成15+校园项目，获得蓝桥杯等编程竞赛奖项。",
+  keywords: [
+    "源境团队",
+    "软件开发",
+    "编程团队",
+    "算法竞赛",
+    "Web开发",
+    "Go语言",
+    "Python开发",
+    "Java编程",
+    "蓝桥杯",
+    "技术创新",
+    "校园项目",
+    "程序设计",
+    "前端开发",
+    "后端开发",
+    "移动开发"
+  ],
+  authors: [{ name: "源境团队", url: "http://8.136.112.63" }],
+  creator: "源境团队",
+  publisher: "源境团队",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("http://8.136.112.63"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "zh-CN": "/ch",
+      "en-US": "/en",
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "zh_CN",
+    url: "http://8.136.112.63",
+    title: "源境团队 - 专业软件开发与技术创新团队",
+    description: "源境软件工作室成立于2018年，专注于软件开发与技术创新的专业学生团队。",
+    siteName: "源境团队",
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 135,
+        height: 125,
+        alt: "源境团队Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "源境团队 - 专业软件开发团队",
+    description: "源境软件工作室成立于2018年，专注于软件开发与技术创新。",
+    images: ["/images/logo.png"],
+    creator: "@yuanjingteam",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code", // 获得验证码后替换
+  },
+  other: {
+    "baidu-site-verification": "your-baidu-verification-code", // 获得验证码后替换
+  },
 };
 
 interface RootLayoutProps {
@@ -74,19 +151,21 @@ export default async function RootLayout({
     <html lang={params.lang}>
       <body className={font.className}>
         <ClientOnly>
-          <ClosestSectionProvider>
-            <ToasterProvider />
-            <Navbar lang={params.lang} dict={dict.navigation} />
-            <SideBar dict={dict.sidebar} />
-            {children}
-            <FooterSection dict={dict.footer} />
-          </ClosestSectionProvider>
-          {process.env.VERCEL && (
-            <>
-              <SpeedInsights />
-              <Analytics />
-            </>
-          )}
+          <SessionProviderWrapper>
+            <ClosestSectionProvider>
+              <ToasterProvider />
+              <Navbar lang={params.lang} dict={dict.navigation} />
+              <SideBar dict={dict.sidebar} />
+              {children}
+              <FooterSection dict={dict.footer} />
+            </ClosestSectionProvider>
+            {process.env.VERCEL && (
+              <>
+                <SpeedInsights />
+                <Analytics />
+              </>
+            )}
+          </SessionProviderWrapper>
         </ClientOnly>
       </body>
     </html>

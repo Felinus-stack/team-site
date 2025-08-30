@@ -121,8 +121,8 @@ const FooterSection: React.FC<FooterSectionProps> = ({ dict }) => {
                   >
                     <circle cx="10.992" cy="10.992" r="10.992" fill="#D41E3E" />
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M16.6649 7.90923V14.8043L14.0076 11.4415L13.5026 11.8506L16.1858 15.2468H6.15194L8.83514 11.8506L8.33018 11.4415L5.67285 14.8043V7.90922L11.1685 12.7344L16.6649 7.90923ZM16.6645 6.73682V7.04186L11.1688 11.867L5.67311 7.04187V6.73682H16.6645Z"
                       fill="#1F2021"
                     />
