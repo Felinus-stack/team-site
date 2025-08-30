@@ -96,6 +96,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
   }, []);
 
   const handleChangeProject = (projectName: string) => {
+    console.log('项目切换点击:', projectName); // 调试日志
     fetchProjectData(projectName);
   };
 

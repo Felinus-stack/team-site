@@ -113,6 +113,8 @@ const RegisterModal = () => {
       mt-3
     ">
       <hr />
+      {/* 暂时注释掉OAuth登录功能 - 待开发完成后启用 */}
+      {/* 
       <Button
         outline
         label='Continue with Google'
@@ -127,6 +129,7 @@ const RegisterModal = () => {
         onClick={() => handleOAuthSignIn('github')}
         disabled={isLoading}
       />
+      */}
       <div className="
         text-neutral-500
         text-center

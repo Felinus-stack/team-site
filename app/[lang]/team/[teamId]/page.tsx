@@ -194,14 +194,14 @@ const TeamPage = ({ params }: { params: Iparams }) => {
                  {(() => {
                    // 项目对应的团队照片映射 
                    const projectTeamPhotos: { [key: string]: { src: string; alt: string; title: string } } = {
-                     "智能陪护": { src: "/images/team/team1.jpeg", alt: "智能陪护团队", title: "智能陪护团队" },
-                     "新乡市卡口车辆防疫管理系统": { src: "/images/team/team2.jpeg", alt: "防疫系统团队", title: "防疫系统团队" },
-                     "新生报道系统": { src: "/images/team/team3.jpeg", alt: "新生系统团队", title: "新生系统团队" },
-                     "无人车定位跟踪系统": { src: "/images/team/team4.jpg", alt: "无人车团队", title: "无人车团队" },
-                     "网格化管理系统": { src: "/images/team/team5.jpg", alt: "网格化团队", title: "网格化团队" },
-                     "统战管理系统": { src: "/images/team/team6.jpg", alt: "统战系统团队", title: "统战系统团队" },
-                     "场所工作人员管理界面": { src: "/images/team/team7.jpg", alt: "场所管理团队", title: "场所管理团队" },
-                     "XXX市信访预警系统": { src: "/images/team/team8.jpg", alt: "信访系统团队", title: "信访系统团队" }
+                     "智能陪护": { src: "/images/team/team4.jpg", alt: "智能陪护团队", title: "智能陪护团队" },
+                     "新乡市卡口车辆防疫管理系统": { src: "/images/team/team5.jpg", alt: "防疫系统团队", title: "防疫系统团队" },
+                     "新生报道系统": { src: "/images/team/team6.jpg", alt: "新生系统团队", title: "新生系统团队" },
+                     "无人车定位跟踪系统": { src: "/images/team/team7.jpg", alt: "无人车团队", title: "无人车团队" },
+                     "网格化管理系统": { src: "/images/team/team8.jpg", alt: "网格化团队", title: "网格化团队" },
+                     "统战管理系统": { src: "/images/team/team9 .jpg", alt: "统战系统团队", title: "统战系统团队" },
+                     "场所工作人员管理界面": { src: "/images/team/team10.jpg", alt: "场所管理团队", title: "场所管理团队" },
+                     "XXX市信访预警系统": { src: "/images/team/team11.jpg", alt: "信访系统团队", title: "信访系统团队" }
                    };
 
                    // 解码 teamId 以正确匹配项目名称
@@ -209,7 +209,7 @@ const TeamPage = ({ params }: { params: Iparams }) => {
                    
                    // 获取当前项目的团队照片，如果没有则使用默认照片
                    const currentProjectPhoto = projectTeamPhotos[decodedTeamId] || { 
-                     src: "/images/team/team1.jpeg", 
+                     src: "/images/team/team4.jpg", 
                      alt: "团队照片", 
                      title: "团队照片" 
                    };
