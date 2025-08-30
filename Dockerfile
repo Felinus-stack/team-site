@@ -1,5 +1,5 @@
 
-FROM node:18-slim AS runner
+FROM node:20-slim AS runner
 
 # 设置工作目录
 WORKDIR /app
