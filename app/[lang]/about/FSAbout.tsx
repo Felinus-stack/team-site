@@ -60,12 +60,6 @@ const FSAbout: React.FC<FSAboutProps> = ({ dict }) => {
               />
               <FlipCard
                 height={"h-60"}
-                src="/images/FS/skipad.png"
-                title={competitions.skidPad.title}
-                text={competitions.skidPad.text}
-              />
-              <FlipCard
-                height={"h-60"}
                 src="/images/FS/autocross.png"
                 title={competitions.autocross.title}
                 text={competitions.autocross.text}
@@ -75,6 +69,12 @@ const FSAbout: React.FC<FSAboutProps> = ({ dict }) => {
                 src="/images/FS/endurance.png"
                 title={competitions.endurance.title}
                 text={competitions.endurance.text}
+              />
+              <FlipCard
+                height={"h-60"}
+                src="/images/FS/skipad.png"
+                title={competitions.skidPad.title}
+                text={competitions.skidPad.text}
               />
             </div>
           </div>
