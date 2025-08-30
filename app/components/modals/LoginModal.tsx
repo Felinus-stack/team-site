@@ -157,6 +157,8 @@ const LoginModal = () => {
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
       <hr />
+      {/* 暂时注释掉OAuth登录功能 - 待开发完成后启用 */}
+      {/* 
       <Button
         outline
         label={dict.loginModal.continueWithGoogle}
@@ -171,6 +173,7 @@ const LoginModal = () => {
         onClick={() => handleOAuthSignIn('github')}
         disabled={isLoading}
       />
+      */}
       <div className="text-neutral-500 text-center mt-4 font-light">
         <div className="justify-center flex flex-row items-center gap-2">
           <div>{dict.loginModal.noAccount}</div>
