@@ -1,6 +1,13 @@
 
 FROM node:20-slim AS runner
 
+# 安装 Prisma 需要的系统依赖
+RUN apt-get update && apt-get install -y \
+    openssl \
+    libssl1.1 \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
 # 设置工作目录
 WORKDIR /app
 
