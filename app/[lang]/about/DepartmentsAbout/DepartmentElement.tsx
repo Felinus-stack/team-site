@@ -26,6 +26,7 @@ interface DepartmentElementProps {
   text: string;
   index: number;
   lightMode?: boolean;
+  techStackLabel: string;
 }
 
 const DepartmentElement: React.FC<DepartmentElementProps> = ({
@@ -34,6 +35,7 @@ const DepartmentElement: React.FC<DepartmentElementProps> = ({
   text,
   index,
   lightMode,
+  techStackLabel,
 }) => {
   const bgColor = lightMode
     ? index % 2 === 0
@@ -62,7 +64,7 @@ const DepartmentElement: React.FC<DepartmentElementProps> = ({
             <Text color={textColor}>{text}</Text>
             <div className="flex flex-col gap-4 mt-4 md:mt-10">
               <Text color={textColor} bold>
-                我们的技术栈：
+                {techStackLabel}
               </Text>
               <div className="flex flex-col gap-2">
                 {responsibilities.map((responsibility, idx) => (

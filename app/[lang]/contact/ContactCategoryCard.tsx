@@ -22,9 +22,10 @@ interface ContactCategory {
 
 interface ContactCategoryCardProps {
   category: ContactCategory;
+  expertiseLabel: string;
 }
 
-const ContactCategoryCard: React.FC<ContactCategoryCardProps> = ({ category }) => {
+const ContactCategoryCard: React.FC<ContactCategoryCardProps> = ({ category, expertiseLabel }) => {
   // 图标映射 - 使用更友好的圆形背景设计
   const getIcon = (iconName: string) => {
     const iconSize = 18;
@@ -175,7 +176,7 @@ const ContactCategoryCard: React.FC<ContactCategoryCardProps> = ({ category }) =
         <div>
           <div className="mb-2">
             <Text extrasmall bold color="black">
-              专业领域：
+              {expertiseLabel}
             </Text>
           </div>
           <div className="flex flex-wrap gap-1.5">

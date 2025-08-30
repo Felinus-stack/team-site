@@ -39,6 +39,9 @@
     "becomePartner": "商务合作",
     "contact": "联系我们"
   },
+  "newsPage": {
+    "title": "新闻资讯"
+  },
   "navigation": {
     "home": "首页",
     "projects": "项目展示",
@@ -110,6 +113,16 @@
   "departmentsAbout": {
     "title": "我们的部门",
     "interestedIn": "您对哪个部门感兴趣？",
+    "techStackLabel": "我们的技术栈：",
+    "departmentLabels": {
+      "frontend": "前端",
+      "backend": "后端", 
+      "product": "产品",
+      "design": "设计",
+      "operates": "运营",
+      "mobile": "移动端",
+      "algorithm": "算法"
+    },
     "frontend": {
       "description": "负责 Web 前端的开发，追求卓越的用户体验、高效的开发流程与精美的界面实现",
       "responsibilities": [
@@ -245,10 +258,11 @@
       }
     }
   },
-  "contactUs": {
+      "contactUs": {
     "pageTitle": "联系我们",
     "writeToUs": "写信给我们",
     "theyWillAnswer": "他们会回答您的问题：",
+    "expertiseLabel": "专业领域：",
     "questionCategories": [
       {
         "id": "recruitment",
@@ -318,6 +332,7 @@
     ],
     "whereToFindUs": "您可以在哪里找到我们？",
     "siteAdministration": "网站管理：",
+    "siteAdminDescription": "网站管理和技术支持请联系我们的技术团队",
     "socialMedia": "关注我们：",
     "officeHours": "办公时间：",
     "officeHoursText": "周一至周五 9:00-17:00",
@@ -325,6 +340,8 @@
     "addressText": "平原建业体育中心 源境团队\n邮编：453000",
     "emergencyContact": "紧急联系方式：",
     "emergencyPhone": "+86 152-2596-8963",
+    "otherContactInfo": "其他联系信息",
+    "emailContact": "邮箱联系",
     "faq": "常见问题",
     "faqItems": [
       {
@@ -348,13 +365,26 @@
   "joinUs": {
     "pageTitle": "加入我们",
     "becomeMember": "成为成员",
+    "recruitmentOpen": "招新开放中，快来加入我们！🚀",
+    "recruitmentClosed": "本期招新已结束，敬请期待下一期！✨",
     "nextRecruitmentStartsIn": "招新将在以下时间结束：",
+    "recruitmentEndedMessage": "招新已结束，感谢关注！",
     "days": "天",
     "hours": "小时",
     "minutes": "分钟",
     "seconds": "秒",
     "becomePartner": "成为合作伙伴",
     "contact": "联系"
+  },
+  "partnersPage": {
+    "pageTitle": "校企伙伴",
+    "title": "校企伙伴",
+    "becomePartner": "成为合作伙伴",
+    "contactUs": "联系我们",
+    "sponsorCategories": {
+      "strategic": "同行起点",
+      "platinum": "梦想落地"
+    }
   },
   "admin": {
     "title": "登录管理员面板",
