@@ -261,16 +261,16 @@
         "text": "A competition involving a race of about 22 kilometers. After 11 kilometers, there is a driver change, which the team has 3 minutes to complete. This is the highest-scoring competition, but only teams that finish the race receive points."
       },
       "cost": {
-        "title": "Cost and Manufacturing",
-        "text": "A competition that evaluates project planning accuracy and team members' knowledge of software development costs, resource allocation, and technology stack selection."
+        "title": "Programming Contest",
+        "text": "Largest programming competition in Henan Province following ACM/ICPC format. Teams solve 8-13 algorithm problems in 5 hours using C/C++/Java. 232 teams from 43 universities participated, testing problem analysis, algorithm design, and teamwork abilities."
       },
       "engineering": {
-        "title": "Engineering Design",
-        "text": "A competition involving the presentation of software architecture and system design. Judges assess the technical skills and creativity of team members in designing both the overall system and individual components. This is the highest-scoring presentation competition, judged by software industry experts."
+        "title": "Programming Contest",
+        "text": "222 teams from 32 universities with 666 participants. Features 12 algorithm problems in 5 hours, using automatic judging and monitoring systems."
       },
       "algorithm": {
-        "title": "algorithm Plan Presentation",
-        "text": "A competition where team members take on the role of a start-up board, for example, creating custom brake systems. Using a ten-minute presentation, they must convince judges acting as investors to support their algorithm model."
+        "title": "Software Development",
+        "text": "Individual 4-hour competition featuring code completion and programming problems. Tests Java application, data structures, and algorithm design including dynamic programming, DFS/BFS, and greedy algorithms."
       }
     }
   },
