@@ -72,6 +72,7 @@
     "cookiesPolicy": "Cookie政策",
     "rodo": "数据保护",
     "recruitment": "招新",
+    "teamName": "源境团队",
     "createdBy": "设计与制作：源境软件工作室",
     "allRightsReserved": "© 2025 版权所有",
     "seasonDescription": "源境团队是一群对计算机领域满怀热忱的校园同行者聚集地，自2018年组建以来，始终秉持 “知行合一、协作共赢” 原则，打破年级与专业壁垒，在 Go/Python/Java 编程实践、Web 开发及算法竞赛备赛等方向探索，已完成 15 + 个校园实践项目，成员亦在 “蓝桥杯” 等赛事中获奖；在这里每一行代码都能创造价值，每一次探索都能抵达新 “境” 界。"
@@ -278,19 +279,6 @@
         }
       },
       {
-        "id": "cooperation",
-        "title": "合作洽谈",
-        "description": "校企合作、项目外包、技术咨询等商务合作事宜",
-        "icon": "FaHandshake",
-        "contact": {
-          "name": "李雅楠",
-          "role": "校企合作负责人",
-          "email": "cooperation@yuanjingteam.com",
-          "phone": "+86 138-9876-5432",
-          "expertise": ["校企合作", "项目外包", "商务洽谈", "合作协议"]
-        }
-      },
-      {
         "id": "technical",
         "title": "技术咨询",
         "description": "技术问题、架构设计、代码评审等技术相关咨询",
@@ -315,23 +303,10 @@
           "phone": "+86 137-8888-9999",
           "expertise": ["项目管理", "需求分析", "产品设计", "进度跟踪"]
         }
-      },
-      {
-        "id": "general",
-        "title": "综合咨询",
-        "description": "团队介绍、实验室参观、媒体采访等其他问题",
-        "icon": "FaQuestionCircle",
-        "contact": {
-          "name": "刘文博",
-          "role": "综合事务负责人",
-          "email": "info@yuanjingteam.com",
-          "phone": "+86 151-0000-1234",
-          "expertise": ["团队介绍", "实验室参观", "媒体接待", "活动组织"]
-        }
       }
     ],
     "whereToFindUs": "您可以在哪里找到我们？",
-    "siteAdministration": "网站管理：",
+    "siteAdministration": "网站管理",
     "siteAdminDescription": "网站管理和技术支持请联系我们的技术团队",
     "socialMedia": "关注我们：",
     "officeHours": "办公时间：",
