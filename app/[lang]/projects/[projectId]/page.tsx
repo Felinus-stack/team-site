@@ -18,7 +18,7 @@ const ProjectPage = async ({ params }: { params: Iparams }) => {
   const currentLocale = lang === "ch" || lang === "en" ? lang : "en";
 
   const dict = await getDictionary(currentLocale);
-  const projectIdValue = projectId ?? "新乡市卡口车辆防疫管理系统";
+  const projectIdValue = projectId ?? "智能陪护";
   const project = await getProjectByProjectId(projectIdValue);
 
   if (!project) {

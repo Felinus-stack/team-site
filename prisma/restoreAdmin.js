@@ -1,4 +1,5 @@
 const { PrismaClient } = require("@prisma/client");
+const bcrypt = require("bcrypt");
 
 const prisma = new PrismaClient();
 
@@ -14,8 +15,9 @@ async function createAdmin() {
       return;
     }
     
-    // 创建默认管理员账户（暂时使用明文密码，稍后可在管理界面修改）
-    const hashedPassword = "admin123456";
+    // 创建默认管理员账户
+    const plainPassword = "admin123456";
+    const hashedPassword = await bcrypt.hash(plainPassword, 12);
     
     const admin = await prisma.admin.create({
       data: {
@@ -27,7 +29,7 @@ async function createAdmin() {
     
     console.log("✅ 管理员账户创建成功！");
     console.log(`📧 邮箱: ${admin.email}`);
-    console.log(`🔑 密码: admin123456`);
+    console.log(`🔑 密码: ${plainPassword}`);
     console.log("⚠️  请登录后立即修改密码！");
     
   } catch (error) {
