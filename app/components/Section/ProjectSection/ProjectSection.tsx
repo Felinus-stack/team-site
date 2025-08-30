@@ -24,17 +24,17 @@ interface ProjectSectionProps {
 const ProjectSection: React.FC<ProjectSectionProps> = ({
   dict,
   language,
-  presetProject = "新乡市卡口车辆防疫管理系统",
+  presetProject = "智能陪护",
 }) => {
   const [currentProjectData, setCurrentProjectData] = useState<ProjectData>({
     name: presetProject,
-    EN_name: "Xinxiang Vehicle Checkpoint Management System",
-    year: "2024",
-    short_description: "专为疫情防控设计的智能管理系统",
-    EN_short_description: "An intelligent epidemic prevention management system designed specifically for vehicle checkpoint control.",
-    acceleration: "8人",
-    mass: "微服务架构",
-    power: "4个月",
+    EN_name: "Intelligent Companion Care",
+    year: "2025",
+    short_description: "基于人工智能技术的智能陪护解决方案",
+    EN_short_description: "An intelligent companion care solution based on artificial intelligence technology.",
+    acceleration: "5人",
+    mass: "多模态交互",
+    power: "6个月",
   });
 
   const [previousProjectData, setPreviousProjectData] =
@@ -55,7 +55,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
 
     if (
       currentProjectData.year < data.year ||
-      (currentProjectData.name === "XXX市信访预警系统" && projectName === "新乡市卡口车辆防疫管理系统")
+      (currentProjectData.name === "XXX市信访预警系统" && projectName === "智能陪护")
     ) {
       if (sameDirection === "left") {
         setsameDirectionShift("0");
@@ -71,7 +71,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
       }
     } else if (
       currentProjectData.year > data.year ||
-      (currentProjectData.name === "新乡市卡口车辆防疫管理系统" && projectName === "XXX市信访预警系统")
+      (currentProjectData.name === "智能陪护" && projectName === "XXX市信访预警系统")
     ) {
       if (sameDirection === "right") {
         setsameDirectionShift("");
