@@ -1,6 +1,6 @@
 import { getProjectByProjectId } from "@/app/actions/getProjectByProjectId";
 import Container from "@/app/components/Container";
-import ProjectSection from "@/app/components/Section/ProjectSection/ProjectSection";
+import ProjectSectionFinal from "@/app/components/Section/ProjectSection/ProjectSectionFinal";
 import Text from "@/app/components/Text";
 import Title from "@/app/components/Title";
 import Image from "next/image";
@@ -28,7 +28,7 @@ const ProjectPage = async ({ params }: { params: Iparams }) => {
 
   return (
     <div className="flex flex-col pt-[100px]">
-      <ProjectSection
+      <ProjectSectionFinal
         dict={dict.projectSection}
         language={currentLocale}
         presetProject={projectIdValue}
