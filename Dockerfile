@@ -1,15 +1,5 @@
-# 使用 Debian 基础镜像以获得更好的 Prisma 兼容性
-FROM node:18-slim
 
-# 安装 Prisma 所需的依赖
-RUN echo "deb http://mirrors.aliyun.com/debian/ bookworm main non-free contrib" > /etc/apt/sources.list && \
-    echo "deb http://mirrors.aliyun.com/debian-security/ bookworm-security main" >> /etc/apt/sources.list && \
-    echo "deb http://mirrors.aliyun.com/debian/ bookworm-updates main non-free contrib" >> /etc/apt/sources.list && \
-    apt-get update && \
-    apt-get install -y \
-        openssl \
-        ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
+FROM node:18-slim AS runner
 
 # 设置工作目录
 WORKDIR /app
