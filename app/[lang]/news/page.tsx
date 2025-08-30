@@ -1,6 +1,6 @@
 // 新闻页面组件
 import Container from "@/app/components/Container";
-import NewsCard from "@/app/components/NewsCard";
+import NewsGridClient from "@/app/components/NewsGridClient";
 import { fetchNews } from "@/app/actions/getNews";
 import Title from "@/app/components/Title";
 
@@ -12,18 +12,11 @@ const AboutUs = async () => {
         <Title>新闻资讯</Title>
       </div>
       <Container>
-        <div className="my-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-          {news.map((item, index) => (
-            <NewsCard
-              key={index}
-              id={item.id}
-              title={item.title}
-              short_description={item.shortDescription}
-              length_time={item.duration}
-              logo={item.logo || "/images/logo-czarne.svg"}
-              main_image={item.mainImage}
-            />
-          ))}
+        <div className="my-6">
+          <NewsGridClient 
+            news={news}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
+          />
         </div>
       </Container>
     </div>
