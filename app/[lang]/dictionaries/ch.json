@@ -390,5 +390,33 @@
     "title": "登录管理员面板",
     "buttonRecruitment": "登录",
     "buttonPartner": "返回主页"
+  },
+  "loginModal": {
+    "title": "登录",
+    "welcomeBack": "欢迎回来",
+    "loginToAccount": "登录您的账户！",
+    "email": "邮箱",
+    "password": "密码",
+    "continue": "继续",
+    "continueWithGoogle": "使用 Google 继续",
+    "continueWithGithub": "使用 GitHub 继续",
+    "noAccount": "还没有账户？",
+    "register": "注册",
+    "loginSuccess": "登录成功",
+    "loginFailed": "登录失败"
+  },
+  "registerModal": {
+    "title": "注册",
+    "welcome": "欢迎来到源境团队",
+    "createAccount": "创建您的账户！",
+    "email": "邮箱",
+    "password": "密码",
+    "continue": "继续",
+    "continueWithGoogle": "使用 Google 继续",
+    "continueWithGithub": "使用 GitHub 继续",
+    "haveAccount": "已经有账户？",
+    "login": "登录",
+    "registerSuccess": "注册成功",
+    "registerFailed": "注册失败"
   }
 }
