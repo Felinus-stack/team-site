@@ -458,5 +458,16 @@
     "login": "Login",
     "registerSuccess": "Successfully registered",
     "registerFailed": "Registration failed"
+  },
+  "teamPage": {
+    "projectTeam": "Project Team",
+    "meetTeamMembers": "Meet the Project Team Members",
+    "teamDescription": "This project is composed of outstanding members from different departments, each playing an important role in their professional field, working together to promote the successful implementation of the project.",
+    "teamMemberCount": "Total team members: {count}",
+    "involvedDepartments": "Departments involved: {count}",
+    "viewAllMembers": "View All Members",
+    "teamPhoto": "Team Photo",
+    "departmentCount": "Department Statistics",
+    "memberCount": "Member Statistics"
   }
 }
