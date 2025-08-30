@@ -152,6 +152,7 @@ const ProjectContent: React.FC<ProjectData> = ({
         acceleration={acceleration}
         mass={mass}
         power={power}
+        language={language}
         dict={dict}
       />
     </div>
