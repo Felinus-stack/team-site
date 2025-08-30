@@ -299,24 +299,6 @@
         }
       },
       {
-        "id": "cooperation",
-        "title": "Partnership Cooperation",
-        "description": "University-enterprise cooperation, project outsourcing, technical consulting and other business cooperation",
-        "icon": "FaHandshake",
-        "contact": {
-          "name": "Yanan Li",
-          "role": "Partnership Manager",
-          "email": "cooperation@yuanjingteam.com",
-          "phone": "+86 138-9876-5432",
-          "expertise": [
-            "University Partnerships",
-            "Project Outsourcing",
-            "Business Negotiation",
-            "Collaboration Agreements"
-          ]
-        }
-      },
-      {
         "id": "technical",
         "title": "Technical Consultation",
         "description": "Technical questions, architecture design, code review and other technical consultations",
@@ -351,28 +333,10 @@
             "Progress Tracking"
           ]
         }
-      },
-      {
-        "id": "general",
-        "title": "General Inquiry",
-        "description": "Team introduction, lab visits, media interviews and other general questions",
-        "icon": "FaQuestionCircle",
-        "contact": {
-          "name": "Wenbo Liu",
-          "role": "General Affairs Manager",
-          "email": "info@yuanjingteam.com",
-          "phone": "+86 151-0000-1234",
-          "expertise": [
-            "Team Introduction",
-            "Lab Visits",
-            "Media Relations",
-            "Event Organization"
-          ]
-        }
       }
     ],
     "whereToFindUs": "WHERE TO FIND US?",
-    "siteAdministration": "Site Administration:",
+    "siteAdministration": "Site Administration",
     "siteAdminDescription": "For website management and technical support, please contact our technical team",
     "socialMedia": "Follow Us:",
     "officeHours": "Office Hours:",
