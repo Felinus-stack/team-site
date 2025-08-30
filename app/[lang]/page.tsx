@@ -1,7 +1,7 @@
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { Metadata } from "next";
 import ClientOnly from "../components/ClientOnly";
-import ProjectSection from "../components/Section/ProjectSection/ProjectSection";
+import ProjectSectionFinal from "../components/Section/ProjectSection/ProjectSectionFinal";
 import DepartmentsSubsection from "../components/Section/DepartmentsSubsection/DepartmentsSubsection";
 import FSSection from "../components/Section/FSSection/FSSection";
 import HeroSection from "../components/Section/HeroSection/HeroSection";
@@ -57,7 +57,7 @@ const Home: React.FC<PageProps> = async ({ params }) => {
         <StructuredData type="website" data={{}} />
         <HeroSection dict={dict.heroSection} language={language} />
         <DepartmentsSubsection />
-        <ProjectSection dict={dict.projectSection} language={language} />
+        <ProjectSectionFinal dict={dict.projectSection} language={language} />
         <FSSection dict={dict.fsSection} />
         <TeamSection dict={dict.teamSection} />
         <HistorySection dict={dict.historySection} />

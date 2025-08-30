@@ -12,7 +12,7 @@ export interface SliderProps {
 }
 
 const Slider: React.FC<SliderProps> = ({
-  currentProject = "新乡市卡口车辆防疫管理系统",
+  currentProject = "智能陪护",
   onChangeProject = () => {},
   darkMode = false,
   language = "ch",

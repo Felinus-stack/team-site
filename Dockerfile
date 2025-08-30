@@ -1,9 +1,10 @@
-# 使用 Debian 基础镜像以获得更好的 Prisma 兼容性
-FROM node:18-slim
 
-# 安装 Prisma 所需的依赖
+FROM node:20-slim AS runner
+
+# 安装 Prisma 需要的系统依赖
 RUN apt-get update && apt-get install -y \
     openssl \
+    libssl3 \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 

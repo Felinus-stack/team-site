@@ -7,6 +7,7 @@ interface ProjectSpecsProps {
   acceleration: string;
   power: string;
   mass: string;
+  language: "ch" | "en";
   dict: any;
 }
 const ProjectSpecs: React.FC<ProjectSpecsProps> = ({
@@ -14,8 +15,45 @@ const ProjectSpecs: React.FC<ProjectSpecsProps> = ({
   acceleration,
   power,
   mass,
+  language,
   dict,
 }) => {
+  // 英文版本的技术规格映射
+  const englishSpecs = {
+    // 参与人数映射
+    "5人": "5 Members",
+    "6人": "6 Members", 
+    "7人": "7 Members",
+    "8人": "8 Members",
+    "10人": "10 Members",
+    "4人": "4 Members",
+    
+    // 技术架构映射
+    "多模态交互": "Multi-modal Interaction",
+    "微服务架构": "Microservices Architecture",
+    "云原生架构": "Cloud-native Architecture",
+    "物联网架构": "IoT Architecture",
+    "分布式架构": "Distributed Architecture", 
+    "单体架构": "Monolithic Architecture",
+    "大数据架构": "Big Data Architecture",
+    "前后端分离": "Frontend-Backend Separation",
+    
+    // 开发周期映射
+    "6个月": "6 Months",
+    "4个月": "4 Months",
+    "3个月": "3 Months", 
+    "8个月": "8 Months",
+    "5个月": "5 Months",
+    "2个月": "2 Months"
+  };
+
+  // 根据语言获取显示文本
+  const getDisplayText = (chineseText: string) => {
+    if (language === "en") {
+      return englishSpecs[chineseText] || chineseText;
+    }
+    return chineseText;
+  };
   return (
     <div className="">
       <div
@@ -79,7 +117,7 @@ const ProjectSpecs: React.FC<ProjectSpecsProps> = ({
             <h1
               className={`text-white font-akiraExpanded text-md md:text-3xl font-extrabold leading-tight`}
             >
-              {acceleration}
+              {getDisplayText(acceleration)}
             </h1>
             <h2
               className={`hidden md:block text-customRed font-akiraExpanded text-2xl font-extrabold leading-tight`}
@@ -108,7 +146,7 @@ const ProjectSpecs: React.FC<ProjectSpecsProps> = ({
             <h1
               className={`text-white font-akiraExpanded text-md md:text-3xl font-extrabold leading-tight`}
             >
-              {power}
+              {getDisplayText(power)}
             </h1>
             <h2
               className={`hidden min-w-fit md:block text-customRed font-akiraExpanded text-2xl font-extrabold leading-tight`}
@@ -157,7 +195,7 @@ const ProjectSpecs: React.FC<ProjectSpecsProps> = ({
             <h1
               className={`text-white font-akiraExpanded text-md md:text-3xl font-extrabold leading-tight`}
             >
-              {mass}
+              {getDisplayText(mass)}
             </h1>
             <h2
               className={`hidden md:block text-customRed font-akiraExpanded text-2xl font-extrabold leading-tight`}

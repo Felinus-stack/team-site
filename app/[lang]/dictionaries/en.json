@@ -395,5 +395,33 @@
     "title": "Admin Panel Login",
     "buttonRecruitment": "Login",
     "buttonPartner": "Back to Home"
+  },
+  "loginModal": {
+    "title": "Login",
+    "welcomeBack": "Welcome back",
+    "loginToAccount": "Login to your account!",
+    "email": "Email",
+    "password": "Password",
+    "continue": "Continue",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithGithub": "Continue with GitHub",
+    "noAccount": "Don't have an account?",
+    "register": "Register",
+    "loginSuccess": "Logged in",
+    "loginFailed": "Login failed"
+  },
+  "registerModal": {
+    "title": "Register",
+    "welcome": "Welcome to Yuanjing Team",
+    "createAccount": "Create your account!",
+    "email": "Email",
+    "password": "Password",
+    "continue": "Continue",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithGithub": "Continue with GitHub",
+    "haveAccount": "Already have an account?",
+    "login": "Login",
+    "registerSuccess": "Successfully registered",
+    "registerFailed": "Registration failed"
   }
 }
