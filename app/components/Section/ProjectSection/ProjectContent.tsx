@@ -7,6 +7,7 @@ import Container from "../../Container";
 import Text from "../../Text";
 import Title from "../../Title";
 import ProjectSpecs from "./ProjectSpecs";
+import { getEnglishFileName } from "@/app/utils/projectMapping";
 
 interface ProjectData {
   name: string;
@@ -127,7 +128,7 @@ const ProjectContent: React.FC<ProjectData> = ({
             className={`flex flex-col justify-end items-center h-full w-full transition-all ease-out duration-500`}
           >
             <Image
-              src={`/images/projects/${name}/${name}.png`}
+              src={`/images/projects/${getEnglishFileName(name)}/${getEnglishFileName(name)}.png`}
               alt="project"
               layout="intrinsic"
               width={700}

@@ -5,6 +5,7 @@ import Text from "@/app/components/Text";
 import Title from "@/app/components/Title";
 import Image from "next/image";
 import { getDictionary } from "../../dictionaries";
+import { getEnglishFileName } from "@/app/utils/projectMapping";
 
 interface Iparams {
   lang: string;
@@ -43,7 +44,7 @@ const ProjectPage = async ({ params }: { params: Iparams }) => {
               <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 pt-6 text-white">
                 <div className="relative rounded overflow-hidden h-52 md:h-60">
                   <Image
-                    src="/images/projects/RT12e/images/zawody/1.jpg"
+                    src={`/images/projects/${getEnglishFileName(projectIdValue)}/images/zawody/1.jpg`}
                     alt="比赛照片"
                     layout="fill"
                     objectFit="cover"
@@ -62,7 +63,7 @@ const ProjectPage = async ({ params }: { params: Iparams }) => {
                       </div>
                       <div className="">
                         <Image
-                          src="/images/projects/RT12e/images/zawody/logo1.png"
+                          src={`/images/projects/${getEnglishFileName(projectIdValue)}/images/zawody/logo1.png`}
                           alt="比赛标志"
                           width={100}
                           height={100}
@@ -73,7 +74,7 @@ const ProjectPage = async ({ params }: { params: Iparams }) => {
                 </div>
                 <div className="relative rounded overflow-hidden h-52 md:h-60">
                   <Image
-                    src="/images/projects/RT12e/images/zawody/2.jpg"
+                    src={`/images/projects/${getEnglishFileName(projectIdValue)}/images/zawody/2.jpg`}
                     alt="Zdjęcie 2"
                     layout="fill"
                     objectFit="cover"
@@ -92,7 +93,7 @@ const ProjectPage = async ({ params }: { params: Iparams }) => {
                       </div>
                       <div className="">
                         <Image
-                          src="/images/projects/RT12e/images/zawody/logo2.png"
+                          src={`/images/projects/${getEnglishFileName(projectIdValue)}/images/zawody/logo2.png`}
                           alt="Zdjęcie 1"
                           width={100}
                           height={100}
@@ -103,7 +104,7 @@ const ProjectPage = async ({ params }: { params: Iparams }) => {
                 </div>
                 <div className="relative rounded overflow-hidden h-52 md:h-60">
                   <Image
-                    src="/images/projects/RT12e/images/zawody/3.jpg"
+                    src={`/images/projects/${getEnglishFileName(projectIdValue)}/images/zawody/3.jpg`}
                     alt="Zdjęcie 2"
                     layout="fill"
                     objectFit="cover"
@@ -122,7 +123,7 @@ const ProjectPage = async ({ params }: { params: Iparams }) => {
                       </div>
                       <div className="">
                         <Image
-                          src="/images/projects/RT12e/images/zawody/logo3.png"
+                          src={`/images/projects/${getEnglishFileName(projectIdValue)}/images/zawody/logo3.png`}
                           alt="Zdjęcie 1"
                           width={100}
                           height={100}
@@ -160,7 +161,7 @@ const ProjectPage = async ({ params }: { params: Iparams }) => {
                 </div>
                 <div className=" my-auto md:w-1/3">
                   <Image
-                    src={`/images/projects/RT12e/parts/${part.partName}.png`}
+                    src={`/images/projects/${getEnglishFileName(projectIdValue)}/parts/${part.partName}.png`}
                     alt={`${part.partName}部件图片`}
                     width={300} // 使用真实的图片比例
                     height={400} // 使用真实的图片比例
