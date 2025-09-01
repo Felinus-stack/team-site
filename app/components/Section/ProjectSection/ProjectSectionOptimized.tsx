@@ -120,7 +120,7 @@ const ProjectSectionOptimized: React.FC<ProjectSectionProps> = ({
   const [sameDirection, setSameDirection] = useState("");
   const [sameDirectionShift, setSameDirectionShift] = useState("duration-500");
   const [isLoading, setIsLoading] = useState(false);
-  const [preloadedImages, setPreloadedImages] = useState<Set<string>>(new Set());
+  const [preloadedImages, setPreloadedImages] = useState<string[]>([]);
 
   // 预加载所有项目图片
   const preloadImages = useCallback(() => {
@@ -128,10 +128,10 @@ const ProjectSectionOptimized: React.FC<ProjectSectionProps> = ({
       const englishName = getEnglishFileName(projectName);
       const imagePath = `/images/projects/${englishName}/${englishName}.png`;
       
-      if (!preloadedImages.has(imagePath)) {
+      if (!preloadedImages.includes(imagePath)) {
         const img = new Image();
         img.onload = () => {
-          setPreloadedImages(prev => new Set([...prev, imagePath]));
+          setPreloadedImages(prev => [...prev, imagePath]);
         };
         img.src = imagePath;
       }

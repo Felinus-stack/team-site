@@ -50,7 +50,7 @@ const ProjectSpecs: React.FC<ProjectSpecsProps> = ({
   // 根据语言获取显示文本
   const getDisplayText = (chineseText: string) => {
     if (language === "en") {
-      return englishSpecs[chineseText] || chineseText;
+      return (englishSpecs as Record<string, string>)[chineseText] || chineseText;
     }
     return chineseText;
   };
