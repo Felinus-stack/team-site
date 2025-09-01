@@ -2,7 +2,7 @@
 
 import Text from "@/app/components/Text";
 import toast from "react-hot-toast";
-import { FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaArrowRight } from "react-icons/fa";
 import { useHandleNavigation } from "@/app/components/NavigationHandler";
 
 interface EmailActionProps {
@@ -49,10 +49,30 @@ const Admin: React.FC<AdmingProps> = ({ text }) => {
   const handleNavigation = useHandleNavigation("/admin");
 
   return (
-    <div onClick={handleNavigation} className=" cursor-pointer">
-      <Text bold medium>
-        {text}
-      </Text>
+    <div 
+      onClick={handleNavigation} 
+      className="cursor-pointer inline-flex items-center gap-2 group"
+    >
+      <div className="relative">
+        <Text bold medium color="black" hoverColor="red">
+          {text}
+        </Text>
+        <div className="absolute left-0 bottom-0 w-0 h-0.5 bg-customRed group-hover:w-full transition-all duration-300 ease-in-out"></div>
+      </div>
+      <FaArrowRight 
+        className="text-black group-hover:text-customRed transition-all duration-300 group-hover:translate-x-1 group-hover:animate-none" 
+        style={{
+          animation: "wiggle 2s ease-in-out infinite"
+        }}
+        size={16} 
+      />
+      <style jsx>{`
+        @keyframes wiggle {
+          0%, 100% { transform: translateX(0px); }
+          25% { transform: translateX(-2px); }
+          75% { transform: translateX(2px); }
+        }
+      `}</style>
     </div>
   );
 };
