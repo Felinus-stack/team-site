@@ -139,7 +139,7 @@ const NewsCard: React.FC<NewsCardProps> = ({
               确认删除
             </h3>
             <p className="text-gray-600 mb-6">
-              您确定要删除新闻 "{title}" 吗？此操作无法撤销。
+              您确定要删除新闻 `{title}` 吗？此操作无法撤销。
             </p>
             <div className="flex justify-end gap-3">
               <button
