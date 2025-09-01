@@ -4,7 +4,8 @@ import Title from "@/app/components/Title";
 import DepartmentsAbout from "../about/DepartmentsAbout/DepartmentsAbout";
 import { getDictionary } from "../dictionaries";
 import ButtonsSection from "./buttonJoinUs";
-import Timer from "./timer";
+import Timer from "./timer-raf";
+import RECRUITMENT_CONFIG from "@/app/config/recruitment";
 
 interface Props {
   params: {
@@ -29,7 +30,7 @@ const JoinUs: React.FC<Props> = async ({ params }) => {
           <div className="mb-24 py-4 my-4 border-b-2 md:w-3/5 border-black text-center">
             <Title color="black">{dict.joinUs.becomeMember}</Title>
           </div>
-          <Timer targetDate="2025-08-28T10:34:00" dict={dict.joinUs} />
+          <Timer targetDate={RECRUITMENT_CONFIG.deadline} dict={dict.joinUs} />
           <ButtonsSection dict={dict.joinusSection} />
         </div>
       </Container>
