@@ -9,10 +9,28 @@ interface NewsSectionProps {
     becomePartner: string;
     contact: string;
   };
+  language?: "ch" | "en";
 }
 
-const NewsSection: React.FC<NewsSectionProps> = async ({ dict }) => {
-  const news = await fetchFiveNews();
+const NewsSection: React.FC<NewsSectionProps> = async ({ dict, language = "ch" }) => {
+  let news: any[] = [];
+  try {
+    const rawNews = await fetchFiveNews();
+    // 处理多语言显示，使用数据库中的英文字段
+    news = rawNews.map(item => {
+      const newsItem = item as any; // 类型断言以访问新的英文字段
+      return {
+        ...item,
+        title: language === "en" && newsItem.enTitle ? newsItem.enTitle : item.title,
+        shortDescription: language === "en" && newsItem.enShortDescription 
+          ? newsItem.enShortDescription 
+          : item.shortDescription
+      };
+    });
+  } catch (error) {
+    console.error('Failed to fetch news:', error);
+    news = [];
+  }
 
   return (
     <div id="section-news" className="flex flex-col">

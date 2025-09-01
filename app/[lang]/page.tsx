@@ -63,7 +63,7 @@ const Home: React.FC<PageProps> = async ({ params }) => {
         <HistorySection dict={dict.historySection} />
         <JoinusSection dict={dict.joinusSection} />
         <SponsorsSection />
-        <NewsSection dict={dict.newsControls} />
+        <NewsSection dict={dict.newsControls} language={language} />
       </div>
     </ClientOnly>
   );

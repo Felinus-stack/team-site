@@ -9,7 +9,7 @@ import ClientSlider from "./ClientSlider";
 import UserCard from "./UserCard";
 import { sortRoles } from "./utils";
 import { useEffect, useState, useCallback } from "react";
-import { getProjectDisplayName } from "@/app/utils/projectMapping";
+import { getProjectDisplayName, getEnglishFileName } from "@/app/utils/projectMapping";
 import { useRouter, usePathname } from "next/navigation";
 
 interface Iparams {
@@ -375,7 +375,7 @@ const TeamPage = ({ params }: { params: Iparams }) => {
                         </div>
 
                         <Image
-                          src={`/images/projects/${params.teamId}/${params.teamId}.png`}
+                          src={`/images/projects/${getEnglishFileName(decodeURIComponent(params.teamId || teamId))}/${getEnglishFileName(decodeURIComponent(params.teamId || teamId))}.png`}
                           alt="project"
                           width={700}
                           height={551}

@@ -85,6 +85,7 @@ model Project {
   id                String @id @default(uuid())
   name              String @unique
   enName            String? 
+  englishPath       String?  // 英文文件路径，用于图片和URL
   year              String
   shortDescription  String
   enShortDescription String? @db.Text
@@ -108,8 +109,11 @@ model News {
   id                String @id @default(uuid())
   date              DateTime  @default(now())
   title             String
+  enTitle           String?    // 英文标题
   shortDescription  String @db.Text
+  enShortDescription String? @db.Text // 英文短描述
   longDescription   String @db.Text
+  enLongDescription String? @db.Text  // 英文长描述
   duration          Int
   logo              String
   mainImage         String

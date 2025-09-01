@@ -4,6 +4,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import ProjectContentOptimized from "./ProjectContentOptimized";
 import Slider from "./Slider";
 import { useImagePreloader } from "@/app/hooks/useImagePreloader";
+import { getEnglishFileName } from "@/app/utils/projectMapping";
 
 type ProjectData = {
   name: string;
@@ -14,6 +15,7 @@ type ProjectData = {
   acceleration: string;
   mass: string;
   power: string;
+  imagePath?: string;
 };
 
 interface ProjectSectionProps {
@@ -45,6 +47,7 @@ const PROJECT_DATA_CACHE: { [key: string]: ProjectData } = {
     acceleration: "5人",
     mass: "多模态交互",
     power: "6个月",
+    imagePath: "/images/projects/smart-companion/smart-companion.png",
   },
   "新乡市卡口车辆防疫管理系统": {
     name: "新乡市卡口车辆防疫管理系统",
@@ -55,6 +58,7 @@ const PROJECT_DATA_CACHE: { [key: string]: ProjectData } = {
     acceleration: "8人",
     mass: "实时监控",
     power: "12个月",
+    imagePath: "/images/projects/xinxiang-checkpoint-system/xinxiang-checkpoint-system.png",
   },
   "新生报道系统": {
     name: "新生报道系统",
@@ -65,6 +69,7 @@ const PROJECT_DATA_CACHE: { [key: string]: ProjectData } = {
     acceleration: "6人",
     mass: "自动化流程",
     power: "8个月",
+    imagePath: "/images/projects/freshman-registration-system/freshman-registration-system.png",
   },
   "无人车定位跟踪系统": {
     name: "无人车定位跟踪系统",
@@ -75,6 +80,7 @@ const PROJECT_DATA_CACHE: { [key: string]: ProjectData } = {
     acceleration: "10人",
     mass: "精确定位",
     power: "15个月",
+    imagePath: "/images/projects/autonomous-vehicle-tracking/autonomous-vehicle-tracking.png",
   },
   "网格化管理系统": {
     name: "网格化管理系统",
@@ -85,6 +91,7 @@ const PROJECT_DATA_CACHE: { [key: string]: ProjectData } = {
     acceleration: "7人",
     mass: "网格管理",
     power: "10个月",
+    imagePath: "/images/projects/grid-management-system/grid-management-system.png",
   },
   "统战管理系统": {
     name: "统战管理系统",
@@ -95,6 +102,7 @@ const PROJECT_DATA_CACHE: { [key: string]: ProjectData } = {
     acceleration: "5人",
     mass: "统一管理",
     power: "9个月",
+    imagePath: "/images/projects/united-front-management/united-front-management.png",
   },
   "场所工作人员管理界面": {
     name: "场所工作人员管理界面",
@@ -105,6 +113,7 @@ const PROJECT_DATA_CACHE: { [key: string]: ProjectData } = {
     acceleration: "4人",
     mass: "人员管理",
     power: "7个月",
+    imagePath: "/images/projects/workplace-staff-management/workplace-staff-management.png",
   },
   "XXX市信访预警系统": {
     name: "XXX市信访预警系统",
@@ -115,6 +124,7 @@ const PROJECT_DATA_CACHE: { [key: string]: ProjectData } = {
     acceleration: "6人",
     mass: "预警系统",
     power: "11个月",
+    imagePath: "/images/projects/petition-warning-system/petition-warning-system.png",
   },
 };
 
@@ -197,19 +207,32 @@ const ProjectSectionFinal: React.FC<ProjectSectionProps> = ({
       setIsTransitioning(false);
     }, 500);
 
-    // 后台更新数据（如果需要）
+    // 后台更新数据（如果需要），确保使用正确的图片路径
     try {
       const response = await fetch(`/api/projects/${projectName}`);
       if (response.ok) {
         const apiData = await response.json();
-        PROJECT_DATA_CACHE[projectName] = apiData;
+        // 确保使用正确的英文图片路径
+        const correctedData = {
+          ...apiData,
+          imagePath: `/images/projects/${getEnglishFileName(projectName)}/${getEnglishFileName(projectName)}.png`
+        };
+        PROJECT_DATA_CACHE[projectName] = correctedData;
         // 如果当前还是这个项目，更新数据
         if (currentProjectData.name === projectName) {
-          setCurrentProjectData(apiData);
+          setCurrentProjectData(correctedData);
         }
       }
     } catch (error) {
       console.error("Failed to fetch latest project data:", error);
+      // 数据库失败时确保缓存数据使用正确路径
+      if (PROJECT_DATA_CACHE[projectName]) {
+        const correctedCachedData = {
+          ...PROJECT_DATA_CACHE[projectName],
+          imagePath: `/images/projects/${getEnglishFileName(projectName)}/${getEnglishFileName(projectName)}.png`
+        };
+        PROJECT_DATA_CACHE[projectName] = correctedCachedData;
+      }
     }
   }, [currentProjectData, sameDirection, isTransitioning]);
 
