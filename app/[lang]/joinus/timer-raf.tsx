@@ -2,7 +2,7 @@
 
 import Text from "@/app/components/Text";
 import Title from "@/app/components/Title";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 
 interface TimerProps {
   targetDate: string;
@@ -10,6 +10,9 @@ interface TimerProps {
 }
 
 const Timer: React.FC<TimerProps> = ({ targetDate, dict }) => {
+  const rafRef = useRef<number>();
+  const lastUpdateRef = useRef<number>(0);
+  
   const calculateTimeLeft = useCallback(() => {
     const target = new Date(targetDate);
     const now = new Date();
@@ -40,13 +43,40 @@ const Timer: React.FC<TimerProps> = ({ targetDate, dict }) => {
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
+  const updateTimer = useCallback((timestamp: number) => {
+    // 计算当前时间状态
+    const newTimeLeft = calculateTimeLeft();
+    
+    // 只在每秒更新一次，或者状态发生变化时更新
+    const shouldUpdate = 
+      timestamp - lastUpdateRef.current >= 1000 || 
+      newTimeLeft.isExpired !== timeLeft.isExpired;
+    
+    if (shouldUpdate) {
+      setTimeLeft(newTimeLeft);
+      lastUpdateRef.current = timestamp;
+      
+      // 如果刚好过期，不再继续循环
+      if (newTimeLeft.isExpired) {
+        return;
+      }
+    }
+    
+    // 如果没有过期，继续下一帧
+    if (!newTimeLeft.isExpired) {
+      rafRef.current = requestAnimationFrame(updateTimer);
+    }
+  }, [calculateTimeLeft, timeLeft.isExpired]);
 
-    return () => clearInterval(timer);
-  }, [calculateTimeLeft]);
+  useEffect(() => {
+    rafRef.current = requestAnimationFrame(updateTimer);
+    
+    return () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, [updateTimer]);
 
   // 如果倒计时结束，显示结束状态
   if (timeLeft.isExpired) {
@@ -77,7 +107,7 @@ const Timer: React.FC<TimerProps> = ({ targetDate, dict }) => {
         {dict.nextRecruitmentStartsIn}
       </Text>
       <div className="flex gap-2 md:gap-4">
-        <div className="flex flex-col text-center rounded-lg p-3 md:p-4  transition-all duration-300">
+        <div className="flex flex-col text-center rounded-lg p-3 md:p-4 transition-all duration-300">
           <Title lower size="bigger" color="red">
             {timeLeft.days}
           </Title>
@@ -86,11 +116,9 @@ const Timer: React.FC<TimerProps> = ({ targetDate, dict }) => {
           </Title>
         </div>
         <div className="flex items-center">
-          <Title lower size="bigger" color="red">
-            :
-          </Title>
+          <Title lower size="bigger" color="red">:</Title>
         </div>
-        <div className="flex flex-col text-center rounded-lg p-3 md:p-4  transition-all duration-300">
+        <div className="flex flex-col text-center rounded-lg p-3 md:p-4 transition-all duration-300">
           <Title lower size="bigger" color="red">
             {timeLeft.hours}
           </Title>
@@ -99,11 +127,9 @@ const Timer: React.FC<TimerProps> = ({ targetDate, dict }) => {
           </Title>
         </div>
         <div className="flex items-center">
-          <Title lower size="bigger" color="red">
-            :
-          </Title>
+          <Title lower size="bigger" color="red">:</Title>
         </div>
-        <div className="flex flex-col text-center rounded-lg p-3 md:p-4  transition-all duration-300">
+        <div className="flex flex-col text-center rounded-lg p-3 md:p-4 transition-all duration-300">
           <Title lower size="bigger" color="red">
             {timeLeft.minutes}
           </Title>
@@ -112,11 +138,9 @@ const Timer: React.FC<TimerProps> = ({ targetDate, dict }) => {
           </Title>
         </div>
         <div className="flex items-center">
-          <Title lower size="bigger" color="red">
-            :
-          </Title>
+          <Title lower size="bigger" color="red">:</Title>
         </div>
-        <div className="flex flex-col text-center rounded-lg p-3 md:p-4  transition-all duration-300">
+        <div className="flex flex-col text-center rounded-lg p-3 md:p-4 transition-all duration-300">
           <Title lower size="bigger" color="red">
             {timeLeft.seconds}
           </Title>
