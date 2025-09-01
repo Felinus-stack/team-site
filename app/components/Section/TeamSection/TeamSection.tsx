@@ -1,5 +1,5 @@
 "use client";
-
+//团队页面首页组件
 import Image from "next/image";
 import Container from "../../Container";
 import Text from "../../Text";

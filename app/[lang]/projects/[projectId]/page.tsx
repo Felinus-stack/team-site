@@ -1,4 +1,4 @@
-import { getProjectByProjectId } from "@/app/actions/getProjectByProjectId";
+// import { getProjectByProjectId } from "@/app/actions/getProjectByProjectId"; // 暂时不使用数据库
 import Container from "@/app/components/Container";
 import ProjectSectionFinal from "@/app/components/Section/ProjectSection/ProjectSectionFinal";
 import Text from "@/app/components/Text";
@@ -20,11 +20,37 @@ const ProjectPage = async ({ params }: { params: Iparams }) => {
 
   const dict = await getDictionary(currentLocale);
   const projectIdValue = projectId ?? "智能陪护";
-  const project = await getProjectByProjectId(projectIdValue);
-
-  if (!project) {
-    return <p>未找到项目</p>;
-  }
+  // 使用静态数据 - 不依赖数据库
+  // const project = {
+  //   year: "2025",
+  //   name: projectIdValue,
+  //   parts: [
+  //     { 
+  //       partName: "智能控制系统", 
+  //       description: "采用先进的人工智能算法，实现智能化控制和决策。系统具备自主学习能力，能够根据实际应用场景不断优化控制策略，提高系统整体性能和用户体验。集成了多种传感器数据融合技术，确保控制决策的准确性和实时性。" 
+  //     },
+  //     { 
+  //       partName: "传感器网络", 
+  //       description: "部署高精度多类型传感器网络，实现对环境参数的全方位监测。包括温度、湿度、光照、运动等多维度数据采集，支持实时数据传输和边缘计算处理。传感器采用低功耗设计，支持长期稳定运行。" 
+  //     },
+  //     { 
+  //       partName: "通信模块", 
+  //       description: "基于最新的5G/WiFi6技术，构建高速稳定的通信网络。支持多协议兼容，确保与各类设备的无缝连接。采用端到端加密技术，保障数据传输安全。具备网络自愈能力，在网络中断时能够自动切换备用链路。" 
+  //     },
+  //     { 
+  //       partName: "用户界面", 
+  //       description: "设计简洁直观的用户交互界面，支持多平台访问（Web、移动端、桌面应用）。采用响应式设计，适配各种屏幕尺寸。集成语音控制和手势识别功能，提供多元化的交互方式。界面支持个性化定制，满足不同用户的使用习惯。" 
+  //     },
+  //     { 
+  //       partName: "数据分析", 
+  //       description: "构建强大的数据分析引擎，采用机器学习和深度学习算法对收集的数据进行智能分析。能够识别数据模式、预测趋势、发现异常情况。提供可视化的数据报表和实时监控面板，帮助用户快速理解系统状态和性能指标。" 
+  //     },
+  //     { 
+  //       partName: "安全防护", 
+  //       description: "实施多层次的安全防护体系，包括物理安全、网络安全、数据安全等方面。采用区块链技术确保数据不可篡改，支持多因子身份认证，实现精细化的权限管理。定期进行安全漏洞扫描和渗透测试，确保系统安全稳定运行。" 
+  //     }
+  //   ]
+  // };
 
   return (
     <div className="flex flex-col pt-[100px]">
@@ -33,150 +59,48 @@ const ProjectPage = async ({ params }: { params: Iparams }) => {
         language={currentLocale}
         presetProject={projectIdValue}
       />
+      {/* 项目成果展示 - 正在开发中 */}
       <div className=" w-full" id="achievements">
-        <Container>
+        {/* <Container>
           <div className="flex flex-col w-full py-8 md:py-16">
             <Title size="big" color="black">
-              {project.year}赛季成就
+              项目成果展示
             </Title>
-
-            <div className="flex">
-              <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 pt-6 text-white">
-                <div className="relative rounded overflow-hidden h-52 md:h-60">
-                  <Image
-                    src={`/images/projects/${getEnglishFileName(projectIdValue)}/images/zawody/1.jpg`}
-                    alt="比赛照片"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  <div className=" absolute inset-0 bg-black opacity-50"></div>
-                  <div className=" absolute inset-0 p-4 flex flex-col justify-between ">
-                    <Title size="small">德国大学生方程式赛车大赛</Title>
-                    <div className=" flex justify-between items-end ">
-                      <div className=" ">
-                        <Text extrasmall>总成绩第6名</Text>
-                        <Text extrasmall>8字形绕桩第8名</Text>
-                        <Text extrasmall>直线加速第11名</Text>
-                        <Text extrasmall>工程设计第2名</Text>
-                        <Text extrasmall>商业计划书第4名</Text>
-                        <Text extrasmall>耐久赛第7名</Text>
-                      </div>
-                      <div className="">
-                        <Image
-                          src={`/images/projects/${getEnglishFileName(projectIdValue)}/images/zawody/logo1.png`}
-                          alt="比赛标志"
-                          width={100}
-                          height={100}
-                        />
-                      </div>
-                    </div>
-                  </div>
+            
+            <div className="flex justify-center items-center py-16">
+              <div className="bg-gray-100 rounded-lg p-12 text-center max-w-md">
+                <div className="text-6xl mb-4">🚧</div>
+                <Title size="small" color="gray">正在开发中</Title>
+                <div className="mt-4">
+                  <Text color="gray">此功能正在紧张开发中，敬请期待...</Text>
                 </div>
-                <div className="relative rounded overflow-hidden h-52 md:h-60">
-                  <Image
-                    src={`/images/projects/${getEnglishFileName(projectIdValue)}/images/zawody/2.jpg`}
-                    alt="Zdjęcie 2"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  <div className=" absolute inset-0 bg-black opacity-50"></div>
-                  <div className=" absolute inset-0 p-4 flex flex-col justify-between">
-                    <Title size="small">阿尔卑斯-亚得里亚大学生方程式赛车大赛</Title>
-                    <div className=" flex justify-between items-end">
-                      <div className="">
-                        <Text extrasmall>总成绩第6名</Text>
-                        <Text extrasmall>8字形绕桩第8名</Text>
-                        <Text extrasmall>直线加速第11名</Text>
-                        <Text extrasmall>工程设计第2名</Text>
-                        <Text extrasmall>商业计划书第4名</Text>
-                        <Text extrasmall>耐久赛第7名</Text>
-                      </div>
-                      <div className="">
-                        <Image
-                          src={`/images/projects/${getEnglishFileName(projectIdValue)}/images/zawody/logo2.png`}
-                          alt="Zdjęcie 1"
-                          width={100}
-                          height={100}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="relative rounded overflow-hidden h-52 md:h-60">
-                  <Image
-                    src={`/images/projects/${getEnglishFileName(projectIdValue)}/images/zawody/3.jpg`}
-                    alt="Zdjęcie 2"
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  <div className=" absolute inset-0 bg-black opacity-50"></div>
-                  <div className=" absolute inset-0 p-4 flex flex-col justify-between">
-                    <Title size="small">意大利大学生方程式赛车大赛</Title>
-                    <div className=" flex justify-between items-end">
-                      <div className="">
-                        <Text extrasmall>总成绩第6名</Text>
-                        <Text extrasmall>8字形绕桩第8名</Text>
-                        <Text extrasmall>直线加速第11名</Text>
-                        <Text extrasmall>工程设计第2名</Text>
-                        <Text extrasmall>商业计划书第4名</Text>
-                        <Text extrasmall>耐久赛第7名</Text>
-                      </div>
-                      <div className="">
-                        <Image
-                          src={`/images/projects/${getEnglishFileName(projectIdValue)}/images/zawody/logo3.png`}
-                          alt="Zdjęcie 1"
-                          width={100}
-                          height={100}
-                        />
-                      </div>
-                    </div>
-                  </div>
+              </div>
+            </div>
+          </div>
+        </Container> */}
+      </div>
+      {/* 项目详细内容 - 正在开发中 */}
+      {/* <div className="w-full bg-gray-50 py-16">
+        <Container>
+          <div className="flex justify-center items-center py-16">
+            <div className="bg-white rounded-lg p-12 text-center max-w-lg shadow-lg">
+              <div className="text-6xl mb-6">⚙️</div>
+              <Title size="big" color="gray">项目详情正在完善中</Title>
+              <div className="mt-6">
+                <Text color="gray">我们正在努力完善项目的详细介绍和技术文档</Text>
+                <Text color="gray">更多精彩内容即将呈现，敬请期待...</Text>
+              </div>
+              <div className="mt-8">
+                <div className="flex justify-center space-x-2">
+                  <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce"></div>
+                  <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                  <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
                 </div>
               </div>
             </div>
           </div>
         </Container>
-      </div>
-      <div className="w-full">
-        {project.parts.map((part, depIndex) => (
-          <div
-            key={part.partName}
-            className={`${depIndex % 2 === 0 ? "bg-neutral-200" : "bg-white"}`}
-          >
-            <Container>
-              <div
-                className={`${
-                  depIndex % 2 === 0 ? "" : " md:flex-row-reverse"
-                } flex md:flex-row flex-col gap-0 md:gap-16 my-8 `}
-              >
-                <div className=" my-0 md:my-20 md:w-2/3">
-                  <div className=" uppercase">
-                    <Title size="big" color="black">
-                      {part.partName}
-                    </Title>
-                  </div>
-                  <div className=" my-4 md:my-6">
-                    <Text color="black">{part.description}</Text>
-                  </div>
-                </div>
-                <div className=" my-auto md:w-1/3">
-                  <Image
-                    src={`/images/projects/${getEnglishFileName(projectIdValue)}/parts/${part.partName}.png`}
-                    alt={`${part.partName}部件图片`}
-                    width={300} // 使用真实的图片比例
-                    height={400} // 使用真实的图片比例
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                    }}
-                    sizes="(max-width: 768px) 100vw, 25vw"
-                  />
-                </div>
-              </div>
-            </Container>
-          </div>
-        ))}
-      </div>
+      </div> */}
     </div>
   );
 };

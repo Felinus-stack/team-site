@@ -19,6 +19,7 @@ interface ProjectData {
   acceleration: string;
   mass: string;
   power: string;
+  imagePath?: string;
   language: "ch" | "en";
   dict: any;
 }
@@ -32,6 +33,7 @@ const ProjectContentOptimized: React.FC<ProjectData> = ({
   acceleration,
   mass,
   power,
+  imagePath,
   language,
   dict,
 }) => {
@@ -102,7 +104,7 @@ const ProjectContentOptimized: React.FC<ProjectData> = ({
     setImageError(false);
   }, [name]);
 
-  const imageSrc = `/images/projects/${getEnglishFileName(name)}/${getEnglishFileName(name)}.png`;
+  const imageSrc = imagePath || `/images/projects/${getEnglishFileName(name)}/${getEnglishFileName(name)}.png`;
 
   return (
     <div className="relative flex flex-col">

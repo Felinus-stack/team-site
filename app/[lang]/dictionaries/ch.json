@@ -393,5 +393,16 @@
     "login": "登录",
     "registerSuccess": "注册成功",
     "registerFailed": "注册失败"
+  },
+  "teamPage": {
+    "projectTeam": "项目团队",
+    "meetTeamMembers": "认识项目团队成员",
+    "teamDescription": "这个项目由来自不同部门的优秀成员组成，每个成员都在各自的专业领域发挥重要作用，共同推动项目的成功实施。",
+    "teamMemberCount": "团队成员总数：{count} 人",
+    "involvedDepartments": "涉及部门：{count} 个",
+    "viewAllMembers": "查看全部成员",
+    "teamPhoto": "团队照片",
+    "departmentCount": "部门统计",
+    "memberCount": "成员统计"
   }
 }
