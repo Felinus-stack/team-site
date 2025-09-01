@@ -143,10 +143,10 @@ const SponsorsSection = () => {
         <div className="absolute top-0 left-0 w-full h-full z-20"></div>
       </div>
       {/* Kopia w celu stworzenia iluzji braku przeskoku międzye końcem animacji */}
-      <div className="relative h-full ">
-        <div className="flex gap-8 select-none h-full">
+      <div className="relative h-full ml-20">
+        <div className="flex gap-20 select-none h-full">
           {sponsors.map((src, index) => (
-            <div key={index} className="relative h-full w-60">
+            <div key={index} className="relative h-full w-36 md:w-60">
               <Image
                 src={src}
                 alt={`Sponsor ${index + 1}`}

@@ -37,6 +37,7 @@ interface FooterSectionProps {
     cookiesPolicy: string;
     rodo: string;
     recruitment: string;
+    teamName: string;
     createdBy: string;
     allRightsReserved: string;
     seasonDescription: string;
@@ -190,7 +191,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ dict }) => {
             </div>
             <div className=" whitespace-nowrap">
               <Text center small bold>
-                源境团队
+                {dict.teamName}
               </Text>
               <ul className="mt-1 md:mt-2">
                 <FooterLink href="/joinus">{dict.joinUs}</FooterLink>

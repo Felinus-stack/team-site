@@ -72,6 +72,7 @@
     "cookiesPolicy": "Cookie政策",
     "rodo": "数据保护",
     "recruitment": "招新",
+    "teamName": "源境团队",
     "createdBy": "设计与制作：源境软件工作室",
     "allRightsReserved": "© 2025 版权所有",
     "seasonDescription": "源境团队是一群对计算机领域满怀热忱的校园同行者聚集地，自2018年组建以来，始终秉持 “知行合一、协作共赢” 原则，打破年级与专业壁垒，在 Go/Python/Java 编程实践、Web 开发及算法竞赛备赛等方向探索，已完成 15 + 个校园实践项目，成员亦在 “蓝桥杯” 等赛事中获奖；在这里每一行代码都能创造价值，每一次探索都能抵达新 “境” 界。"
@@ -245,16 +246,16 @@
         "text": "竞赛内容是进行约22公里的比赛。在完成11公里后进行车手更换，团队有3分钟的时间进行更换。这是得分最高的竞赛项目，但只有完成比赛的团队才能获得积分。"
       },
       "cost": {
-        "title": "成本与制造",
-        "text": "竞赛内容是评估项目规划的精确性以及团队成员对软件开发成本、资源配置和技术栈选择的了解。"
+        "title": "程序设计",
+        "text": "由河南省计算机学会主办、河南农业大学承办，是河南省内规模最大的程序设计类赛事。比赛参照 ACM/ICPC 国际赛制，各队需在 5 小时内用 C、C++ 或 Java 解决 8–13 道算法题，提交后实时判题，正确解题会获得对应颜色气球，最终按 “解题数优先、总用时最少” 决出名次。本届吸引全省 43 所高校（含 4 所中学）的 232 支队伍近 700 人参赛，赛事旨在考验选手分析问题、算法设计与团队协作能力，推动省内高校计算机教育交流。"
       },
       "engineering": {
-        "title": "工程设计",
-        "text": "竞赛内容是展示软件架构和系统设计。评委会评估团队成员在设计整体系统和各个组件时的技术技能和创新能力。这是得分最高的展示竞赛项目，由软件行业专家进行评估。"
+        "title": "程序设计",
+        "text": "河南省 32 所高校 222 支队伍 666 人参赛。比赛设 12 道算法题，限时 5 小时，由北京航空航天大学命题，采用计算机自动判题系统及 OMS 监考系统。"
       },
       "algorithm": {
-        "title": "商业计划展示",
-        "text": "竞赛内容是团队成员扮演初创公司管理层的角色，例如定制制造的制动器。通过十分钟的展示，团队需要说服扮演投资者的评委支持他们的商业模式。"
+        "title": "软件开发",
+        "text": "个人赛，比赛限时 4 小时，设置代码填空、编程大题等题型，考察 Java 语言应用、数据结构（数组、链表、集合）及算法设计（动态规划、DFS/BFS、贪心算法）能力，采用自动判题系统确保公平性。比赛内容涵盖字符串处理、数学建模、图论等场景，要求选手在规定时间内完成复杂逻辑编程与代码调试。"
       }
     }
   },
@@ -275,19 +276,6 @@
           "email": "recruitment@yuanjingteam.com",
           "phone": "+86 152-2596-8963",
           "expertise": ["团队招募", "面试流程", "新人培训", "部门分配"]
-        }
-      },
-      {
-        "id": "cooperation",
-        "title": "合作洽谈",
-        "description": "校企合作、项目外包、技术咨询等商务合作事宜",
-        "icon": "FaHandshake",
-        "contact": {
-          "name": "李雅楠",
-          "role": "校企合作负责人",
-          "email": "cooperation@yuanjingteam.com",
-          "phone": "+86 138-9876-5432",
-          "expertise": ["校企合作", "项目外包", "商务洽谈", "合作协议"]
         }
       },
       {
@@ -315,23 +303,10 @@
           "phone": "+86 137-8888-9999",
           "expertise": ["项目管理", "需求分析", "产品设计", "进度跟踪"]
         }
-      },
-      {
-        "id": "general",
-        "title": "综合咨询",
-        "description": "团队介绍、实验室参观、媒体采访等其他问题",
-        "icon": "FaQuestionCircle",
-        "contact": {
-          "name": "刘文博",
-          "role": "综合事务负责人",
-          "email": "info@yuanjingteam.com",
-          "phone": "+86 151-0000-1234",
-          "expertise": ["团队介绍", "实验室参观", "媒体接待", "活动组织"]
-        }
       }
     ],
     "whereToFindUs": "您可以在哪里找到我们？",
-    "siteAdministration": "网站管理：",
+    "siteAdministration": "网站管理",
     "siteAdminDescription": "网站管理和技术支持请联系我们的技术团队",
     "socialMedia": "关注我们：",
     "officeHours": "办公时间：",
@@ -390,5 +365,44 @@
     "title": "登录管理员面板",
     "buttonRecruitment": "登录",
     "buttonPartner": "返回主页"
+  },
+  "loginModal": {
+    "title": "登录",
+    "welcomeBack": "欢迎回来",
+    "loginToAccount": "登录您的账户！",
+    "email": "邮箱",
+    "password": "密码",
+    "continue": "继续",
+    "continueWithGoogle": "使用 Google 继续",
+    "continueWithGithub": "使用 GitHub 继续",
+    "noAccount": "还没有账户？",
+    "register": "注册",
+    "loginSuccess": "登录成功",
+    "loginFailed": "登录失败"
+  },
+  "registerModal": {
+    "title": "注册",
+    "welcome": "欢迎来到源境团队",
+    "createAccount": "创建您的账户！",
+    "email": "邮箱",
+    "password": "密码",
+    "continue": "继续",
+    "continueWithGoogle": "使用 Google 继续",
+    "continueWithGithub": "使用 GitHub 继续",
+    "haveAccount": "已经有账户？",
+    "login": "登录",
+    "registerSuccess": "注册成功",
+    "registerFailed": "注册失败"
+  },
+  "teamPage": {
+    "projectTeam": "项目团队",
+    "meetTeamMembers": "认识项目团队成员",
+    "teamDescription": "这个项目由来自不同部门的优秀成员组成，每个成员都在各自的专业领域发挥重要作用，共同推动项目的成功实施。",
+    "teamMemberCount": "团队成员总数：{count} 人",
+    "involvedDepartments": "涉及部门：{count} 个",
+    "viewAllMembers": "查看全部成员",
+    "teamPhoto": "团队照片",
+    "departmentCount": "部门统计",
+    "memberCount": "成员统计"
   }
 }

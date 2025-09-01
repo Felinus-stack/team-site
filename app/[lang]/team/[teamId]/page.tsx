@@ -8,26 +8,89 @@ import Image from "next/image";
 import ClientSlider from "./ClientSlider";
 import UserCard from "./UserCard";
 import { sortRoles } from "./utils";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+import { getProjectDisplayName } from "@/app/utils/projectMapping";
+import { useRouter, usePathname } from "next/navigation";
 
 interface Iparams {
   teamId?: string;
+  lang: string;
 }
 
 const TeamPage = ({ params }: { params: Iparams }) => {
+  const router = useRouter();
+  const pathname = usePathname();
   const [team, setTeam] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const teamId = params.teamId ?? "RT13e";
+  const [dict, setDict] = useState<any>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  
+  const teamId = params.teamId ?? "智能陪护";
+  
+  // 获取当前语言
+  const currentLang = params.lang || 'en';
+  const isChineseLang = currentLang === 'ch';
+
+  // 优化的项目切换函数
+  const handleChangeProject = useCallback(async (projectName: string) => {
+    if (isTransitioning || decodeURIComponent(teamId) === projectName) return;
+    
+    setIsTransitioning(true);
+    
+    // 添加动画效果
+    const contentElement = document.querySelector('.team-content');
+    if (contentElement) {
+      contentElement.classList.add('opacity-50', 'scale-95');
+    }
+    
+    // 延迟更新URL
+    setTimeout(() => {
+      if (pathname) {
+        const newPath = pathname.replace(
+          encodeURIComponent(teamId), 
+          encodeURIComponent(projectName)
+        );
+        router.push(newPath);
+      }
+    }, 200);
+    
+  }, [teamId, pathname, router, isTransitioning]);
+
+  // 加载字典
+  useEffect(() => {
+    const loadDictionary = async () => {
+      try {
+        const dictModule = await import(`@/app/[lang]/dictionaries/${isChineseLang ? 'ch' : 'en'}.json`);
+        setDict(dictModule.default);
+      } catch (error) {
+        console.error('Failed to load dictionary:', error);
+      }
+    };
+    
+    loadDictionary();
+  }, [isChineseLang]);
 
   useEffect(() => {
     const fetchTeam = async () => {
+      setLoading(true);
       try {
-        const teamData = await getTeamByProject(teamId);
+        const teamData = await getTeamByProject(decodeURIComponent(teamId));
         setTeam(teamData);
       } catch (error) {
         console.error('Error fetching team:', error);
+        setTeam([]);
       } finally {
         setLoading(false);
+        setIsTransitioning(false);
+        
+        // 恢复动画状态
+        setTimeout(() => {
+          const contentElement = document.querySelector('.team-content');
+          if (contentElement) {
+            contentElement.classList.remove('opacity-50', 'scale-95');
+            contentElement.classList.add('opacity-100', 'scale-100');
+          }
+        }, 100);
       }
     };
 
@@ -137,10 +200,14 @@ const TeamPage = ({ params }: { params: Iparams }) => {
   return (
     <div className="relative bg-neutral-950 pt-32 pb-12">
       <div className="relative overflow-hidden">
-        <ClientSlider teamId={teamId} />
+        <ClientSlider 
+          teamId={decodeURIComponent(teamId)} 
+          language={currentLang as "ch" | "en"}
+          onChangeProject={handleChangeProject}
+        />
 
         {/* 项目团队展示区域 */}
-        <div className="relative py-16 animate-fade-in">
+        <div className={`team-content relative py-16 animate-fade-in transition-all duration-300 ease-in-out ${isTransitioning ? 'opacity-50 scale-95' : 'opacity-100 scale-100'}`}>
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/team/Bg.jpeg"
@@ -156,22 +223,22 @@ const TeamPage = ({ params }: { params: Iparams }) => {
             <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8 md:gap-20">
               <div className="flex-1">
                 <Title size="subtitle" color="gray">
-                  {decodeURIComponent(teamId)} 项目团队
+                  {getProjectDisplayName(decodeURIComponent(teamId), currentLang as "ch" | "en")} {dict?.teamPage?.projectTeam || "Project Team"}
                 </Title>
                 <Title size="big" color="white">
-                  认识项目团队成员
+                  {dict?.teamPage?.meetTeamMembers || "Meet the Project Team Members"}
                 </Title>
                 <div className="my-6">
                   <p className="text-white text-opacity-70 text-xs sm:text-base sm:leading-5">
-                    这个项目由来自不同部门的优秀成员组成，每个成员都在各自的专业领域发挥重要作用，共同推动项目的成功实施。
+                    {dict?.teamPage?.teamDescription || "This project is composed of outstanding members from different departments, each playing an important role in their professional field, working together to promote the successful implementation of the project."}
                   </p>
                 </div>
                 <div className="mt-4">
                   <p className="text-white text-opacity-60 text-xs">
-                    团队成员总数: {Object.values(membersByDepartment).reduce((acc, members) => acc + members.length, 0)} 人
+                    {dict?.teamPage?.teamMemberCount?.replace('{count}', Object.values(membersByDepartment).reduce((acc, members) => acc + members.length, 0).toString()) || `Total team members: ${Object.values(membersByDepartment).reduce((acc, members) => acc + members.length, 0)}`}
                   </p>
                   <p className="text-white text-opacity-60 text-xs">
-                    涉及部门: {sortedDepartments.length} 个
+                    {dict?.teamPage?.involvedDepartments?.replace('{count}', sortedDepartments.length.toString()) || `Departments involved: ${sortedDepartments.length}`}
                   </p>
                   <div className="mt-4">
                     <button 
@@ -184,7 +251,7 @@ const TeamPage = ({ params }: { params: Iparams }) => {
                         }
                       }}
                     >
-                      查看全部成员
+                      {dict?.teamPage?.viewAllMembers || "View All Members"}
                     </button>
                   </div>
                 </div>
@@ -194,14 +261,14 @@ const TeamPage = ({ params }: { params: Iparams }) => {
                  {(() => {
                    // 项目对应的团队照片映射 
                    const projectTeamPhotos: { [key: string]: { src: string; alt: string; title: string } } = {
-                     "智能陪护": { src: "/images/team/team1.jpeg", alt: "智能陪护团队", title: "智能陪护团队" },
-                     "新乡市卡口车辆防疫管理系统": { src: "/images/team/team2.jpeg", alt: "防疫系统团队", title: "防疫系统团队" },
-                     "新生报道系统": { src: "/images/team/team3.jpeg", alt: "新生系统团队", title: "新生系统团队" },
-                     "无人车定位跟踪系统": { src: "/images/team/team4.jpg", alt: "无人车团队", title: "无人车团队" },
-                     "网格化管理系统": { src: "/images/team/team5.jpg", alt: "网格化团队", title: "网格化团队" },
-                     "统战管理系统": { src: "/images/team/team6.jpg", alt: "统战系统团队", title: "统战系统团队" },
-                     "场所工作人员管理界面": { src: "/images/team/team7.jpg", alt: "场所管理团队", title: "场所管理团队" },
-                     "XXX市信访预警系统": { src: "/images/team/team8.jpg", alt: "信访系统团队", title: "信访系统团队" }
+                     "智能陪护": { src: "/images/team/team4.jpg", alt: "智能陪护团队", title: "智能陪护团队" },
+                     "新乡市卡口车辆防疫管理系统": { src: "/images/team/team5.jpg", alt: "防疫系统团队", title: "防疫系统团队" },
+                     "新生报道系统": { src: "/images/team/team6.jpg", alt: "新生系统团队", title: "新生系统团队" },
+                     "无人车定位跟踪系统": { src: "/images/team/team7.jpg", alt: "无人车团队", title: "无人车团队" },
+                     "网格化管理系统": { src: "/images/team/team8.jpg", alt: "网格化团队", title: "网格化团队" },
+                     "统战管理系统": { src: "/images/team/team9 .jpg", alt: "统战系统团队", title: "统战系统团队" },
+                     "场所工作人员管理界面": { src: "/images/team/team10.jpg", alt: "场所管理团队", title: "场所管理团队" },
+                     "XXX市信访预警系统": { src: "/images/team/team11.jpg", alt: "信访系统团队", title: "信访系统团队" }
                    };
 
                    // 解码 teamId 以正确匹配项目名称
@@ -209,9 +276,9 @@ const TeamPage = ({ params }: { params: Iparams }) => {
                    
                    // 获取当前项目的团队照片，如果没有则使用默认照片
                    const currentProjectPhoto = projectTeamPhotos[decodedTeamId] || { 
-                     src: "/images/team/team1.jpeg", 
-                     alt: "团队照片", 
-                     title: "团队照片" 
+                     src: "/images/team/team4.jpg", 
+                     alt: dict?.teamPage?.teamPhoto || "Team Photo", 
+                     title: dict?.teamPage?.teamPhoto || "Team Photo" 
                    };
 
                    return (
