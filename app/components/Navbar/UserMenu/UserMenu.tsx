@@ -18,9 +18,18 @@ import LangButton from "./LangButton";
 
 interface UserMenuProps {
   lang: string;
+  dict: {
+    home: string;
+    projects: string;
+    team: string;
+    about: string;
+    partners: string;
+    news: string;
+    contact: string;
+  };
 }
 
-const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
+const UserMenu: React.FC<UserMenuProps> = ({ lang, dict }) => {
   const router = useRouter();
   const pathname = usePathname();
   const registerModal = useRegisterModal();
@@ -114,30 +123,30 @@ const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
       {isOpen && (
         <div className="absolute rounded-xl shadow-md  bg-white overflow-hidden right-0 top-12 text-sm">
           <div className="flex flex-col cursor-pointer">
-            <MenuItem onClick={() => handleMenuItemClick(`/`)} label="Home" />
+            <MenuItem onClick={() => handleMenuItemClick(`/`)} label={dict.home} />
             <MenuItem
               onClick={() => handleMenuItemClick(`/projects`)}
-              label="Projects"
+              label={dict.projects}
             />
             <MenuItem
               onClick={() => handleMenuItemClick(`/team/智能陪护`)}
-              label="Zespoł"
+              label={dict.team}
             />
             <MenuItem
               onClick={() => handleMenuItemClick(`/about`)}
-              label="O nas"
+              label={dict.about}
             />
             <MenuItem
               onClick={() => handleMenuItemClick(`/partners`)}
-              label="校企伙伴"
+              label={dict.partners}
             />
             <MenuItem
               onClick={() => handleMenuItemClick(`/news`)}
-              label="新闻资讯"
+              label={dict.news}
             />
             <MenuItem
               onClick={() => handleMenuItemClick(`/contact`)}
-              label="联系我们"
+              label={dict.contact}
             />
             <div className="w-full h-[1px] bg-black"></div>
             <div className="social-responsive flex items-center gap-4 my-2 mx-3 ">
