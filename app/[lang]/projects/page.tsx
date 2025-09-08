@@ -1,6 +1,6 @@
 import { getDictionary } from "../dictionaries";
 import Container from "@/app/components/Container";
-import ProjectSection from "@/app/components/Section/ProjectSection/ProjectSection";
+import ProjectSectionFinal from "@/app/components/Section/ProjectSection/ProjectSectionFinal";
 
 interface Iparams {
   lang: string;
@@ -16,7 +16,7 @@ const ProjectsPage = async ({ params }: { params: Iparams }) => {
 
   return (
     <div className="flex flex-col pt-[100px]">
-      <ProjectSection
+      <ProjectSectionFinal
         dict={dict.projectSection}
         language={currentLocale}
       />

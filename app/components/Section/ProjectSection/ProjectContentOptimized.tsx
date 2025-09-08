@@ -8,6 +8,7 @@ import Text from "../../Text";
 import Title from "../../Title";
 import ProjectSpecs from "./ProjectSpecs";
 import { getEnglishFileName } from "@/app/utils/projectMapping";
+import { useState, useEffect } from "react";
 
 interface ProjectData {
   name: string;
@@ -18,11 +19,12 @@ interface ProjectData {
   acceleration: string;
   mass: string;
   power: string;
+  imagePath?: string;
   language: "ch" | "en";
   dict: any;
 }
 
-const ProjectContent: React.FC<ProjectData> = ({
+const ProjectContentOptimized: React.FC<ProjectData> = ({
   name,
   EN_name,
   year,
@@ -31,16 +33,20 @@ const ProjectContent: React.FC<ProjectData> = ({
   acceleration,
   mass,
   power,
+  imagePath,
   language,
   dict,
 }) => {
   const router = useRouter();
   const path = usePathname();
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const teamRedirect = (project: string) => {
     const currentLocale = path!.split("/")[1];
     router.push(`/${currentLocale}/team/${project}`);
   };
+  
   const projectRedirect = (project: string) => {
     const currentLocale = path!.split("/")[1];
     router.push(`/${currentLocale}/projects/${project}#achievements`);
@@ -51,7 +57,6 @@ const ProjectContent: React.FC<ProjectData> = ({
     const isSpecialChar = lastChar === "e" || lastChar === "b";
     const isEnglish = /^[a-zA-Z\s]+$/.test(name);
 
-    // 为长英文名称添加换行
     const formatEnglishName = (englishName: string) => {
       if (!isEnglish) return englishName;
       
@@ -83,26 +88,29 @@ const ProjectContent: React.FC<ProjectData> = ({
     );
   };
 
-  const description =
-    language === "en" ? EN_short_description : short_description;
-  
+  const description = language === "en" ? EN_short_description : short_description;
   const displayName = language === "en" ? (EN_name || name) : name;
 
-  // 为按钮文字格式化 - 英文模式下只显示项目名称
   const formatButtonText = (teamText: string, projectName: string) => {
     if (language === "en") {
-      return teamText; // 英文模式下只显示 "MEET THE TEAM"
+      return teamText;
     }
     return `${teamText} ${projectName}`;
   };
+
+  // 重置图片加载状态当项目改变时
+  useEffect(() => {
+    setImageLoaded(false);
+    setImageError(false);
+  }, [name]);
+
+  const imageSrc = imagePath || `/images/projects/${getEnglishFileName(name)}/${getEnglishFileName(name)}.png`;
 
   return (
     <div className="relative flex flex-col">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 py-4 sm:py-12 transition-all ease-out duration-500">
-          <div
-            className={`flex justify-center items-center transition-all ease-out duration-500`}
-          >
+          <div className="flex justify-center items-center transition-all ease-out duration-500">
             <div>
               <Title size="subtitle" color="gray">
                 {year}
@@ -124,17 +132,51 @@ const ProjectContent: React.FC<ProjectData> = ({
               </div>
             </div>
           </div>
-          <div
-            className={`flex flex-col justify-end items-center h-full w-full transition-all ease-out duration-500`}
-          >
+          
+          <div className="flex flex-col justify-end items-center h-full w-full transition-all ease-out duration-500 relative">
+            {/* 图片加载占位符 */}
+            {!imageLoaded && !imageError && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
+                <div className="animate-pulse flex flex-col items-center">
+                  <div className="w-16 h-16 bg-gray-300 rounded-full mb-4"></div>
+                  <div className="text-gray-500 text-sm">加载中...</div>
+                </div>
+              </div>
+            )}
+            
+            {/* 图片加载错误占位符 */}
+            {imageError && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
+                <div className="flex flex-col items-center text-gray-500">
+                  <div className="text-4xl mb-2">📷</div>
+                  <div className="text-sm">图片加载失败</div>
+                </div>
+              </div>
+            )}
+            
             <Image
-              src={`/images/projects/${getEnglishFileName(name)}/${getEnglishFileName(name)}.png`}
-              alt="project"
-              layout="intrinsic"
+              src={imageSrc}
+              alt={`${name} project image`}
               width={700}
               height={300}
+              priority={true} // 优先加载
+              quality={90} // 提高图片质量
+              className={`transition-opacity duration-300 ${
+                imageLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              onLoad={() => {
+                setImageLoaded(true);
+                setImageError(false);
+              }}
+              onError={() => {
+                setImageError(true);
+                setImageLoaded(false);
+              }}
+              // 使用 sizes 优化响应式加载
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 700px"
             />
           </div>
+          
           <div className="gap-2 md:gap-4 flex lg:hidden">
             <Button
               label={dict.moreAboutProject}
@@ -149,7 +191,7 @@ const ProjectContent: React.FC<ProjectData> = ({
         </div>
       </Container>
       <ProjectSpecs
-        animate={"opacity"}
+        animate="opacity"
         acceleration={acceleration}
         mass={mass}
         power={power}
@@ -160,4 +202,4 @@ const ProjectContent: React.FC<ProjectData> = ({
   );
 };
 
-export default ProjectContent;
+export default ProjectContentOptimized;

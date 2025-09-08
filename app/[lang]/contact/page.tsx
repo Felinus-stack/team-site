@@ -43,7 +43,6 @@ const ContactUs: React.FC<ContactUsProps> = async ({ params }) => {
               <ContactCategoryCard 
                 key={category.id} 
                 category={category} 
-                expertiseLabel={dict.contactUs.expertiseLabel}
               />
             ))}
           </div>

@@ -1,5 +1,5 @@
 "use client";
-
+//团队页面首页组件
 import Image from "next/image";
 import Container from "../../Container";
 import Text from "../../Text";
@@ -52,7 +52,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ dict }) => {
           <div className="flex gap-4">
             <div className=" w-[400px] h-[300px] md:h-[400px] relative">
               <Image
-                src="/images/team/team4.jpg"
+                src="/images/team/team8.jpg"
                 alt="project"
                 layout="fill"
                 objectFit="cover"
@@ -60,7 +60,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ dict }) => {
             </div>
             <div className=" hidden sm:block w-[400px] h-[300px] md:h-[400px] relative">
               <Image
-                src="/images/team/team5.jpg"
+                src="/images/team/team10.jpg"
                 alt="project"
                 layout="fill"
                 objectFit="cover"
@@ -68,7 +68,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ dict }) => {
             </div>
             <div className=" hidden lg:block w-[200px] h-[400px] relative">
               <Image
-                src="/images/team/team6.jpg"
+                src="/images/team/team11.jpg"
                 alt="project"
                 layout="fill"
                 objectFit="cover"
