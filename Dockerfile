@@ -1,6 +1,10 @@
 
 FROM node:20-slim AS runner
 
+# 更换为国内镜像源以加速包下载
+RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources || \
+    sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list
+
 # 安装 Prisma 需要的系统依赖
 RUN apt-get update && apt-get install -y \
     openssl \
