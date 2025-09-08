@@ -261,7 +261,7 @@
   },
       "contactUs": {
     "pageTitle": "联系我们",
-    "writeToUs": "写信给我们",
+    "writeToUs": "联系我们",
     "theyWillAnswer": "他们会回答您的问题：",
     "expertiseLabel": "专业领域：",
     "questionCategories": [
@@ -285,7 +285,7 @@
         "icon": "FaCode",
         "contact": {
           "name": "王志强",
-          "role": "技术总监",
+          "role": "技术负责人",
           "email": "tech@yuanjingteam.com",
           "phone": "+86 139-1234-5678",
           "expertise": ["技术架构", "代码评审", "技术选型", "性能优化"]
@@ -298,7 +298,7 @@
         "icon": "FaProjectDiagram",
         "contact": {
           "name": "陈思雨",
-          "role": "项目经理",
+          "role": "项目负责人",
           "email": "project@yuanjingteam.com",
           "phone": "+86 137-8888-9999",
           "expertise": ["项目管理", "需求分析", "产品设计", "进度跟踪"]
