@@ -11,11 +11,11 @@ const ButtonsSection: React.FC<ButtonsSectionProps> = ({ dict }) => {
   const router = useRouter();
 
   const handleFormsClick = () => {
-    window.open("https://forms.gle/4mt5v32n4vKPdt568", "_blank"); // Open form in new tab
+    window.open("https://jsj.top/f/KNEERg", "_blank"); // Open form in new tab
   };
 
   const handleFacebookClick = () => {
-    window.open("https://www.facebook.com/PWRRacingTeam", "_blank"); // Open Facebook in new tab
+    window.open("https://www.facebook.com/yuanjingteam", "_blank"); // Open Facebook in new tab
   };
 
   return (

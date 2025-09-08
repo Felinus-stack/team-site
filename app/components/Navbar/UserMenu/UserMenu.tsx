@@ -69,7 +69,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
         <div className="md:flex hidden items-center gap-4">
           <div className="social-responsive flex items-center gap-4 ml-4">
             <SocialIcons
-              href="https://weibo.com/pwrracingteam"
+              href="https://weibo.com/yuanjingteam"
               icon={FaWeibo}
               ariaLabel="微博"
             />
@@ -143,7 +143,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ lang }) => {
             <div className="social-responsive flex items-center gap-4 my-2 mx-3 ">
               <SocialIcons
                 black
-                href="https://weibo.com/pwrracingteam"
+                href="https://weibo.com/yuanjingteam"
                 icon={FaWeibo}
                 ariaLabel="微博"
               />
