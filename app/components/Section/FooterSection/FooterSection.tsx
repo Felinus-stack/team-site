@@ -214,12 +214,12 @@ const FooterSection: React.FC<FooterSectionProps> = ({ dict }) => {
           <div className="w-full flex-col md:flex-row items-center gap-4 flex justify-between md:px-12 py-4 md:py-8">
             <div className="flex items-center gap-4">
               <SocialIcons
-                href="https://weibo.com/pwrracingteam"
+                href="https://weibo.com/yuanjingteam"
                 icon={FaWeibo}
                 ariaLabel="微博"
               />
               <SocialIcons
-                href="https://mp.weixin.qq.com/s/pwrracingteam"
+                href="https://mp.weixin.qq.com/s/yuanjingteam"
                 icon={FaWeixin}
                 ariaLabel="微信公众号"
               />
