@@ -1,22 +1,10 @@
 // 根据新闻ID获取新闻信息的操作
-import prisma from "@/app/libs/prismadb";
+import { getPublicApiData } from "@/app/libs/public-api";
+import type { NewsItem } from "@/app/libs/api-types";
 
-export default async function getNewsById(newsId: string) {
+export default async function getNewsById(newsId: string): Promise<NewsItem | null> {
   try {
-    const news = await prisma.news.findUnique({
-      where: { id: newsId },
-      select: {
-        date: true,
-        title: true,
-        shortDescription: true,
-        longDescription: true,
-        duration: true,
-        logo: true,
-        mainImage: true,
-        content: true,
-      },
-    });
-    return news;
+    return await getPublicApiData<NewsItem>(`/api/news/${encodeURIComponent(newsId)}`);
   } catch {
     return null;
   }

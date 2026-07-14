@@ -45,7 +45,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
   const [sameDirectionShift, setsameDirectionShift] = useState("duration-500");
 
   const fetchProjectData = async (projectName: string) => {
-    const response = await fetch(`/api/projects/${projectName}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:4000"}/api/projects/${encodeURIComponent(projectName)}`);
     if (!response.ok) {
       console.error("Failed to fetch project data:", response.statusText);
       return;

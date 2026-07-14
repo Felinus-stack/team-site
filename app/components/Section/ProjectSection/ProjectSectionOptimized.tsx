@@ -160,7 +160,7 @@ const ProjectSectionOptimized: React.FC<ProjectSectionProps> = ({
 
     // 后台异步获取最新数据（如果需要）
     try {
-      const response = await fetch(`/api/projects/${projectName}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:4000"}/api/projects/${encodeURIComponent(projectName)}`);
       if (response.ok) {
         const apiData = await response.json();
         // 更新缓存

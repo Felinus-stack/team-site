@@ -1,21 +1,16 @@
 'use client';
 
-import axios from 'axios';
-import { signIn } from "next-auth/react";
-import { AiFillGithub } from 'react-icons/ai';
-import { FcGoogle } from 'react-icons/fc';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import useLoginModal from '@/app/hooks/useLoginModal';
 import { useAuth } from '@/app/context/Auth/AuthContext';
+import { parseAuthResponse, publicApiBaseUrl } from '@/app/libs/auth-client';
 import Modal from './Modal';
 import Heading from '../Heading';
 import Input from '../Inputs/Input';
-import { error } from 'console';
 import toast from 'react-hot-toast';
-import Button from '../Button';
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -37,19 +32,26 @@ const RegisterModal = () => {
     }
   })
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setIsLoading(true);
-
-    axios.post('/api/register', data)
-      .then(() => {
-        registerModal.onClose();
-      })
-      .catch((error) => {
-        toast.error('Something went wrong');
-      })
-      .finally(() => {
-        setIsLoading(false);
-      })
+    try {
+      const response = await fetch(`${publicApiBaseUrl}/api/auth/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = parseAuthResponse(await response.json());
+      if (!response.ok || !result) {
+        toast.error('Registration failed');
+        return;
+      }
+      login(result.token);
+      registerModal.onClose();
+    } catch {
+      toast.error('Registration failed');
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   const bodyContent = (
@@ -85,25 +87,6 @@ const RegisterModal = () => {
       />
     </div>
   )
-
-  const handleOAuthSignIn = (provider: string) => {
-    setIsLoading(true);
-    signIn(provider, {
-      callbackUrl: '/admin/addNews'
-    }).then((result) => {
-      if (result?.ok) {
-        login(); // Update AuthContext
-        toast.success('Logged in successfully');
-        registerModal.onClose();
-      } else if (result?.error) {
-        toast.error('Login failed');
-      }
-      setIsLoading(false);
-    }).catch(() => {
-      toast.error('Login failed');
-      setIsLoading(false);
-    });
-  };
 
   const footerContent = (
     <div className="

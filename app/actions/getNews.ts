@@ -1,15 +1,9 @@
-import prisma from "@/app/libs/prismadb";
+import { getPublicApiData } from "@/app/libs/public-api";
+import type { NewsItem } from "@/app/libs/api-types";
 
-export async function fetchNews() {
+export async function fetchNews(): Promise<NewsItem[]> {
   try {
-    const news = await prisma.news.findMany({
-      orderBy: [
-        {
-          date: "desc",
-        },
-      ],
-    });
-    return news;
+    return await getPublicApiData<NewsItem[]>("/api/news");
   } catch {
     return [];
   }

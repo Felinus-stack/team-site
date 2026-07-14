@@ -1,6 +1,5 @@
 "use client";
 
-import { getTeamByProject } from "@/app/actions/getTeamByProject";
 import Container from "@/app/components/Container";
 import SecondaryButton from "@/app/components/SecondaryButton";
 import Title from "@/app/components/Title";
@@ -74,7 +73,11 @@ const TeamPage = ({ params }: { params: Iparams }) => {
     const fetchTeam = async () => {
       setLoading(true);
       try {
-        const teamData = await getTeamByProject(decodeURIComponent(teamId));
+        const projectName = decodeURIComponent(teamId);
+        const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:4000";
+        const response = await fetch(`${apiBaseUrl}/api/team?projectName=${encodeURIComponent(projectName)}`);
+        if (!response.ok) throw new Error(`Failed to fetch team: ${response.status}`);
+        const teamData = await response.json();
         setTeam(teamData);
       } catch (error) {
         console.error('Error fetching team:', error);

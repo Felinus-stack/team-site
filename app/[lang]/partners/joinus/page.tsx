@@ -32,7 +32,7 @@ const getMembersData = async (names: string[]): Promise<TeamMember[]> => {
 
   return teamMembers.map((member) => {
     const currentRole = member.roles.find(
-      (role) => role.projectName === "智能陪护"
+      (role: Role) => role.projectName === "智能陪护"
     )?.role;
     return {
       ...member,

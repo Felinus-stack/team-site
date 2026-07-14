@@ -1,29 +1,10 @@
-import prisma from "@/app/libs/prismadb";
+import { getPublicApiData } from "@/app/libs/public-api";
+import type { NewsItem } from "@/app/libs/api-types";
 
-export async function fetchFiveNews() {
+export async function fetchFiveNews(): Promise<NewsItem[]> {
   try {
-    const news = await prisma.news.findMany({
-      select: {
-        id: true,
-        title: true,
-        enTitle: true,
-        shortDescription: true,
-        enShortDescription: true,
-        longDescription: true,
-        enLongDescription: true,
-        duration: true,
-        logo: true,
-        mainImage: true,
-        date: true,
-      },
-      orderBy: [
-        {
-          date: "desc",
-        },
-      ],
-      take: 3,
-    });
-    return news;
+    const news = await getPublicApiData<NewsItem[]>("/api/news");
+    return news.slice(0, 3);
   } catch {
     return [];
   }

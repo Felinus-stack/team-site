@@ -1,41 +1,46 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-  ReactNode,
-  useEffect,
-} from "react";
+"use client";
 
-// 定义上下文数据的结构
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import {
+  clearAuthToken,
+  getAuthToken,
+  getAuthorizationHeaders,
+  publicApiBaseUrl,
+  saveAuthToken,
+} from "@/app/libs/auth-client";
+
 interface AuthContextProps {
   isAuthenticated: boolean;
-  login: () => void;
+  login: (token: string) => void;
   logout: () => void;
 }
 
-// 创建上下文，初始值为 undefined
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
-// 创建提供者组件
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    // 通过检查 localStorage/sessionStorage 来确认用户是否已登录
-    const loggedIn = localStorage.getItem("isAuthenticated");
-    if (loggedIn === "true") {
-      setIsAuthenticated(true);
-    }
+    if (!getAuthToken()) return;
+
+    fetch(`${publicApiBaseUrl}/api/auth/me`, {
+      headers: getAuthorizationHeaders(),
+    })
+      .then((response) => {
+        if (response.ok) setIsAuthenticated(true);
+        else clearAuthToken();
+      })
+      .catch(() => clearAuthToken());
   }, []);
 
-  const login = () => {
+  const login = (token: string): void => {
+    saveAuthToken(token);
     setIsAuthenticated(true);
-    localStorage.setItem("isAuthenticated", "true");
   };
 
-  const logout = () => {
+  const logout = (): void => {
+    clearAuthToken();
     setIsAuthenticated(false);
-    localStorage.removeItem("isAuthenticated");
   };
 
   return (
@@ -45,11 +50,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Custom hook to use the AuthContext
 export const useAuth = (): AuthContextProps => {
   const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error("useAuth must be used within an AuthProvider");
-  }
+  if (!context) throw new Error("useAuth must be used within an AuthProvider");
   return context;
 };

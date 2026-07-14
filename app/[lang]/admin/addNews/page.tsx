@@ -12,6 +12,7 @@ import Button from "@/app/components/Button";
 import Input from "@/app/components/Inputs/Input";
 import Textarea from "@/app/components/Inputs/Textarea";
 import { useAuth } from "@/app/context/Auth/AuthContext";
+import { getAuthorizationHeaders, publicApiBaseUrl } from "@/app/libs/auth-client";
 
 const AddNews = () => {
   const { isAuthenticated, logout } = useAuth();
@@ -41,7 +42,9 @@ const AddNews = () => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await fetch("/api/auth/check");
+        const response = await fetch(`${publicApiBaseUrl}/api/auth/me`, {
+          headers: getAuthorizationHeaders(),
+        });
         if (response.status !== 200) {
           console.log("Authentication failed, redirecting to admin");
           router.push(`/${lang}/admin`);
@@ -91,10 +94,11 @@ const AddNews = () => {
           .map(text => ({ text }))
       };
 
-      const response = await fetch('/api/news', {
+      const response = await fetch(`${publicApiBaseUrl}/api/news`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          ...getAuthorizationHeaders(),
         },
         body: JSON.stringify(newsData),
       });

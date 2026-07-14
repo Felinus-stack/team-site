@@ -4,10 +4,11 @@ import Image from "next/image";
 import Title from "./Title";
 import Text from "./Text";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/app/context/Auth/AuthContext";
+import { getAuthorizationHeaders, publicApiBaseUrl } from "@/app/libs/auth-client";
 
 type NewsCardProps = {
   id: string;
@@ -32,13 +33,13 @@ const NewsCard: React.FC<NewsCardProps> = ({
   whiteMode,
   onDelete,
 }) => {
-  const { data: session } = useSession();
+  const { isAuthenticated } = useAuth();
   const router = useRouter();
   const [isDeleting, setIsDeleting] = useState(false);
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
 
   // 检查是否是管理员
-  const isAdmin = session?.user;
+  const isAdmin = isAuthenticated;
 
   const handleDeleteClick = async (e: React.MouseEvent) => {
     e.preventDefault(); // 阻止链接跳转
@@ -49,8 +50,9 @@ const NewsCard: React.FC<NewsCardProps> = ({
   const confirmDelete = async () => {
     setIsDeleting(true);
     try {
-      const response = await fetch(`/api/news/${id}`, {
+      const response = await fetch(`${publicApiBaseUrl}/api/news/${id}`, {
         method: 'DELETE',
+        headers: getAuthorizationHeaders(),
       });
 
       if (response.ok) {

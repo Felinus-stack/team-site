@@ -3,8 +3,8 @@ const prisma = new PrismaClient();
 const fs = require("fs");
 const path = require("path");
 
-// 英文短描述的JSON文件路径
-const enShortDescriptionsPath = path.join(__dirname, "enShortDescriptions.json");
+// 项目描述的JSON文件路径
+const enShortDescriptionsPath = path.join(__dirname, "projectsDescriptions.json");
 const enShortDescriptions = require(enShortDescriptionsPath);
 
 async function updateProjectDescriptions() {

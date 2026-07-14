@@ -68,7 +68,7 @@ async function createProjects() {
     // 获取英文短描述
     const fs = require("fs");
     const path = require("path");
-    const enShortDescriptionsPath = path.join(__dirname, "enShortDescriptions.json");
+    const enShortDescriptionsPath = path.join(__dirname, "projectsDescriptions.json");
     const enShortDescriptions = require(enShortDescriptionsPath);
     
     // 创建所有项目记录

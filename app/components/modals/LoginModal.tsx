@@ -1,8 +1,5 @@
 "use client";
 
-import { signIn } from "next-auth/react";
-import { AiFillGithub } from "react-icons/ai";
-import { FcGoogle } from "react-icons/fc";
 import { useState, useEffect } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -11,11 +8,26 @@ import { useRouter, usePathname } from "next/navigation";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { useAuth } from "@/app/context/Auth/AuthContext";
+import { parseAuthResponse, publicApiBaseUrl } from "@/app/libs/auth-client";
 
 import Modal from "./Modal";
 import Heading from "../Heading";
 import Input from "../Inputs/Input";
-import Button from "../Button";
+
+type LoginDictionary = {
+  loginModal: {
+    title: string;
+    welcomeBack: string;
+    loginToAccount: string;
+    email: string;
+    password: string;
+    continue: string;
+    noAccount: string;
+    register: string;
+    loginSuccess: string;
+    loginFailed: string;
+  };
+};
 
 const LoginModal = () => {
   const router = useRouter();
@@ -24,7 +36,7 @@ const LoginModal = () => {
   const loginModal = useLoginModal();
   const { login } = useAuth(); // Use the login function from the AuthContext
   const [isLoading, setIsLoading] = useState(false);
-  const [dict, setDict] = useState<any>(null);
+  const [dict, setDict] = useState<LoginDictionary | null>(null);
 
   // 获取当前语言
   const currentLang = pathname?.split('/')[1] || 'en';
@@ -35,7 +47,7 @@ const LoginModal = () => {
     const loadDictionary = async () => {
       try {
         const dictModule = await import(`@/app/[lang]/dictionaries/${isChineseLang ? 'ch' : 'en'}.json`);
-        setDict(dictModule.default);
+        setDict(dictModule.default as LoginDictionary);
       } catch (error) {
         console.error('Failed to load dictionary:', error);
         // 如果加载失败，使用默认英文文本
@@ -72,26 +84,28 @@ const LoginModal = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setIsLoading(true);
-
-    signIn("credentials", {
-      ...data,
-      redirect: false,
-    }).then((callback) => {
+    try {
+      const response = await fetch(`${publicApiBaseUrl}/api/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: data.email, password: data.password }),
+      });
+      const result = parseAuthResponse(await response.json());
+      if (!response.ok || !result) {
+        toast.error(dict?.loginModal.loginFailed ?? "Login failed");
+        return;
+      }
+      login(result.token);
+      toast.success(dict?.loginModal.loginSuccess ?? "Logged in");
+      loginModal.onClose();
+      router.push(`/${currentLang}/admin/addNews`);
+    } catch {
+      toast.error(dict?.loginModal.loginFailed ?? "Login failed");
+    } finally {
       setIsLoading(false);
-
-      if (callback?.ok) {
-        toast.success(dict?.loginModal?.loginSuccess || "Logged in");
-        login(); // Call the login function to update the AuthContext
-        router.push("/admin/addNews"); // Redirect to the desired page
-        loginModal.onClose();
-      }
-
-      if (callback?.error) {
-        toast.error(callback.error);
-      }
-    });
+    }
   };
 
   // 如果字典还没有加载，显示加载状态
@@ -134,25 +148,6 @@ const LoginModal = () => {
       />
     </div>
   );
-
-  const handleOAuthSignIn = (provider: string) => {
-    setIsLoading(true);
-    signIn(provider, {
-      callbackUrl: '/admin/addNews'
-    }).then((result) => {
-      if (result?.ok) {
-        login(); // Update AuthContext
-        toast.success(dict.loginModal.loginSuccess);
-        loginModal.onClose();
-      } else if (result?.error) {
-        toast.error(dict.loginModal.loginFailed);
-      }
-      setIsLoading(false);
-    }).catch(() => {
-      toast.error(dict.loginModal.loginFailed);
-      setIsLoading(false);
-    });
-  };
 
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">

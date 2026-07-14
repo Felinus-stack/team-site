@@ -1,30 +1,10 @@
-import prisma from "@/app/libs/prismadb";
+import { getPublicApiData } from "@/app/libs/public-api";
 
 export async function getTeamByProject(projectName: string) {
   try {
-    const teamMembers = await prisma.teamMember.findMany({
-      where: {
-        roles: {
-          some: {
-            projectName,
-          },
-        },
-      },
-      select: {
-        name: true,
-        surname: true,
-        email: true,
-        phoneNumber: true,
-        roles: {
-          select: {
-            department: true,
-            role: true,
-            projectName: true,
-          },
-        },
-      },
-    });
-    return teamMembers;
+    return await getPublicApiData<any[]>(
+      `/api/team?projectName=${encodeURIComponent(projectName)}`
+    );
   } catch {
     return [];
   }

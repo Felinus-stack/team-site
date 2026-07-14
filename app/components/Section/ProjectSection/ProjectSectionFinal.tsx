@@ -209,7 +209,7 @@ const ProjectSectionFinal: React.FC<ProjectSectionProps> = ({
 
     // 后台更新数据（如果需要），确保使用正确的图片路径
     try {
-      const response = await fetch(`/api/projects/${projectName}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:4000"}/api/projects/${encodeURIComponent(projectName)}`);
       if (response.ok) {
         const apiData = await response.json();
         // 确保使用正确的英文图片路径

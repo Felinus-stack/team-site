@@ -1,16 +1,6 @@
 // 根据项目ID获取项目信息的操作
-import prisma from "@/app/libs/prismadb";
+import { getPublicApiData } from "@/app/libs/public-api";
 
 export async function getProjectByProjectId(projectId: string) {
-  const project = await prisma.project.findUnique({
-    where: {
-      name: projectId,
-    },
-    select: {
-      parts: true,
-      year: true,
-    },
-  });
-
-  return project;
+  return getPublicApiData(`/api/projects/${encodeURIComponent(projectId)}`);
 }

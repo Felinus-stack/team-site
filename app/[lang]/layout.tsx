@@ -12,7 +12,7 @@ import SideBar from "../components/Navbar/SideBar";
 import FooterSection from "../components/Section/FooterSection/FooterSection";
 import "../globals.css";
 import ToasterProvider from "../providers/ToasterProvider";
-import SessionProviderWrapper from "../providers/SessionProvider";
+import { AuthProvider } from "../context/Auth/AuthContext";
 import { getDictionary } from "./dictionaries";
 
 export async function generateStaticParams() {
@@ -151,7 +151,7 @@ export default async function RootLayout({
     <html lang={params.lang}>
       <body className={font.className}>
         <ClientOnly>
-          <SessionProviderWrapper>
+          <AuthProvider>
             <ClosestSectionProvider>
               <ToasterProvider />
               <Navbar lang={params.lang} dict={dict.navigation} />
@@ -165,7 +165,7 @@ export default async function RootLayout({
                 <Analytics />
               </>
             )}
-          </SessionProviderWrapper>
+          </AuthProvider>
         </ClientOnly>
       </body>
     </html>

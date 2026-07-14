@@ -10,6 +10,8 @@ out/
 
 # Node.js dependencies
 node_modules/
+.pnpm-store/
+server/dist/
 
 # Production build files
 dist/
