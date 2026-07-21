@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { HiOutlineSparkles, HiXMark } from "react-icons/hi2";
 import { IoSend } from "react-icons/io5";
 import { RiRobot2Line } from "react-icons/ri";
@@ -118,6 +119,7 @@ const initialMessage: ChatMessage = {
 const recruitmentOpeningQuestion = "我想通过对话了解自己是否适合加入源境团队，请开始向我提问。";
 
 const AiChatWidget = () => {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -273,11 +275,14 @@ const AiChatWidget = () => {
     void submitQuestion(input);
   };
 
+  // 管理后台不需要访客聊天入口，避免悬浮层干扰后台操作。
+  if (pathname?.includes("/admin")) return null;
+
   return (
-    <div className="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
+    <div className="pointer-events-none fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
       <section
         aria-hidden={!isOpen}
-        className={`w-[calc(100vw-2.5rem)] max-w-[380px] overflow-hidden rounded-3xl border border-white/15 bg-neutral-950 text-white shadow-2xl shadow-black/40 transition-all duration-300 sm:w-[380px] ${
+        className={`pointer-events-auto w-[calc(100vw-2.5rem)] max-w-[380px] overflow-hidden rounded-3xl border border-white/15 bg-neutral-950 text-white shadow-2xl shadow-black/40 transition-all duration-300 sm:w-[380px] ${
           isOpen
             ? "translate-y-0 scale-100 opacity-100"
             : "pointer-events-none translate-y-4 scale-95 opacity-0"
@@ -374,7 +379,7 @@ const AiChatWidget = () => {
         onClick={() => setIsOpen((currentValue) => !currentValue)}
         aria-expanded={isOpen}
         aria-label={isOpen ? "最小化 AI 聊天窗口" : "打开 AI 聊天窗口"}
-        className={`group flex h-16 w-16 items-center justify-center rounded-full border border-white/30 bg-gradient-to-br from-red-600 to-red-800 text-white shadow-xl shadow-red-900/30 transition duration-300 hover:scale-105 hover:shadow-red-700/40 ${
+        className={`pointer-events-auto group flex h-16 w-16 items-center justify-center rounded-full border border-white/30 bg-gradient-to-br from-red-600 to-red-800 text-white shadow-xl shadow-red-900/30 transition duration-300 hover:scale-105 hover:shadow-red-700/40 ${
           isOpen ? "rotate-90" : "rotate-0"
         }`}
       >

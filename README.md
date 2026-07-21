@@ -2,6 +2,36 @@
 
 一个包含项目展示、新闻管理、管理员后台和 AI 官网助手的多语言网站。
 
+## 界面预览
+
+### 官网首页
+
+![源境团队官网首页](./docs/images/homepage.png)
+
+### AI 官网助手
+
+![AI 助手发起加入团队咨询](./docs/images/ai-chat.png)
+
+![AI 助手逐步了解项目经历与协作经验](./docs/images/ai-assessment.png)
+
+![AI 助手给出方向建议并收集加入意向](./docs/images/ai-result.png)
+
+### 项目展示
+
+![项目展示页面](./docs/images/project-showcase.png)
+
+### 新闻管理后台
+
+![管理员添加新闻页面](./docs/images/admin-news.png)
+
+### 加入意向管理后台
+
+![管理员审核加入意向](./docs/images/admin-recruitment.png)
+
+### 审核通过邮件通知
+
+![源境团队加入意向审核通过与报到通知](./docs/images/join-accepted-email.jpg)
+
 ## 技术栈
 
 - 前端：Next.js 14、React、TypeScript、Tailwind CSS
