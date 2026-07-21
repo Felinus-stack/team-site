@@ -1,14 +1,25 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
+import { Prisma, type RecruitmentIntentStatus } from "@prisma/client";
 import bcrypt from "bcrypt";
 import express, {
   type NextFunction,
   type Request,
   type Response,
 } from "express";
+import { streamAgentReply } from "./lib/agent";
+import { getMailConfigurationError, isMailConfigured, sendJoinAcceptedEmail } from "./lib/mail";
 import { prisma } from "./lib/prisma";
+import {
+  getDirectionLabel,
+  getRecommendation,
+  isRecruitmentDirection,
+  type RecruitmentDirectionValue,
+} from "./lib/recruitment";
 
 type ProjectParams = { name: string };
 type NewsParams = { newsId: string };
+type RecruitmentIntentParams = { intentId: string };
+type RecruitmentIntentQuery = { page?: string; pageSize?: string; status?: string };
 type TeamQuery = { projectName?: string };
 type TeamMemberQuery = { name?: string; surname?: string };
 type EmptyParams = Record<string, never>;
@@ -32,6 +43,39 @@ type NewsInput = {
   logo: string;
   mainImage: string;
   content: Array<{ text: string }>;
+};
+
+type RecruitmentAnswerInput = {
+  questionCode: string;
+  answer: string;
+};
+
+type RecruitmentApplicationInput = {
+  sessionId: string;
+  name: string | null;
+  email: string | null;
+  phone: string | null;
+  primaryDirection: RecruitmentDirectionValue;
+  secondaryDirection: RecruitmentDirectionValue | null;
+  weeklyHours: number;
+  motivation: string;
+  projectExperience: string;
+  portfolioUrl: string | null;
+  collaborationExperience: string | null;
+  learningGoals: string;
+  answers: RecruitmentAnswerInput[];
+};
+
+type AgentSource = {
+  type: "project" | "news";
+  title: string;
+  url: string;
+};
+
+type AgentChatResponse = {
+  answer: string;
+  mode: "retrieval" | "rag";
+  sources: AgentSource[];
 };
 
 const app = express();
@@ -146,6 +190,15 @@ const toAuthResponse = (admin: {
   };
 };
 
+const normalizeImagePath = (value: unknown, fallback: string): string => {
+  const rawPath = readRequiredString(value);
+  if (!rawPath) return fallback;
+  if (/^https?:\/\//i.test(rawPath)) return rawPath;
+
+  const normalized = rawPath.replace(/\\/g, "/").replace(/^\/?public\//i, "");
+  return normalized.startsWith("/") ? normalized : `/${normalized}`;
+};
+
 const parseNewsInput = (body: unknown): NewsInput | null => {
   if (!isRecord(body)) return null;
   const title = readRequiredString(body.title);
@@ -156,8 +209,8 @@ const parseNewsInput = (body: unknown): NewsInput | null => {
   const duration = typeof body.duration === "number" && Number.isFinite(body.duration)
     ? Math.max(1, Math.trunc(body.duration))
     : 5;
-  const logo = readRequiredString(body.logo) ?? "/images/logo-czarne.svg";
-  const mainImage = readRequiredString(body.mainImage) ?? "/images/placeholder.jpg";
+  const logo = normalizeImagePath(body.logo, "/images/logo-czarne.svg");
+  const mainImage = normalizeImagePath(body.mainImage, "/images/placeholder.jpg");
   const content = Array.isArray(body.content)
     ? body.content
         .filter(isRecord)
@@ -169,6 +222,86 @@ const parseNewsInput = (body: unknown): NewsInput | null => {
   return { title, shortDescription, longDescription, duration, logo, mainImage, content };
 };
 
+const readOptionalString = (value: unknown, maxLength = 2000): string | null => {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  return trimmed.length > 0 && trimmed.length <= maxLength ? trimmed : null;
+};
+
+const readEmail = (value: unknown): string | null => {
+  const email = readOptionalString(value, 254)?.toLowerCase() ?? null;
+  return email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? email : null;
+};
+
+const parseRecruitmentApplication = (body: unknown): RecruitmentApplicationInput | null => {
+  if (!isRecord(body) || body.consent !== true) return null;
+  const sessionId = readRequiredString(body.sessionId);
+  const primaryDirection = body.primaryDirection;
+  const secondaryDirection = body.secondaryDirection;
+  const weeklyHours = body.weeklyHours;
+  const motivation = readOptionalString(body.motivation, 4000);
+  const projectExperience = readOptionalString(body.projectExperience, 6000);
+  const learningGoals = readOptionalString(body.learningGoals, 4000);
+  if (
+    !sessionId ||
+    !/^[A-Za-z0-9_-]{8,128}$/.test(sessionId) ||
+    !isRecruitmentDirection(primaryDirection) ||
+    (secondaryDirection !== null && secondaryDirection !== undefined && !isRecruitmentDirection(secondaryDirection)) ||
+    typeof weeklyHours !== "number" ||
+    !Number.isInteger(weeklyHours) ||
+    weeklyHours < 24 ||
+    weeklyHours > 168 ||
+    !motivation ||
+    !projectExperience ||
+    !learningGoals ||
+    !Array.isArray(body.answers)
+  ) {
+    return null;
+  }
+
+  const answers = body.answers.map((value): RecruitmentAnswerInput | null => {
+    if (!isRecord(value)) return null;
+    const questionCode = readOptionalString(value.questionCode, 100);
+    const answer = readOptionalString(value.answer, 4000);
+    return questionCode && answer ? { questionCode, answer } : null;
+  });
+  if (answers.some((answer) => answer === null)) return null;
+  const validAnswers = answers.filter((answer): answer is RecruitmentAnswerInput => answer !== null);
+  if (new Set(validAnswers.map((answer) => answer.questionCode)).size !== validAnswers.length) return null;
+
+  return {
+    sessionId,
+    name: readOptionalString(body.name, 100),
+    email: readOptionalString(body.email, 254),
+    phone: readOptionalString(body.phone, 50),
+    primaryDirection,
+    secondaryDirection: isRecruitmentDirection(secondaryDirection) ? secondaryDirection : null,
+    weeklyHours,
+    motivation,
+    projectExperience,
+    portfolioUrl: readOptionalString(body.portfolioUrl, 500),
+    collaborationExperience: readOptionalString(body.collaborationExperience, 4000),
+    learningGoals,
+    answers: validAnswers,
+  };
+};
+
+const getSearchTerm = (message: string): string =>
+  message
+    .replace(/[？?！!，,。\s]/g, "")
+    .replace(/请问|介绍一下|项目介绍|团队有哪些|有哪些|项目|新闻|相关|情况|什么|怎么|如何|一下|吗/g, "")
+    .trim();
+
+const isProjectQuestion = (message: string): boolean =>
+  /项目|系统|作品|团队/.test(message);
+
+const isNewsQuestion = (message: string): boolean => /新闻|动态|资讯/.test(message);
+
+const createProjectUrl = (projectName: string): string =>
+  `/projects/${encodeURIComponent(projectName)}`;
+
+const createNewsUrl = (newsId: string): string => `/news/${newsId}`;
+
 app.get("/health", async (_request: Request, response: Response) => {
   try {
     await prisma.$queryRaw`SELECT 1`;
@@ -177,6 +310,391 @@ app.get("/health", async (_request: Request, response: Response) => {
     response.status(503).json({ status: "unavailable" });
   }
 });
+
+app.get("/api/recruitment/questions", async (request: Request, response: Response) => {
+  const direction = firstQueryValue(request.query.direction);
+  if (!isRecruitmentDirection(direction)) {
+    response.status(400).json({ error: "A valid recruitment direction is required" });
+    return;
+  }
+  const questions = await prisma.recruitmentQuestion.findMany({
+    where: {
+      isActive: true,
+      OR: [{ direction: null }, { direction }],
+    },
+    orderBy: { sortOrder: "asc" },
+    select: {
+      code: true,
+      direction: true,
+      prompt: true,
+      type: true,
+      options: true,
+      required: true,
+    },
+  });
+  response.json(questions);
+});
+
+app.get("/api/recruitment/tasks", async (request: Request, response: Response) => {
+  const direction = firstQueryValue(request.query.direction);
+  if (!isRecruitmentDirection(direction)) {
+    response.status(400).json({ error: "A valid recruitment direction is required" });
+    return;
+  }
+  const task = await prisma.recruitmentTask.findFirst({
+    where: { direction, isActive: true },
+    orderBy: [{ version: "desc" }, { updatedAt: "desc" }],
+    select: { id: true, direction: true, title: true, description: true, requirements: true, rubric: true, version: true },
+  });
+  if (!task) {
+    response.status(404).json({ error: "No active task found for this direction" });
+    return;
+  }
+  response.json(task);
+});
+
+app.post("/api/recruitment/applications", async (request: Request, response: Response) => {
+  const input = parseRecruitmentApplication(request.body);
+  if (!input) {
+    response.status(400).json({ error: "Invalid application payload or consent is missing" });
+    return;
+  }
+
+  const questions = await prisma.recruitmentQuestion.findMany({
+    where: {
+      isActive: true,
+      OR: [{ direction: null }, { direction: input.primaryDirection }],
+    },
+    select: { id: true, code: true, required: true },
+  });
+  const questionByCode = new Map(questions.map((question) => [question.code, question]));
+  const providedCodes = new Set(input.answers.map((answer) => answer.questionCode));
+  const hasUnknownQuestion = input.answers.some((answer) => !questionByCode.has(answer.questionCode));
+  const hasMissingRequiredAnswer = questions.some(
+    (question) => question.required && !providedCodes.has(question.code)
+  );
+  if (hasUnknownQuestion || hasMissingRequiredAnswer) {
+    response.status(400).json({ error: "Required recruitment answers are incomplete" });
+    return;
+  }
+
+  const task = await prisma.recruitmentTask.findFirst({
+    where: { direction: input.primaryDirection, isActive: true },
+    orderBy: [{ version: "desc" }, { updatedAt: "desc" }],
+    select: { id: true, title: true },
+  });
+  if (!task) {
+    response.status(503).json({ error: "Recruitment task configuration is unavailable" });
+    return;
+  }
+
+  const recommendation = getRecommendation(input.weeklyHours);
+  const application = await prisma.recruitmentApplication.create({
+    data: {
+      ...input,
+      consentAt: new Date(),
+      status: "TASK_ASSIGNED",
+      answers: {
+        create: input.answers.map((answer) => ({
+          questionId: questionByCode.get(answer.questionCode)?.id ?? "",
+          answer: answer.answer,
+        })),
+      },
+      assessment: {
+        create: {
+          suggestedDirection: input.primaryDirection,
+          recommendation,
+          strengths: [],
+          gaps: [],
+          suggestedTask: task.title,
+          summary: `已完成${getDirectionLabel(input.primaryDirection)}方向的基础信息提交。请完成“${task.title}”后进入人工审核。`,
+          model: null,
+        },
+      },
+      taskSubmissions: { create: { taskId: task.id } },
+    },
+    select: {
+      id: true,
+      status: true,
+      assessment: { select: { suggestedDirection: true, recommendation: true, suggestedTask: true, summary: true } },
+    },
+  });
+  response.status(201).json(application);
+});
+
+app.post(
+  "/api/agent/chat",
+  async (
+    request: Request<EmptyParams, AgentChatResponse, unknown>,
+    response: Response<AgentChatResponse | { error: string }>
+  ) => {
+    if (!isRecord(request.body)) {
+      response.status(400).json({ error: "Invalid request body" });
+      return;
+    }
+
+    const message = readRequiredString(request.body.message);
+    if (!message || message.length > 500) {
+      response.status(400).json({ error: "message must contain 1 to 500 characters" });
+      return;
+    }
+
+    let streamStarted = false;
+    const writeEvent = (event: string, payload: object): void => {
+      response.write(`event: ${event}\ndata: ${JSON.stringify(payload)}\n\n`);
+    };
+
+    try {
+      response.status(200);
+      response.setHeader("Content-Type", "text/event-stream; charset=utf-8");
+      response.setHeader("Cache-Control", "no-cache, no-transform");
+      response.setHeader("Connection", "keep-alive");
+      response.flushHeaders();
+      streamStarted = true;
+
+      await streamAgentReply(
+        {
+          message,
+          sessionId: request.body.sessionId,
+          conversationId: request.body.conversationId,
+        },
+        {
+          onReady: (metadata) => writeEvent("meta", metadata),
+          onDelta: (content) => writeEvent("delta", { content }),
+        }
+      );
+      writeEvent("done", {});
+    } catch (error: unknown) {
+      console.error("[AGENT_ERROR]", error);
+      if (streamStarted) {
+        writeEvent("error", { error: "AI service is temporarily unavailable" });
+      } else {
+        response.status(503).json({ error: "AI service is temporarily unavailable" });
+      }
+    } finally {
+      response.end();
+    }
+    return;
+
+    const legacyMessage = message ?? "";
+    const searchTerm = getSearchTerm(legacyMessage);
+    const projectSearch = searchTerm.length >= 2
+      ? prisma.project.findMany({
+          where: {
+            OR: [
+              { name: { contains: searchTerm } },
+              { shortDescription: { contains: searchTerm } },
+            ],
+          },
+          orderBy: { year: "desc" },
+          take: 3,
+        })
+      : isProjectQuestion(legacyMessage)
+        ? prisma.project.findMany({ orderBy: { year: "desc" }, take: 5 })
+        : Promise.resolve([]);
+    const newsSearch = searchTerm.length >= 2
+      ? prisma.news.findMany({
+          where: {
+            OR: [
+              { title: { contains: searchTerm } },
+              { shortDescription: { contains: searchTerm } },
+              { longDescription: { contains: searchTerm } },
+            ],
+          },
+          orderBy: { date: "desc" },
+          take: 3,
+        })
+      : isNewsQuestion(legacyMessage)
+        ? prisma.news.findMany({ orderBy: { date: "desc" }, take: 3 })
+        : Promise.resolve([]);
+
+    const [projects, news] = await Promise.all([projectSearch, newsSearch]);
+    const sources: AgentSource[] = [
+      ...projects.map((project) => ({
+        type: "project" as const,
+        title: project.name,
+        url: createProjectUrl(project.name),
+      })),
+      ...news.map((newsItem) => ({
+        type: "news" as const,
+        title: newsItem.title,
+        url: createNewsUrl(newsItem.id),
+      })),
+    ];
+
+    const projectAnswer = projects.length > 0
+      ? `项目资料：\n${projects
+          .map((project) => `- ${project.name}（${project.year}）：${project.shortDescription}`)
+          .join("\n")}`
+      : "";
+    const newsAnswer = news.length > 0
+      ? `新闻资料：\n${news
+          .map((newsItem) => `- ${newsItem.title}：${newsItem.shortDescription}`)
+          .join("\n")}`
+      : "";
+    const answer = [projectAnswer, newsAnswer].filter(Boolean).join("\n\n") ||
+      "我暂时没有在官网的项目和新闻资料中找到直接相关的内容。你可以换一种更具体的说法，例如输入项目名称。";
+
+    response.json({ answer, mode: "retrieval", sources });
+  }
+);
+
+app.post("/api/recruitment/intents", async (request: Request, response: Response) => {
+  if (!isRecord(request.body)) {
+    response.status(400).json({ error: "Invalid request body" });
+    return;
+  }
+  const email = readEmail(request.body.email);
+  const sessionId = readRequiredString(request.body.sessionId);
+  const conversationId = readRequiredString(request.body.conversationId);
+  if (!email || !sessionId || !conversationId || !/^[A-Za-z0-9_-]{8,128}$/.test(sessionId)) {
+    response.status(400).json({ error: "A valid email, sessionId, and conversationId are required" });
+    return;
+  }
+  const conversation = await prisma.agentConversation.findFirst({
+    where: { id: conversationId, sessionId },
+    select: { id: true },
+  });
+  if (!conversation) {
+    response.status(404).json({ error: "Conversation not found" });
+    return;
+  }
+  const existingIntent = await prisma.recruitmentIntent.findUnique({ where: { conversationId } });
+  if (existingIntent) {
+    response.json({ id: existingIntent.id, status: existingIntent.status, alreadySubmitted: true });
+    return;
+  }
+  const existingEmailIntent = await prisma.recruitmentIntent.findFirst({
+    where: { email },
+    select: { id: true },
+  });
+  if (existingEmailIntent) {
+    response.status(409).json({ error: "该邮箱已提交过加入意向，请勿重复提交" });
+    return;
+  }
+  try {
+    const intent = await prisma.recruitmentIntent.create({
+      data: { conversationId, email },
+      select: { id: true, status: true },
+    });
+    response.status(201).json(intent);
+  } catch (error: unknown) {
+    if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002") {
+      response.status(409).json({ error: "该邮箱已提交过加入意向，请勿重复提交" });
+      return;
+    }
+    throw error;
+  }
+});
+
+app.get(
+  "/api/admin/recruitment-intents",
+  async (request: Request<EmptyParams, unknown, unknown, RecruitmentIntentQuery>, response: Response) => {
+  if (!requireAuthentication(request, response)) return;
+    const pageValue = Number(firstQueryValue(request.query.page) ?? "1");
+    const pageSizeValue = Number(firstQueryValue(request.query.pageSize) ?? "20");
+    const page = Number.isInteger(pageValue) && pageValue > 0 ? pageValue : 1;
+    const pageSize = Number.isInteger(pageSizeValue) ? Math.min(Math.max(pageSizeValue, 1), 100) : 20;
+    const status = firstQueryValue(request.query.status);
+    const statusFilter: RecruitmentIntentStatus | undefined =
+      status === "PENDING_REVIEW" || status === "ACCEPTED" ? status : undefined;
+    const where = statusFilter ? { status: statusFilter } : {};
+    const [total, intents] = await prisma.$transaction([
+      prisma.recruitmentIntent.count({ where }),
+      prisma.recruitmentIntent.findMany({
+        where,
+        orderBy: { createdAt: "desc" },
+        skip: (page - 1) * pageSize,
+        take: pageSize,
+        select: { id: true, email: true, status: true, emailDeliveryStatus: true, createdAt: true },
+      }),
+    ]);
+    response.json({ items: intents, page, pageSize, total, totalPages: Math.max(1, Math.ceil(total / pageSize)) });
+  }
+);
+
+app.get(
+  "/api/admin/recruitment-intents/:intentId",
+  async (request: Request<RecruitmentIntentParams>, response: Response) => {
+    if (!requireAuthentication(request, response)) return;
+    const intent = await prisma.recruitmentIntent.findUnique({
+      where: { id: request.params.intentId },
+      include: {
+        conversation: {
+          select: {
+            messages: {
+              orderBy: { createdAt: "asc" },
+              select: { role: true, content: true, createdAt: true },
+            },
+          },
+        },
+      },
+    });
+    if (!intent) {
+      response.status(404).json({ error: "Recruitment intent not found" });
+      return;
+    }
+    response.json(intent);
+  }
+);
+
+app.delete(
+  "/api/admin/recruitment-intents/:intentId",
+  async (request: Request<RecruitmentIntentParams>, response: Response) => {
+    if (!requireAuthentication(request, response)) return;
+    const intent = await prisma.recruitmentIntent.findUnique({
+      where: { id: request.params.intentId },
+      select: { id: true, conversationId: true },
+    });
+    if (!intent) {
+      response.status(404).json({ error: "Recruitment intent not found" });
+      return;
+    }
+    await prisma.$transaction([
+      prisma.recruitmentIntent.delete({ where: { id: intent.id } }),
+      prisma.agentConversation.delete({ where: { id: intent.conversationId } }),
+    ]);
+    response.status(204).end();
+  }
+);
+
+app.post(
+  "/api/admin/recruitment-intents/:intentId/accept",
+  async (request: Request<RecruitmentIntentParams>, response: Response) => {
+    const reviewer = requireAuthentication(request, response);
+    if (!reviewer) return;
+    if (!isMailConfigured()) {
+      response.status(503).json({ error: getMailConfigurationError() });
+      return;
+    }
+    const intent = await prisma.recruitmentIntent.findUnique({ where: { id: request.params.intentId } });
+    if (!intent) {
+      response.status(404).json({ error: "Recruitment intent not found" });
+      return;
+    }
+    try {
+      await sendJoinAcceptedEmail(intent.email);
+      const delivered = await prisma.recruitmentIntent.update({
+        where: { id: intent.id },
+        data: {
+          status: "ACCEPTED",
+          reviewerId: reviewer.sub,
+          reviewedAt: new Date(),
+          emailDeliveryStatus: "SENT",
+        },
+        select: { id: true, status: true, emailDeliveryStatus: true },
+      });
+      response.json(delivered);
+    } catch (error: unknown) {
+      await prisma.recruitmentIntent.update({
+        where: { id: intent.id },
+        data: { emailDeliveryStatus: "FAILED" },
+      });
+      console.error("[RECRUITMENT_EMAIL_ERROR]", error);
+      response.status(502).json({ error: "通知邮件发送失败，申请仍处于待审核状态；请检查邮件服务配置后重试。" });
+    }
+  }
+);
 
 app.post("/api/auth/login", async (request: Request<EmptyParams, unknown, unknown>, response: Response) => {
   if (!isRecord(request.body)) {

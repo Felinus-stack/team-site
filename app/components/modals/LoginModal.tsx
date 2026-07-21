@@ -59,8 +59,6 @@ const LoginModal = () => {
             email: "Email",
             password: "Password",
             continue: "Continue",
-            continueWithGoogle: "Continue with Google",
-            continueWithGithub: "Continue with GitHub",
             noAccount: "Don't have an account?",
             register: "Register",
             loginSuccess: "Logged in",

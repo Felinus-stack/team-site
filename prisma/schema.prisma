@@ -24,8 +24,10 @@ model Admin {
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
 
-  accounts Account[]
-  sessions Session[]
+  accounts           Account[]
+  sessions           Session[]
+  recruitmentReviews RecruitmentReview[]
+  recruitmentIntents RecruitmentIntent[]
 }
 
 model Account {
@@ -64,7 +66,7 @@ model VerificationToken {
 }
 
 model TeamMember {
-  id          String @id @default(uuid())
+  id          String  @id @default(uuid())
   name        String
   surname     String
   phoneNumber String?
@@ -73,32 +75,32 @@ model TeamMember {
 }
 
 model Role {
-  id          String @id @default(uuid())
-  department  String
-  role        String
-  projectName String
-  teamMember  TeamMember @relation(fields: [teamMemberId], references: [id])
+  id           String     @id @default(uuid())
+  department   String
+  role         String
+  projectName  String
+  teamMember   TeamMember @relation(fields: [teamMemberId], references: [id])
   teamMemberId String
 }
 
 model Project {
-  id                String @id @default(uuid())
-  name              String @unique
-  enName            String? 
-  englishPath       String?  // 英文文件路径，用于图片和URL
-  year              String
-  shortDescription  String
+  id                 String  @id @default(uuid())
+  name               String  @unique
+  enName             String?
+  englishPath        String? // 英文文件路径，用于图片和URL
+  year               String
+  shortDescription   String
   enShortDescription String? @db.Text
-  parts             Part[]
-  acceleration      String
-  mass              String
-  power             String
+  parts              Part[]
+  acceleration       String
+  mass               String
+  power              String
 
   @@map("projects")
 }
 
 model Part {
-  id          String @id @default(uuid())
+  id          String  @id @default(uuid())
   partName    String
   description String
   project     Project @relation(fields: [projectId], references: [id])
@@ -106,23 +108,280 @@ model Part {
 }
 
 model News {
-  id                String @id @default(uuid())
-  date              DateTime  @default(now())
-  title             String
-  enTitle           String?    // 英文标题
-  shortDescription  String @db.Text
-  enShortDescription String? @db.Text // 英文短描述
-  longDescription   String @db.Text
-  enLongDescription String? @db.Text  // 英文长描述
-  duration          Int
-  logo              String
-  mainImage         String
-  content           NewsContent[]
+  id                 String        @id @default(uuid())
+  date               DateTime      @default(now())
+  title              String
+  enTitle            String? // 英文标题
+  shortDescription   String        @db.Text
+  enShortDescription String?       @db.Text // 英文短描述
+  longDescription    String        @db.Text
+  enLongDescription  String?       @db.Text // 英文长描述
+  duration           Int
+  logo               String
+  mainImage          String
+  content            NewsContent[]
 }
 
 model NewsContent {
-  id      String @id @default(uuid())
-  text    String @db.Text
-  news    News @relation(fields: [newsId], references: [id])
-  newsId  String
+  id     String @id @default(uuid())
+  text   String @db.Text
+  news   News   @relation(fields: [newsId], references: [id])
+  newsId String
+}
+
+model AgentConversation {
+  id        String         @id @default(uuid())
+  sessionId String
+  title     String?
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  messages  AgentMessage[]
+  recruitmentIntent RecruitmentIntent?
+
+  @@index([sessionId, updatedAt])
+}
+
+model AgentMessage {
+  id             String            @id @default(uuid())
+  conversationId String
+  role           AgentRole
+  content        String            @db.Text
+  createdAt      DateTime          @default(now())
+  conversation   AgentConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  citations      AgentCitation[]
+
+  @@index([conversationId, createdAt])
+}
+
+model AgentCitation {
+  id          String       @id @default(uuid())
+  messageId   String
+  sourceType  String
+  sourceTitle String
+  sourceUrl   String
+  message     AgentMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
+
+  @@index([messageId])
+}
+
+model RecruitmentIntent {
+  id                  String                         @id @default(uuid())
+  conversationId      String                         @unique
+  email               String                         @unique
+  status              RecruitmentIntentStatus        @default(PENDING_REVIEW)
+  emailDeliveryStatus RecruitmentEmailDeliveryStatus @default(PENDING_CONTENT)
+  createdAt           DateTime                       @default(now())
+  updatedAt           DateTime                       @updatedAt
+  reviewedAt          DateTime?
+  reviewerId          String?
+  conversation        AgentConversation              @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  reviewer            Admin?                         @relation(fields: [reviewerId], references: [id], onDelete: SetNull)
+
+  @@index([status, createdAt])
+  @@index([reviewerId, reviewedAt])
+}
+
+enum AgentRole {
+  USER
+  ASSISTANT
+}
+
+enum RecruitmentIntentStatus {
+  PENDING_REVIEW
+  ACCEPTED
+}
+
+enum RecruitmentEmailDeliveryStatus {
+  PENDING_CONTENT
+  SENT
+  FAILED
+}
+
+model RecruitmentApplication {
+  id                      String                       @id @default(uuid())
+  sessionId               String
+  name                    String?
+  email                   String?
+  phone                   String?
+  primaryDirection        RecruitmentDirection
+  secondaryDirection      RecruitmentDirection?
+  weeklyHours             Int
+  motivation              String                       @db.Text
+  projectExperience       String                       @db.Text
+  portfolioUrl            String?
+  collaborationExperience String?                      @db.Text
+  learningGoals           String                       @db.Text
+  consentAt               DateTime
+  status                  RecruitmentApplicationStatus @default(SUBMITTED)
+  createdAt               DateTime                     @default(now())
+  updatedAt               DateTime                     @updatedAt
+  answers                 RecruitmentAnswer[]
+  assessment              RecruitmentAssessment?
+  taskSubmissions         RecruitmentTaskSubmission[]
+  reviews                 RecruitmentReview[]
+
+  @@index([sessionId, createdAt])
+  @@index([status, updatedAt])
+}
+
+model RecruitmentConversation {
+  id        String                      @id @default(uuid())
+  sessionId String
+  direction RecruitmentDirection?
+  createdAt DateTime                    @default(now())
+  updatedAt DateTime                    @updatedAt
+  messages  RecruitmentConversationMessage[]
+
+  @@index([sessionId, updatedAt])
+}
+
+model RecruitmentConversationMessage {
+  id             String                   @id @default(uuid())
+  conversationId String
+  role           RecruitmentMessageRole
+  content        String                   @db.Text
+  createdAt      DateTime                 @default(now())
+  conversation   RecruitmentConversation  @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@index([conversationId, createdAt])
+}
+
+model RecruitmentQuestion {
+  id        String                  @id @default(uuid())
+  code      String                  @unique
+  direction RecruitmentDirection?
+  prompt    String                  @db.Text
+  type      RecruitmentQuestionType
+  options   Json?
+  required  Boolean                 @default(true)
+  sortOrder Int                     @default(0)
+  isActive  Boolean                 @default(true)
+  answers   RecruitmentAnswer[]
+}
+
+model RecruitmentAnswer {
+  id            String                 @id @default(uuid())
+  applicationId String
+  questionId    String
+  answer        String                 @db.Text
+  createdAt     DateTime               @default(now())
+  updatedAt     DateTime               @updatedAt
+  application   RecruitmentApplication @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  question      RecruitmentQuestion    @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([applicationId, questionId])
+}
+
+model RecruitmentAssessment {
+  id                 String                    @id @default(uuid())
+  applicationId      String                    @unique
+  suggestedDirection RecruitmentDirection
+  recommendation     RecruitmentRecommendation
+  strengths          Json?
+  gaps               Json?
+  suggestedTask      String                    @db.Text
+  summary            String                    @db.Text
+  model              String?
+  createdAt          DateTime                  @default(now())
+  application        RecruitmentApplication    @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+}
+
+model RecruitmentTask {
+  id           String                      @id @default(uuid())
+  direction    RecruitmentDirection
+  title        String
+  description  String                      @db.Text
+  requirements Json
+  rubric       Json
+  version      Int                         @default(1)
+  isActive     Boolean                     @default(true)
+  createdAt    DateTime                    @default(now())
+  updatedAt    DateTime                    @updatedAt
+  submissions  RecruitmentTaskSubmission[]
+
+  @@index([direction, isActive])
+}
+
+model RecruitmentTaskSubmission {
+  id             String                          @id @default(uuid())
+  applicationId  String
+  taskId         String
+  repositoryUrl  String?
+  demoUrl        String?
+  submissionNote String?                         @db.Text
+  status         RecruitmentTaskSubmissionStatus @default(NOT_SUBMITTED)
+  submittedAt    DateTime?
+  createdAt      DateTime                        @default(now())
+  updatedAt      DateTime                        @updatedAt
+  application    RecruitmentApplication          @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  task           RecruitmentTask                 @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  @@unique([applicationId, taskId])
+}
+
+model RecruitmentReview {
+  id            String                    @id @default(uuid())
+  applicationId String
+  reviewerId    String
+  decision      RecruitmentReviewDecision
+  score         Json?
+  feedback      String                    @db.Text
+  createdAt     DateTime                  @default(now())
+  application   RecruitmentApplication    @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  reviewer      Admin                     @relation(fields: [reviewerId], references: [id], onDelete: Cascade)
+
+  @@index([applicationId, createdAt])
+  @@index([reviewerId, createdAt])
+}
+
+enum RecruitmentDirection {
+  FRONTEND
+  BACKEND
+  ROBOTICS
+  AI_FULL_STACK
+}
+
+enum RecruitmentApplicationStatus {
+  DRAFT
+  SUBMITTED
+  TASK_ASSIGNED
+  TASK_SUBMITTED
+  UNDER_REVIEW
+  ACCEPTED
+  GROWTH_MEMBER
+  NEEDS_INFO
+  CLOSED
+}
+
+enum RecruitmentQuestionType {
+  TEXT
+  NUMBER
+  URL
+  SINGLE_CHOICE
+  MULTIPLE_CHOICE
+}
+
+enum RecruitmentRecommendation {
+  TASK_READY
+  PREPARE_FIRST
+  OTHER_DIRECTION
+}
+
+enum RecruitmentTaskSubmissionStatus {
+  NOT_SUBMITTED
+  SUBMITTED
+  REVISION_REQUESTED
+  REVIEWED
+}
+
+enum RecruitmentReviewDecision {
+  ACCEPT
+  GROWTH_MEMBER
+  NEEDS_INFO
+  NOT_SELECTED
+}
+
+enum RecruitmentMessageRole {
+  USER
+  ASSISTANT
 }

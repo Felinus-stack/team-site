@@ -1,25 +1,23 @@
 // 管理员添加新闻页面
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { useRouter, useParams } from "next/navigation";
+import React, { useState } from "react";
 import { useForm, FieldValues, SubmitHandler } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import Container from "@/app/components/Container";
-import Title from "@/app/components/Title";
 import Text from "@/app/components/Text";
 import Button from "@/app/components/Button";
 import Input from "@/app/components/Inputs/Input";
 import Textarea from "@/app/components/Inputs/Textarea";
+import AdminPageHeader from "@/app/components/admin/AdminPageHeader";
+import AdminPageLoading from "@/app/components/admin/AdminPageLoading";
 import { useAuth } from "@/app/context/Auth/AuthContext";
 import { getAuthorizationHeaders, publicApiBaseUrl } from "@/app/libs/auth-client";
+import { useAdminAccess } from "@/app/hooks/useAdminAccess";
 
 const AddNews = () => {
-  const { isAuthenticated, logout } = useAuth();
-  const router = useRouter();
-  const params = useParams();
-  const lang = (params?.lang as string) || "ch";
-  const [isChecking, setIsChecking] = useState(true);
+  const { logout } = useAuth();
+  const { isAuthenticated, isAuthReady, lang, router } = useAdminAccess();
   const [isLoading, setIsLoading] = useState(false);
   const [contentItems, setContentItems] = useState<string[]>(['']);
 
@@ -38,27 +36,6 @@ const AddNews = () => {
       mainImage: '/images/placeholder.jpg',
     }
   });
-
-  useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        const response = await fetch(`${publicApiBaseUrl}/api/auth/me`, {
-          headers: getAuthorizationHeaders(),
-        });
-        if (response.status !== 200) {
-          console.log("Authentication failed, redirecting to admin");
-          router.push(`/${lang}/admin`);
-        }
-      } catch (error) {
-        console.error("Auth check failed:", error);
-        router.push(`/${lang}/admin`);
-      } finally {
-        setIsChecking(false);
-      }
-    };
-    
-    checkAuth();
-  }, [router, lang]);
 
   const handleLogout = () => {
     logout();
@@ -120,29 +97,29 @@ const AddNews = () => {
     }
   };
 
-  if (isChecking) {
-    return (
-      <Container>
-        <div className="py-32 w-full flex justify-center">
-          <Text>检查认证状态...</Text>
-        </div>
-      </Container>
-    );
-  }
+  if (!isAuthReady) return <AdminPageLoading />;
+  if (!isAuthenticated) return null;
 
   return (
     <Container>
       <div className="py-32 w-full">
-        <div className="flex justify-between items-center mb-8">
-          <Title color="black">添加新闻</Title>
-          {isAuthenticated ? (
-            <div className="w-32">
+        <AdminPageHeader
+          title="添加新闻"
+          actions={(
+            <>
+              <button
+                type="button"
+                onClick={() => router.push(`/${lang}/admin/recruitment`)}
+                className="rounded-md border border-neutral-300 px-4 py-2 text-sm transition hover:border-black"
+              >
+                查看加入意向
+              </button>
+              <div className="w-32">
               <Button label="退出登录" onClick={handleLogout} />
-            </div>
-          ) : (
-            <Text>您未登录</Text>
+              </div>
+            </>
           )}
-        </div>
+        />
 
         <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

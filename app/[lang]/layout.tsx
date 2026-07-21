@@ -13,6 +13,7 @@ import FooterSection from "../components/Section/FooterSection/FooterSection";
 import "../globals.css";
 import ToasterProvider from "../providers/ToasterProvider";
 import { AuthProvider } from "../context/Auth/AuthContext";
+import AiChatWidget from "../components/AiChatWidget";
 import { getDictionary } from "./dictionaries";
 
 export async function generateStaticParams() {
@@ -158,6 +159,7 @@ export default async function RootLayout({
               <SideBar dict={dict.sidebar} />
               {children}
               <FooterSection dict={dict.footer} />
+              <AiChatWidget />
             </ClosestSectionProvider>
             {process.env.VERCEL && (
               <>

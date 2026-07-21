@@ -1,17 +1,17 @@
 "use client";
 
 import Button from "@/app/components/Button";
-import { useRouter } from "next/navigation";
-
+import { usePathname } from "next/navigation";
 interface ButtonsSectionProps {
-  dict: any;
+  dict: { buttonRecruitment: string; buttonPartner: string };
 }
 
 const ButtonsSection: React.FC<ButtonsSectionProps> = ({ dict }) => {
-  const router = useRouter();
+  const pathname = usePathname();
 
   const handleFormsClick = () => {
-    window.open("https://jsj.top/f/KNEERg", "_blank"); // Open form in new tab
+    const locale = pathname?.split("/")[1] === "en" ? "en" : "ch";
+    window.location.assign(`/${locale}?assistant=recruitment`);
   };
 
   const handleFacebookClick = () => {

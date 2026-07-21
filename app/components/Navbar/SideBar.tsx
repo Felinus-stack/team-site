@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FaCamera } from "react-icons/fa";
 import { MdPerson } from "react-icons/md";
@@ -16,6 +16,7 @@ interface SideBarProps {
 const SideBar: React.FC<SideBarProps> = ({ dict }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,8 +38,11 @@ const SideBar: React.FC<SideBarProps> = ({ dict }) => {
     }
   };
 
+  if (pathname?.includes("/admin")) return null;
+
   return (
     <div
+      data-global-sidebar
       className={`${
         isScrolled ? "gap-4 bottom-1/2" : "gap-48 bottom-1/3"
       } fixed flex flex-col right-0 z-20 transform duration-700`}
